@@ -52,19 +52,19 @@ app.get('/heatmap', async (req, res) => {
   if (error) return res.status(500).json({ error: error.message });
 
   const filtered = clicks.filter(c => {
-    const p = typeof c.page === 'string' ? JSON.parse(c.page) : c.page;
-    return p?.url === url;
-  });
+  const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
+  return d?.page?.url === url;
+});
 
-  const points = filtered.map(c => {
-    const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
-    return {
-      x: d.pageX || d.x || 0,
-      y: d.pageY || d.y || 0,
-      pageHeight: d.pageHeight || 1000,
-      viewportWidth: d.viewportWidth || 1440,
-    };
-  }).filter(p => p.x > 0 && p.y > 0);
+const points = filtered.map(c => {
+  const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
+  return {
+    x: d.pageX || d.x || 0,
+    y: d.pageY || d.y || 0,
+    pageHeight: d.pageHeight || 1000,
+    viewportWidth: d.viewportWidth || 1440,
+  };
+}).filter(p => p.x > 0 && p.y > 0);
 
   const width = 1440;
   const height = points.length > 0 ? Math.max(...points.map(p => p.pageHeight), 800) : 800;
