@@ -7,8 +7,8 @@ app.use(cors());
 app.use(express.json({ limit: '1mb' }));
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
 app.get('/health', (req, res) => {
@@ -30,7 +30,6 @@ app.post('/events', async (req, res) => {
   }));
 
   const { error } = await supabase.from('events').insert(rows);
-
   if (error) {
     console.error('[Solen] Erreur insert:', error.message);
     return res.status(500).json({ error: error.message });
