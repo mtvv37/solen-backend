@@ -23,17 +23,17 @@ app.get('/health', (req, res) => {
 app.post('/events', async (req, res) => {
   const { events } = req.body;
   if (!events?.length) return res.status(400).json({ error: 'events required' });
-
-  const rows = events.map(e => ({
-    type: e.type,
-    session_id: e.sessionId,
-    visitor_id: e.visitorId,
-    timestamp: e.timestamp,
-    page: e.page || null,
-    device: e.device || null,
-    data: e,
-  }));
-
+  
+const rows = events.map(e => ({
+  type: e.type,
+  session_id: e.sessionId,
+  visitor_id: e.visitorId,
+  timestamp: e.timestamp,
+  page: e.page || e.url ? { url: e.url, pageType: e.pageType } : null,
+  device: typeof e.device === 'string' ? { device: e.device } : e.device || null,
+  data: e,
+}));
+  
   const { error } = await supabase.from('events').insert(rows);
   if (error) return res.status(500).json({ error: error.message });
 
