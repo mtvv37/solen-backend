@@ -1,20 +1,43 @@
 const express = require('express');
 const cors = require('cors');
-const app = express();
+const { createClient } = require('@supabase/supabase-js');
 
+const app = express();
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
 app.get('/health', (req, res) => {
   res.json({ status: 'Solen is alive', ts: new Date().toISOString() });
 });
 
-app.post('/events', (req, res) => {
+app.post('/events', async (req, res) => {
   const { events } = req.body;
   if (!events?.length) return res.status(400).json({ error: 'events required' });
-  console.log(`[Solen] ${events.length} events reçus`);
-  events.forEach(e => console.log(`  → ${e.type} | ${e.page?.url}`));
-  res.json({ ok: true, received: events.length });
+
+  const rows = events.map(e => ({
+    type: e.type,
+    session_id: e.sessionId,
+    visitor_id: e.visitorId,
+    timestamp: e.timestamp,
+    page: e.page || null,
+    device: e.device || null,
+    data: e,
+  }));
+
+  const { error } = await supabase.from('events').insert(rows);
+
+  if (error) {
+    console.error('[Solen] Erreur insert:', error.message);
+    return res.status(500).json({ error: error.message });
+  }
+
+  console.log(`[Solen] ${rows.length} events stockés`);
+  res.json({ ok: true, received: rows.length });
 });
 
 module.exports = app;
