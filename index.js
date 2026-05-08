@@ -39,35 +39,65 @@ const rows = events.map(e => ({
 
   res.json({ ok: true, received: rows.length });
 });
+
+
 app.get('/heatmap', async (req, res) => {
   const url = req.query.url || '/';
-  
-  const { data: clicks, error } = await supabase
+  const device = req.query.device || 'desktop';
+
+  const deviceProfiles = {
+    desktop: { width: 1440, label: 'Desktop', foldHeight: 768 },
+    tablet: { width: 768, label: 'Tablet', foldHeight: 1024 },
+    mobile: { width: 390, label: 'Mobile', foldHeight: 844 },
+  };
+  const profile = deviceProfiles[device] || deviceProfiles.desktop;
+
+  const { data: allEvents, error } = await supabase
     .from('events')
     .select('*')
-    .eq('type', 'click')
+    .in('type', ['click', 'scroll_milestone'])
     .order('created_at', { ascending: false })
-    .limit(1000);
+    .limit(2000);
 
   if (error) return res.status(500).json({ error: error.message });
 
-  const filtered = clicks.filter(c => {
-  const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
-  return d?.page?.url === url;
-});
+  const clicks = allEvents.filter(c => {
+    const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
+    return c.type === 'click' && d?.page?.url === url;
+  });
 
-const points = filtered.map(c => {
-  const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
-  return {
-    x: d.pageX || d.x || 0,
-    y: d.pageY || d.y || 0,
-    pageHeight: d.pageHeight || 1000,
-    viewportWidth: d.viewportWidth || 1440,
-  };
-}).filter(p => p.x > 0 && p.y > 0);
+  const scrollEvents = allEvents.filter(c => {
+    const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
+    return c.type === 'scroll_milestone' && d?.page?.url === url;
+  });
 
-  const width = 1440;
-  const height = points.length > 0 ? Math.max(...points.map(p => p.pageHeight), 800) : 800;
+  const points = clicks.map(c => {
+    const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
+    const scaleX = profile.width / (d.viewportWidth || 1440);
+    return {
+      x: Math.round((d.pageX || d.x || 0) * scaleX),
+      y: Math.round(d.pageY || d.y || 0),
+      pageHeight: d.pageHeight || 1000,
+      rage: false,
+    };
+  }).filter(p => p.x > 0 && p.y > 0);
+
+  const maxPageHeight = points.length > 0
+    ? Math.max(...points.map(p => p.pageHeight), profile.foldHeight)
+    : profile.foldHeight * 2;
+
+  const scrollDepths = scrollEvents.map(s => {
+    const d = typeof s.data === 'string' ? JSON.parse(s.data) : s.data;
+    return d?.scrollPct || 0;
+  });
+
+  const avgScrollPct = scrollDepths.length > 0
+    ? Math.round(scrollDepths.reduce((a, b) => a + b, 0) / scrollDepths.length)
+    : 0;
+
+  const avgScrollY = Math.round((avgScrollPct / 100) * (maxPageHeight - profile.foldHeight));
+
+  const storeUrl = process.env.STORE_URL || '';
 
   const html = `<!DOCTYPE html>
 <html>
@@ -75,48 +105,127 @@ const points = filtered.map(c => {
   <meta charset="utf-8">
   <title>Solen Heatmap — ${url}</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:#0C0D0F; font-family: system-ui; color: #E8EAF0; }
-    .header { padding: 16px 24px; background:#13151A; border-bottom:1px solid #353A47; display:flex; align-items:center; gap:12px; }
-    .logo { font-size:18px; font-weight:600; color:#F5A623; }
-    .meta { font-size:13px; color:#6B7385; }
-    .container { position:relative; margin: 24px auto; width:${width}px; }
-    canvas { position:absolute; top:0; left:0; pointer-events:none; }
-    .stats { padding: 16px 24px; display:flex; gap:24px; }
-    .stat { background:#1C1F26; border:1px solid #353A47; border-radius:10px; padding:12px 16px; }
-    .stat-val { font-size:24px; font-weight:600; color:#F5A623; }
-    .stat-label { font-size:11px; color:#6B7385; margin-top:2px; }
-    .empty { text-align:center; padding:80px; color:#6B7385; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#0A0B0D;color:#E2E5EF;font-family:system-ui,sans-serif;}
+    .topbar{background:#111318;border-bottom:1px solid #2C303C;padding:10px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    .logo{font-size:16px;font-weight:600;color:#F5A623;flex-shrink:0;}
+    .meta{font-size:12px;color:#5A6070;}
+    .stats{display:flex;gap:10px;flex-wrap:wrap;padding:12px 20px;}
+    .stat{background:#181B22;border:1px solid #2C303C;border-radius:8px;padding:8px 14px;}
+    .stat-val{font-size:20px;font-weight:600;color:#F5A623;}
+    .stat-label{font-size:10px;color:#5A6070;margin-top:1px;}
+    .controls{display:flex;align-items:center;gap:8px;padding:0 20px 12px;flex-wrap:wrap;}
+    .device-btn{background:#181B22;border:1px solid #2C303C;color:#8A93A8;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-family:system-ui;transition:.15s;}
+    .device-btn.active{background:#F5A62318;border-color:#F5A623;color:#F5A623;}
+    .layer-btn{background:#181B22;border:1px solid #2C303C;color:#8A93A8;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-family:system-ui;transition:.15s;}
+    .layer-btn.active{background:#1FB8A015;border-color:#1FB8A0;color:#1FB8A0;}
+    .sep{width:1px;height:24px;background:#2C303C;}
+    .url-input{background:#181B22;border:1px solid #2C303C;color:#E2E5EF;padding:6px 12px;border-radius:6px;font-size:12px;width:200px;font-family:system-ui;}
+    .go-btn{background:#F5A623;color:#0A0B0D;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:system-ui;}
+    .viewport-wrap{display:flex;justify-content:center;padding:0 20px 24px;overflow-x:auto;}
+    .viewport{position:relative;background:#13151A;border:1px solid #2C303C;border-radius:8px;overflow:hidden;flex-shrink:0;}
+    .iframe-bg{position:absolute;top:0;left:0;width:100%;height:100%;border:none;opacity:0.35;pointer-events:none;}
+    .fold-line{position:absolute;left:0;right:0;border-top:2px dashed #F5A623;opacity:0.6;z-index:10;}
+    .fold-label{position:absolute;right:8px;background:#F5A623;color:#0A0B0D;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;z-index:11;transform:translateY(-50%);}
+    .scroll-line{position:absolute;left:0;right:0;border-top:2px dashed #1FB8A0;opacity:0.7;z-index:10;}
+    .scroll-label{position:absolute;right:8px;background:#1FB8A0;color:#0A0B0D;font-size:10px;font-weight:600;padding:2px 6px;border-radius:3px;z-index:11;transform:translateY(-50%);}
+    .heatmap-canvas{position:absolute;top:0;left:0;pointer-events:none;z-index:5;}
+    .empty{text-align:center;padding:60px 20px;color:#5A6070;font-size:13px;}
+    .legend{display:flex;align-items:center;gap:16px;padding:0 20px 16px;flex-wrap:wrap;}
+    .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#5A6070;}
+    .legend-dot{width:12px;height:12px;border-radius:50%;}
   </style>
 </head>
 <body>
-  <div class="header">
-    <span class="logo">Solen</span>
-    <span class="meta">Heatmap — ${url} — ${filtered.length} clics</span>
+<div class="topbar">
+  <span class="logo">Solen</span>
+  <span class="meta">Heatmap — ${url} — ${clicks.length} clics — ${device}</span>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-val">${clicks.length}</div><div class="stat-label">Clics</div></div>
+  <div class="stat"><div class="stat-val">${[...new Set(clicks.map(c=>c.session_id))].length}</div><div class="stat-label">Sessions</div></div>
+  <div class="stat"><div class="stat-val">${avgScrollPct}%</div><div class="stat-label">Scroll moyen</div></div>
+  <div class="stat"><div class="stat-val">${scrollEvents.length}</div><div class="stat-label">Events scroll</div></div>
+</div>
+
+<div class="controls">
+  <a href="?url=${encodeURIComponent(url)}&device=desktop" class="device-btn ${device==='desktop'?'active':''}">🖥 Desktop</a>
+  <a href="?url=${encodeURIComponent(url)}&device=tablet" class="device-btn ${device==='tablet'?'active':''}">📱 Tablet</a>
+  <a href="?url=${encodeURIComponent(url)}&device=mobile" class="device-btn ${device==='mobile'?'active':''}">📱 Mobile</a>
+  <div class="sep"></div>
+  <button class="layer-btn active" id="btn-clicks" onclick="toggleLayer('clicks')">Clics</button>
+  <button class="layer-btn" id="btn-scroll" onclick="toggleLayer('scroll')">Zone de scroll</button>
+  <button class="layer-btn" id="btn-fold" onclick="toggleLayer('fold')">Above the fold</button>
+  <div class="sep"></div>
+  <input class="url-input" id="url-input" value="${url}" placeholder="/products/..." />
+  <button class="go-btn" onclick="navigate()">Analyser</button>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#F5A623"></div>Zone de clics dense</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#F5A62340;border:1px dashed #F5A623"></div>Above the fold</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#1FB8A040;border:1px dashed #1FB8A0"></div>Scroll moyen (${avgScrollPct}%)</div>
+</div>
+
+<div class="viewport-wrap">
+  <div class="viewport" id="viewport" style="width:${profile.width}px;height:${maxPageHeight}px;">
+    ${storeUrl ? `<iframe class="iframe-bg" src="${storeUrl}${url}" scrolling="no" id="store-iframe"></iframe>` : ''}
+    <div class="fold-line" id="fold-line" style="top:${profile.foldHeight}px;">
+      <span class="fold-label" style="top:${profile.foldHeight}px;">Fold — ${profile.label}</span>
+    </div>
+    <div class="scroll-line" id="scroll-line" style="top:${profile.foldHeight + avgScrollY}px;display:none;">
+      <span class="scroll-label" style="top:${profile.foldHeight + avgScrollY}px;">Scroll moyen ${avgScrollPct}%</span>
+    </div>
+    <canvas class="heatmap-canvas" id="heatmap" width="${profile.width}" height="${maxPageHeight}"></canvas>
+    ${points.length === 0 ? `<div class="empty">Pas encore de clics sur cette page en mode ${profile.label}.<br>Navigue sur le store et reviens.</div>` : ''}
   </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-val">${filtered.length}</div><div class="stat-label">Clics totaux</div></div>
-    <div class="stat"><div class="stat-val">${[...new Set(filtered.map(c=>c.session_id))].length}</div><div class="stat-label">Sessions</div></div>
-    <div class="stat"><div class="stat-val">${url}</div><div class="stat-label">Page analysée</div></div>
-  </div>
-  ${points.length === 0 ? '<div class="empty">Pas encore assez de clics sur cette page. Navigue sur le store et reviens.</div>' : `
-  <div class="container" style="height:${height}px">
-    <canvas id="heatmap" width="${width}" height="${height}"></canvas>
-  </div>
-  <script>
-    var points = ${JSON.stringify(points)};
-    var canvas = document.getElementById('heatmap');
-    var ctx = canvas.getContext('2d');
-    
-    points.forEach(function(p) {
-      var gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 40);
-      gradient.addColorStop(0, 'rgba(245, 166, 35, 0.8)');
-      gradient.addColorStop(0.4, 'rgba(229, 83, 83, 0.4)');
-      gradient.addColorStop(1, 'rgba(229, 83, 83, 0)');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(p.x - 40, p.y - 40, 80, 80);
-    });
-  <\/script>`}
+</div>
+
+<script>
+var points = ${JSON.stringify(points)};
+var layers = { clicks: true, scroll: false, fold: true };
+
+var canvas = document.getElementById('heatmap');
+var ctx = canvas.getContext('2d');
+
+function drawHeatmap() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (!layers.clicks) return;
+  points.forEach(function(p) {
+    var r = 35;
+    var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
+    g.addColorStop(0, 'rgba(255,180,0,0.85)');
+    g.addColorStop(0.3, 'rgba(245,100,35,0.5)');
+    g.addColorStop(0.7, 'rgba(229,50,50,0.2)');
+    g.addColorStop(1, 'rgba(229,50,50,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+
+function toggleLayer(name) {
+  layers[name] = !layers[name];
+  document.getElementById('btn-' + name).classList.toggle('active', layers[name]);
+  if (name === 'scroll') document.getElementById('scroll-line').style.display = layers[name] ? 'block' : 'none';
+  if (name === 'fold') document.getElementById('fold-line').style.display = layers[name] ? 'block' : 'none';
+  if (name === 'clicks') drawHeatmap();
+}
+
+function navigate() {
+  var url = document.getElementById('url-input').value;
+  var device = '${device}';
+  window.location.href = '?url=' + encodeURIComponent(url) + '&device=' + device;
+}
+
+document.getElementById('url-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') navigate();
+});
+
+drawHeatmap();
+<\/script>
 </body>
 </html>`;
 
