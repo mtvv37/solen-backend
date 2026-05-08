@@ -39,6 +39,90 @@ const rows = events.map(e => ({
 
   res.json({ ok: true, received: rows.length });
 });
+app.get('/heatmap', async (req, res) => {
+  const url = req.query.url || '/';
+  
+  const { data: clicks, error } = await supabase
+    .from('events')
+    .select('*')
+    .eq('type', 'click')
+    .order('created_at', { ascending: false })
+    .limit(1000);
+
+  if (error) return res.status(500).json({ error: error.message });
+
+  const filtered = clicks.filter(c => {
+    const p = typeof c.page === 'string' ? JSON.parse(c.page) : c.page;
+    return p?.url === url;
+  });
+
+  const points = filtered.map(c => {
+    const d = typeof c.data === 'string' ? JSON.parse(c.data) : c.data;
+    return {
+      x: d.pageX || d.x || 0,
+      y: d.pageY || d.y || 0,
+      pageHeight: d.pageHeight || 1000,
+      viewportWidth: d.viewportWidth || 1440,
+    };
+  }).filter(p => p.x > 0 && p.y > 0);
+
+  const width = 1440;
+  const height = points.length > 0 ? Math.max(...points.map(p => p.pageHeight), 800) : 800;
+
+  const html = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Solen Heatmap — ${url}</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0C0D0F; font-family: system-ui; color: #E8EAF0; }
+    .header { padding: 16px 24px; background:#13151A; border-bottom:1px solid #353A47; display:flex; align-items:center; gap:12px; }
+    .logo { font-size:18px; font-weight:600; color:#F5A623; }
+    .meta { font-size:13px; color:#6B7385; }
+    .container { position:relative; margin: 24px auto; width:${width}px; }
+    canvas { position:absolute; top:0; left:0; pointer-events:none; }
+    .stats { padding: 16px 24px; display:flex; gap:24px; }
+    .stat { background:#1C1F26; border:1px solid #353A47; border-radius:10px; padding:12px 16px; }
+    .stat-val { font-size:24px; font-weight:600; color:#F5A623; }
+    .stat-label { font-size:11px; color:#6B7385; margin-top:2px; }
+    .empty { text-align:center; padding:80px; color:#6B7385; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">Solen</span>
+    <span class="meta">Heatmap — ${url} — ${filtered.length} clics</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-val">${filtered.length}</div><div class="stat-label">Clics totaux</div></div>
+    <div class="stat"><div class="stat-val">${[...new Set(filtered.map(c=>c.session_id))].length}</div><div class="stat-label">Sessions</div></div>
+    <div class="stat"><div class="stat-val">${url}</div><div class="stat-label">Page analysée</div></div>
+  </div>
+  ${points.length === 0 ? '<div class="empty">Pas encore assez de clics sur cette page. Navigue sur le store et reviens.</div>' : `
+  <div class="container" style="height:${height}px">
+    <canvas id="heatmap" width="${width}" height="${height}"></canvas>
+  </div>
+  <script>
+    var points = ${JSON.stringify(points)};
+    var canvas = document.getElementById('heatmap');
+    var ctx = canvas.getContext('2d');
+    
+    points.forEach(function(p) {
+      var gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 40);
+      gradient.addColorStop(0, 'rgba(245, 166, 35, 0.8)');
+      gradient.addColorStop(0.4, 'rgba(229, 83, 83, 0.4)');
+      gradient.addColorStop(1, 'rgba(229, 83, 83, 0)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(p.x - 40, p.y - 40, 80, 80);
+    });
+  <\/script>`}
+</body>
+</html>`;
+
+  res.setHeader('Content-Type', 'text/html');
+  res.send(html);
+});
 
 app.get('/analyze', async (req, res) => {
   // Récupère les 500 derniers events
