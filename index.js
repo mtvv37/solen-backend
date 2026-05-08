@@ -97,8 +97,21 @@ app.get('/heatmap', async (req, res) => {
 
   const avgScrollY = Math.round((avgScrollPct / 100) * (maxPageHeight - profile.foldHeight));
 
-  const storeUrl = process.env.STORE_URL || '';
-
+ const storeUrl = process.env.STORE_URL || '';
+let screenshotBase64 = '';
+if (storeUrl && process.env.SCREENSHOT_KEY) {
+  try {
+    const fetch2 = (await import('node-fetch')).default;
+    const imgUrl = `https://api.screenshotone.com/take?url=${encodeURIComponent(storeUrl + url)}&viewport_width=${profile.width}&viewport_height=${maxPageHeight}&full_page=true&format=jpg&image_quality=50&access_key=${process.env.SCREENSHOT_KEY}`;
+    const imgRes = await fetch2(imgUrl);
+    if (imgRes.ok) {
+      const buffer = await imgRes.buffer();
+      screenshotBase64 = `data:image/jpeg;base64,${buffer.toString('base64')}`;
+    }
+  } catch(e) {
+    console.error('[Solen] Screenshot error:', e.message);
+  }
+}
   const html = `<!DOCTYPE html>
 <html>
 <head>
@@ -170,7 +183,7 @@ app.get('/heatmap', async (req, res) => {
 
 <div class="viewport-wrap">
   <div class="viewport" id="viewport" style="width:${profile.width}px;height:${maxPageHeight}px;">
-    ${storeUrl ? `<iframe class="iframe-bg" src="${storeUrl}${url}" scrolling="no" id="store-iframe"></iframe>` : ''}
+    ${screenshotBase64 ? `<img class="iframe-bg" src="${screenshotBase64}" style="width:100%;height:auto;position:absolute;top:0;left:0;opacity:0.35;" />` : ''}
     <div class="fold-line" id="fold-line" style="top:${profile.foldHeight}px;">
       <span class="fold-label" style="top:${profile.foldHeight}px;">Fold — ${profile.label}</span>
     </div>
