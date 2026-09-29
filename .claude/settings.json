@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "twofoldtech-dakota-plugin-gtm": {
+      "source": {
+        "source": "github",
+        "repo": "twofoldtech-dakota/plugin-gtm"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "plugin-gtm@twofoldtech-dakota-plugin-gtm": true
+  }
+}
