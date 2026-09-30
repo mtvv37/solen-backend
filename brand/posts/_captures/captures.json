@@ -1,0 +1,31 @@
+{
+ "01": {
+  "file": "/Users/thomasmetivier/solen-backend/brand/posts/_src/../_captures/audit-01-cta-below-fold.png",
+  "box": [
+   6,
+   806,
+   378,
+   34
+  ],
+  "cta_top": 1174,
+  "note": "Add-to-cart starts at 1174px; the first screen ends at 844px."
+ },
+ "02": {
+  "file": "/Users/thomasmetivier/solen-backend/brand/posts/_src/../_captures/audit-02-shipping-at-checkout.png",
+  "box": [
+   9,
+   405.796875,
+   372,
+   31.5
+  ]
+ },
+ "05": {
+  "file": "/Users/thomasmetivier/solen-backend/brand/posts/_src/../_captures/audit-05-returns-in-footer.png",
+  "box": [
+   34,
+   392.796875,
+   322,
+   58.890625
+  ]
+ }
+}
