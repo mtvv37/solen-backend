@@ -1,0 +1,59 @@
+/* Solen design tokens — Ink & Sun (approved round b-v2). Source of truth for web, templates and social visuals. */
+/* Font: General Sans (Indian Type Foundry, Fontshare FFL — free for commercial use and logos; do not redistribute the files).
+   Load from https://www.fontshare.com/fonts/general-sans or self-host locally. */
+
+:root {
+  /* ---- colour: core */
+  --solen-ink: #0E1726;          /* dark background, text on light, control half on light */
+  --solen-cream: #F6F5F1;        /* light background, text on dark, control half on dark */
+  --solen-amber: #F5A524;        /* variant half, accents on dark — never text on light (1.9:1) */
+  --solen-amber-text: #B45309;   /* amber for text on light (4.6:1 on cream, AA) */
+  --solen-grey: #8A8F98;         /* secondary text on dark (5.5:1); decorative only on light (3.0:1) */
+  --solen-grey-text-light: #5B616B; /* secondary text on light (5.7:1 on cream, AA) */
+
+  /* ---- colour: supporting (low contrast, backgrounds and wireframes only) */
+  --solen-ink-2: #1B2740;        /* texture / surfaces on ink (1.4:1) */
+  --solen-ink-3: #243049;        /* wireframe blocks, borders on ink */
+  --solen-cream-2: #E7E5DE;      /* surfaces on cream */
+  --solen-cream-3: #D5D9DE;      /* wireframe blocks, borders on cream */
+
+  /* ---- colour: semantic by mode (dark is the default for social) */
+  --bg: var(--solen-ink);
+  --fg: var(--solen-cream);
+  --accent: var(--solen-amber);
+  --accent-text: var(--solen-amber);
+  --muted: var(--solen-grey);
+  --surface: var(--solen-ink-2);
+  --line: var(--solen-ink-3);
+
+  /* ---- typography */
+  --font-sans: "General Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --weight-regular: 500;
+  --weight-strong: 600;
+  --tracking-display: -0.02em;   /* headlines ≥ 40px */
+  --tracking-wordmark: -0.025em;
+  --text-display: 72px;          /* social: statement / quote */
+  --text-headline: 52px;         /* social: main message (min 48px on 1200×675) */
+  --text-body: 28px;             /* social: secondary lines */
+  --text-label: 22px;            /* social: labels, sources, footer */
+
+  /* ---- layout (social 1200×675) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --margin-social: 72px;
+  --radius-s: 10px;
+  --radius-m: 18px;
+  --radius-phone: 40px;
+}
+
+[data-theme="light"] {
+  --bg: var(--solen-cream);
+  --fg: var(--solen-ink);
+  --accent: var(--solen-amber);          /* shapes, the variant half */
+  --accent-text: var(--solen-amber-text);/* any text in accent colour */
+  --muted: var(--solen-grey-text-light);
+  --surface: var(--solen-cream-2);
+  --line: var(--solen-cream-3);
+}

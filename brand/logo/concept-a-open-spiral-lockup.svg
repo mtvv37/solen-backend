@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 687 256" width="687" height="256" role="img" aria-labelledby="title">
+  <title id="title">Solen logo, concept A</title>
+  <g transform="translate(0 35.84) scale(0.72)">
+  <g id="symbol" fill="none" stroke="#111111" stroke-width="28.6" stroke-linecap="round">
+    <path d="M84.93 139.7 A52.0 52.0 0 0 1 188.93 139.7 A75.4 75.4 0 0 1 38.13 139.7 A98.8 98.8 0 0 1 217.87 83.03"/>
+  </g>
+  </g>
+  <g id="wordmark" fill="none" stroke="#111111" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M267.57 97.25 A20.5 20.5 0 1 0 249.82 128 A20.5 20.5 0 1 1 232.07 158.75"/>
+    <path d="M306.32 128 A41 41 0 1 1 388.32 128 A41 41 0 1 1 306.32 128 Z"/>
+    <path d="M428.32 52 V169"/>
+    <path d="M468.32 128 H550.3199999999999 A41 41 0 1 0 540.73 154.35"/>
+    <path d="M588.3199999999999 87 V169 M588.3199999999999 128 A41 41 0 0 1 670.3199999999999 128 V169"/>
+  </g>
+</svg>
