@@ -111,3 +111,28 @@ test('refuses internal targets, respects robots.txt, 404s unknown ids, rate-limi
     server.close();
   }
 });
+
+test('front end on another domain: CORS allowlist, report URL template, share page redirect', async () => {
+  process.env.ALLOWED_ORIGINS = 'https://solen.fr, https://www.solen.fr/';
+  process.env.REPORT_URL_TEMPLATE = 'https://solen.fr/audit/rapport/{id}';
+  const { server, call } = await startApp();
+  const base = `http://127.0.0.1:${server.address().port}`;
+  try {
+    const pre = await fetch(`${base}/api/audits`, { method: 'OPTIONS', headers: { Origin: 'https://www.solen.fr', 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'content-type' } });
+    assert.equal(pre.headers.get('access-control-allow-origin'), 'https://www.solen.fr');
+    const evil = await fetch(`${base}/api/audits`, { method: 'OPTIONS', headers: { Origin: 'https://evil.example', 'Access-Control-Request-Method': 'POST' } });
+    assert.equal(evil.headers.get('access-control-allow-origin'), null);
+
+    const created = await (await call('/api/audits', { method: 'POST', body: JSON.stringify({ url: 'maisonlune.fr' }), ip: '192.0.2.99' })).json();
+    assert.equal(created.reportUrl, `https://solen.fr/audit/rapport/${created.id}`);
+    assert.match(created.shareUrl, new RegExp(`/r/${created.id}$`));
+
+    const html = await (await call(`/r/${created.id}`)).text();
+    assert.match(html, new RegExp(`name="solen-redirect" content="https://solen.fr/audit/rapport/${created.id}"`));
+    assert.match(html, /og:image/);
+  } finally {
+    delete process.env.ALLOWED_ORIGINS;
+    delete process.env.REPORT_URL_TEMPLATE;
+    server.close();
+  }
+});

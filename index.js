@@ -5,7 +5,9 @@ const Anthropic = require('@anthropic-ai/sdk');
 const { createAuditRouter } = require('./src/audit/routes');
 
 const app = express();
-app.use(cors());
+// Tracking endpoints are called from merchant storefronts, so they accept any origin.
+// The audit API has its own origin allowlist (ALLOWED_ORIGINS) in src/audit/routes.js.
+app.use(['/events', '/heatmap', '/analyze', '/health'], cors());
 app.use(express.json({ limit: '1mb' }));
 
 // Created only when configured, so the app (and the audit) can boot without them.

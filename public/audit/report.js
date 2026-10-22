@@ -1,5 +1,7 @@
 (function () {
   'use strict';
+  var redirect = document.querySelector('meta[name="solen-redirect"]');
+  if (redirect && /^https:\/\//.test(redirect.content)) { location.replace(redirect.content); return; }
   var root = document.getElementById('report');
   var id = (location.pathname.match(/^\/r\/([A-Za-z0-9_-]{22})$/) || [])[1];
   var storageKey = 'solen-audit-' + id;

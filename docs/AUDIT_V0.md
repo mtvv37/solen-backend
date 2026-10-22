@@ -32,6 +32,10 @@ Outil d'acquisition de l'étape 0. Le marchand colle l'adresse de sa boutique Sh
 - **Données** : les tables ont le RLS activé et aucune politique d'accès. Seul le serveur, avec la clé service-role, peut lire et écrire. Le texte exact du consentement et sa version sont stockés avec chaque email.
 - **Pages** : CSP stricte (pas de script inline, `frame-ancestors 'none'`), `nosniff`, rapports en `noindex`.
 
+## Interface sur ton propre site
+
+L'interface intégrée (`/audit/`) peut être remplacée par un site sur ton domaine : voir [`AUDIT_API.md`](AUDIT_API.md). Renseigne `ALLOWED_ORIGINS` et `REPORT_URL_TEMPLATE` côté backend.
+
 ## Déploiement
 
 1. **Supabase** : SQL Editor → coller `supabase/migrations/20261022000000_audit_v0.sql` → Run. Le script crée `audits`, `audit_leads` et `audit_attempts`.

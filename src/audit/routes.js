@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 const { runAudit, AuditError } = require('./service');
 const { createStore } = require('./store');
 const { newAuditId, isAuditId, unlockToken, verifyUnlockToken, hashIp, clientIp } = require('./tokens');
@@ -73,6 +74,18 @@ function baseUrl(req) {
   return `${proto}://${host}`;
 }
 
+// A separate front end (your own domain) can host the audit UI:
+// ALLOWED_ORIGINS lists the sites allowed to call /api/audits from the browser,
+// REPORT_URL_TEMPLATE (e.g. https://solen.fr/audit/rapport/{id}) is where humans read a report.
+function allowedOrigins() {
+  return String(process.env.ALLOWED_ORIGINS || '').split(',').map((o) => o.trim().replace(/\/$/, '')).filter(Boolean);
+}
+
+function frontendReportUrl(id) {
+  const tpl = process.env.REPORT_URL_TEMPLATE || '';
+  return /^https:\/\/[^\s]+\{id\}/.test(tpl) ? tpl.replace('{id}', id) : null;
+}
+
 function createAuditRouter(options = {}) {
   const router = express.Router();
   let store = options.store || null;
@@ -83,6 +96,17 @@ function createAuditRouter(options = {}) {
   const reportTemplate = () => fs.readFileSync(path.join(PUBLIC_DIR, 'report.html'), 'utf8');
 
   router.use('/audit', (req, res, next) => { securityHeaders(res); next(); }, express.static(PUBLIC_DIR, { index: 'index.html', maxAge: '1h' }));
+
+  // Same-origin calls (the built-in UI) need no CORS; other sites must be listed in ALLOWED_ORIGINS.
+  router.use('/api/audits', cors({
+    origin: (origin, cb) => {
+      const list = allowedOrigins();
+      cb(null, Boolean(origin) && list.includes(origin.replace(/\/$/, '')));
+    },
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+    maxAge: 600,
+  }));
 
   router.post('/api/audits', async (req, res) => {
     try {
@@ -96,7 +120,7 @@ function createAuditRouter(options = {}) {
       const result = await runAudit({ url: body.url, monthlyVisitors: body.monthlyVisitors, averageOrderValue: body.averageOrderValue }, deps);
       const id = newAuditId();
       await db.insertAudit(toRow(id, ipHash, result));
-      return res.status(201).json({ id, reportUrl: `/r/${id}` });
+      return res.status(201).json({ id, reportUrl: frontendReportUrl(id) || `/r/${id}`, shareUrl: `${baseUrl(req)}/r/${id}` });
     } catch (err) {
       if (err instanceof AuditError) return res.status(err.status).json({ error: err.message, code: err.code });
       console.error('[audit] create failed:', err);
@@ -176,7 +200,9 @@ function createAuditRouter(options = {}) {
         .replace(/{{OG_TITLE}}/g, escapeHtml(title))
         .replace(/{{OG_DESCRIPTION}}/g, escapeHtml(desc))
         .replace(/{{OG_IMAGE}}/g, escapeHtml(`${base}/api/audits/${row.id}/og.png`))
-        .replace(/{{CANONICAL}}/g, escapeHtml(`${base}/r/${row.id}`)));
+        .replace(/{{CANONICAL}}/g, escapeHtml(frontendReportUrl(row.id) || `${base}/r/${row.id}`))
+        // Crawlers read the share preview above; people are sent on to the report on your own site.
+        .replace(/{{REDIRECT}}/g, escapeHtml(frontendReportUrl(row.id) || '')));
     } catch (err) {
       console.error('[audit] report page failed:', err);
       return res.status(500).type('text').send('Erreur');
@@ -186,4 +212,4 @@ function createAuditRouter(options = {}) {
   return router;
 }
 
-module.exports = { createAuditRouter, view, CONSENT_TEXT, CONSENT_VERSION, VISIBLE_LEAKS };
+module.exports = { createAuditRouter, frontendReportUrl, view, CONSENT_TEXT, CONSENT_VERSION, VISIBLE_LEAKS };
