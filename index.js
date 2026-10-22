@@ -2,19 +2,26 @@ const express = require('express');
 const cors = require('cors');
 const { createClient } = require('@supabase/supabase-js');
 const Anthropic = require('@anthropic-ai/sdk');
+const { createAuditRouter } = require('./src/audit/routes');
 
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+// Created only when configured, so the app (and the audit) can boot without them.
+const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  ? createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+  : null;
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+const anthropic = process.env.ANTHROPIC_API_KEY ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }) : null;
+
+app.use(['/events', '/heatmap', '/analyze'], (req, res, next) => {
+  if (!supabase) return res.status(503).json({ error: 'Supabase is not configured' });
+  return next();
 });
+
+app.use(createAuditRouter());
+app.get('/', (req, res) => res.redirect(302, '/audit/'));
 
 app.get('/health', (req, res) => {
   res.json({ status: 'Solen is alive', ts: new Date().toISOString() });
@@ -291,6 +298,7 @@ Analyse ces données et produis un diagnostic structuré avec :
 
 Réponds en français, de façon directe et actionnable. Tu es un agent qui agit, pas un outil qui observe.`;
 
+  if (!anthropic) return res.status(503).json({ error: 'ANTHROPIC_API_KEY is not configured' });
   const message = await anthropic.messages.create({
     model: 'claude-sonnet-4-6',
     max_tokens: 1024,
@@ -306,3 +314,8 @@ Réponds en français, de façon directe et actionnable. Tu es un agent qui agit
 });
 
 module.exports = app;
+
+if (require.main === module) {
+  const port = Number(process.env.PORT) || 3000;
+  app.listen(port, () => console.log(`Solen backend on http://localhost:${port} (audit: /audit)`));
+}

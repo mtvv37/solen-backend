@@ -18,3 +18,4 @@ __pycache__/
 *.otf
 *.woff
 *.woff2
+!.env.example

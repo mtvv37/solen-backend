@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit de conversion Shopify gratuit · Solen</title>
+<meta name="description" content="Collez l’adresse de votre boutique Shopify : Solen analyse votre accueil et une fiche produit, puis chiffre les fuites de conversion à corriger en priorité.">
+<meta property="og:title" content="Audit de conversion Shopify gratuit · Solen">
+<meta property="og:description" content="Score sur 100 et fuites de conversion de votre fiche produit, en 30 secondes.">
+<meta name="theme-color" content="#0E1726">
+<link rel="icon" href="/audit/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600&display=swap">
+<link rel="stylesheet" href="/audit/app.css">
+</head>
+<body>
+<header class="wrap topbar">
+  <a href="/audit" aria-label="Solen, accueil"><img src="/audit/lockup-dark.svg" alt="Solen" width="88" height="30"></a>
+  <a class="link" href="#solen">Qu’est-ce que Solen ?</a>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow">Audit gratuit · boutiques Shopify</span>
+    <h1>Votre fiche produit perd-elle des ventes ?</h1>
+    <p class="lede">Collez l’adresse de votre boutique. Solen lit votre page d’accueil et une fiche produit, calcule un score sur 100 et chiffre les fuites de conversion à corriger en priorité.</p>
+
+    <form class="audit-form" id="audit-form" novalidate>
+      <div class="url-row">
+        <label class="visually-hidden" for="url" hidden>Adresse de la boutique</label>
+        <input id="url" name="url" type="text" inputmode="url" autocomplete="url" spellcheck="false" required
+               placeholder="maboutique.fr ou l’adresse d’une fiche produit" aria-label="Adresse de la boutique">
+        <button class="btn" id="submit" type="submit">Lancer l’audit</button>
+      </div>
+      <details class="refine">
+        <summary>Affiner l’estimation en euros (optionnel)</summary>
+        <div class="refine-grid">
+          <label class="field" for="visitors">Visiteurs par mois
+            <input id="visitors" name="monthlyVisitors" type="number" min="100" max="10000000" step="100" placeholder="10 000 par défaut">
+          </label>
+          <label class="field" for="aov">Panier moyen (€)
+            <input id="aov" name="averageOrderValue" type="number" min="1" max="100000" step="1" placeholder="prix du produit par défaut">
+          </label>
+        </div>
+      </details>
+      <p class="error" id="form-error" role="alert" hidden></p>
+      <p class="form-note">Lecture de 2 pages publiques seulement, dans le respect du fichier robots.txt de votre site. Aucun accès à votre back-office.</p>
+    </form>
+
+    <div class="progress" id="progress" aria-live="polite">
+      <div class="bar"><span id="progress-bar"></span></div>
+      <p id="progress-label">Lecture du fichier robots.txt…</p>
+    </div>
+  </section>
+
+  <section class="checks" aria-labelledby="checks-title">
+    <h2 id="checks-title">Ce que l’audit mesure</h2>
+    <div class="check-grid">
+      <div class="check-card"><b>Preuve sociale</b><span class="pts">20 points</span><p>Avis clients, note moyenne et volume d’avis sur la fiche produit.</p></div>
+      <div class="check-card"><b>Fiche produit</b><span class="pts">25 points</span><p>Nombre de photos, textes alternatifs, description, clarté du prix, bouton d’achat.</p></div>
+      <div class="check-card"><b>Réassurance</b><span class="pts">20 points</span><p>Livraison, retours, garantie, paiement sécurisé et moyens de paiement affichés.</p></div>
+      <div class="check-card"><b>Poids de la page</b><span class="pts">15 points</span><p>Taille du code, nombre de scripts et d’apps tierces chargées.</p></div>
+      <div class="check-card"><b>Mobile</b><span class="pts">10 points</span><p>Affichage mobile, position estimée du bouton d’achat, choix des tailles et couleurs.</p></div>
+      <div class="check-card"><b>Accès au panier</b><span class="pts">10 points</span><p>Paiement express, sélecteur de quantité, données produit structurées.</p></div>
+    </div>
+    <div class="promise">
+      <p><b>Des chiffres honnêtes</b>Chaque montant en euros affiche ses hypothèses de trafic et de conversion. Ce sont des estimations, pas des promesses.</p>
+      <p><b>Des pistes à tester</b>Chaque fuite vient avec un test concret à lancer sur votre boutique.</p>
+      <p><b>Un rapport partageable</b>Votre rapport a sa propre adresse, à envoyer à votre équipe ou à votre agence.</p>
+    </div>
+  </section>
+
+  <section class="about" id="solen" aria-labelledby="solen-title">
+    <span class="eyebrow">Solen</span>
+    <h2 id="solen-title">Après l’audit, Solen teste les corrections pour vous</h2>
+    <p>Solen observe le comportement de vos visiteurs, propose des changements, les teste sur une partie du trafic et ne garde que ce qui fait vraiment vendre plus. Vous validez chaque changement. L’IA propose, vos ventes décident.</p>
+    <p class="muted">Solen est en construction. Laissez votre email en débloquant votre rapport pour faire partie des premières boutiques.</p>
+  </section>
+</main>
+
+<footer class="wrap">Solen · audit fourni à titre indicatif, sur la base du code public de deux pages. Les montants sont des estimations.</footer>
+<script src="/audit/app.js" defer></script>
+</body>
+</html>
