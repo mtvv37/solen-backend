@@ -16,10 +16,11 @@ Solen — *The Self-Optimizing Commerce Layer*. B2B SaaS prototype that turns e-
 
 ## Code layout
 
-- `index.js` — Express API deployed on Vercel (`vercel.json`), backed by Supabase (`events` table) and the Anthropic SDK.
+- `index.js` — Express app deployed on Vercel through `api/index.js` (`vercel.json` rewrites everything to it), backed by Supabase and the Anthropic SDK. `npm test` runs the suite, `npm run dev` serves locally.
+  - `/audit/`, `/r/:id`, `/api/audits*` — free conversion audit V0 (`src/audit/`, UI in `public/audit/`, schema in `supabase/migrations/`). See `docs/AUDIT_V0.md`. Numbers are computed by code from stated assumptions; Claude only writes the French text.
   - `GET /health` — liveness.
   - `POST /events` — ingest tracked visitor events (`{ events: [...] }`).
   - `GET /heatmap?url=&device=` — click / scroll-milestone heatmap per device profile.
   - `GET /analyze` — LLM analysis of recent events into recommendations.
-- Env vars: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ANTHROPIC_API_KEY`.
+- Env vars: see `.env.example`.
 - `verzo-sales-agent/` — separate project (VERZO Studio sales agent) with its own `CLAUDE.md`; unrelated to Solen.
