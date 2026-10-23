@@ -9,6 +9,6 @@ Apply to every Instagram, TikTok and X post. No exceptions.
 5. **CTA on the last slide**: "Comment AUDIT and I'll send you a free audit of your product page."
 6. **No invented numbers**: no revenue claims, no "+X% conversion", no fake reviews. Present fixes as things to test, not guaranteed results.
 7. **Two formats per carousel**: `ig/` 1080x1350 (4:5) and `tt/` 1080x1920 (9:16). On TikTok, keep text out of the bottom 420 px and the right 130 px (covered by the app UI).
-8. **Captions: ultra short.** One or two sentences max, ending with the AUDIT call to action.
+8. **Captions: short and structured.** One hook line, then the tips as a numbered list (`1. ...`, `2. ...`), then the call to action: "Comment AUDIT for a free audit of your product page."
 9. **No emoji** in captions or slides.
-10. **One hashtag only**: `#shopify` or `#ecommerce`. Nothing else.
+10. **Hashtags: exactly `#shopify #ecommerce`** on every post. Nothing else.
