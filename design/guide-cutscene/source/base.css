@@ -1,0 +1,52 @@
+
+@page{size:A4;margin:0}
+:root{--bg:#0A0B10;--card:#12141C;--line:#232736;--text:#EEF0F6;--muted:#9AA0B4;--accent:#5B8CFF;--accent2:#9BB8FF;--warn:#FFB45B}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter Tight',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.page{width:210mm;height:297mm;padding:20mm 18mm 16mm;position:relative;overflow:hidden;page-break-after:always;display:flex;flex-direction:column;gap:5mm}
+.page:last-child{page-break-after:auto}
+.num{position:absolute;bottom:9mm;right:18mm;font-family:'JetBrains Mono',monospace;font-size:8.5pt;color:var(--muted)}
+.run{position:absolute;bottom:9mm;left:18mm;font-family:'JetBrains Mono',monospace;font-size:8.5pt;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:30pt;font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:0}
+h2{font-size:22pt;font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0}
+h3{font-size:12.5pt;font-weight:700;margin:0 0 1.5mm}
+p,li{font-size:10.5pt;line-height:1.5;color:#D6D9E4;margin:0}
+p+p{margin-top:2.5mm}
+ul,ol{margin:0;padding-left:5mm}
+li+li{margin-top:1.5mm}
+b,strong{color:var(--text);font-weight:600}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4mm;padding:5mm 6mm}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4mm}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3mm}
+img{display:block;width:100%;border-radius:2.5mm;border:1px solid var(--line)}
+.cap{font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--muted);margin-top:1.5mm}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:'JetBrains Mono',monospace;font-size:8.2pt;line-height:1.5;color:#DCE3FF;background:#0E1220;border:1px solid #26304D;border-radius:3mm;padding:4mm 5mm}
+pre .v{color:var(--warn)}
+.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--accent2);border:1px solid #2B3A66;border-radius:99px;padding:.6mm 2.5mm;margin-right:1.5mm}
+table{width:100%;border-collapse:collapse;font-size:9.5pt}
+th,td{text-align:left;vertical-align:top;padding:2.6mm 3mm;border-bottom:1px solid var(--line);line-height:1.4;color:#D6D9E4}
+th{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400}
+td:first-child{color:var(--text);font-weight:600}
+.step{display:flex;gap:4mm;align-items:flex-start}
+.step .n{flex:0 0 9mm;height:9mm;border-radius:50%;background:var(--accent);color:#0A0B10;font-weight:800;font-size:11pt;display:flex;align-items:center;justify-content:center}
+.note{border-left:2px solid var(--warn);padding:1mm 0 1mm 4mm}
+.note p{color:#E9DCC8}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3mm}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:3mm;padding:3.5mm}
+.flow b{display:block;font-size:10.5pt;margin-bottom:1mm}
+.flow span{font-size:9pt;color:var(--muted);line-height:1.4;display:block}
+.flow i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--accent)}
+.check li{list-style:none;position:relative;padding-left:6mm}
+.check li:before{content:"";position:absolute;left:0;top:1.3mm;width:3mm;height:3mm;border:1.5px solid var(--accent);border-radius:.8mm}
+.check{padding-left:0}
+/* cover */
+.cover{padding:0;gap:0}
+.cover .hero{height:150mm;position:relative}
+.cover .hero img{height:100%;object-fit:cover;border:0;border-radius:0}
+.cover .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,16,0) 45%,rgba(10,11,16,1))}
+.cover .body{padding:6mm 18mm 0;display:flex;flex-direction:column;gap:6mm}
+.cover h1{font-size:46pt}
+.cover .sub{font-size:14pt;line-height:1.4;color:#C9CEDD;max-width:160mm}
+.cover .meta{display:flex;gap:3mm;flex-wrap:wrap}
