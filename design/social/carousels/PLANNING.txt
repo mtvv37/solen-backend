@@ -1,0 +1,26 @@
+SOLEN · Planning des 11 prochains posts (Instagram + TikTok)
+Le 01 est deja poste. 3 posts par jour : matin, midi, soir.
+
+AUJOURD'HUI
+  Midi   03-ab-testing-explained
+  Soir   04-trust-signals
+
+JOUR 2
+  Matin  02-checkout-leaks
+  Midi   05-cro-myths
+  Soir   09-more-traffic-wont-fix-it
+
+JOUR 3
+  Matin  06-mobile-mistakes
+  Midi   07-what-to-test-first
+  Soir   11-add-to-cart-never-buy
+
+JOUR 4
+  Matin  08-product-description
+  Midi   12-return-policy-sells
+  Soir   10-whats-broken-with-cro
+
+Dans chaque dossier :
+  instagram/ -> slides a poster sur Instagram (derniere slide : Comment AUDIT)
+  tiktok/    -> slides a poster sur TikTok (derniere slide : Link in bio)
+  caption-instagram.txt / caption-tiktok.txt -> textes a copier-coller
