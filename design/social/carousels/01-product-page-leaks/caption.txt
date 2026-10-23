@@ -1,10 +1,10 @@
 5 leaks killing your Shopify sales:
 
-1. Sizes hidden in a dropdown
-2. Surprise shipping costs
-3. Reviews buried at the bottom
-4. Buy button hidden on mobile
-5. No answer to "will it fit me?"
+1. Sizes hidden in a dropdown. Shoppers can't see what's in stock without clicking. Show sizes as buttons and cross out the sold-out ones.
+2. Surprise shipping costs. An unexpected cost at checkout makes people leave. Show shipping and delivery date right under the price.
+3. Reviews buried at the bottom. Most visitors never scroll that far. Put the star rating right under the product title.
+4. Buy button hidden on mobile. If the button isn't on screen, the decision gets postponed. Move it up or make it sticky.
+5. No answer to "will it fit me?". Doubt kills more sales than price. Add a size guide and one line on fit next to the sizes.
 
 Comment AUDIT for a free audit of your product page.
 
