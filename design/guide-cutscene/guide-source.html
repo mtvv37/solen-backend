@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cutscene Ads</title>
+<link rel="stylesheet" href="../../../tmp-fonts-not-included.css">
+<style>
+@page{size:A4;margin:0}
+:root{--bg:#0A0B10;--card:#12141C;--line:#232736;--text:#EEF0F6;--muted:#9AA0B4;--accent:#5B8CFF;--accent2:#9BB8FF;--warn:#FFB45B}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter Tight',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.page{width:210mm;height:297mm;padding:20mm 18mm 16mm;position:relative;overflow:hidden;page-break-after:always;display:flex;flex-direction:column;gap:5mm}
+.page:last-child{page-break-after:auto}
+.num{position:absolute;bottom:9mm;right:18mm;font-family:'JetBrains Mono',monospace;font-size:8.5pt;color:var(--muted)}
+.run{position:absolute;bottom:9mm;left:18mm;font-family:'JetBrains Mono',monospace;font-size:8.5pt;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:30pt;font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:0}
+h2{font-size:22pt;font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0}
+h3{font-size:12.5pt;font-weight:700;margin:0 0 1.5mm}
+p,li{font-size:10.5pt;line-height:1.5;color:#D6D9E4;margin:0}
+p+p{margin-top:2.5mm}
+ul,ol{margin:0;padding-left:5mm}
+li+li{margin-top:1.5mm}
+b,strong{color:var(--text);font-weight:600}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4mm;padding:5mm 6mm}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4mm}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3mm}
+img{display:block;width:100%;border-radius:2.5mm;border:1px solid var(--line)}
+.cap{font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--muted);margin-top:1.5mm}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:'JetBrains Mono',monospace;font-size:8.2pt;line-height:1.5;color:#DCE3FF;background:#0E1220;border:1px solid #26304D;border-radius:3mm;padding:4mm 5mm}
+pre .v{color:var(--warn)}
+.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--accent2);border:1px solid #2B3A66;border-radius:99px;padding:.6mm 2.5mm;margin-right:1.5mm}
+table{width:100%;border-collapse:collapse;font-size:9.5pt}
+th,td{text-align:left;vertical-align:top;padding:2.6mm 3mm;border-bottom:1px solid var(--line);line-height:1.4;color:#D6D9E4}
+th{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400}
+td:first-child{color:var(--text);font-weight:600}
+.step{display:flex;gap:4mm;align-items:flex-start}
+.step .n{flex:0 0 9mm;height:9mm;border-radius:50%;background:var(--accent);color:#0A0B10;font-weight:800;font-size:11pt;display:flex;align-items:center;justify-content:center}
+.note{border-left:2px solid var(--warn);padding:1mm 0 1mm 4mm}
+.note p{color:#E9DCC8}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3mm}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:3mm;padding:3.5mm}
+.flow b{display:block;font-size:10.5pt;margin-bottom:1mm}
+.flow span{font-size:9pt;color:var(--muted);line-height:1.4;display:block}
+.flow i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:8pt;color:var(--accent)}
+.check li{list-style:none;position:relative;padding-left:6mm}
+.check li:before{content:"";position:absolute;left:0;top:1.3mm;width:3mm;height:3mm;border:1.5px solid var(--accent);border-radius:.8mm}
+.check{padding-left:0}
+/* cover */
+.cover{padding:0;gap:0}
+.cover .hero{height:150mm;position:relative}
+.cover .hero img{height:100%;object-fit:cover;border:0;border-radius:0}
+.cover .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,16,0) 45%,rgba(10,11,16,1))}
+.cover .body{padding:6mm 18mm 0;display:flex;flex-direction:column;gap:6mm}
+.cover h1{font-size:46pt}
+.cover .sub{font-size:14pt;line-height:1.4;color:#C9CEDD;max-width:160mm}
+.cover .meta{display:flex;gap:3mm;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="page cover">
+  <div class="hero"><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-2.6.jpg"></div>
+  <div class="body">
+    <div class="kicker">The playbook</div>
+    <h1>Cutscene Ads</h1>
+    <p class="sub">How to make a PS2-style CGI character ad with AI, from blank page to posted video. One recurring character, about 20 seconds, and roughly $3 of generation on our example.</p>
+    <div class="meta"><span class="tag">Script</span><span class="tag">Character</span><span class="tag">Sets</span><span class="tag">Silent shots</span><span class="tag">Voice</span><span class="tag">Lip sync</span><span class="tag">Edit</span><span class="tag">Measure</span></div>
+  </div>
+  <div class="run">Cutscene Ads</div>
+</section>
+
+<!-- 2 WHAT YOU WILL MAKE -->
+<section class="page">
+  <div class="kicker">01 · What you will make</div>
+  <h2>A 20 second ad that looks like a 2005 game cutscene</h2>
+  <p>A recurring character talks straight to your audience, in a set that tells them instantly who the ad is for. Every frame below comes from the example video built with this playbook: a 20 second ad for a Shopify tool, made with sume.com and CapCut.</p>
+  <div class="grid3">
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-0.4.jpg"><div class="cap">0s · hook, wide set</div></div>
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-2.6.jpg"><div class="cap">3s · he talks to camera</div></div>
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-4.6.jpg"><div class="cap">5s · the set tells the story</div></div>
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-6.6.jpg"><div class="cap">7s · pain line, close up</div></div>
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-15.4.jpg"><div class="cap">15s · punchline</div></div>
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-18.5.jpg"><div class="cap">17s · end card + CTA</div></div>
+  </div>
+  <div class="card">
+    <h3>The specs of the example</h3>
+    <table>
+      <tr><td>Length</td><td>20 seconds: about 17 s of character, then the end card</td></tr>
+      <tr><td>Tools</td><td>sume.com (images, Wan 3.0 video, lip sync), CapCut (edit, captions)</td></tr>
+      <tr><td>Cost</td><td>About $3 of generation for the finished video, retries included</td></tr>
+      <tr><td>Skills needed</td><td>None technical. Copy the prompts, follow the steps.</td></tr>
+    </table>
+  </div>
+  <div class="run">Cutscene Ads</div><div class="num">02</div>
+</section>
+
+<!-- 3 WHY + PIPELINE -->
+<section class="page">
+  <div class="kicker">02 · The idea</div>
+  <h2>Why this format, and how the pipeline works</h2>
+  <p>Most short ads look like other ads. A pre-rendered cutscene from a PS2 era game does not: waxy skin, chunky hair, soft light, a little blur. It reads as nostalgia and as a joke at the same time, and a character who speaks your customer's inner monologue makes them feel seen.</p>
+  <div class="note"><p><b>Be honest with yourself:</b> this is a creative bet, not a guaranteed result. The format stops the scroll for some audiences and not for others. Section 08 shows how to measure it on your own account before you scale it.</p></div>
+  <h3 style="margin-top:3mm">The 8 steps</h3>
+  <div class="flow">
+    <div><i>01</i><b>Script</b><span>A 5 beat script, about 60 words, with pauses between sentences.</span></div>
+    <div><i>02</i><b>Character</b><span>One original character with 3 traits people remember.</span></div>
+    <div><i>03</i><b>Sets</b><span>3 to 5 images of the same location, in the same style.</span></div>
+    <div><i>04</i><b>Voice</b><span>Record or generate the voice first. Everything is timed on it.</span></div>
+    <div><i>05</i><b>Silent shots</b><span>Generate the video with the mouth closed and no audio.</span></div>
+    <div><i>06</i><b>Lip sync</b><span>Sync the mouth to your voice track, only on face shots.</span></div>
+    <div><i>07</i><b>Edit</b><span>Captions, end card, loudness, 9:16 export.</span></div>
+    <div><i>08</i><b>Measure</b><span>Track 4 numbers, change one thing per video.</span></div>
+  </div>
+  <div class="card">
+    <h3>The one rule that saves you money</h3>
+    <p>Do not ask the video model to act, talk and sing at once. Generate a <b>silent</b> character with the <b>mouth closed</b>, then add the voice with lip sync. Our first attempts asked the model to keep a reference audio and lip sync it in one pass: the model kept the wrong audio, cut in the middle of sentences, and every retry cost a full generation.</p>
+  </div>
+  <div class="run">Cutscene Ads</div><div class="num">03</div>
+</section>
+
+<!-- 4 SCRIPT -->
+<section class="page">
+  <div class="kicker">03 · Step 1 · Script</div>
+  <h2>Write a 5 beat script your audience recognizes</h2>
+  <p>About 60 words for 20 seconds. Write short sentences: the edit only cuts in the silences between sentences, never in the middle of one.</p>
+  <table>
+    <tr><th>Beat</th><th>Time</th><th>Job</th><th>Example line</th></tr>
+    <tr><td>Hook</td><td>0 to 6 s</td><td>Name the audience and quote their question</td><td>Shopifiers will say: "Man, how do you know I do Shopify for a living?"</td></tr>
+    <tr><td>Wink</td><td>6 to 9 s</td><td>A beat of attitude</td><td>Haha, like I don't know, bro.</td></tr>
+    <tr><td>Mirror</td><td>9 to 21 s</td><td>Three habits or pains they will recognize</td><td>You just spend all your time staring at your stats, changing your product page with absolutely no clue, and wondering: "Why is my conversion rate so low?"</td></tr>
+    <tr><td>Punchline</td><td>21 to 25 s</td><td>One line people repeat</td><td>You met me at a very optimized time in my life.</td></tr>
+    <tr><td>CTA</td><td>last 4 s</td><td>What to do now, over the end card</td><td>Get your free product page audit at withsolen.com</td></tr>
+  </table>
+  <h3 style="margin-top:2mm">Template</h3>
+<pre>[AUDIENCE] will say: "Man, how do you know I [THEIR JOB OR HOBBY]?"
+
+Haha, like I don't know, bro.
+
+You just [HABIT 1], [HABIT 2], and wondering: "[THE QUESTION THEY ASK THEMSELVES]?"
+
+[ONE MEMORABLE PUNCHLINE ABOUT YOUR PRODUCT].
+
+[CTA: WHAT THEY GET] at [YOUR SITE]</pre>
+  <div class="grid2">
+    <div class="card"><h3>Do</h3><ul><li>Habits that are specific and a bit embarrassing.</li><li>Read it aloud with a timer. Over 22 s of voice? Cut a line.</li><li>Write the URL as "yoursite dot com" for the voice.</li></ul></div>
+    <div class="card"><h3>Avoid</h3><ul><li>Feature lists. The character is not a salesman.</li><li>Promises you cannot prove ("double your sales").</li><li>Lines quoted from someone else's ad.</li></ul></div>
+  </div>
+  <div class="run">Cutscene Ads</div><div class="num">04</div>
+</section>
+
+<!-- 5 CHARACTER + SETS -->
+<section class="page">
+  <div class="kicker">04 · Steps 2 and 3 · Character and sets</div>
+  <h2>One original character, one location</h2>
+  <p>Give the character exactly <b>3 identifiers</b> that survive every shot. In the example: jet black hair with one grey streak over the right eye, a dark fir green t-shirt with a small white logo, a silver wallet chain. Repeat these words, identical, in every prompt.</p>
+<pre>Character reference image. An original character, a man in his late 20s: <span class="v">[HAIR: color, cut, one distinctive streak or detail]</span>, <span class="v">[TOP: color + your small logo on the chest]</span>, <span class="v">[ONE ACCESSORY: chain, bracelets, glasses]</span>. Neutral expression, mouth closed, standing, full body and face visible, plain background. Pre-rendered CGI cutscene from a 2005 PlayStation 2 game: low polygon model with visible angular edges, simple low resolution textures, smooth waxy plastic skin with no pores, hair made of a few thick glossy chunks, soft flat lighting, slightly washed out colors. Not photorealistic.</pre>
+  <p>Then generate 3 to 5 images of <b>one</b> location that says who the ad is for. The example used a gamer bedroom: a monitor with a falling sales chart, stacked shipping boxes, a green neon sign. Same room, different angles.</p>
+<pre>Empty <span class="v">[LOCATION]</span> at night, no people. <span class="v">[3 OBJECTS THAT TELL WHO IT IS FOR]</span>. <span class="v">[ANGLE: wide shot of the room / close view of the desk and monitor / corner with the shelf and neon]</span>. <span class="v">[LIGHT: blue screen light, green neon]</span>. Same rendering style: pre-rendered CGI cutscene from a 2005 PlayStation 2 game, low polygon, simple textures, soft flat lighting, washed out colors, mild blur. 4:3.</pre>
+  <div class="note"><p><b>Legal, read this once.</b> A visual style is free to use. Characters, faces and voices are not. Do not recreate a character from a game, film or another brand's ads, do not put a real person's face on him, and do not clone a voice you have no rights to. Use only your own logo. Original characters are also safer for the long run: you own them.</p></div>
+  <div class="run">Cutscene Ads</div><div class="num">05</div>
+</section>
+
+<!-- 6 VOICE + SILENT SHOTS -->
+<section class="page">
+  <div class="kicker">05 · Steps 4 and 5 · Voice, then silent shots</div>
+  <h2>Lock the voice first, then generate a silent actor</h2>
+  <div class="step"><div class="n">1</div><div><h3>Voice track</h3><p>Generate the voice with a text to speech voice you have the rights to, or record it yourself. Leave short silences between sentences. Note the start time of each sentence: your shots will be timed on them.</p></div></div>
+  <div class="step"><div class="n">2</div><div><h3>Settings in sume.com, model Wan 3.0</h3><p>References only: the character image plus your set images. <b>Sound: Off.</b> Duration 15 s. No reference video, no start or end frame (see section 06).</p></div></div>
+  <div class="step"><div class="n">3</div><div><h3>Prompt</h3><p>One continuous take, close framing for lip sync, mouth closed. Replace the brackets.</p></div></div>
+<pre>One single continuous shot, no cuts at all. The camera moves smoothly from one position to the next, like a slow handheld camera following him in one take.
+Framing for lip sync: only close ups and medium close ups. His face always faces the camera or a slight three quarter angle, fully visible, never hidden by his hands, hair or objects. No wide shots, no shots from behind.
+The only character is the man from the character reference image, exactly the same during the whole video: <span class="v">[3 IDENTIFIERS, word for word]</span>. He is alone.
+Setting: the <span class="v">[LOCATION]</span> shown in the set reference images. <span class="v">[LIGHT]</span> on him.
+Rendering style: exactly like the set reference images, a pre-rendered CGI cutscene from a 2005 PlayStation 2 game. Low polygon models with visible angular edges, simple low resolution textures, smooth waxy plastic skin, hair in a few thick glossy chunks, soft flat lighting, washed out colors, 480p look. Not photorealistic, not a modern game.
+He does not speak. Mouth closed and relaxed during the whole video. No sound.
+0-5s: <span class="v">[ACTION FOR THE HOOK]</span>, slow push-in to a close up.
+5-9s: without cutting, <span class="v">[ACTION FOR THE MIRROR]</span>.
+9-12s: without cutting, <span class="v">[REACTION, e.g. tired deadpan look into the camera]</span>.
+12-15s: without cutting, he looks straight at the camera and points at it, confident half smile.
+No subtitles, no text on screen except the logo.</pre>
+  <div class="run">Cutscene Ads</div><div class="num">06</div>
+</section>
+
+<!-- 7 TROUBLESHOOTING -->
+<section class="page">
+  <div class="kicker">06 · What went wrong, so it does not happen to you</div>
+  <h2>Errors we hit and how to fix them</h2>
+  <p>Each line below cost us at least one generation. Read it before your first try.</p>
+  <table>
+    <tr><th>Problem</th><th>Fix</th></tr>
+    <tr><td>"input_video_duration + duration exceeds 30s limit"</td><td>The reference video counts toward the limit. Remove it. You do not need it for a silent actor.</td></tr>
+    <tr><td>"Use either a start / end frame or reference media, not both"</td><td>Pick one. References only is the setup that worked in our runs.</td></tr>
+    <tr><td>Generation failed with many references</td><td>Remove any video from the references, then drop to the character plus 2 sets.</td></tr>
+    <tr><td>The model keeps the audio of the reference video</td><td>Never feed it a video with a voice you do not want. Sound Off, voice added later.</td></tr>
+    <tr><td>Hard cuts between shots, sometimes mid sentence</td><td>Ask for "one single continuous shot, no cuts", or generate one clip per shot and join them in the edit.</td></tr>
+    <tr><td>Looks like a modern game, too realistic</td><td>Name the defects you want: low polygon, angular edges, low resolution textures, hair in thick chunks, washed out colors, 480p.</td></tr>
+    <tr><td>Hair or logo changes between shots</td><td>Repeat the 3 identifiers word for word. "The blue tint on his hair is only the light" stops colored lighting from changing the hair.</td></tr>
+    <tr><td>Lip sync looks wrong</td><td>The face was too small or turned away. Ask for close ups, face to camera, mouth visible, no hands in front.</td></tr>
+    <tr><td>Video is 16:9 or 4:3 on a vertical app</td><td>Choose the ratio before you generate, or reframe in the edit (section 07).</td></tr>
+  </table>
+  <div class="run">Cutscene Ads</div><div class="num">07</div>
+</section>
+
+<!-- 8 LIP SYNC + EDIT -->
+<section class="page">
+  <div class="kicker">07 · Steps 6 and 7 · Lip sync and edit</div>
+  <h2>Sync the mouth, then finish in CapCut</h2>
+  <div class="step"><div class="n">1</div><div><h3>Lip sync</h3><p>In the Lipsync tab of sume.com, give the silent video and your voice track. Sync only the parts where the face is visible. Shots of the screen or of his back stay as they are, the voice plays over them.</p></div></div>
+  <div class="step"><div class="n">2</div><div><h3>Timeline in CapCut</h3><p>Voice on top, synced video under it, music at the bottom. Cut only in the silences. Music well under the voice: you should understand every word on a phone speaker.</p></div></div>
+  <div class="step"><div class="n">3</div><div><h3>Captions</h3><p>Auto captions, 2 to 5 words at a time, big, centered in the lower third. Then <b>read every caption</b>: auto captions invent words. In our first export "so low ?" had a French space before the question mark, and "Haha, like I don't know, bro" became "ahahah like idk bro".</p></div></div>
+  <div class="step"><div class="n">4</div><div><h3>End card, 3 to 4 seconds</h3><p>Logo, one benefit, your URL in big type. The CTA line of the voice plays over it. Same aspect ratio as the video, or it shows black bars.</p></div></div>
+  <div class="step"><div class="n">5</div><div><h3>Export</h3><p>9:16, 1080 x 1920 for TikTok, Reels and Shorts. If your video is 16:9, place it full width in the middle with a blurred copy behind it. Loudness: aim for about -14 LUFS. Our first export was around -30 LUFS, much quieter than the videos around it.</p></div></div>
+  <div class="grid2">
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-13.6.jpg"><div class="cap">Check every caption: "so low ?" should be "so low?"</div></div>
+    <div><img src="file:///home/user/solen-backend/design/guide-cutscene/img/f-18.5.jpg"><div class="cap">End card: logo, benefit, URL</div></div>
+  </div>
+  <div class="run">Cutscene Ads</div><div class="num">08</div>
+</section>
+
+<!-- 9 MEASURE + COST -->
+<section class="page">
+  <div class="kicker">08 · Step 8 · Measure and cost</div>
+  <h2>Know if it works before you make ten more</h2>
+  <p>Post it, wait 48 hours, then write down four numbers from the platform analytics. Compare them with your average post, not with someone else's viral video.</p>
+  <table>
+    <tr><th>Metric</th><th>Question it answers</th></tr>
+    <tr><td>3 second hold rate</td><td>Does the opening frame stop the scroll?</td></tr>
+    <tr><td>Completion rate</td><td>Does the script hold attention to the end card?</td></tr>
+    <tr><td>Profile visits</td><td>Did the character make people curious about you?</td></tr>
+    <tr><td>Clicks or keyword comments</td><td>Did anyone act on the CTA?</td></tr>
+  </table>
+  <div class="card"><h3>Change one thing per video</h3><p>Same character and set, new script: you learn which message works. Same script, new hook frame: you learn what stops the scroll. Change everything at once and you learn nothing.</p></div>
+  <h3 style="margin-top:2mm">Cost of the example</h3>
+  <table>
+    <tr><th>Item</th><th>What we saw</th></tr>
+    <tr><td>Wan 3.0 video</td><td>A 20 s generation at 480p was listed at $1.00 on sume.com</td></tr>
+    <tr><td>Whole video</td><td>About $3 of generation, retries and lip sync included</td></tr>
+    <tr><td>CapCut</td><td>Edit, captions and end card</td></tr>
+  </table>
+  <p class="muted">Prices change often. Check the price shown on the Generate button before each run.</p>
+  <div class="run">Cutscene Ads</div><div class="num">09</div>
+</section>
+
+<!-- 10 CHECKLIST -->
+<section class="page">
+  <div class="kicker">09 · Before you post</div>
+  <h2>The checklist</h2>
+  <div class="grid2">
+    <div class="card"><h3>Script and rights</h3><ul class="check">
+      <li>5 beats, 20 to 25 s of voice, read aloud with a timer</li>
+      <li>No claim you cannot prove</li>
+      <li>Original character, no real face, no cloned voice</li>
+      <li>Music you have the right to use, or a platform sound</li>
+      <li>Only your own logo on screen</li>
+    </ul></div>
+    <div class="card"><h3>Generation</h3><ul class="check">
+      <li>References only, no video, sound Off</li>
+      <li>3 identifiers repeated word for word</li>
+      <li>One continuous shot, close framing</li>
+      <li>Mouth closed in the prompt</li>
+      <li>Aspect ratio chosen before generating</li>
+    </ul></div>
+    <div class="card"><h3>Edit</h3><ul class="check">
+      <li>Cuts only in the silences</li>
+      <li>Every caption read and corrected</li>
+      <li>Voice clear on a phone speaker</li>
+      <li>End card 3 to 4 s, same ratio</li>
+      <li>1080 x 1920, about -14 LUFS</li>
+    </ul></div>
+    <div class="card"><h3>After posting</h3><ul class="check">
+      <li>48 h later: hold rate, completion, profile visits, clicks</li>
+      <li>Compared with your average post</li>
+      <li>One change chosen for the next video</li>
+      <li>Prompts saved with the result next to them</li>
+    </ul></div>
+  </div>
+  <div class="card" style="margin-top:auto"><h3>The short version</h3><p>Write the voice, generate a silent and consistent actor, sync the mouth, cut in the silences, check the captions, measure. The character is the asset: every new video costs a few dollars because the character, the sets and the prompts already exist.</p></div>
+  <div class="run">Cutscene Ads</div><div class="num">10</div>
+</section>
+
+</body>
+</html>
