@@ -1,0 +1,11 @@
+5 mobile mistakes on Shopify stores:
+
+1. Heavy images. Slow pages lose people before they see anything. Compress images and check your product page speed on a real phone.
+2. Text too small to read. If they have to zoom, they stop reading. Body text big enough to read at arm's length, short paragraphs.
+3. A full screen pop up. It hides the product the second they arrive. Delay it, make it smaller, or show it on exit only.
+4. A buy button out of reach. If they have to scroll back up to buy, many won't. Keep the button on screen with a sticky bar.
+5. Tiny tap targets. Size buttons and links too close together cause wrong taps and frustration. Make every button easy to hit with a thumb.
+
+Comment AUDIT for a free audit of your product page.
+
+#shopify #ecommerce

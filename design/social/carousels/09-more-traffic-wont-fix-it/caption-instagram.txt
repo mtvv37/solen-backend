@@ -1,0 +1,10 @@
+More traffic won't fix a leaking page:
+
+1. The leaky bucket. Ads pour visitors in. Every leak on your page lets some of them out. Pour more and you mostly pay for more leaks.
+2. Find where they leave. Product page, cart or checkout: one step usually loses more than the others. Compare visits, add to carts and orders in your Shopify analytics.
+3. Fix the biggest hole. Start where the most people drop off. Test one fix on that step against your current page.
+4. Then scale. A page that converts better makes every ad cheaper. Now more traffic actually means more sales.
+
+Comment AUDIT for a free audit of your product page.
+
+#shopify #ecommerce

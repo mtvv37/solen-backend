@@ -1,0 +1,10 @@
+How to pick what to test first:
+
+1. List your ideas. Write down every change you'd like to make, big or small. One line each: what you would change, and where.
+2. Score the impact. How much could this move sales if it works? Pages with the most visitors and the clearest leak score highest.
+3. Score your confidence. Do you have a reason to believe it, or is it a hunch? Customer messages, reviews or recordings count as evidence.
+4. Score the effort. How long does it take to build and launch? Start with high impact, high confidence, low effort. Then repeat.
+
+Comment AUDIT for a free audit of your product page.
+
+#shopify #ecommerce

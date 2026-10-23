@@ -1,0 +1,10 @@
+A/B testing explained:
+
+1. Split your traffic. Half your visitors see version A (your current page), half see version B. Same period, same traffic, so the only difference is the change.
+2. Change one thing. A new button, a new photo order, a new headline. Just one. Change three things and you won't know which one worked.
+3. Wait for enough data. A few days with a handful of orders proves nothing. Let the test run until both versions have enough visits and orders to compare.
+4. Keep the winner. If B sells more, B becomes your new page. If not, you learned something for free. Then test the next idea against the new winner.
+
+Comment AUDIT for a free audit of your product page.
+
+#shopify #ecommerce

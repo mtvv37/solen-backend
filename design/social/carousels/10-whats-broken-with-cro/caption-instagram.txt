@@ -1,0 +1,10 @@
+What's broken with CRO today:
+
+1. Too expensive. A CRO agency or team costs more than most stores can spend. So most small stores never run a single real test.
+2. Too slow. Audit, meetings, mockups, development. Weeks before the first test. Meanwhile, the leaks keep leaking.
+3. Opinions, not tests. Many recommendations are based on taste, not on real sales. If it isn't tested, it's still a guess.
+4. No memory. When the agency leaves, what it learned leaves with it. Every test should make the next one smarter.
+
+Comment AUDIT for a free audit of your product page.
+
+#shopify #ecommerce

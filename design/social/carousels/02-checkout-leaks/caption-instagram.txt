@@ -1,0 +1,11 @@
+5 checkout leaks Shopify won't warn you about:
+
+1. Forced account creation. Asking for a password before payment feels like homework. Many shoppers just want to pay. Offer guest checkout first. Suggest an account after the order.
+2. A loud discount code field. An empty promo box sends people hunting for a code on Google. Some never come back. Make the field a small link, or show the active offer directly.
+3. Too few payment options. If their usual way to pay isn't there, the purchase stops right here. Show the express options your customers use (Shop Pay, Apple Pay, PayPal) at the top.
+4. No reassurance near the button. The last click is the scariest one. Doubts about returns or delivery show up now. Add one line under the pay button: returns policy and delivery estimate.
+5. Surprise costs on the last step. Taxes or fees that appear only at the end feel like a trick. Show the full total, fees included, as early as the cart.
+
+Comment AUDIT for a free audit of your product page.
+
+#shopify #ecommerce
