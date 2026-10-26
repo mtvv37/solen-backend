@@ -1,112 +1,119 @@
 {
-  "generated_at": "2026-10-26T20:06:03+00:00",
-  "stores": 252,
-  "pages": 1239,
+  "generated_at": "2026-10-26T23:33:10+00:00",
+  "stores": 292,
+  "pages": 1426,
   "features": {
     "ld_product": {
       "label": "Product structured data",
-      "stores_with": 183,
-      "stores_measured": 252,
-      "pct": 72.6
+      "stores_with": 184,
+      "stores_measured": 292,
+      "pct": 63.0
     },
     "price": {
       "label": "Price in structured data",
-      "stores_with": 169,
-      "stores_measured": 252,
-      "pct": 67.1
+      "stores_with": 170,
+      "stores_measured": 292,
+      "pct": 58.2
     },
     "rating": {
       "label": "Star rating in structured data",
-      "stores_with": 63,
-      "stores_measured": 252,
-      "pct": 25.0
+      "stores_with": 65,
+      "stores_measured": 292,
+      "pct": 22.3
     },
     "return_policy_markup": {
       "label": "Return policy in structured data",
       "stores_with": 22,
-      "stores_measured": 252,
-      "pct": 8.7
+      "stores_measured": 292,
+      "pct": 7.5
     },
     "shipping_markup": {
       "label": "Shipping in structured data",
       "stores_with": 21,
-      "stores_measured": 252,
-      "pct": 8.3
+      "stores_measured": 292,
+      "pct": 7.2
     },
     "cta_found": {
       "label": "Add to cart button or cart form found",
-      "stores_with": 181,
-      "stores_measured": 252,
-      "pct": 71.8
+      "stores_with": 182,
+      "stores_measured": 292,
+      "pct": 62.3
     },
     "cta_text": {
       "label": "Add to cart style button text",
-      "stores_with": 160,
-      "stores_measured": 252,
-      "pct": 63.5
+      "stores_with": 162,
+      "stores_measured": 292,
+      "pct": 55.5
     },
     "returns_near_cta": {
       "label": "Returns mentioned right after the button",
-      "stores_with": 62,
-      "stores_measured": 160,
-      "pct": 38.8
+      "stores_with": 60,
+      "stores_measured": 162,
+      "pct": 37.0
     },
     "shipping_near_cta": {
       "label": "Shipping or delivery mentioned right after the button",
       "stores_with": 87,
-      "stores_measured": 160,
-      "pct": 54.4
+      "stores_measured": 162,
+      "pct": 53.7
     },
     "free_shipping": {
       "label": "Free shipping mentioned",
-      "stores_with": 127,
-      "stores_measured": 252,
-      "pct": 50.4
+      "stores_with": 129,
+      "stores_measured": 292,
+      "pct": 44.2
     },
     "secure_checkout": {
       "label": "Secure checkout wording",
       "stores_with": 25,
-      "stores_measured": 252,
-      "pct": 9.9
+      "stores_measured": 292,
+      "pct": 8.6
     },
     "guarantee": {
       "label": "Guarantee wording",
-      "stores_with": 64,
-      "stores_measured": 252,
-      "pct": 25.4
+      "stores_with": 67,
+      "stores_measured": 292,
+      "pct": 22.9
     },
     "payment_logos": {
-      "label": "Payment logos on the page",
-      "stores_with": 177,
-      "stores_measured": 252,
-      "pct": 70.2
+      "label": "Card or PayPal brand marks on the page",
+      "stores_with": 159,
+      "stores_measured": 292,
+      "pct": 54.5
+    },
+    "wallet_buttons": {
+      "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
+      "stores_with": 152,
+      "stores_measured": 292,
+      "pct": 52.1
     },
     "viewport": {
       "label": "Mobile viewport tag",
-      "stores_with": 249,
-      "stores_measured": 252,
-      "pct": 98.8
+      "stores_with": 289,
+      "stores_measured": 292,
+      "pct": 99.0
     }
   },
   "numeric": {
     "imgs": {
       "label": "Images in the page",
-      "median_across_stores": 37
+      "median_across_stores": 35
     },
     "scripts": {
       "label": "Scripts in the page",
-      "median_across_stores": 80
+      "median_across_stores": 74
     },
     "bytes": {
       "label": "HTML size (bytes)",
-      "median_across_stores": 541960
+      "median_across_stores": 507338
     }
   },
   "platforms": {
-    "shopify": 165,
-    "magento": 51,
-    "woocommerce": 20,
-    "other": 8,
-    "sfcc": 8
+    "shopify": 167,
+    "magento": 85,
+    "woocommerce": 17,
+    "other": 9,
+    "sfcc": 13,
+    "bigcommerce": 1
   }
 }
