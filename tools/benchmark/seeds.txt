@@ -1,0 +1,40 @@
+# Starting list of e-commerce domains, written from memory. Some will block
+# robots or have no usable sitemap: that is expected and recorded as such.
+# Add your own domains, one per line. Lines starting with # are ignored.
+allbirds.com
+gymshark.com
+bombas.com
+ruggable.com
+glossier.com
+fashionnova.com
+brooklinen.com
+casper.com
+warbyparker.com
+awaytravel.com
+parachutehome.com
+thesill.com
+mvmt.com
+colourpop.com
+tentree.com
+vuoriclothing.com
+rhone.com
+taylorstitch.com
+outdoorvoices.com
+ridge.com
+yeti.com
+patagonia.com
+llbean.com
+rei.com
+backcountry.com
+kyliecosmetics.com
+rarebeauty.com
+fentybeauty.com
+drinkag1.com
+huel.com
+hexclad.com
+brumate.com
+stanley1913.com
+manscaped.com
+harrys.com
+getquip.com
+nativecos.com
