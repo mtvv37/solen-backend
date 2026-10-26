@@ -46,4 +46,12 @@ html = ('<a href="https://www.allbirds.com/?utm=1">a</a><a href="https://twitter
         '<a href="https://blog.example.com/p">own</a><a href="https://shop.brand.fr/">b</a>'
         '<a href="http://127.0.0.1/x">ip</a>')
 assert candidates(html, 'blog.example.com') == ['allbirds.com', 'shop.brand.fr'], candidates(html, 'blog.example.com')
+
+# 7. Tranco rows: cursor, skip list, junk lines
+from discover_tranco import parse_rows  # noqa: E402
+rows = "1,google.com\n2,somestore.com\n3,site.gov\nbad line\n4,other.fr\n5,third.com\n"
+doms, nxt = parse_rows(rows, 1, 3)
+assert doms == ['somestore.com', 'other.fr', 'third.com'] and nxt == 6, (doms, nxt)
+doms2, nxt2 = parse_rows(rows, 4, 5)
+assert doms2 == ['other.fr', 'third.com'] and nxt2 == 6, (doms2, nxt2)
 print('UNIT TESTS PASSED')

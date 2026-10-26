@@ -18,7 +18,7 @@ on:
     inputs:
       batch:
         description: "Domains to crawl in this run"
-        default: "150"
+        default: "800"
 
 permissions:
   contents: write
@@ -55,10 +55,15 @@ jobs:
           fi
 
       - name: Discover new stores from public roundup articles
+        continue-on-error: true
         run: python3 tools/benchmark/discover.py --data data
 
+      - name: Discover from the Tranco popularity ranking (next slice)
+        continue-on-error: true
+        run: python3 tools/benchmark/discover_tranco.py --data data --per-run 1500
+
       - name: Crawl
-        run: python3 tools/benchmark/crawl.py --data data --batch "${{ inputs.batch || 150 }}" --budget-min 35
+        run: python3 tools/benchmark/crawl.py --data data --batch "${{ inputs.batch || 800 }}" --workers 12 --budget-min 35
 
       - name: Aggregate
         run: python3 tools/benchmark/aggregate.py --data data
