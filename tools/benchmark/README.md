@@ -14,7 +14,7 @@ Clear User-Agent with a contact address, `robots.txt` read first and obeyed (inc
 ## Set up
 
 1. Merge this code into the default branch (scheduled workflows only run from there).
-2. In ntfy, pick a long random topic name (it works like a password). In the GitHub repo: Settings, Secrets and variables, Actions, New secret `NTFY_TOPIC`.
+2. In the ntfy app, subscribe to the topic written in `.github/workflows/benchmark.yml` (`solen-jhh607v7l91uh7rti9gz`). No secret to configure. The repository is public, so this topic name is public too: it only carries crawl summaries.
 3. Actions tab, "benchmark-crawl", Run workflow, to start the first run by hand.
 
 ## Rule for anything you publish

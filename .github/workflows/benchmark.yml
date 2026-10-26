@@ -2,7 +2,8 @@ name: benchmark-crawl
 
 # Crawls public product pages from tools/benchmark/seeds.txt every night,
 # stores features on the branch "benchmark-data", and sends a ntfy summary.
-# Secrets used: NTFY_TOPIC (optional). No other secret is needed.
+# No secret needed. The ntfy topic below is public (this repository is public):
+# it only carries crawl summaries.
 
 on:
   schedule:
@@ -65,7 +66,7 @@ jobs:
       - name: Notify (ntfy)
         if: always()
         env:
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_TOPIC: solen-jhh607v7l91uh7rti9gz
           JOB_STATUS: ${{ job.status }}
         run: |
           if [ -z "$NTFY_TOPIC" ]; then echo "NTFY_TOPIC not set, skipping"; exit 0; fi
