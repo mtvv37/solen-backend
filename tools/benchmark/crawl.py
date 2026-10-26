@@ -26,6 +26,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from urllib.robotparser import RobotFileParser
 
+VERSION = 2  # bump when feature extraction changes: older records are crawled again
 UA = 'SolenBot/0.1 (+https://withsolen.com; contact: withsolen@gmail.com)'
 ROBOT_NAME = 'SolenBot'
 MAX_BYTES = 2_500_000
@@ -68,15 +69,21 @@ def get(url):
         return 0, '', ''
 
 
+def _is_type(d, names):
+    t = d.get('@type')
+    ts = t if isinstance(t, list) else [t]
+    return any(isinstance(x, str) and x.rsplit('/', 1)[-1] in names for x in ts)
+
+
 def find_product(d):
+    """Finds a Product or ProductGroup node in JSON-LD (also inside @graph)."""
     if isinstance(d, list):
         for x in d:
             r = find_product(x)
             if r:
                 return r
     elif isinstance(d, dict):
-        t = d.get('@type')
-        if t == 'Product' or (isinstance(t, list) and 'Product' in t):
+        if _is_type(d, ('Product', 'ProductGroup')):
             return d
         for k in ('@graph', 'mainEntity'):
             if k in d:
@@ -84,6 +91,17 @@ def find_product(d):
                 if r:
                     return r
     return None
+
+
+def first_offer(p):
+    """Offer of a Product, or of the first variant of a ProductGroup."""
+    o = p.get('offers') if p else None
+    if not o and p and isinstance(p.get('hasVariant'), list) and p['hasVariant']:
+        v = p['hasVariant'][0]
+        o = v.get('offers') if isinstance(v, dict) else None
+    if isinstance(o, list):
+        o = o[0] if o else None
+    return o if isinstance(o, dict) else {}
 
 
 def jsonld_product(html):
@@ -108,7 +126,7 @@ def platform_of(html):
     h = html[:400_000].lower()
     if 'cdn.shopify.com' in h or 'shopify.theme' in h:
         return 'shopify'
-    if 'woocommerce' in h or 'wp-content' in h:
+    if re.search(r'woocommerce[-_/]|/plugins/woocommerce', h):
         return 'woocommerce'
     if 'bigcommerce' in h:
         return 'bigcommerce'
@@ -125,19 +143,19 @@ def platform_of(html):
 
 def features(html, url):
     p = jsonld_product(html)
-    offers = p.get('offers') if p else None
-    if isinstance(offers, list):
-        offers = offers[0] if offers else None
-    offers = offers if isinstance(offers, dict) else {}
+    offers = first_offer(p)
     rating = (p or {}).get('aggregateRating') or {}
     if not isinstance(rating, dict):
         rating = {}
     images = (p or {}).get('image')
     text = visible_text(html)
     cta = CTA_RE.search(text)
+    cart_form = bool(re.search(r'action=["\'][^"\']*/cart/add|name=["\']add-to-cart|class=["\'][^"\']*single_add_to_cart', html, re.I))
     near = text[cta.start(): cta.start() + 1500] if cta else ''
     imgs = re.findall(r'<img\b[^>]*>', html, re.I)
+    no_script = re.sub(r'<script\b.*?</script>', ' ', html, flags=re.S | re.I)
     return {
+        'v': VERSION,
         'url': url,
         'fetched_at': now(),
         'platform': platform_of(html),
@@ -155,13 +173,14 @@ def features(html, url):
         'ld_images': (len(images) if isinstance(images, list) else 1) if images else 0,
         'return_policy_markup': bool(offers.get('hasMerchantReturnPolicy')),
         'shipping_markup': bool(offers.get('shippingDetails')),
-        'cta_found': bool(cta),
+        'cta_found': bool(cta) or cart_form,
+        'cta_text': bool(cta),
         'returns_near_cta': bool(cta and RETURN_RE.search(near)),
         'shipping_near_cta': bool(cta and SHIP_RE.search(near)),
         'free_shipping': bool(FREE_SHIP_RE.search(text)),
         'secure_checkout': bool(SECURE_RE.search(text)),
         'guarantee': bool(GUARANTEE_RE.search(text)),
-        'payment_logos': any(PAY_RE.search(i) for i in imgs),
+        'payment_logos': bool(PAY_RE.search(no_script)),
     }
 
 
@@ -171,8 +190,8 @@ def locs(xml):
 
 def discover_products(sitemaps, delay, deadline):
     """Walk up to 6 sitemaps and return product-looking URLs."""
-    queue, seen, urls = list(sitemaps[:4]), 0, []
-    while queue and seen < 6 and len(urls) < 60 and time.time() < deadline:
+    queue, seen, urls = list(sitemaps[:5]), 0, []
+    while queue and seen < 8 and len(urls) < 60 and time.time() < deadline:
         sm = queue.pop(0)
         seen += 1
         time.sleep(delay)
@@ -191,7 +210,8 @@ def discover_products(sitemaps, delay, deadline):
 
 
 def crawl_domain(domain, scheme, min_delay, deadline):
-    rec = {'domain': domain, 'checked_at': now(), 'status': 'ok', 'platform': None, 'pages': 0}
+    rec = {'v': VERSION, 'domain': domain, 'checked_at': now(), 'status': 'ok',
+           'platform': None, 'pages': 0}
     if time.time() > deadline:
         rec['status'] = 'skipped_budget'
         return rec, []
@@ -209,7 +229,8 @@ def crawl_domain(domain, scheme, min_delay, deadline):
         rec['status'] = 'robots_disallow'
         return rec, []
     delay = max(min_delay, min(10.0, float(rp.crawl_delay(ROBOT_NAME) or 0)))
-    sitemaps = rp.site_maps() or [base + '/sitemap.xml']
+    sitemaps = list(dict.fromkeys((rp.site_maps() or []) +
+                                  [base + '/sitemap.xml', base + '/sitemap_index.xml']))
     urls = [u for u in dict.fromkeys(discover_products(sitemaps, delay, deadline))
             if rp.can_fetch(ROBOT_NAME, u)]
     if not urls:
@@ -227,7 +248,7 @@ def crawl_domain(domain, scheme, min_delay, deadline):
             rec['status'] = 'blocked'
             break
         if st != 200 or 'html' not in ct.lower() or len(html) < 2000:
-            pages.append({'domain': domain, 'url': u, 'ok': False, 'http': st})
+            pages.append({'v': VERSION, 'domain': domain, 'url': u, 'ok': False, 'http': st})
             continue
         f = features(html, u)
         f.update({'domain': domain, 'ok': True, 'http': st})
@@ -265,13 +286,14 @@ def main():
     a = ap.parse_args()
 
     os.makedirs(a.data, exist_ok=True)
-    seeds = [s.strip().lower() for s in open(a.seeds, encoding='utf-8')
-             if s.strip() and not s.startswith('#')]
+    seed_files = [a.seeds, os.path.join(a.data, 'seeds_discovered.txt')]
+    seeds = [s.strip().lower() for path in seed_files if os.path.exists(path)
+             for s in open(path, encoding='utf-8') if s.strip() and not s.startswith('#')]
     state = {r['domain']: r for r in read_jsonl(os.path.join(a.data, 'domains.jsonl'))}
 
     def due(d):
         r = state.get(d)
-        if not r:
+        if not r or r.get('v', 1) < VERSION:
             return True
         age = (datetime.now(timezone.utc) - datetime.fromisoformat(r['checked_at'])).days
         return age >= a.recheck_days
@@ -291,8 +313,8 @@ def main():
     by_status = {}
     for r in recs:
         by_status[r['status']] = by_status.get(r['status'], 0) + 1
-    all_domains = read_jsonl(os.path.join(a.data, 'domains.jsonl'))
-    all_pages = read_jsonl(os.path.join(a.data, 'pages.jsonl'))
+    all_domains = [r for r in read_jsonl(os.path.join(a.data, 'domains.jsonl')) if r.get('v', 1) >= VERSION]
+    all_pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('v', 1) >= VERSION]
     summary = {
         'run_at': now(),
         'domains_processed': len(recs),

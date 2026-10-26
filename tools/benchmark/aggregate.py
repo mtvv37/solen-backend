@@ -19,7 +19,8 @@ BOOLS = [
     ('rating', 'Star rating in structured data'),
     ('return_policy_markup', 'Return policy in structured data'),
     ('shipping_markup', 'Shipping in structured data'),
-    ('cta_found', 'Add to cart style button text'),
+    ('cta_found', 'Add to cart button or cart form found'),
+    ('cta_text', 'Add to cart style button text'),
     ('returns_near_cta', 'Returns mentioned right after the button'),
     ('shipping_near_cta', 'Shipping or delivery mentioned right after the button'),
     ('free_shipping', 'Free shipping mentioned'),
@@ -42,18 +43,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--data', default='data')
     a = ap.parse_args()
-    pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('ok')]
+    pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('ok') and p.get('v', 1) >= 2]
     by_domain = defaultdict(dict)  # latest page per url
     for p in pages:
         by_domain[p['domain']][p['url']] = p
     stores = {d: list(v.values()) for d, v in by_domain.items() if len(v) >= 2}
 
     feats = {}
+    NEAR = ('returns_near_cta', 'shipping_near_cta')  # only meaningful where the button text was found
+
+    def has(ps, key):
+        return sum(1 for p in ps if p.get(key)) / len(ps) >= 0.6
+
     for key, label in BOOLS:
-        have = sum(1 for ps in stores.values()
-                   if sum(1 for p in ps if p.get(key)) / len(ps) >= 0.6)
-        feats[key] = {'label': label, 'stores_with': have,
-                      'pct': round(100 * have / len(stores), 1) if stores else None}
+        pool = [ps for ps in stores.values() if has(ps, 'cta_text')] if key in NEAR else list(stores.values())
+        have = sum(1 for ps in pool if has(ps, key))
+        feats[key] = {'label': label, 'stores_with': have, 'stores_measured': len(pool),
+                      'pct': round(100 * have / len(pool), 1) if pool else None}
     nums = {}
     for key, label in NUMS:
         per_store = [statistics.median(p[key] for p in ps) for ps in stores.values()]
@@ -75,7 +81,7 @@ def main():
              '| Practice | Stores | Share |', '|---|---|---|']
     for key, _ in BOOLS:
         v = feats[key]
-        lines.append(f"| {v['label']} | {v['stores_with']} | {v['pct']}% |")
+        lines.append(f"| {v['label']} | {v['stores_with']} of {v['stores_measured']} | {v['pct']}% |")
     lines += ['', '| Measure | Median across stores |', '|---|---|']
     for key, _ in NUMS:
         v = nums[key]

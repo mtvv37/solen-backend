@@ -38,3 +38,45 @@ manscaped.com
 harrys.com
 getquip.com
 nativecos.com
+
+# Brands named in public roundup articles (web search, 2026-10-26).
+# Brand names come from the articles; the domains are written from memory,
+# so a wrong one simply ends up as unreachable or no_products.
+beardbrand.com
+velasca.com
+hiutdenim.co.uk
+masterclass.com
+bruvi.com
+unitedbyblue.com
+troubadourgoods.com
+manitobah.ca
+everlane.com
+magicspoon.com
+mejuri.com
+indochino.com
+dollarshaveclub.com
+stitchfix.com
+elvie.com
+masterdynamic.com
+dyson.com
+hellyhansen.com
+bjornborg.com
+christianlouboutin.com
+fredperry.com
+byredo.com
+graze.com
+coxandcox.co.uk
+tomdixon.net
+shinola.com
+scufgaming.com
+porterandyork.com
+rootscience.com
+leslipfrancais.fr
+ocarat.com
+makemylemonade.com
+gemmyo.com
+bensonsforbeds.co.uk
+laperla.com
+harveynichols.com
+stussy.com
+thebodyshop.com

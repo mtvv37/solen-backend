@@ -11,14 +11,14 @@ name: benchmark-crawl
 on:
   push:
     branches: ["claude/serene-clarke-1i8n6p"]
-    paths: [".github/workflows/benchmark.yml"]
+    paths: [".github/workflows/benchmark.yml", "tools/benchmark/**"]
   schedule:
     - cron: "17 2 * * *"
   workflow_dispatch:
     inputs:
       batch:
         description: "Domains to crawl in this run"
-        default: "40"
+        default: "150"
 
 permissions:
   contents: write
@@ -54,8 +54,11 @@ jobs:
             git checkout -q --orphan benchmark-data
           fi
 
+      - name: Discover new stores from public roundup articles
+        run: python3 tools/benchmark/discover.py --data data
+
       - name: Crawl
-        run: python3 tools/benchmark/crawl.py --data data --batch "${{ inputs.batch || 40 }}" --budget-min 35
+        run: python3 tools/benchmark/crawl.py --data data --batch "${{ inputs.batch || 150 }}" --budget-min 35
 
       - name: Aggregate
         run: python3 tools/benchmark/aggregate.py --data data

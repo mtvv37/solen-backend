@@ -1,0 +1,21 @@
+# Public roundup articles that list real stores (found by web search on 2026-10-26).
+# discover.py reads each one once and keeps the external domains it links to.
+https://whatmore.ai/blog/best-shopify-website-examples
+https://meetanshi.com/blog/best-shopify-stores/
+https://ecomm.design/best-shopify-stores/
+https://the4.co/blogs/shopify-tutorials/best-shopify-stores
+https://blog.adnabu.com/shopify/best-shopify-stores/
+https://www.omnisend.com/blog/woocommerce-examples/
+https://www.hostinger.com/tutorials/woocommerce-website-examples
+https://amasty.com/blog/best-woocommerce-websites
+https://meetanshi.com/blog/magento-websites/
+https://www.drip.com/blog/magento-store-examples
+https://digitiz.fr/blog/exemples-sites-ecommerce/
+https://www.lafabriquedunet.fr/creation-site-ecommerce/articles/exemples-sites-shopify/
+https://www.shopify.com/fr/blog/12-superbes-sites-e-commerce-francais-crees-sur-shopify
+https://trendtrack.io/blog-post/top-dtc-brands
+https://influencermarketinghub.com/dtc-brands/
+https://blog.mean.ceo/startup-news-ecommerce-product-page-examples-mistakes-tips-2026
+https://mockplus.com/blog/post/product-page-design-examples
+https://ecommercefastlane.com/product-pages-16-best-in-class-examples-and-why-they-work/
+https://metrobi.com/blog/e-commerce-product-page-examples-that-convert-in-2025/
