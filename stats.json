@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-10-26T19:10:28+00:00",
+  "stores": 27,
+  "pages": 135,
+  "features": {
+    "ld_product": {
+      "label": "Product structured data",
+      "stores_with": 11,
+      "pct": 40.7
+    },
+    "price": {
+      "label": "Price in structured data",
+      "stores_with": 11,
+      "pct": 40.7
+    },
+    "rating": {
+      "label": "Star rating in structured data",
+      "stores_with": 7,
+      "pct": 25.9
+    },
+    "return_policy_markup": {
+      "label": "Return policy in structured data",
+      "stores_with": 2,
+      "pct": 7.4
+    },
+    "shipping_markup": {
+      "label": "Shipping in structured data",
+      "stores_with": 2,
+      "pct": 7.4
+    },
+    "cta_found": {
+      "label": "Add to cart style button text",
+      "stores_with": 16,
+      "pct": 59.3
+    },
+    "returns_near_cta": {
+      "label": "Returns mentioned right after the button",
+      "stores_with": 7,
+      "pct": 25.9
+    },
+    "shipping_near_cta": {
+      "label": "Shipping or delivery mentioned right after the button",
+      "stores_with": 11,
+      "pct": 40.7
+    },
+    "free_shipping": {
+      "label": "Free shipping mentioned",
+      "stores_with": 21,
+      "pct": 77.8
+    },
+    "secure_checkout": {
+      "label": "Secure checkout wording",
+      "stores_with": 1,
+      "pct": 3.7
+    },
+    "guarantee": {
+      "label": "Guarantee wording",
+      "stores_with": 7,
+      "pct": 25.9
+    },
+    "payment_logos": {
+      "label": "Payment logos on the page",
+      "stores_with": 0,
+      "pct": 0.0
+    },
+    "viewport": {
+      "label": "Mobile viewport tag",
+      "stores_with": 27,
+      "pct": 100.0
+    }
+  },
+  "numeric": {
+    "imgs": {
+      "label": "Images in the page",
+      "median_across_stores": 60
+    },
+    "scripts": {
+      "label": "Scripts in the page",
+      "median_across_stores": 89
+    },
+    "bytes": {
+      "label": "HTML size (bytes)",
+      "median_across_stores": 827127
+    }
+  },
+  "platforms": {
+    "shopify": 26,
+    "woocommerce": 1
+  }
+}

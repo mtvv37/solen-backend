@@ -1,0 +1,14 @@
+{
+  "run_at": "2026-10-26T19:10:28+00:00",
+  "domains_processed": 37,
+  "by_status": {
+    "ok": 28,
+    "no_products": 6,
+    "blocked": 3
+  },
+  "pages_ok": 136,
+  "pages_failed": 4,
+  "total_domains_with_pages": 28,
+  "total_pages_ok": 136,
+  "seeds_left": 0
+}
