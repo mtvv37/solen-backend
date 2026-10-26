@@ -26,7 +26,8 @@ BOOLS = [
     ('free_shipping', 'Free shipping mentioned'),
     ('secure_checkout', 'Secure checkout wording'),
     ('guarantee', 'Guarantee wording'),
-    ('payment_logos', 'Payment logos on the page'),
+    ('payment_logos', 'Card or PayPal brand marks on the page'),
+    ('wallet_buttons', 'Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page'),
     ('viewport', 'Mobile viewport tag'),
 ]
 NUMS = [('imgs', 'Images in the page'), ('scripts', 'Scripts in the page'), ('bytes', 'HTML size (bytes)')]
@@ -43,7 +44,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--data', default='data')
     a = ap.parse_args()
-    pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('ok') and p.get('v', 1) >= 2]
+    pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('ok') and p.get('v', 1) >= 3]
     by_domain = defaultdict(dict)  # latest page per url
     for p in pages:
         by_domain[p['domain']][p['url']] = p

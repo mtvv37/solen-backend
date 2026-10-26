@@ -27,7 +27,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from urllib.robotparser import RobotFileParser
 
-VERSION = 2  # bump when feature extraction changes: older records are crawled again
+VERSION = 3  # bump when feature extraction changes: older records are crawled again
 UA = 'SolenBot/0.1 (+https://withsolen.com; contact: withsolen@gmail.com)'
 ROBOT_NAME = 'SolenBot'
 MAX_BYTES = 2_500_000
@@ -48,7 +48,13 @@ SECURE_RE = re.compile(
     r'secure (checkout|payment)|paiement s[eé]curis[eé]|sichere zahlung|pago seguro', re.I)
 GUARANTEE_RE = re.compile(
     r'guarantee|garantie|money.back|satisfait ou rembours|garant[ií]a', re.I)
-PAY_RE = re.compile(r'visa|mastercard|paypal|apple.?pay|shop.?pay|klarna|amex|google.?pay', re.I)
+BRAND = r'(?<![a-z])(?:visa|master-?card|amex|american[-_ ]?express|paypal|klarna)(?![a-z])'
+# card / PayPal brand marks: in attribute values (alt, src, id, class, aria-label, href...) or an svg <title>
+PAY_RE = re.compile(
+    r'(?:alt|title|src|data-src|aria-label|aria-labelledby|class|id|href|xlink:href)=["\'][^"\']*' + BRAND
+    + r'|<title[^>]*>\s*' + BRAND, re.I)
+# wallet buttons are a different thing from logos: Shop Pay, Apple Pay, Google Pay
+WALLET_RE = re.compile(r'shop[-_ ]?pay|apple[-_ ]?pay|google[-_ ]?pay', re.I)
 
 
 def now():
@@ -184,6 +190,7 @@ def features(html, url):
         'secure_checkout': bool(SECURE_RE.search(text)),
         'guarantee': bool(GUARANTEE_RE.search(text)),
         'payment_logos': bool(PAY_RE.search(no_script)),
+        'wallet_buttons': bool(WALLET_RE.search(no_script)),
     }
 
 
@@ -305,8 +312,10 @@ def main():
 
     def due(d):
         r = state.get(d)
-        if not r or r.get('v', 1) < VERSION:
+        if not r:
             return True
+        if r.get('v', 1) < VERSION and r.get('pages', 0) > 0:
+            return True  # new feature definitions: read shops that gave pages again
         age = (datetime.now(timezone.utc) - datetime.fromisoformat(r['checked_at'])).days
         return age >= a.recheck_days
 

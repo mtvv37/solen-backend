@@ -30,6 +30,10 @@ svg = '<svg><symbol id="icon-visa"></symbol></svg>'
 assert features(doc({}, svg), 'u')['payment_logos'] is True
 only_script = '<script>var s="https://www.paypal.com/sdk/js"</script>'
 assert features(doc({}, only_script), 'u')['payment_logos'] is False
+assert features(doc({}, '<p class="advisable">x</p>'), 'u')['payment_logos'] is False
+assert features(doc({}, '<svg><title>Visa</title></svg>'), 'u')['payment_logos'] is True
+w = features(doc({}, '<shop-pay-wallet-button></shop-pay-wallet-button>'), 'u')
+assert w['wallet_buttons'] is True and w['payment_logos'] is False
 
 # 4. Add to cart found through the Shopify cart form even when the button has no text
 form = '<form action="/cart/add" method="post"><button type="submit">+</button></form>'
