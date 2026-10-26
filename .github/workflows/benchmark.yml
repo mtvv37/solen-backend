@@ -1,11 +1,17 @@
 name: benchmark-crawl
 
+# TEMPORARY: the push trigger below only exists to test from the feature branch.
+# Remove it before merging into main.
+
 # Crawls public product pages from tools/benchmark/seeds.txt every night,
 # stores features on the branch "benchmark-data", and sends a ntfy summary.
 # No secret needed. The ntfy topic below is public (this repository is public):
 # it only carries crawl summaries.
 
 on:
+  push:
+    branches: ["claude/serene-clarke-1i8n6p"]
+    paths: [".github/workflows/benchmark.yml"]
   schedule:
     - cron: "17 2 * * *"
   workflow_dispatch:
