@@ -22,6 +22,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import urljoin
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from urllib.robotparser import RobotFileParser
@@ -56,6 +57,8 @@ def now():
 
 def get(url):
     """Returns (status, content_type, text). status 0 = network error."""
+    if not url.startswith(('http://', 'https://')):
+        return 0, '', ''
     req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept-Encoding': 'gzip'})
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as f:
@@ -229,8 +232,8 @@ def crawl_domain(domain, scheme, min_delay, deadline):
         rec['status'] = 'robots_disallow'
         return rec, []
     delay = max(min_delay, min(10.0, float(rp.crawl_delay(ROBOT_NAME) or 0)))
-    sitemaps = list(dict.fromkeys((rp.site_maps() or []) +
-                                  [base + '/sitemap.xml', base + '/sitemap_index.xml']))
+    declared = [urljoin(base + '/', s) for s in (rp.site_maps() or [])]  # some robots.txt use relative paths
+    sitemaps = list(dict.fromkeys(declared + [base + '/sitemap.xml', base + '/sitemap_index.xml']))
     urls = [u for u in dict.fromkeys(discover_products(sitemaps, delay, deadline))
             if rp.can_fetch(ROBOT_NAME, u)]
     if not urls:
@@ -258,6 +261,15 @@ def crawl_domain(domain, scheme, min_delay, deadline):
     if rec['status'] == 'ok' and rec['pages'] == 0:
         rec['status'] = 'no_pages'
     return rec, pages
+
+
+def safe_crawl(domain, scheme, min_delay, deadline):
+    """One broken site must never stop the whole run."""
+    try:
+        return crawl_domain(domain, scheme, min_delay, deadline)
+    except Exception as e:
+        return {'v': VERSION, 'domain': domain, 'checked_at': now(), 'status': 'error',
+                'platform': None, 'pages': 0, 'error': str(e)[:80]}, []
 
 
 def read_jsonl(path):
@@ -303,7 +315,7 @@ def main():
     print(f'{len(seeds)} seeds, {len(pending)} to crawl now')
 
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        results = list(ex.map(lambda d: crawl_domain(d, a.scheme, a.min_delay, deadline), pending))
+        results = list(ex.map(lambda d: safe_crawl(d, a.scheme, a.min_delay, deadline), pending))
 
     recs = [r for r, _ in results if r['status'] != 'skipped_budget']
     pages = [p for _, ps in results for p in ps]

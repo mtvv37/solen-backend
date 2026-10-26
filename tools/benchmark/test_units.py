@@ -54,4 +54,53 @@ doms, nxt = parse_rows(rows, 1, 3)
 assert doms == ['somestore.com', 'other.fr', 'third.com'] and nxt == 6, (doms, nxt)
 doms2, nxt2 = parse_rows(rows, 4, 5)
 assert doms2 == ['other.fr', 'third.com'] and nxt2 == 6, (doms2, nxt2)
+
+# 8. Relative sitemap path in robots.txt (this crashed the first Tranco run), and error isolation
+import threading
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import crawl
+
+
+class R(BaseHTTPRequestHandler):
+    def log_message(self, *a):
+        pass
+
+    def do_GET(self):
+        h = self.headers.get('Host', '')
+        if self.path == '/robots.txt':
+            body, ct = 'User-agent: *\nSitemap: /sitemap.xml\n', 'text/plain'
+        elif self.path == '/sitemap.xml':
+            body, ct = ('<urlset>' + ''.join(f'<url><loc>http://{h}/products/p{i}</loc></url>' for i in range(3))
+                        + '</urlset>'), 'text/xml'
+        elif self.path.startswith('/products/p'):
+            body, ct = doc({'@type': 'Product', 'offers': {'price': '9'}}), 'text/html'
+        else:
+            self.send_response(404)
+            self.end_headers()
+            return
+        data = body.encode()
+        self.send_response(200)
+        self.send_header('Content-Type', ct)
+        self.send_header('Content-Length', str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+
+for k in ('HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy'):
+    os.environ.pop(k, None)
+srv = ThreadingHTTPServer(('127.0.0.1', 0), R)
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+dom = f'127.0.0.1:{srv.server_address[1]}'
+rec, pages = crawl.safe_crawl(dom, 'http', 0.05, __import__('time').time() + 60)
+assert rec['status'] == 'ok' and len([x for x in pages if x['ok']]) == 3, (rec, pages)
+assert crawl.get('/sitemap.xml') == (0, '', '')
+
+
+def boom(*a, **k):
+    raise ValueError('boom')
+
+
+crawl.crawl_domain = boom
+rec2, pages2 = crawl.safe_crawl('x.test', 'https', 0.05, 0)
+assert rec2['status'] == 'error' and pages2 == [], rec2
 print('UNIT TESTS PASSED')
