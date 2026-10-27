@@ -43,15 +43,33 @@ def parse_rows(text, start, count):
     return out, nxt
 
 
+def queue_size(data):
+    """Candidates written to seeds_discovered.txt that have not been crawled yet."""
+    path = os.path.join(data, 'seeds_discovered.txt')
+    if not os.path.exists(path):
+        return 0
+    queued = {x.strip() for x in open(path, encoding='utf-8') if x.strip() and not x.startswith('#')}
+    done = set()
+    dpath = os.path.join(data, 'domains.jsonl')
+    if os.path.exists(dpath):
+        done = {json.loads(x)['domain'] for x in open(dpath, encoding='utf-8') if x.strip()}
+    return len(queued - done)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--data', default='data')
     ap.add_argument('--per-run', type=int, default=1500)
     ap.add_argument('--max-rank', type=int, default=200_000)
+    ap.add_argument('--max-queue', type=int, default=5000,
+                    help='do not add more candidates while this many are still waiting')
     a = ap.parse_args()
     os.makedirs(a.data, exist_ok=True)
     cur_path = os.path.join(a.data, 'tranco_cursor.json')
     out_path = os.path.join(a.data, 'seeds_discovered.txt')
+    if queue_size(a.data) >= a.max_queue:
+        print(f'Queue already holds {a.max_queue}+ candidates: nothing added tonight')
+        return
     start = json.load(open(cur_path))['next_rank'] if os.path.exists(cur_path) else 1
     if start > a.max_rank:
         print('Tranco slice finished (max rank reached)')

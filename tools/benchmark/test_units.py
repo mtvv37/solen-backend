@@ -104,7 +104,59 @@ def boom(*a, **k):
     raise ValueError('boom')
 
 
+real_crawl = crawl.crawl_domain
 crawl.crawl_domain = boom
 rec2, pages2 = crawl.safe_crawl('x.test', 'https', 0.05, 0)
 assert rec2['status'] == 'error' and pages2 == [], rec2
+
+# 9. Per-platform statistics: two platforms with enough stores get their own column,
+#    a small one does not, and shares are computed inside each platform
+import aggregate
+
+
+def fake_pages(domain, platform, rating):
+    return [{'domain': domain, 'url': f'https://{domain}/products/{i}', 'ok': True, 'v': 3, 'platform': platform,
+             'rating': rating, 'cta_text': True, 'returns_near_cta': rating, 'imgs': 10, 'scripts': 5, 'bytes': 1000}
+            for i in range(3)]
+
+
+pages = []
+for i in range(20):
+    pages += fake_pages(f'a{i}.test', 'shopify', True)
+for i in range(20):
+    pages += fake_pages(f'b{i}.test', 'magento', False)
+for i in range(3):
+    pages += fake_pages(f'c{i}.test', 'wix', True)
+st = aggregate.build(pages)
+assert st['stores'] == 43 and set(st['by_platform']) == {'shopify', 'magento'}, st['by_platform'].keys()
+assert st['by_platform']['shopify']['features']['rating']['pct'] == 100.0
+assert st['by_platform']['magento']['features']['rating']['pct'] == 0.0
+md = aggregate.to_markdown(st)
+assert 'shopify (20)' in md and 'magento (20)' in md and 'wix' not in md.split('Platforms')[0]
+
+# 10. www fallback when the bare domain does not answer at all
+calls = []
+real_get = crawl.get
+
+
+def fake_get(url):
+    calls.append(url)
+    if url.startswith('https://www.only-www.test'):
+        return (200, 'text/plain', 'User-agent: *\nDisallow: /nothing\n') if url.endswith('robots.txt') else (404, '', '')
+    return 0, '', ''
+
+
+crawl.get = fake_get
+rec3, _ = real_crawl(domain := 'only-www.test', 'https', 0.0, __import__('time').time() + 30)
+crawl.get = real_get
+assert any(c.startswith('https://www.only-www.test/') for c in calls), calls
+assert rec3['status'] != 'unreachable', rec3
+
+# 11. queue size counts only domains still waiting
+import tempfile
+import discover_tranco
+with tempfile.TemporaryDirectory() as d:
+    open(os.path.join(d, 'seeds_discovered.txt'), 'w').write('a.com\nb.com\nc.com\n')
+    open(os.path.join(d, 'domains.jsonl'), 'w').write(json.dumps({'domain': 'a.com'}) + '\n')
+    assert discover_tranco.queue_size(d) == 2
 print('UNIT TESTS PASSED')

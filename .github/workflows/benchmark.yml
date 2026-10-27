@@ -13,7 +13,7 @@ on:
     inputs:
       batch:
         description: "Domains to crawl in this run"
-        default: "800"
+        default: "2500"
 
 permissions:
   contents: write
@@ -55,10 +55,10 @@ jobs:
 
       - name: Discover from the Tranco popularity ranking (next slice)
         continue-on-error: true
-        run: python3 tools/benchmark/discover_tranco.py --data data --per-run 1500
+        run: python3 tools/benchmark/discover_tranco.py --data data --per-run 2500 --max-queue 5000
 
       - name: Crawl
-        run: python3 tools/benchmark/crawl.py --data data --batch "${{ inputs.batch || 800 }}" --workers 12 --budget-min 35
+        run: python3 tools/benchmark/crawl.py --data data --batch "${{ inputs.batch || 2500 }}" --workers 20 --budget-min 38
 
       - name: Aggregate
         run: python3 tools/benchmark/aggregate.py --data data

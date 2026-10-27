@@ -227,6 +227,12 @@ def crawl_domain(domain, scheme, min_delay, deadline):
         return rec, []
     base = f'{scheme}://{domain}'
     status, _, robots = get(base + '/robots.txt')
+    if status == 0 and not domain.startswith('www.') and ':' not in domain:
+        # some sites only answer on the www host: try it before giving up
+        alt = f'{scheme}://www.{domain}'
+        s2, _, r2 = get(alt + '/robots.txt')
+        if s2 != 0:
+            base, status, robots = alt, s2, r2
     if status in (401, 403):
         rec['status'] = 'blocked'
         return rec, []
