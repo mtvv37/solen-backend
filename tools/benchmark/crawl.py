@@ -27,7 +27,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from urllib.robotparser import RobotFileParser
 
-VERSION = 3  # bump when feature extraction changes: older records are crawled again
+VERSION = 4  # bump when feature extraction changes: older records are crawled again
 UA = 'SolenBot/0.1 (+https://withsolen.com; contact: withsolen@gmail.com)'
 ROBOT_NAME = 'SolenBot'
 MAX_BYTES = 2_500_000
@@ -134,22 +134,31 @@ def visible_text(html):
 
 
 def platform_of(html):
+    """Platform from specific signatures only. Loose words matched far too much
+    ('mage/' matches every 'image/'), which mislabelled thousands of pages as Magento."""
     h = html[:400_000].lower()
     if 'cdn.shopify.com' in h or 'shopify.theme' in h:
         return 'shopify'
     if re.search(r'woocommerce[-_/]|/plugins/woocommerce', h):
         return 'woocommerce'
-    if 'bigcommerce' in h:
+    if re.search(r'cdn\d*\.bigcommerce\.com|stencil-utils', h):
         return 'bigcommerce'
-    if 'demandware' in h or 'salesforce' in h:
-        return 'sfcc'
-    if 'mage/' in h or 'magento' in h:
+    if re.search(r'text/x-magento-init|data-mage-init|mage-cache-storage|/pub/static/|magento_', h):
         return 'magento'
-    if 'wixstatic' in h:
+    if re.search(r'demandware\.(static|net)|/on/demandware\.store/|dwanalytics', h):
+        return 'sfcc'
+    if re.search(r'prestashop', h):
+        return 'prestashop'
+    if 'wixstatic.com' in h:
         return 'wix'
-    if 'squarespace' in h:
+    if 'static1.squarespace.com' in h or 'squarespace-cdn.com' in h:
         return 'squarespace'
     return 'other'
+
+
+def page_lang(html):
+    m = re.search(r'<html[^>]*\blang=["\']([a-zA-Z-]+)', html[:5000], re.I)
+    return m.group(1).lower() if m else None
 
 
 def features(html, url):
@@ -170,6 +179,7 @@ def features(html, url):
         'url': url,
         'fetched_at': now(),
         'platform': platform_of(html),
+        'lang': page_lang(html),
         'bytes': len(html),
         'scripts': len(re.findall(r'<script\b', html, re.I)),
         'imgs': len(imgs),
