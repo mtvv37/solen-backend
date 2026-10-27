@@ -22,7 +22,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from urllib.robotparser import RobotFileParser
@@ -33,6 +33,8 @@ ROBOT_NAME = 'SolenBot'
 MAX_BYTES = 2_500_000
 TIMEOUT = 15
 PAGES_PER_DOMAIN = 5
+REF_PAGES = 10  # hand-picked reference stores are read more deeply
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 PRODUCT_RE = re.compile(
     r'/(products?|produits?|producto|artikel|item)/[^/?#]+|/p/[^/?#]+|-p-\d+', re.I)
@@ -219,9 +221,9 @@ def discover_products(sitemaps, delay, deadline):
     return urls
 
 
-def crawl_domain(domain, scheme, min_delay, deadline):
+def crawl_domain(domain, scheme, min_delay, deadline, is_ref=False, extra_urls=()):
     rec = {'v': VERSION, 'domain': domain, 'checked_at': now(), 'status': 'ok',
-           'platform': None, 'pages': 0}
+           'platform': None, 'pages': 0, 'ref': is_ref}
     if time.time() > deadline:
         rec['status'] = 'skipped_budget'
         return rec, []
@@ -249,11 +251,12 @@ def crawl_domain(domain, scheme, min_delay, deadline):
     sitemaps = list(dict.fromkeys(declared + [base + '/sitemap.xml', base + '/sitemap_index.xml']))
     urls = [u for u in dict.fromkeys(discover_products(sitemaps, delay, deadline))
             if rp.can_fetch(ROBOT_NAME, u)]
-    if not urls:
+    extra = [u for u in extra_urls if rp.can_fetch(ROBOT_NAME, u)]  # product pages given by hand
+    if not urls and not extra:
         rec['status'] = 'no_products'
         return rec, []
     rng = random.Random(domain)
-    sample = rng.sample(urls, min(PAGES_PER_DOMAIN, len(urls)))
+    sample = list(dict.fromkeys(extra + rng.sample(urls, min(REF_PAGES if is_ref else PAGES_PER_DOMAIN, len(urls)))))
     pages = []
     for u in sample:
         if time.time() > deadline:
@@ -264,10 +267,10 @@ def crawl_domain(domain, scheme, min_delay, deadline):
             rec['status'] = 'blocked'
             break
         if st != 200 or 'html' not in ct.lower() or len(html) < 2000:
-            pages.append({'v': VERSION, 'domain': domain, 'url': u, 'ok': False, 'http': st})
+            pages.append({'v': VERSION, 'domain': domain, 'url': u, 'ok': False, 'http': st, 'ref': is_ref})
             continue
         f = features(html, u)
-        f.update({'domain': domain, 'ok': True, 'http': st})
+        f.update({'domain': domain, 'ok': True, 'http': st, 'ref': is_ref})
         pages.append(f)
         rec['platform'] = rec['platform'] or f['platform']
     rec['pages'] = sum(1 for p in pages if p['ok'])
@@ -276,13 +279,32 @@ def crawl_domain(domain, scheme, min_delay, deadline):
     return rec, pages
 
 
-def safe_crawl(domain, scheme, min_delay, deadline):
+def safe_crawl(domain, scheme, min_delay, deadline, is_ref=False, extra_urls=()):
     """One broken site must never stop the whole run."""
     try:
-        return crawl_domain(domain, scheme, min_delay, deadline)
+        return crawl_domain(domain, scheme, min_delay, deadline, is_ref, extra_urls)
     except Exception as e:
         return {'v': VERSION, 'domain': domain, 'checked_at': now(), 'status': 'error',
-                'platform': None, 'pages': 0, 'error': str(e)[:80]}, []
+                'platform': None, 'pages': 0, 'ref': is_ref, 'error': str(e)[:80]}, []
+
+
+def host_key(url_or_domain):
+    h = (urlparse(url_or_domain).hostname if '://' in url_or_domain else url_or_domain).lower()
+    return h[4:] if h.startswith('www.') else h
+
+
+def load_references(here):
+    """references.txt: one domain per line. reference_urls.txt: product page URLs given by hand."""
+    def lines(name):
+        path = os.path.join(here, name)
+        if not os.path.exists(path):
+            return []
+        return [x.strip() for x in open(path, encoding='utf-8') if x.strip() and not x.startswith('#')]
+    refs = [host_key(x) for x in lines('references.txt')]
+    urls = {}
+    for u in lines('reference_urls.txt'):
+        urls.setdefault(host_key(u), []).append(u)
+    return refs, urls
 
 
 def read_jsonl(path):
@@ -308,18 +330,24 @@ def main():
     ap.add_argument('--budget-min', type=float, default=35)
     ap.add_argument('--scheme', default='https')
     ap.add_argument('--recheck-days', type=int, default=60)
+    ap.add_argument('--no-refs', action='store_true', help='ignore references.txt (used by offline tests)')
     a = ap.parse_args()
 
     os.makedirs(a.data, exist_ok=True)
+    refs, ref_urls = ([], {}) if a.no_refs else load_references(HERE)
     seed_files = [a.seeds, os.path.join(a.data, 'seeds_discovered.txt')]
     seeds = [s.strip().lower() for path in seed_files if os.path.exists(path)
              for s in open(path, encoding='utf-8') if s.strip() and not s.startswith('#')]
+    seeds = list(dict.fromkeys(refs + seeds))  # reference stores always go first
     state = {r['domain']: r for r in read_jsonl(os.path.join(a.data, 'domains.jsonl'))}
 
     def due(d):
         r = state.get(d)
         if not r:
             return True
+        if d in refs:
+            age_ref = (datetime.now(timezone.utc) - datetime.fromisoformat(r['checked_at'])).days
+            return r.get('v', 1) < VERSION or age_ref >= 14  # reference stores are read again every 14 days
         if r.get('v', 1) < VERSION and r.get('pages', 0) > 0:
             return True  # new feature definitions: read shops that gave pages again
         age = (datetime.now(timezone.utc) - datetime.fromisoformat(r['checked_at'])).days
@@ -330,7 +358,8 @@ def main():
     print(f'{len(seeds)} seeds, {len(pending)} to crawl now')
 
     with ThreadPoolExecutor(max_workers=a.workers) as ex:
-        results = list(ex.map(lambda d: safe_crawl(d, a.scheme, a.min_delay, deadline), pending))
+        results = list(ex.map(lambda d: safe_crawl(d, a.scheme, a.min_delay, deadline, d in refs,
+                                                   ref_urls.get(d, ())), pending))
 
     recs = [r for r, _ in results if r['status'] != 'skipped_budget']
     pages = [p for _, ps in results for p in ps]

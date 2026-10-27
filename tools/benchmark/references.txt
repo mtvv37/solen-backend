@@ -1,0 +1,6 @@
+# Stores picked by hand as examples of excellent product pages.
+# They are crawled first, with 10 pages each, and shown in their own section of stats.md.
+# This is NOT a statistical group: it only shows what these particular stores do.
+# Do not call them "stores that make millions" unless you have a source.
+arntreal.com
+helloboku.com

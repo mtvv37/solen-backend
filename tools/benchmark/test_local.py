@@ -81,7 +81,7 @@ def main():
         for k in ('HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy'):
             env.pop(k, None)
         r = subprocess.run([sys.executable, os.path.join(HERE, 'crawl.py'), '--seeds', seeds,
-                            '--data', data, '--scheme', 'http', '--min-delay', '0.05',
+                            '--data', data, '--scheme', 'http', '--min-delay', '0.05', '--no-refs',
                             '--budget-min', '2'], capture_output=True, text=True, env=env)
         print(r.stdout, r.stderr)
         assert r.returncode == 0, 'crawler failed'
@@ -98,7 +98,7 @@ def main():
         assert doms[f"127.0.0.2:{PORT['n']}"]['status'] == 'blocked', 'blocked store not marked'
         # second run must not recrawl domains already done
         subprocess.run([sys.executable, os.path.join(HERE, 'crawl.py'), '--seeds', seeds, '--data', data,
-                        '--scheme', 'http', '--min-delay', '0.05'], capture_output=True, env=env)
+                        '--scheme', 'http', '--min-delay', '0.05', '--no-refs'], capture_output=True, env=env)
         again = [json.loads(x) for x in open(os.path.join(data, 'pages.jsonl'))]
         assert len(again) == len(pages), 'domains were crawled twice'
         a = subprocess.run([sys.executable, os.path.join(HERE, 'aggregate.py'), '--data', data],

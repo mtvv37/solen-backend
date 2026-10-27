@@ -64,7 +64,7 @@ def summarize(stores):
             'features': feats, 'numeric': nums}
 
 
-def build(pages, min_platform=MIN_PLATFORM):
+def build(pages, min_platform=MIN_PLATFORM, refs=(), domain_status=None):
     by_domain = defaultdict(dict)  # latest page per url
     for p in pages:
         by_domain[p['domain']][p['url']] = p
@@ -78,6 +78,14 @@ def build(pages, min_platform=MIN_PLATFORM):
     out['platforms'] = dict(Counter(platform_of.values()))
     out['by_platform'] = {p: summarize(g) for p, g in sorted(groups.items(), key=lambda kv: -len(kv[1]))
                           if len(g) >= min_platform}
+    refs = set(refs)
+    out['references'] = {
+        d: {'pages': len(ps), 'platform': platform_of[d],
+            'practices': {key: (has(ps, key) if key not in NEAR or has(ps, 'cta_text') else None)
+                          for key, _ in BOOLS}}
+        for d, ps in stores.items() if d in refs}
+    status = domain_status or {}
+    out['references_not_measured'] = {d: status.get(d, 'not crawled yet') for d in sorted(refs - set(stores))}
     return out
 
 
@@ -106,6 +114,23 @@ def to_markdown(stats):
               f"({near['stores_measured']} of {stats['stores']} overall).",
               'Platforms (most frequent per store): ' + ', '.join(f'{k} {v}' for k, v in
                                                                  sorted(stats['platforms'].items(), key=lambda kv: -kv[1]))]
+    refs = stats.get('references', {})
+    missing = stats.get('references_not_measured', {})
+    if refs or missing:
+        names = list(refs)
+        lines += ['', '## Reference stores (picked by hand, not a statistical group)',
+                  'Each column shows what that store does on at least 60% of its pages. The sample column is the share of '
+                  'all stores above. "n/a" means the button text was not found, so the near-the-button check is not possible.', '']
+        if names:
+            lines += ['| Practice | Sample | ' + ' | '.join(f"{n} ({refs[n]['pages']} pages)" for n in names) + ' |',
+                      '|---|---|' + '---|' * len(names)]
+            for key, label in BOOLS:
+                sample = stats['features'][key]['pct']
+                cells = ['n/a' if refs[n]['practices'][key] is None else ('yes' if refs[n]['practices'][key] else 'no')
+                         for n in names]
+                lines.append(f'| {label} | {sample}% | ' + ' | '.join(cells) + ' |')
+        for d, st in missing.items():
+            lines.append(f'Not measured yet: {d} ({st}).')
     return '\n'.join(lines) + '\n'
 
 
@@ -114,7 +139,14 @@ def main():
     ap.add_argument('--data', default='data')
     a = ap.parse_args()
     pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('ok') and p.get('v', 1) >= 3]
-    stats = build(pages)
+    here = os.path.dirname(os.path.abspath(__file__))
+    ref_path = os.path.join(here, 'references.txt')
+    refs = [x.strip().lower() for x in open(ref_path, encoding='utf-8') if x.strip() and not x.startswith('#')] \
+        if os.path.exists(ref_path) else []
+    status = {}
+    for r in read_jsonl(os.path.join(a.data, 'domains.jsonl')):
+        status[r['domain']] = r['status']
+    stats = build(pages, refs=refs, domain_status=status)
     with open(os.path.join(a.data, 'stats.json'), 'w', encoding='utf-8') as f:
         json.dump(stats, f, indent=2)
     md = to_markdown(stats)

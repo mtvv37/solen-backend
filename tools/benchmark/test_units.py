@@ -159,4 +159,21 @@ with tempfile.TemporaryDirectory() as d:
     open(os.path.join(d, 'seeds_discovered.txt'), 'w').write('a.com\nb.com\nc.com\n')
     open(os.path.join(d, 'domains.jsonl'), 'w').write(json.dumps({'domain': 'a.com'}) + '\n')
     assert discover_tranco.queue_size(d) == 2
+
+# 12. Reference stores: read first, deeper, flagged, extra URLs honoured; stats show them next to the sample
+rec4, pages4 = real_crawl(dom, 'http', 0.0, __import__('time').time() + 60, True, [f'http://{dom}/products/p1'])
+assert rec4['ref'] is True and len([x for x in pages4 if x['ok']]) == 3 and all(x['ref'] for x in pages4), (rec4, pages4)
+refs_found, ref_urls = crawl.load_references(os.path.dirname(os.path.abspath(__file__)))
+assert 'helloboku.com' in refs_found and 'arntreal.com' in refs_found
+assert ref_urls['helloboku.com'] == ['https://www.helloboku.com/products/bidet-boku'], ref_urls
+assert crawl.host_key('https://www.Example.com/x?gclid=1') == 'example.com'
+pages_r = []
+for i in range(20):
+    pages_r += fake_pages(f'a{i}.test', 'shopify', i % 2 == 0)
+pages_r += fake_pages('refstore.test', 'shopify', True)
+st2 = aggregate.build(pages_r, refs=['refstore.test', 'absent.test'], domain_status={'absent.test': 'blocked'})
+assert list(st2['references']) == ['refstore.test'] and st2['references']['refstore.test']['practices']['rating'] is True
+assert st2['references_not_measured'] == {'absent.test': 'blocked'}
+md2 = aggregate.to_markdown(st2)
+assert 'Reference stores' in md2 and 'refstore.test' in md2 and 'Not measured yet: absent.test (blocked)' in md2
 print('UNIT TESTS PASSED')
