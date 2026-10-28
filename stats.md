@@ -1,29 +1,50 @@
-# Benchmark (566 stores, 2692 product pages)
-Generated 2026-10-27T14:07:08+00:00. A store counts when at least 60% of its sampled pages show the practice. Platforms with fewer than 15 stores are not shown on their own.
+# Benchmark (742 stores, 3541 product pages)
+Generated 2026-10-28T08:55:05+00:00. A store counts when at least 60% of its sampled pages show the practice. Platforms with fewer than 15 stores are not shown on their own.
 
-| Practice | all (566) | magento (293) | shopify (172) | other (41) | sfcc (41) | woocommerce (18) |
+| Practice | all (742) | magento (414) | shopify (176) | other (69) | sfcc (57) | woocommerce (23) |
 |---|---|---|---|---|---|---|
-| Product structured data | 39.6% | 16.4% | 89.0% | 14.6% | 17.1% | 55.6% |
-| Price in structured data | 34.8% | 11.3% | 85.5% | 9.8% | 14.6% | 38.9% |
-| Star rating in structured data | 13.6% | 5.5% | 32.0% | 2.4% | 7.3% | 11.1% |
-| Return policy in structured data | 4.4% | 1.4% | 11.0% | 0.0% | 4.9% | 0.0% |
-| Shipping in structured data | 4.2% | 1.4% | 11.0% | 0.0% | 2.4% | 0.0% |
-| Add to cart button or cart form found | 36.4% | 9.9% | 88.4% | 9.8% | 19.5% | 72.2% |
-| Add to cart style button text | 32.7% | 9.9% | 77.9% | 7.3% | 19.5% | 61.1% |
-| Returns mentioned right after the button | 35.1% | 20.7% | 38.1% | 33.3% | 25.0% | 45.5% |
-| Shipping or delivery mentioned right after the button | 50.3% | 34.5% | 53.7% | 33.3% | 62.5% | 45.5% |
-| Free shipping mentioned | 24.4% | 4.8% | 64.0% | 2.4% | 14.6% | 33.3% |
-| Secure checkout wording | 4.4% | 1.4% | 11.0% | 0.0% | 2.4% | 5.6% |
-| Guarantee wording | 14.7% | 7.8% | 29.7% | 4.9% | 9.8% | 16.7% |
-| Card or PayPal brand marks on the page | 31.3% | 6.1% | 83.7% | 7.3% | 14.6% | 33.3% |
-| Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page | 29.5% | 5.8% | 83.1% | 4.9% | 9.8% | 5.6% |
-| Mobile viewport tag | 96.8% | 95.6% | 100.0% | 87.8% | 100.0% | 100.0% |
+| Product structured data | 35.6% | 17.6% | 89.2% | 11.6% | 21.1% | 60.9% |
+| Price in structured data | 30.9% | 12.3% | 85.8% | 8.7% | 17.5% | 47.8% |
+| Star rating in structured data | 11.9% | 5.6% | 31.2% | 2.9% | 8.8% | 13.0% |
+| Return policy in structured data | 4.0% | 1.9% | 10.8% | 1.4% | 3.5% | 0.0% |
+| Shipping in structured data | 3.4% | 1.2% | 10.8% | 0.0% | 1.8% | 0.0% |
+| Add to cart button or cart form found | 31.0% | 10.4% | 88.6% | 8.7% | 17.5% | 65.2% |
+| Add to cart style button text | 27.9% | 10.1% | 77.8% | 7.2% | 17.5% | 56.5% |
+| Returns mentioned right after the button | 34.8% | 21.4% | 38.0% | 60.0% | 30.0% | 38.5% |
+| Shipping or delivery mentioned right after the button | 47.3% | 31.0% | 52.6% | 40.0% | 60.0% | 38.5% |
+| Free shipping mentioned | 19.9% | 4.8% | 64.2% | 1.4% | 12.3% | 26.1% |
+| Secure checkout wording | 3.6% | 1.0% | 11.4% | 0.0% | 3.5% | 4.3% |
+| Guarantee wording | 13.6% | 8.9% | 30.1% | 4.3% | 8.8% | 13.0% |
+| Card or PayPal brand marks on the page | 27.5% | 8.0% | 84.1% | 5.8% | 21.1% | 30.4% |
+| Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page | 24.1% | 5.6% | 82.4% | 4.3% | 12.3% | 4.3% |
+| Mobile viewport tag | 96.4% | 95.4% | 100.0% | 88.4% | 100.0% | 100.0% |
 
-| Median across stores | all (566) | magento (293) | shopify (172) | other (41) | sfcc (41) | woocommerce (18) |
+| Median across stores | all (742) | magento (414) | shopify (176) | other (69) | sfcc (57) | woocommerce (23) |
 |---|---|---|---|---|---|---|
-| Images in the page | 25 | 18 | 50 | 13 | 30 | 26 |
-| Scripts in the page | 41 | 29 | 90 | 23 | 30 | 95 |
-| HTML size (bytes) | 363538 | 267957 | 682467 | 138311 | 303629 | 297384 |
+| Images in the page | 23 | 18 | 52 | 9 | 31 | 26 |
+| Scripts in the page | 36 | 29 | 90 | 23 | 30 | 90 |
+| HTML size (bytes) | 314168 | 268370 | 682467 | 127065 | 317810 | 295344 |
 
-Near-the-button shares only count stores where the button text was found (185 of 566 overall).
-Platforms (most frequent per store): magento 293, shopify 172, other 41, sfcc 41, woocommerce 18, bigcommerce 1
+Near-the-button shares only count stores where the button text was found (207 of 742 overall).
+Platforms (most frequent per store): magento 414, shopify 176, other 69, sfcc 57, woocommerce 23, bigcommerce 3
+
+## Reference stores (picked by hand, not a statistical group)
+Each column shows what that store does on at least 60% of its pages. The sample column is the share of all stores above. "n/a" means the button text was not found, so the near-the-button check is not possible.
+
+| Practice | Sample | arntreal.com (10 pages) | helloboku.com (11 pages) |
+|---|---|---|---|
+| Product structured data | 35.6% | yes | yes |
+| Price in structured data | 30.9% | yes | yes |
+| Star rating in structured data | 11.9% | no | no |
+| Return policy in structured data | 4.0% | no | no |
+| Shipping in structured data | 3.4% | no | no |
+| Add to cart button or cart form found | 31.0% | yes | yes |
+| Add to cart style button text | 27.9% | yes | yes |
+| Returns mentioned right after the button | 34.8% | yes | no |
+| Shipping or delivery mentioned right after the button | 47.3% | no | no |
+| Free shipping mentioned | 19.9% | no | yes |
+| Secure checkout wording | 3.6% | yes | no |
+| Guarantee wording | 13.6% | no | yes |
+| Card or PayPal brand marks on the page | 27.5% | yes | yes |
+| Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page | 24.1% | yes | yes |
+| Mobile viewport tag | 96.4% | yes | yes |
