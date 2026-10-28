@@ -22,7 +22,7 @@ Toujours distinguer :
 ## 1. Nom et positionnement
 
 - **Nom :** Solen
-- **EN :** The Self-Optimizing Commerce Layer
+- **EN :** The Self-Optimizing E-commerce Layer
 - **FR :** La couche d'optimisation autonome de l'e-commerce
 
 Description courte :
@@ -351,7 +351,7 @@ Autofinancé, coûts volontairement faibles, pas de financement externe nécessa
 
 « AI-powered e-commerce platform », « AI agent for e-commerce », « révolutionner le e-commerce avec l'IA », « l'OS de l'e-commerce », « IA qui augmente automatiquement vos ventes ».
 
-Préférer : **The Self-Optimizing Commerce Layer** ou « Solen transforme le comportement des visiteurs en optimisations e-commerce testées. »
+Préférer : **The Self-Optimizing E-commerce Layer** ou « Solen transforme le comportement des visiteurs en optimisations e-commerce testées. »
 
 ## 43. Positionnement simple
 
@@ -423,7 +423,7 @@ Pas « J'ai une idée d'IA, trouvons à quoi elle peut servir », mais :
 | | |
 |---|---|
 | **Vision** | Make every e-commerce store self-improving. |
-| **Produit** | The Self-Optimizing Commerce Layer. |
+| **Produit** | The Self-Optimizing E-commerce Layer. |
 | **Mécanisme** | Observe → Understand → Propose → Test → Learn → Improve. |
 | **Philosophie** | AI proposes. Reality decides. |
 | **Priorité actuelle** | Terrain → données → synthèse → décision → produit. |

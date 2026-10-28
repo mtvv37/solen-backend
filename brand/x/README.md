@@ -12,7 +12,7 @@
 
 **Colours**: background `#0E1726`, control half and text `#F6F5F1`, variant half and V1 secondary line `#F5A524` (8.8:1 on ink), V2 secondary line `#8A8F98` (5.5:1). Big background control half in V2: `#1B2740`.
 
-**Copy**: "The self-optimizing commerce layer for Shopify." · "AI proposes. Reality decides. · Building in public". No figures, no promised results.
+**Copy**: "The Self-Optimizing E-commerce Layer for Shopify." · "AI proposes. Reality decides. · Building in public". No figures, no promised results.
 
 Note: the brief referenced `brand/BRAND.md`, `brand/tokens.css` and `brand/logo/final/`, which do not exist yet. Values are taken from the approved `brand/logo/b-v2/` (Ink & Sun).
 

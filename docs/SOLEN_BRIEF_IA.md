@@ -21,6 +21,8 @@ Règle de lecture : chaque affirmation est marquée **Fait** (vérifié), **Hypo
 
 ## 1. Solen en un paragraphe
 
+**Signature (toujours écrite ainsi, en anglais)** : *The Self-Optimizing E-commerce Layer*. En français : « La couche d'optimisation autonome de l'e-commerce ».
+
 **Ambition** : Solen est une couche d'optimisation autonome pour les boutiques e-commerce, d'abord Shopify. Elle observe le comportement réel des visiteurs, repère où les ventes se perdent, propose des changements précis, les teste sur de petits segments de visiteurs, puis déploie ce qui gagne sur tout le site. À terme, elle génère aussi les pages produit de A à Z : le marchand dépose son produit, Solen construit la page à partir de ce que font les meilleures pages de la catégorie et de ce que disent ses propres visiteurs. L'objectif est un SaaS très rentable qui devienne la référence de l'optimisation de conversion sur Shopify.
 
 **Ce qui est vrai aujourd'hui** : un prototype avec un audit gratuit de fiche produit qui fonctionne, un suivi de boutique par pixel (phase 1), des recommandations générées par IA, un robot qui compare les pages à un échantillon de boutiques, et **aucun client payant**. La boucle de test (tester, mesurer, garder le gagnant) n'existe pas encore.

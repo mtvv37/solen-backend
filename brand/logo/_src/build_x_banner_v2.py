@@ -12,7 +12,7 @@ os.makedirs(OUT, exist_ok=True)
 W, H = 1500, 500
 INK, CREAM, AMBER = "#0E1726", "#F6F5F1", "#F5A524"
 TEX_CTRL, TEX_VAR = "#131F33", "#1A2740"      # background texture: very low contrast (1.1–1.3:1 on ink)
-LINE = "The self-optimizing commerce layer for Shopify."
+LINE = "The Self-Optimizing E-commerce Layer for Shopify."
 SIZE = 44
 SAFE = dict(x0=250, x1=1250, y0=190, y1=430)
 CTRL, VAR = split_sun(gap=0.05, lift=0.11)
@@ -66,7 +66,7 @@ def variant_a():
 
 # ---- B · symbol left + headline on two lines
 def variant_b():
-    l1, l2 = "The self-optimizing commerce layer", "for Shopify."
+    l1, l2 = "The Self-Optimizing E-commerce Layer", "for Shopify."
     box, gap = 104, 46
     sx, sy = 300, 196
     tx = sx + box + gap                           # = 450: second line clears the avatar zone

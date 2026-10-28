@@ -1,6 +1,6 @@
 # Solen backend
 
-Solen — *The Self-Optimizing Commerce Layer*. B2B SaaS prototype that turns e-commerce visitor behavior into tested optimizations.
+Solen — *The Self-Optimizing E-commerce Layer*. B2B SaaS prototype that turns e-commerce visitor behavior into tested optimizations.
 
 **Business context of reference: [`docs/SOLEN_CONTEXT.md`](docs/SOLEN_CONTEXT.md). Read it before any product, strategy or roadmap work.**
 

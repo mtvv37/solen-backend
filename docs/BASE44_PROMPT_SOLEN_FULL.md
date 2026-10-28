@@ -13,7 +13,7 @@ After each phase: stop, list what you built, how I test it in preview, and what 
 
 ## 1. What Solen is
 
-Solen is the self-optimizing commerce layer for Shopify stores.
+Solen is the Self-Optimizing E-commerce Layer for Shopify stores.
 It is installed on a merchant's store, understands the store's identity, watches how visitors behave, and continuously improves the store:
 it finds where sales leak, proposes changes in the brand's own voice, tests them on a small share of traffic, keeps what works, rolls the winner out to the whole store, and remembers every result so the next idea is better.
 It can also build a complete product page from scratch: the merchant drops a product, Solen studies how strong stores structure their pages, and drafts the page in the brand's style.

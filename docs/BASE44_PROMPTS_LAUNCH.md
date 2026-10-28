@@ -23,7 +23,7 @@ Après les étapes 1 à 5, Solen fait déjà ce que promet le film jusqu'à « A
 
 ```
 You are working on Solen, an existing Base44 app (do not create a new app).
-Solen is a conversion layer for Shopify stores. Loop: Observe → Understand → Propose → Test → Learn → Improve.
+Solen is the Self-Optimizing E-commerce Layer for Shopify stores. Loop: Observe → Understand → Propose → Test → Learn → Improve.
 Philosophy: "AI proposes. Reality decides." Observation ≠ hypothesis ≠ experiment ≠ result.
 
 What already exists and must keep working:

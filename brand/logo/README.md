@@ -4,7 +4,7 @@ Status: **concepts for review**, black only, not final. Overview: `concepts.png`
 
 ## Brief (as understood)
 
-- **What**: B2B SaaS that turns Shopify visitor behavior into tested store improvements — "The Self-Optimizing Commerce Layer".
+- **What**: B2B SaaS that turns Shopify visitor behavior into tested store improvements — "The Self-Optimizing E-commerce Layer".
 - **Audience**: e-commerce founders, growth managers, CRO agencies.
 - **Adjectives**: precise, calm, trustworthy — evidence over hype.
 - **Avoid**: flashy "AI" (sparkles, brains, gradients), category clichés (upward arrows, bar charts, eyes, magnifiers, carts, refresh arrows, infinity loops — already used by Arduino, Fedora, Flux, Squarespace…).

@@ -13,7 +13,7 @@ W, H = 1500, 500
 INK, CREAM, AMBER, GREY = "#0E1726", "#F6F5F1", "#F5A524", "#8A8F98"
 SAFE_TOP, SAFE_BOT = 70, 430                 # central band kept on every screen
 DEAD = dict(x1=400, y0=333)                  # avatar overlap: x < 400 and y > 333
-HEAD = ["The self-optimizing commerce", "layer for Shopify."]
+HEAD = ["The Self-Optimizing E-commerce", "Layer for Shopify."]
 SUB = "AI proposes. Reality decides. · Building in public"
 
 CTRL, VAR = split_sun(gap=0.05, lift=0.11)   # 256 box, large cut
