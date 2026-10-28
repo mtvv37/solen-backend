@@ -5,7 +5,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from crawl import features, find_product, first_offer, platform_of  # noqa: E402
+from crawl import features, find_product, first_offer, platform_of, page_lang  # noqa: E402
 from discover import candidates  # noqa: E402
 
 
@@ -42,6 +42,12 @@ assert g['cta_found'] is True and g['cta_text'] is False and g['returns_near_cta
 
 # 5. Platform detection: the word wp-content alone is no longer WooCommerce
 assert platform_of('<link href="/wp-content/themes/x/style.css">') == 'other'
+assert platform_of('<meta content="image/png"><img src="/image/logo.svg">') == 'other'
+assert platform_of('<script type="text/x-magento-init">{}</script>') == 'magento'
+assert platform_of('<script>var prestashop = {};</script>') == 'prestashop'
+assert platform_of('<script src="https://cdn11.bigcommerce.com/s-1/x.js">') == 'bigcommerce'
+assert platform_of('<p>Our salesforce integration</p>') == 'other'
+assert page_lang('<html lang="fr-FR"><head>') == 'fr-fr' and page_lang('<html>') is None
 assert platform_of('<body class="woocommerce-page">') == 'woocommerce'
 assert platform_of('<script src="https://cdn.shopify.com/s/x.js">') == 'shopify'
 
@@ -116,7 +122,7 @@ import aggregate
 
 def fake_pages(domain, platform, rating):
     return [{'domain': domain, 'url': f'https://{domain}/products/{i}', 'ok': True, 'v': 3, 'platform': platform,
-             'rating': rating, 'cta_text': True, 'returns_near_cta': rating, 'imgs': 10, 'scripts': 5, 'bytes': 1000}
+             'rating': rating, 'cta_text': True, 'cta_found': True, 'price': True, 'lang': 'fr' if domain.startswith('a') else 'en', 'returns_near_cta': rating, 'imgs': 10, 'scripts': 5, 'bytes': 1000}
             for i in range(3)]
 
 
@@ -176,4 +182,20 @@ assert list(st2['references']) == ['refstore.test'] and st2['references']['refst
 assert st2['references_not_measured'] == {'absent.test': 'blocked'}
 md2 = aggregate.to_markdown(st2)
 assert 'Reference stores' in md2 and 'refstore.test' in md2 and 'Not measured yet: absent.test (blocked)' in md2
+
+# 13. Sites without any commerce evidence are not counted as stores; French segment
+corp = []
+for i in range(5):
+    for k in range(3):
+        corp.append({'domain': f'corp{i}.test', 'url': f'https://corp{i}.test/products/{k}', 'ok': True, 'v': 4,
+                     'platform': 'other', 'cta_found': False, 'price': False, 'lang': 'en', 'cta_text': False,
+                     'imgs': 1, 'scripts': 1, 'bytes': 1})
+shops = []
+for i in range(20):
+    shops += fake_pages(f'a{i}.test', 'shopify', True)
+st3 = aggregate.build(shops + corp)
+assert st3['sites_sampled'] == 25 and st3['stores'] == 20, (st3['sites_sampled'], st3['stores'])
+assert st3['french'] is not None and st3['french']['stores'] == 20 and st3['french_count'] == 20
+assert 'french: lang fr or .fr (20)' in aggregate.to_markdown(st3)
+assert aggregate.build(corp)['stores'] == 0
 print('UNIT TESTS PASSED')

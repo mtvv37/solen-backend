@@ -64,41 +64,62 @@ def summarize(stores):
             'features': feats, 'numeric': nums}
 
 
+def is_store(ps):
+    """Commerce evidence: a price in the page data or a cart button on most pages.
+    Without it a site with /products/ URLs may be a corporate catalogue, not a shop."""
+    return has(ps, 'price') or has(ps, 'cta_found')
+
+
+def is_french(domain, ps):
+    langs = [p.get('lang') for p in ps if p.get('lang')]
+    return domain.endswith('.fr') or (bool(langs) and statistics.mode(langs).startswith('fr'))
+
+
 def build(pages, min_platform=MIN_PLATFORM, refs=(), domain_status=None):
     by_domain = defaultdict(dict)  # latest page per url
     for p in pages:
         by_domain[p['domain']][p['url']] = p
-    stores = {d: list(v.values()) for d, v in by_domain.items() if len(v) >= 2}
+    sites = {d: list(v.values()) for d, v in by_domain.items() if len(v) >= 2}
+    stores = {d: ps for d, ps in sites.items() if is_store(ps)}
     platform_of = {d: statistics.mode([p['platform'] for p in ps]) for d, ps in stores.items()}
     groups = defaultdict(dict)
     for d, ps in stores.items():
         groups[platform_of[d]][d] = ps
     out = summarize(stores)
+    out['sites_sampled'] = len(sites)
+    fr = {d: ps for d, ps in stores.items() if is_french(d, ps)}
+    out['french'] = summarize(fr) if len(fr) >= min_platform else None
+    out['french_count'] = len(fr)
     out['generated_at'] = datetime.now(timezone.utc).isoformat(timespec='seconds')
     out['platforms'] = dict(Counter(platform_of.values()))
     out['by_platform'] = {p: summarize(g) for p, g in sorted(groups.items(), key=lambda kv: -len(kv[1]))
                           if len(g) >= min_platform}
     refs = set(refs)
     out['references'] = {
-        d: {'pages': len(ps), 'platform': platform_of[d],
+        d: {'pages': len(ps), 'platform': statistics.mode([p['platform'] for p in ps]),
             'practices': {key: (has(ps, key) if key not in NEAR or has(ps, 'cta_text') else None)
                           for key, _ in BOOLS}}
-        for d, ps in stores.items() if d in refs}
+        for d, ps in sites.items() if d in refs}
     status = domain_status or {}
-    out['references_not_measured'] = {d: status.get(d, 'not crawled yet') for d in sorted(refs - set(stores))}
+    out['references_not_measured'] = {d: status.get(d, 'not crawled yet') for d in sorted(refs - set(sites))}
     return out
 
 
 def to_markdown(stats):
-    cols = ['all'] + list(stats['by_platform'])
+    cols = ['all'] + list(stats['by_platform']) + (['french'] if stats.get('french') else [])
     heads = [f"all ({stats['stores']})"] + [f"{p} ({stats['by_platform'][p]['stores']})" for p in stats['by_platform']]
+    if stats.get('french'):
+        heads.append(f"french: lang fr or .fr ({stats['french']['stores']})")
     lines = [f"# Benchmark ({stats['stores']} stores, {stats['pages']} product pages)",
              f"Generated {stats['generated_at']}. A store counts when at least 60% of its sampled pages show the practice. "
-             f"Platforms with fewer than {MIN_PLATFORM} stores are not shown on their own.", '',
+             f"Platforms with fewer than {MIN_PLATFORM} stores are not shown on their own. "
+             f"{stats['sites_sampled']} sites were sampled; only the {stats['stores']} showing a price or a cart button are counted as stores.", '',
              '| Practice | ' + ' | '.join(heads) + ' |', '|---|' + '---|' * len(cols)]
 
     def part(c):
-        return stats if c == 'all' else stats['by_platform'][c]
+        if c == 'all':
+            return stats
+        return stats['french'] if c == 'french' else stats['by_platform'][c]
 
     for key, label in BOOLS:
         cells = []
@@ -138,7 +159,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--data', default='data')
     a = ap.parse_args()
-    pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('ok') and p.get('v', 1) >= 3]
+    pages = [p for p in read_jsonl(os.path.join(a.data, 'pages.jsonl')) if p.get('ok') and p.get('v', 1) >= 4]
     here = os.path.dirname(os.path.abspath(__file__))
     ref_path = os.path.join(here, 'references.txt')
     refs = [x.strip().lower() for x in open(ref_path, encoding='utf-8') if x.strip() and not x.startswith('#')] \
