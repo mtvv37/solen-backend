@@ -1,6 +1,6 @@
 # Solen : 3 posts X par jour, du 19 novembre au 31 décembre 2026
 
-> Version 1.1, 19/11/2026 (ajout du 4e post d'appel). En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
+> Version 1.2, 19/11/2026 (4e post d'appel ; sans tiret ni emoji, selon `design/social/RULES.md`). En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
 > Suite de [`X_BUILD_IN_PUBLIC.md`](X_BUILD_IN_PUBLIC.md). Objectif : obtenir des appels 1:1 et des réponses au formulaire, pas des abonnés.
 
 ## Mode d'emploi
@@ -14,7 +14,7 @@
   ```
   Running a Shopify store? I'm collecting how merchants decide what to change. 4 min, no pitch: [lien Tally]
 
-  🇫🇷 Tu parles français ? Le formulaire te propose plutôt un appel de 20 min.
+  Tu parles français ? Le formulaire te propose plutôt un appel de 20 min.
   ```
 - **« Link below »** dans un post C : le lien du formulaire va en première réponse, jamais dans le post.
 
@@ -26,9 +26,9 @@ Une capture, un nom de marque, ce qui marche, une chose qu'on testerait.
 Worth stealing #1: [Brand]'s [feature].
 
 Why it works:
-– [what the shopper sees]
-– [the question it answers]
-– [the friction it removes]
+· [what the shopper sees]
+· [the question it answers]
+· [the friction it removes]
 
 What I'd test: [one idea, framed as a test]
 
@@ -89,13 +89,13 @@ Follow for more.
 
 **B · 13h · Worth stealing #1** : envoie-moi ta capture, j'écris le post. Suggestion : Gymshark (fiche produit mobile, sélecteur de taille, panier).
 
-**C · 18h · Appel** (257/280)
+**C · 18h · Appel** (252/280)
 ```
 New plan for Solen.
 
 I'm stopping the free audit offers (7 weeks here, zero takers) and doing what I should have started with: talking to merchants.
 
-How do you decide what to change on your store? 4-min form below, or a 20-min call if you speak French 🇫🇷
+How do you decide what to change on your store? 4-min form below, or a 20-min call if you speak French
 ```
 
 ### Vendredi 20 novembre
@@ -379,11 +379,11 @@ Follow for more.
 
 **B · 13h · Worth stealing #12** : envoie-moi ta capture, j'écris le post. Suggestion : Le Slip Français (packs, cadeaux).
 
-**C · 18h · Appel** (186/280)
+**C · 18h · Appel** (181/280)
 ```
 Right after Black Friday is when merchants remember best what broke.
 
-If you run a store: 4 minutes on how you decide what to fix, or a 20-min call if you speak French 🇫🇷.
+If you run a store: 4 minutes on how you decide what to fix, or a 20-min call if you speak French.
 
 Link below.
 ```
@@ -464,9 +464,9 @@ Follow for more.
 ```
 Solen today, honestly:
 
-– live site
-– paid plans from €19/month
-– 0 paying customers
+· live site
+· paid plans from €19/month
+· 0 paying customers
 
 The next step isn't a feature. It's 15 conversations with merchants. That's the only number I'm chasing this month.
 ```
@@ -490,9 +490,9 @@ Follow for more.
 
 **B · 13h · Worth stealing #16** : envoie-moi ta capture, j'écris le post. Suggestion : Glossier (teintes, avis).
 
-**C · 18h · Appel** (180/280)
+**C · 18h · Appel** (175/280)
 ```
-French-speaking merchants 🇫🇷: I'd love 20 minutes with you. No pitch. I want to understand how you decide what to change on your store.
+French-speaking merchants: I'd love 20 minutes with you. No pitch. I want to understand how you decide what to change on your store.
 
 Everyone else: a 4-min form.
 
@@ -569,9 +569,9 @@ Conversion rate alone hides who you lost.
 Split it by device, and by new vs returning visitors, before deciding anything. A "stable" rate can hide a mobile drop.
 ```
 
-**D · 21h · Appel** (174/280)
+**D · 21h · Appel** (170/280)
 ```
-French-speaking founders in France, Belgium, Switzerland or Québec 🇫🇷
+French-speaking founders in France, Belgium, Switzerland or Québec:
 
 I'd rather talk than send you a form: 20 minutes, no pitch.
 
@@ -711,9 +711,9 @@ Follow for more.
 ```
 What I'll do with the form answers:
 
-– read every one
-– tag the problems
-– publish the summary in January
+· read every one
+· tag the problems
+· publish the summary in January
 
 No name and no store ever attached to a quote.
 ```
@@ -996,10 +996,10 @@ Follow for more.
 ```
 January plan for any store:
 
-– pick 3 changes, not 30
-– one metric each
-– write the hypothesis before you ship
-– check it before you celebrate
+· pick 3 changes, not 30
+· one metric each
+· write the hypothesis before you ship
+· check it before you celebrate
 ```
 
 **D · 21h · Appel** (150/280)
