@@ -1,6 +1,6 @@
 # Solen : 3 posts X par jour, du 19 novembre au 31 décembre 2026
 
-> Version 1.0, 19/11/2026. En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
+> Version 1.1, 19/11/2026 (ajout du 4e post d'appel). En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
 > Suite de [`X_BUILD_IN_PUBLIC.md`](X_BUILD_IN_PUBLIC.md). Objectif : obtenir des appels 1:1 et des réponses au formulaire, pas des abonnés.
 
 ## Mode d'emploi
@@ -8,6 +8,8 @@
 - **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. »
 - **B · 13h : Worth stealing**, nouvelle série. Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
+- **D · 21h, 14 jours sur 43 : un 4e post, uniquement un appel vers le formulaire.** Les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les 8 appels en C : 22 appels en 6 semaines, plus le lien en réponse sous chaque post A et B.
+- **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
 - **Sous chaque post A et B**, ta première réponse : le lien du formulaire.
   ```
   Running a Shopify store? I'm collecting how merchants decide what to change. 4 min, no pitch: [lien Tally]
@@ -118,6 +120,13 @@ Follow for more.
 Shopify founders: what are you changing on your store before Black Friday, and what are you deliberately leaving alone?
 ```
 
+**D · 21h · Appel** (189/280)
+```
+Comment "form" and I'll DM you the link.
+
+It's 4 minutes on how you decide what to change on your Shopify store. No pitch, no mailing list. Everyone who answers gets the summary in January.
+```
+
 ### Samedi 21 novembre
 
 **A · 9h · Friction #30** (263/280)
@@ -188,6 +197,13 @@ If you're running a sale this week: where does a shopper first see the discounte
 Product page, cart, or only at checkout?
 ```
 
+**D · 21h · Appel** (159/280)
+```
+If your store gets under 10k visitors a month, I especially want your answers.
+
+I honestly don't know yet if Solen can help stores your size. 4-min form below.
+```
+
 ### Mardi 24 novembre
 
 **A · 9h · Friction #33** (250/280)
@@ -238,6 +254,15 @@ What's the one thing that breaks on your store every Black Friday?
 Discount codes, stock, speed, the support inbox, something else?
 ```
 
+**D · 21h · Appel** (181/280)
+```
+Know someone who runs a Shopify store?
+
+Send them this: 4 minutes on how they decide what to change on their store, and they get the summary of every answer in January.
+
+Link below.
+```
+
 ### Jeudi 26 novembre · Thanksgiving (US)
 
 **A · 9h · Friction #35** (260/280)
@@ -284,6 +309,13 @@ Follow for more.
 Black Friday rule I'd give any store: no new changes today.
 
 Write down every "that looks off" moment instead. That list is your January test plan.
+```
+
+**D · 21h · Appel** (184/280)
+```
+Busy day for merchants, so I'll keep it short.
+
+When things calm down, 4 minutes on how you decide what to fix on your store would help me more than anything I could build. Link below.
 ```
 
 ### Samedi 28 novembre
@@ -402,6 +434,13 @@ Follow for more.
 Store owners: who actually makes changes on your site?
 
 You, someone on the team, an agency, or nobody really?
+```
+
+**D · 21h · Appel** (154/280)
+```
+If you've ever said "we should test that" and never did, I want your answer.
+
+What stopped you is exactly what I'm trying to understand. 4-min form below.
 ```
 
 ### Jeudi 3 décembre
@@ -530,6 +569,15 @@ Conversion rate alone hides who you lost.
 Split it by device, and by new vs returning visitors, before deciding anything. A "stable" rate can hide a mobile drop.
 ```
 
+**D · 21h · Appel** (174/280)
+```
+French-speaking founders in France, Belgium, Switzerland or Québec 🇫🇷
+
+I'd rather talk than send you a form: 20 minutes, no pitch.
+
+Everyone else: a 4-min form. Link below.
+```
+
 ### Mardi 8 décembre
 
 **A · 9h · Friction #47** (268/280)
@@ -580,6 +628,13 @@ The cheapest conversion research: one question on your order confirmation page.
 Read 50 answers before your next test.
 ```
 
+**D · 21h · Appel** (152/280)
+```
+Tried A/B testing on your store and stopped? I want to know why.
+
+Not enough traffic, tools, time, results you didn't trust? 4-min form below, no pitch.
+```
+
 ### Jeudi 10 décembre
 
 **A · 9h · Friction #49** (276/280)
@@ -626,6 +681,13 @@ Follow for more.
 Do you ask buyers why they almost didn't buy?
 
 If yes: what's the one answer that changed something on your store?
+```
+
+**D · 21h · Appel** (129/280)
+```
+Worked with a CRO agency or freelancer and stopped? I'd love to know what didn't work.
+
+Answers stay anonymous. 4-min form below.
 ```
 
 ### Samedi 12 décembre
@@ -700,6 +762,13 @@ Follow for more.
 If software flagged one problem on your store every week, where should it look first?
 
 Product pages, cart, checkout, or traffic sources?
+```
+
+**D · 21h · Appel** (167/280)
+```
+Growth and e-commerce managers at bigger brands: your answers matter too.
+
+You probably have more data than time. How do you pick what to test first? 4-min form below.
 ```
 
 ### Mardi 15 décembre
@@ -798,6 +867,13 @@ Most "we doubled conversion" screenshots compare December to November.
 That's the season, not a result. Ask for the control group.
 ```
 
+**D · 21h · Appel** (189/280)
+```
+Every form answer gets read, tagged and counted. None of it is used to sell to you.
+
+If you run a store and have 4 minutes before the holidays: how do you decide what to change? Link below.
+```
+
 ### Samedi 19 décembre
 
 **A · 9h · Friction #58** (261/280)
@@ -868,6 +944,13 @@ the most-read were about surprises on the way to paying. Hidden payment options,
 Shoppers hate surprises at the till.
 ```
 
+**D · 21h · Appel** (179/280)
+```
+Reply "form" and I'll send you the link.
+
+4 minutes before the holiday break on how you decide what to change on your store. The summary goes to everyone who answered, in January.
+```
+
 ### Mardi 22 décembre
 
 **A · 9h · Friction #61** (257/280)
@@ -917,6 +1000,13 @@ January plan for any store:
 – one metric each
 – write the hypothesis before you ship
 – check it before you celebrate
+```
+
+**D · 21h · Appel** (150/280)
+```
+Apparel and beauty stores: size, shade and fit questions seem to drive a lot of hesitation. Is that true for yours?
+
+Tell me in 4 minutes. Link below.
 ```
 
 ### Jeudi 24 décembre · Réveillon
@@ -1031,6 +1121,13 @@ Follow for more.
 What's on your store's January list? One thing is enough.
 ```
 
+**D · 21h · Appel** (168/280)
+```
+Quiet week between the holidays. A good moment for 4 minutes on how you'll decide what to change on your store in January.
+
+Link below. Summary to everyone who answers.
+```
+
 ### Mardi 29 décembre
 
 **A · 9h · Friction #68** (246/280)
@@ -1077,6 +1174,13 @@ Follow for more.
 On January 1 I'll post the honest numbers: form answers, calls, customers, followers.
 
 Whatever they are. Same rule as day one: the zeros are public too.
+```
+
+**D · 21h · Appel** (158/280)
+```
+Last call of 2026: I start writing the summary of the answers in January.
+
+If you run a Shopify store: 4 minutes on how you decide what to change. Link below.
 ```
 
 ### Jeudi 31 décembre · Dernier jour de l'année
