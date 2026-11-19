@@ -2,70 +2,71 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- Visuel d'appel au formulaire, à mettre en réponse sous chaque post. 1200 x 675, DA de la bannière X verte. -->
+<!-- Visuel d'appel au formulaire, en réponse sous chaque post. 1200 x 675.
+     Copie conforme de la DA de la bannière X « réseau » (design/social/banniere-x-reseau-en.png) :
+     traits en dégradé qui partent d'un point sous le titre, tuiles blanches penchées, titre centré sur deux lignes. -->
 <link rel="stylesheet" href="../../../video/vision-film/_src/fonts.css">
 <style>
   :root{--bg:#040A06;--bright:#2BD07A;--light:#7EF0A5;--text:#EEF5F0;--muted:#93AA9C}
   *{box-sizing:border-box;margin:0;padding:0}
   body{width:1200px;height:675px;background:var(--bg);overflow:hidden}
   #c{position:relative;width:1200px;height:675px;font-family:'Inter Tight';color:var(--text);overflow:hidden;
-     background:radial-gradient(ellipse 55% 55% at 50% 50%, #0C2416 0%, rgba(4,10,6,0) 72%), var(--bg)}
+     background:radial-gradient(ellipse 60% 55% at 50% 42%, #0C2416 0%, rgba(4,10,6,0) 72%), var(--bg)}
   svg.threads{position:absolute;inset:0}
-  .tile{position:absolute;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:18px;display:flex;align-items:center;justify-content:center;
-        background:linear-gradient(160deg,#FFFFFF,#DDEFE3);box-shadow:0 0 0 1px rgba(126,240,165,.55),0 0 32px rgba(43,208,122,.5)}
-  .tile svg{width:30px;height:30px;fill:none;stroke:#0B1F14;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-  .tile.ab{font-family:'JetBrains Mono';font-weight:600;font-size:19px;color:#0B1F14}
-  .halo{position:absolute;left:230px;top:130px;width:740px;height:420px;background:radial-gradient(closest-side,rgba(4,10,6,.92),rgba(4,10,6,0))}
-  .center{position:absolute;left:0;right:0;top:132px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .spot{position:absolute;left:470px;top:430px;width:260px;height:180px;border-radius:50%;background:radial-gradient(closest-side,rgba(43,208,122,.2),rgba(43,208,122,0))}
+  .halo{position:absolute;left:250px;top:150px;width:700px;height:330px;background:radial-gradient(closest-side,rgba(4,10,6,.85),rgba(4,10,6,0))}
+  .tile{position:absolute;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:19px;display:flex;align-items:center;justify-content:center;
+        background:linear-gradient(160deg,#FFFFFF,#DDEFE3);box-shadow:0 0 0 1px rgba(126,240,165,.5),0 0 34px rgba(43,208,122,.5)}
+  .tile svg{width:36px;height:36px;fill:none;stroke:#0B3D24;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .tile.ab{font-family:'JetBrains Mono';font-weight:600;font-size:22px;color:#0B3D24}
+  .center{position:absolute;left:0;right:0;top:178px;display:flex;flex-direction:column;align-items:center;text-align:center}
   .brand{display:flex;align-items:center;gap:13px}
-  .brand span{font-family:'Archivo';font-weight:800;font-stretch:125%;font-size:28px}
-  h1{margin-top:30px;font-weight:800;font-size:92px;line-height:1;letter-spacing:-.05em}
+  .brand span{font-family:'Archivo';font-weight:800;font-stretch:125%;font-size:30px}
+  h1{margin-top:30px;font-weight:800;font-size:84px;line-height:1;letter-spacing:-.05em}
   h1 i{font-style:italic;background:linear-gradient(100deg,#9BF2C2,var(--bright));-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .2em 0 .05em;margin:0 -.07em 0 -.05em}
-  .sub{margin-top:22px;font-size:25px;font-weight:500;color:var(--muted);letter-spacing:-.01em;max-width:920px;line-height:1.3}
-  .pill{margin-top:34px;display:flex;align-items:center;gap:12px;height:66px;padding:0 34px;border-radius:999px;background:var(--text);color:var(--bg);
-        font-weight:800;font-size:26px;letter-spacing:-.02em;box-shadow:0 0 0 1px rgba(126,240,165,.5),0 0 44px rgba(43,208,122,.35)}
-  .pill svg{width:24px;height:24px;fill:none;stroke:var(--bg);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-  .meta{margin-top:20px;font-family:'JetBrains Mono';font-size:17px;letter-spacing:.2em;text-transform:uppercase;color:var(--light)}
+  .meta{margin-top:30px;font-family:'JetBrains Mono';font-size:18px;letter-spacing:.2em;text-transform:uppercase;color:var(--light)}
 </style>
 </head>
 <body>
 <div id="c">
-  <svg class="threads" width="1200" height="675" viewBox="0 0 1200 675" aria-hidden="true">
-    <defs><filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-    <g id="lines" fill="none" stroke="#2BD07A" stroke-width="2" stroke-linecap="round" filter="url(#glow)"></g>
-  </svg>
+  <svg class="threads" width="1200" height="675" viewBox="0 0 1200 675" aria-hidden="true"></svg>
+  <div class="spot"></div>
   <div class="halo"></div>
   <!-- Les tuiles de la bannière : observer, recommencer, chercher, panier, A/B, idée, valider, croissance -->
-  <div class="tile" style="left:140px;top:120px"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-  <div class="tile" style="left:86px;top:372px"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></div>
-  <div class="tile" style="left:262px;top:560px"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg></div>
-  <div class="tile" style="left:470px;top:618px"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-  <div class="tile ab" style="left:735px;top:618px">A/B</div>
-  <div class="tile" style="left:944px;top:560px"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></div>
-  <div class="tile" style="left:1116px;top:372px"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
-  <div class="tile" style="left:1060px;top:120px"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+  <div class="tile" style="left:300px;top:118px;transform:rotate(-5deg)"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+  <div class="tile" style="left:118px;top:262px;transform:rotate(4deg)"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></div>
+  <div class="tile" style="left:290px;top:492px;transform:rotate(-4deg)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg></div>
+  <div class="tile" style="left:500px;top:600px;transform:rotate(5deg)"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+  <div class="tile ab" style="left:752px;top:590px;transform:rotate(-3deg)">A/B</div>
+  <div class="tile" style="left:910px;top:488px;transform:rotate(6deg)"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></div>
+  <div class="tile" style="left:1086px;top:330px;transform:rotate(-6deg)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+  <div class="tile" style="left:960px;top:112px;transform:rotate(4deg)"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
 
   <div class="center">
     <div class="brand">
-      <svg width="44" height="32" viewBox="0 0 65.47 48.00" aria-hidden="true"><g fill="#FFFFFF">
+      <svg width="46" height="34" viewBox="0 0 65.47 48.00" aria-hidden="true"><g fill="#FFFFFF">
         <path d="M17.47 0.00 L55.47 0.00 L45.47 11.00 L13.47 11.00 Z"/><path d="M65.47 0.00 L51.64 38.00 L42.82 32.00 L54.47 0.00 Z"/>
         <path d="M48.00 48.00 L10.00 48.00 L20.00 37.00 L52.00 37.00 Z"/><path d="M0.00 48.00 L13.83 10.00 L22.65 16.00 L11.00 48.00 Z"/></g></svg>
       <span>Solen</span>
     </div>
-    <h1>Help me <i>build</i> Solen.</h1>
-    <div class="sub">For Shopify merchants, e-commerce teams and Shopify app developers.</div>
-    <div class="pill">Fill out the form<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-    <div class="meta">4 minutes · Costs €0 · Just a form</div>
+    <h1>Help me <i>build</i> Solen.<br>It's just a form.</h1>
+    <div class="meta">4 minutes · €0 · Link above</div>
   </div>
 </div>
 <script src="threads.js"></script>
-<script>drawThreads([
-  { o: .55, p: [[-60,200],[140,120],[420,50],[780,40],[1060,120],[1260,70]] },
-  { o: .50, p: [[-60,290],[86,372],[262,560],[470,618],[735,618],[944,560],[1116,372],[1260,290]] },
-  { o: .30, p: [[140,120],[250,250],[86,372]] },
-  { o: .30, p: [[1060,120],[960,250],[1116,372]] },
-  { o: .35, p: [[-60,640],[120,610],[262,560]] },
-  { o: .35, p: [[944,560],[1080,610],[1260,640]] },
-]);</script>
+<script>
+// Comme la bannière : les traits partent d'un point sous le titre et rejoignent les tuiles et les bords.
+const H = [600, 512];
+drawThreads([
+  [H, [470,330], [300,118], [80,40], [-60,30]],
+  [H, [290,492], [118,262], [-60,220]],
+  [H, [430,560], [500,600], [470,720]],
+  [H, [720,560], [752,590], [790,720]],
+  [H, [910,488], [1086,330], [1260,300]],
+  [H, [760,300], [960,112], [1260,70]],
+  [[-60,590], [290,492], [600,512], [910,488], [1260,590]],
+  [[-60,640], [240,600], [500,600], [752,590], [1000,640], [1260,610]],
+]);
+</script>
 </body>
 </html>

@@ -144,11 +144,12 @@ SPECS = [
 
 PAGE = open(os.path.join(HERE, 'friction.tpl.html'), encoding='utf-8').read()
 
-def tile(name, x, y):
-    return f'<div class="tile" style="left:{x}px;top:{y}px"><svg viewBox="0 0 24 24">{ICONS[name]}</svg></div>'
+def tile(name, x, y, rot):
+    # Tuiles légèrement penchées, comme sur la bannière.
+    return f'<div class="tile" style="left:{x}px;top:{y}px;transform:rotate({rot}deg)"><svg viewBox="0 0 24 24">{ICONS[name]}</svg></div>'
 
 for s in SPECS:
-    tiles = tile(s['icons'][0], 452, 84) + tile(s['icons'][1], 1128, 96) + tile(s['icons'][2], 1010, 470)
+    tiles = tile(s['icons'][0], 452, 84, -5) + tile(s['icons'][1], 1128, 96, 6) + tile(s['icons'][2], 1010, 470, -4)
     html = (PAGE.replace('{{N}}', str(s['n'])).replace('{{H1}}', s['h1'])
                 .replace('{{SCREEN}}', '\n'.join(s['screen'])).replace('{{TILES}}', tiles))
     with open(os.path.join(HERE, f"friction-{s['n']}.html"), 'w', encoding='utf-8') as f:

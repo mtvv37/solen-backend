@@ -13,9 +13,10 @@
                 radial-gradient(ellipse 50% 60% at 78% 45%, rgba(12,36,22,.7) 0%, rgba(4,10,6,0) 70%), var(--bg)}
   svg.threads{position:absolute;inset:0}
   .mono{font-family:'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase}
-  .tile{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:17px;display:flex;align-items:center;justify-content:center;
-        background:linear-gradient(160deg,#FFFFFF,#DDEFE3);box-shadow:0 0 0 1px rgba(126,240,165,.55),0 0 30px rgba(43,208,122,.5)}
-  .tile svg{width:28px;height:28px;fill:none;stroke:#0B1F14;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .tile{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+        background:linear-gradient(160deg,#FFFFFF,#DDEFE3);box-shadow:0 0 0 1px rgba(126,240,165,.5),0 0 30px rgba(43,208,122,.5)}
+  .tile svg{width:30px;height:30px;fill:none;stroke:#0B3D24;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .spot{position:absolute;left:105px;top:150px;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(43,208,122,.22),rgba(43,208,122,0))}
 
   .phone{position:absolute;left:110px;top:45px;width:290px;height:502px;border-radius:44px;background:#0A1A11;border:4px solid #1E3A29;padding:14px;
          box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(126,240,165,.08)}
@@ -101,11 +102,9 @@
 </head>
 <body>
 <div id="c">
-  <svg class="threads" width="1200" height="675" viewBox="0 0 1200 675" aria-hidden="true">
-    <defs><filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-    <g id="lines" fill="none" stroke="#2BD07A" stroke-width="2" stroke-linecap="round" filter="url(#glow)"></g>
-  </svg>
-  <div class="tile" style="left:452px;top:84px"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="tile" style="left:1128px;top:96px"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="tile" style="left:1010px;top:470px"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+  <svg class="threads" width="1200" height="675" viewBox="0 0 1200 675" aria-hidden="true"></svg>
+  <div class="spot"></div>
+  <div class="tile" style="left:452px;top:84px;transform:rotate(-5deg)"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="tile" style="left:1128px;top:96px;transform:rotate(6deg)"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><div class="tile" style="left:1010px;top:470px;transform:rotate(-4deg)"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
   <div class="phone"><div class="screen">
 <div class="head"><b>Your cart (2)</b><span>×</span></div>
 <div class="item"><div class="th"></div><div class="lines"><div class="bar"></div><div class="bar s"></div></div><b>€45</b></div>
@@ -130,11 +129,17 @@
   <div class="handle">@thomzzss_</div>
 </div>
 <script src="threads.js"></script>
-<script>drawThreads([
-  { o: .50, p: [[-60,120],[160,90],[452,84],[700,40],[900,-40]] },
-  { o: .45, p: [[1260,40],[1128,96],[1080,250],[1150,420],[1260,520]] },
-  { o: .50, p: [[-60,660],[300,610],[700,560],[1010,470],[1260,330]] },
-  { o: .30, p: [[-60,300],[60,380],[250,330]] },
-]);</script>
+<script>
+// Comme la bannière : les traits partent d'un même point (caché derrière le téléphone) et balaient l'image, sans passer sur le texte.
+const H = [255, 300];
+drawThreads([
+  [H, [330,160], [452,84], [700,22], [1000,40], [1128,96], [1185,250], [1260,330]],
+  [H, [120,140], [10,60], [-60,30]],
+  [H, [40,330], [-60,380]],
+  [H, [60,520], [-60,600]],
+  [H, [420,600], [720,628], [1010,470], [1260,410]],
+  [[-60,652], [300,640], [620,662], [900,600], [1010,470]],
+]);
+</script>
 </body>
 </html>
