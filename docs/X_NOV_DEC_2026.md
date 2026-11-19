@@ -1,20 +1,22 @@
 # Solen : 3 posts X par jour, du 19 novembre au 31 décembre 2026
 
-> Version 1.2, 19/11/2026 (4e post d'appel ; sans tiret ni emoji, selon `design/social/RULES.md`). En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
+> Version 1.3, 19/11/2026 (22 visuels de friction, visuel d'appel au formulaire, liste de marques ; sans tiret ni emoji, selon `design/social/RULES.md`). En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
 > Suite de [`X_BUILD_IN_PUBLIC.md`](X_BUILD_IN_PUBLIC.md). Objectif : obtenir des appels 1:1 et des réponses au formulaire, pas des abonnés.
 
 ## Mode d'emploi
 
-- **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. »
+- **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. » 22 posts sur 43 ont un visuel (`design/social/x-friction/`), en priorité ceux sur l'argent.
 - **B · 13h : Worth stealing**, nouvelle série. Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
 - **D · 21h, 14 jours sur 43 : un 4e post, uniquement un appel vers le formulaire.** Les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les 8 appels en C : 22 appels en 6 semaines, plus le lien en réponse sous chaque post A et B.
 - **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
-- **Sous chaque post A et B**, ta première réponse : le lien du formulaire.
+- **Sous chaque post A et B**, ta première réponse : ce texte, avec le visuel `design/social/x-friction/cta-form.png`. Remplace `[link]` par le lien Tally.
   ```
-  Running a Shopify store? I'm collecting how merchants decide what to change. 4 min, no pitch: [lien Tally]
+  Run a Shopify store, work in e-commerce, or build Shopify apps?
 
-  Tu parles français ? Le formulaire te propose plutôt un appel de 20 min.
+  I'm building Solen, an AI app that finds what to A/B test on a store, segment by segment. I need your input: 4 minutes, nothing to buy.
+
+  Form: [link]
   ```
 - **« Link below »** dans un post C : le lien du formulaire va en première réponse, jamais dans le post.
 
@@ -43,30 +45,43 @@ Follow for more.
 
 ## Marques à décortiquer
 
-Des marques connues pour le soin de leur site. Pour chacune, où regarder en premier ; si rien ne ressort, prends une autre fonctionnalité ou une autre marque.
+Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy. Pour chacune, où regarder en premier ; si rien ne ressort, prends une autre fonctionnalité ou une autre marque. Pour Fincut et Holy, envoie-moi les liens : je n'ai pas pu vérifier de quelles marques il s'agit.
 
-| Marque | Pays | Catégorie | Où regarder |
-|---|---|---|---|
-| Gymshark | UK | sport | fiche produit mobile, sélecteur de taille, panier |
-| Represent | UK | streetwear | fiche produit, pages de drop |
-| Alo Yoga | US | sport | fiche produit, infos de coupe |
-| Vuori | US | sport | guide des tailles, avis |
-| Skims | US | mode | sélecteur de taille, infos de coupe |
-| Allbirds | US | chaussures | comparaison de modèles, tailles |
-| Aimé Leon Dore | US | mode | page d'accueil, mise en scène produit |
-| Pangaia | UK | mode | infos matières sur la fiche produit |
-| Sézane | FR | mode | fiche produit, panier, livraison |
-| Polène | FR | maroquinerie | galerie photo, mise à l'échelle |
-| Asphalte | FR | mode | précommande, explication du modèle |
-| Le Slip Français | FR | mode | packs, cadeaux |
-| Veja | FR | chaussures | guide des tailles, infos matières |
-| Respire | FR | beauté | routines, abonnement |
-| Typology | FR | beauté | diagnostic, recommandations |
-| Glossier | US | beauté | teintes, avis |
-| Rhode | US | beauté | fiche produit, ruptures |
-| Huel | UK | alimentation | abonnement, packs |
-| Olipop | US | boissons | packs, prix par unité |
-| Our Place | US | maison | variantes de couleur, cadeaux |
+| Marque | Catégorie | Où regarder |
+|---|---|---|
+| Gymshark | sport | fiche produit mobile, tailles, panier |
+| Boku | salle de bain (helloboku.com) | la fiche produit de référence du robot |
+| Arntreal | marque de référence du robot (arntreal.com) | fiche produit |
+| Fincut | envoie-moi le lien | fiche produit |
+| Holy | envoie-moi le lien | fiche produit, packs |
+| Represent | streetwear | fiche produit, drops |
+| Oner Active | sport | tailles, avis |
+| AYBL | sport | fiche produit, panier |
+| Alphalete | sport | tailles, infos de coupe |
+| YoungLA | sport | fiche produit, collections |
+| Corteiz | streetwear | drops, ruptures |
+| Broken Planet | streetwear | drops, fiche produit |
+| Castore | sport | fiche produit, livraison |
+| Skims | mode | tailles, infos de coupe |
+| Alo Yoga | sport | fiche produit, panier |
+| Vuori | sport | guide des tailles, avis |
+| Horace | soin homme | routines, packs |
+| Le Slip Français | mode | packs, cadeaux |
+| Polène | maroquinerie | galerie photo, mise à l'échelle |
+| Sézane | mode | fiche produit, livraison |
+| Asphalte | mode | précommande |
+| Jacquemus | mode | fiche produit, galerie |
+| Respire | beauté | routines, abonnement |
+| Typology | beauté | diagnostic, recommandations |
+| Glossier | beauté | teintes, avis |
+| Rhode | beauté | fiche produit, ruptures |
+| Huel | nutrition | abonnement, packs |
+| AG1 | nutrition | abonnement |
+| Grenade | nutrition | packs, prix par unité |
+| Ruggable | maison | tailles, variantes |
+| HexClad | cuisine | packs, garanties |
+| Ridge | accessoires | comparaison de modèles |
+| Manscaped | soin homme | packs, abonnement |
 
 ## Calendrier
 
@@ -86,8 +101,9 @@ Metric: add-to-cart rate on sale items.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-28.png`
 
-**B · 13h · Worth stealing #1** : envoie-moi ta capture, j'écris le post. Suggestion : Gymshark (fiche produit mobile, sélecteur de taille, panier).
+**B · 13h · Worth stealing #1** : envoie-moi ta capture, j'écris le post. Suggestion : Gymshark (fiche produit mobile, tailles, panier).
 
 **C · 18h · Appel** (252/280)
 ```
@@ -112,8 +128,9 @@ Metric: cart-to-checkout rate.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-29.png`
 
-**B · 13h · Worth stealing #2** : envoie-moi ta capture, j'écris le post. Suggestion : Represent (fiche produit, pages de drop).
+**B · 13h · Worth stealing #2** : envoie-moi ta capture, j'écris le post. Suggestion : Boku (la fiche produit de référence du robot).
 
 **C · 18h · Question** (119/280)
 ```
@@ -141,8 +158,9 @@ Metric: mobile checkout completion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-30.png`
 
-**B · 13h · Worth stealing #3** : envoie-moi ta capture, j'écris le post. Suggestion : Alo Yoga (fiche produit, infos de coupe).
+**B · 13h · Worth stealing #3** : envoie-moi ta capture, j'écris le post. Suggestion : Arntreal (fiche produit).
 
 **C · 18h · Opinion** (177/280)
 ```
@@ -165,8 +183,9 @@ Metric: conversion of returning visitors.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-31.png`
 
-**B · 13h · Worth stealing #4** : envoie-moi ta capture, j'écris le post. Suggestion : Vuori (guide des tailles, avis).
+**B · 13h · Worth stealing #4** : envoie-moi ta capture, j'écris le post. Suggestion : Fincut (fiche produit).
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -187,8 +206,9 @@ Metric: sale collection to product page clicks.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-32.png`
 
-**B · 13h · Worth stealing #5** : envoie-moi ta capture, j'écris le post. Suggestion : Skims (sélecteur de taille, infos de coupe).
+**B · 13h · Worth stealing #5** : envoie-moi ta capture, j'écris le post. Suggestion : Holy (fiche produit, packs).
 
 **C · 18h · Question** (130/280)
 ```
@@ -218,8 +238,9 @@ Metric: checkout completion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-33.png`
 
-**B · 13h · Worth stealing #6** : envoie-moi ta capture, j'écris le post. Suggestion : Allbirds (comparaison de modèles, tailles).
+**B · 13h · Worth stealing #6** : envoie-moi ta capture, j'écris le post. Suggestion : Represent (fiche produit, drops).
 
 **C · 18h · Appel** (191/280)
 ```
@@ -244,8 +265,9 @@ Metric: units per order.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-34.png`
 
-**B · 13h · Worth stealing #7** : envoie-moi ta capture, j'écris le post. Suggestion : Aimé Leon Dore (page d'accueil, mise en scène produit).
+**B · 13h · Worth stealing #7** : envoie-moi ta capture, j'écris le post. Suggestion : Oner Active (tailles, avis).
 
 **C · 18h · Question** (132/280)
 ```
@@ -277,8 +299,9 @@ Metric: checkout completion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-35.png`
 
-**B · 13h · Worth stealing #8** : envoie-moi ta capture, j'écris le post. Suggestion : Pangaia (infos matières sur la fiche produit).
+**B · 13h · Worth stealing #8** : envoie-moi ta capture, j'écris le post. Suggestion : AYBL (fiche produit, panier).
 
 **C · 18h · Opinion** (213/280)
 ```
@@ -301,8 +324,9 @@ Metric: mobile add-to-cart rate.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-36.png`
 
-**B · 13h · Worth stealing #9** : envoie-moi ta capture, j'écris le post. Suggestion : Sézane (fiche produit, panier, livraison).
+**B · 13h · Worth stealing #9** : envoie-moi ta capture, j'écris le post. Suggestion : Alphalete (tailles, infos de coupe).
 
 **C · 18h · Opinion** (147/280)
 ```
@@ -332,8 +356,9 @@ Metric: cart edits, size-related returns.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-37.png`
 
-**B · 13h · Worth stealing #10** : envoie-moi ta capture, j'écris le post. Suggestion : Polène (galerie photo, mise à l'échelle).
+**B · 13h · Worth stealing #10** : envoie-moi ta capture, j'écris le post. Suggestion : YoungLA (fiche produit, collections).
 
 **C · 18h · Question** (80/280)
 ```
@@ -354,8 +379,9 @@ Metric: collection to product page clicks.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #11** : envoie-moi ta capture, j'écris le post. Suggestion : Asphalte (précommande, explication du modèle).
+**B · 13h · Worth stealing #11** : envoie-moi ta capture, j'écris le post. Suggestion : Corteiz (drops, ruptures).
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -376,8 +402,9 @@ Metric: signups, conversion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-39.png`
 
-**B · 13h · Worth stealing #12** : envoie-moi ta capture, j'écris le post. Suggestion : Le Slip Français (packs, cadeaux).
+**B · 13h · Worth stealing #12** : envoie-moi ta capture, j'écris le post. Suggestion : Broken Planet (drops, fiche produit).
 
 **C · 18h · Appel** (181/280)
 ```
@@ -402,8 +429,9 @@ Metric: December conversion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-40.png`
 
-**B · 13h · Worth stealing #13** : envoie-moi ta capture, j'écris le post. Suggestion : Veja (guide des tailles, infos matières).
+**B · 13h · Worth stealing #13** : envoie-moi ta capture, j'écris le post. Suggestion : Castore (fiche produit, livraison).
 
 **C · 18h · Opinion** (184/280)
 ```
@@ -426,8 +454,9 @@ Metric: conversion, average order value.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-41.png`
 
-**B · 13h · Worth stealing #14** : envoie-moi ta capture, j'écris le post. Suggestion : Respire (routines, abonnement).
+**B · 13h · Worth stealing #14** : envoie-moi ta capture, j'écris le post. Suggestion : Skims (tailles, infos de coupe).
 
 **C · 18h · Question** (110/280)
 ```
@@ -457,8 +486,9 @@ Metric: checkout completion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-42.png`
 
-**B · 13h · Worth stealing #15** : envoie-moi ta capture, j'écris le post. Suggestion : Typology (diagnostic, recommandations).
+**B · 13h · Worth stealing #15** : envoie-moi ta capture, j'écris le post. Suggestion : Alo Yoga (fiche produit, panier).
 
 **C · 18h · Journal** (202/280)
 ```
@@ -487,8 +517,9 @@ Metric: add-to-cart rate, wrong-color returns.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #16** : envoie-moi ta capture, j'écris le post. Suggestion : Glossier (teintes, avis).
+**B · 13h · Worth stealing #16** : envoie-moi ta capture, j'écris le post. Suggestion : Vuori (guide des tailles, avis).
 
 **C · 18h · Appel** (175/280)
 ```
@@ -513,8 +544,9 @@ Metric: add-to-cart rate, size returns.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-44.png`
 
-**B · 13h · Worth stealing #17** : envoie-moi ta capture, j'écris le post. Suggestion : Rhode (fiche produit, ruptures).
+**B · 13h · Worth stealing #17** : envoie-moi ta capture, j'écris le post. Suggestion : Horace (routines, packs).
 
 **C · 18h · Question** (118/280)
 ```
@@ -537,8 +569,9 @@ Metric: wishlist adds, return visits.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #18** : envoie-moi ta capture, j'écris le post. Suggestion : Huel (abonnement, packs).
+**B · 13h · Worth stealing #18** : envoie-moi ta capture, j'écris le post. Suggestion : Le Slip Français (packs, cadeaux).
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -559,8 +592,9 @@ Metric: conversion of international visitors.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-46.png`
 
-**B · 13h · Worth stealing #19** : envoie-moi ta capture, j'écris le post. Suggestion : Olipop (packs, prix par unité).
+**B · 13h · Worth stealing #19** : envoie-moi ta capture, j'écris le post. Suggestion : Polène (galerie photo, mise à l'échelle).
 
 **C · 18h · Opinion** (162/280)
 ```
@@ -592,8 +626,9 @@ Metric: international conversion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-47.png`
 
-**B · 13h · Worth stealing #20** : envoie-moi ta capture, j'écris le post. Suggestion : Our Place (variantes de couleur, cadeaux).
+**B · 13h · Worth stealing #20** : envoie-moi ta capture, j'écris le post. Suggestion : Sézane (fiche produit, livraison).
 
 **C · 18h · Question** (127/280)
 ```
@@ -616,8 +651,9 @@ Metric: checkout completion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-48.png`
 
-**B · 13h · Worth stealing #21** : envoie-moi ta capture, j'écris le post. Suggestion : Gymshark (fiche produit mobile, sélecteur de taille, panier).
+**B · 13h · Worth stealing #21** : envoie-moi ta capture, j'écris le post. Suggestion : Asphalte (précommande).
 
 **C · 18h · Opinion** (165/280)
 ```
@@ -649,8 +685,9 @@ Metric: mobile add-to-cart rate.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #22** : envoie-moi ta capture, j'écris le post. Suggestion : Represent (fiche produit, pages de drop).
+**B · 13h · Worth stealing #22** : envoie-moi ta capture, j'écris le post. Suggestion : Jacquemus (fiche produit, galerie).
 
 **C · 18h · Appel** (150/280)
 ```
@@ -673,8 +710,9 @@ Metric: images viewed, add-to-cart rate.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #23** : envoie-moi ta capture, j'écris le post. Suggestion : Alo Yoga (fiche produit, infos de coupe).
+**B · 13h · Worth stealing #23** : envoie-moi ta capture, j'écris le post. Suggestion : Respire (routines, abonnement).
 
 **C · 18h · Question** (114/280)
 ```
@@ -704,8 +742,9 @@ Metric: clicks to product pages.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #24** : envoie-moi ta capture, j'écris le post. Suggestion : Vuori (guide des tailles, avis).
+**B · 13h · Worth stealing #24** : envoie-moi ta capture, j'écris le post. Suggestion : Typology (diagnostic, recommandations).
 
 **C · 18h · Journal** (153/280)
 ```
@@ -732,8 +771,9 @@ Metric: clicks to product pages.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #25** : envoie-moi ta capture, j'écris le post. Suggestion : Skims (sélecteur de taille, infos de coupe).
+**B · 13h · Worth stealing #25** : envoie-moi ta capture, j'écris le post. Suggestion : Glossier (teintes, avis).
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -754,8 +794,9 @@ Metric: products viewed per session.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #26** : envoie-moi ta capture, j'écris le post. Suggestion : Allbirds (comparaison de modèles, tailles).
+**B · 13h · Worth stealing #26** : envoie-moi ta capture, j'écris le post. Suggestion : Rhode (fiche produit, ruptures).
 
 **C · 18h · Question** (137/280)
 ```
@@ -785,8 +826,9 @@ Metric: gift card sales after the cutoff.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-54.png`
 
-**B · 13h · Worth stealing #27** : envoie-moi ta capture, j'écris le post. Suggestion : Aimé Leon Dore (page d'accueil, mise en scène produit).
+**B · 13h · Worth stealing #27** : envoie-moi ta capture, j'écris le post. Suggestion : Huel (abonnement, packs).
 
 **C · 18h · Opinion** (150/280)
 ```
@@ -809,8 +851,9 @@ Metric: December conversion.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #28** : envoie-moi ta capture, j'écris le post. Suggestion : Pangaia (infos matières sur la fiche produit).
+**B · 13h · Worth stealing #28** : envoie-moi ta capture, j'écris le post. Suggestion : AG1 (abonnement).
 
 **C · 18h · Appel** (179/280)
 ```
@@ -835,8 +878,9 @@ Metric: size changes in cart, add-to-cart rate.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #29** : envoie-moi ta capture, j'écris le post. Suggestion : Sézane (fiche produit, panier, livraison).
+**B · 13h · Worth stealing #29** : envoie-moi ta capture, j'écris le post. Suggestion : Grenade (packs, prix par unité).
 
 **C · 18h · Question** (67/280)
 ```
@@ -857,8 +901,9 @@ Metric: wrong-variant returns.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #30** : envoie-moi ta capture, j'écris le post. Suggestion : Polène (galerie photo, mise à l'échelle).
+**B · 13h · Worth stealing #30** : envoie-moi ta capture, j'écris le post. Suggestion : Ruggable (tailles, variantes).
 
 **C · 18h · Opinion** (131/280)
 ```
@@ -888,8 +933,9 @@ Metric: pack share of orders, average order value.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-58.png`
 
-**B · 13h · Worth stealing #31** : envoie-moi ta capture, j'écris le post. Suggestion : Asphalte (précommande, explication du modèle).
+**B · 13h · Worth stealing #31** : envoie-moi ta capture, j'écris le post. Suggestion : HexClad (packs, garanties).
 
 **C · 18h · Question** (57/280)
 ```
@@ -910,8 +956,9 @@ Metric: add-to-cart rate.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-59.png`
 
-**B · 13h · Worth stealing #32** : envoie-moi ta capture, j'écris le post. Suggestion : Le Slip Français (packs, cadeaux).
+**B · 13h · Worth stealing #32** : envoie-moi ta capture, j'écris le post. Suggestion : Ridge (comparaison de modèles).
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -932,8 +979,9 @@ Metric: add-to-cart rate.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #33** : envoie-moi ta capture, j'écris le post. Suggestion : Veja (guide des tailles, infos matières).
+**B · 13h · Worth stealing #33** : envoie-moi ta capture, j'écris le post. Suggestion : Manscaped (packs, abonnement).
 
 **C · 18h · Journal** (213/280)
 ```
@@ -965,8 +1013,9 @@ Metric: hero clicks, homepage exits.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #34** : envoie-moi ta capture, j'écris le post. Suggestion : Respire (routines, abonnement).
+**B · 13h · Worth stealing #34** : envoie-moi ta capture, j'écris le post. Suggestion : Gymshark (fiche produit mobile, tailles, panier).
 
 **C · 18h · Appel** (155/280)
 ```
@@ -989,8 +1038,9 @@ Metric: add-to-cart rate.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #35** : envoie-moi ta capture, j'écris le post. Suggestion : Typology (diagnostic, recommandations).
+**B · 13h · Worth stealing #35** : envoie-moi ta capture, j'écris le post. Suggestion : Boku (la fiche produit de référence du robot).
 
 **C · 18h · Opinion** (142/280)
 ```
@@ -1023,8 +1073,9 @@ Metric: "where is my order" tickets.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #36** : envoie-moi ta capture, j'écris le post. Suggestion : Glossier (teintes, avis).
+**B · 13h · Worth stealing #36** : envoie-moi ta capture, j'écris le post. Suggestion : Arntreal (fiche produit).
 
 **C · 18h · Question** (93/280)
 ```
@@ -1045,8 +1096,9 @@ Metric: exits from the empty cart.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #37** : envoie-moi ta capture, j'écris le post. Suggestion : Rhode (fiche produit, ruptures).
+**B · 13h · Worth stealing #37** : envoie-moi ta capture, j'écris le post. Suggestion : Fincut (fiche produit).
 
 **C · 18h · Question** (90/280)
 ```
@@ -1067,8 +1119,9 @@ Metric: sale page conversion.
 
 Follow for more.
 ```
+Visuel : `design/social/x-friction/friction-65.png`
 
-**B · 13h · Worth stealing #38** : envoie-moi ta capture, j'écris le post. Suggestion : Huel (abonnement, packs).
+**B · 13h · Worth stealing #38** : envoie-moi ta capture, j'écris le post. Suggestion : Holy (fiche produit, packs).
 
 **C · 18h · Question** (121/280)
 ```
@@ -1091,8 +1144,9 @@ Metric: items per order.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #39** : envoie-moi ta capture, j'écris le post. Suggestion : Olipop (packs, prix par unité).
+**B · 13h · Worth stealing #39** : envoie-moi ta capture, j'écris le post. Suggestion : Represent (fiche produit, drops).
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -1113,8 +1167,9 @@ Metric: clicks to product pages.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #40** : envoie-moi ta capture, j'écris le post. Suggestion : Our Place (variantes de couleur, cadeaux).
+**B · 13h · Worth stealing #40** : envoie-moi ta capture, j'écris le post. Suggestion : Oner Active (tailles, avis).
 
 **C · 18h · Question** (57/280)
 ```
@@ -1142,8 +1197,9 @@ Metric: add-to-cart from recommendations.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #41** : envoie-moi ta capture, j'écris le post. Suggestion : Gymshark (fiche produit mobile, sélecteur de taille, panier).
+**B · 13h · Worth stealing #41** : envoie-moi ta capture, j'écris le post. Suggestion : AYBL (fiche produit, panier).
 
 **C · 18h · Opinion** (166/280)
 ```
@@ -1166,8 +1222,9 @@ Metric: exits from the 404.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #42** : envoie-moi ta capture, j'écris le post. Suggestion : Represent (fiche produit, pages de drop).
+**B · 13h · Worth stealing #42** : envoie-moi ta capture, j'écris le post. Suggestion : Alphalete (tailles, infos de coupe).
 
 **C · 18h · Journal** (153/280)
 ```
@@ -1197,8 +1254,9 @@ Metric: conversion, price-related tickets.
 
 Follow for more.
 ```
+Sans visuel.
 
-**B · 13h · Worth stealing #43** : envoie-moi ta capture, j'écris le post. Suggestion : Alo Yoga (fiche produit, infos de coupe).
+**B · 13h · Worth stealing #43** : envoie-moi ta capture, j'écris le post. Suggestion : YoungLA (fiche produit, collections).
 
 **C · 18h · Appel** (181/280)
 ```
