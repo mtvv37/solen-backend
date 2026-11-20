@@ -1,17 +1,17 @@
 {
-  "run_at": "2026-11-19T10:41:03+00:00",
-  "domains_processed": 2267,
+  "run_at": "2026-11-20T10:21:26+00:00",
+  "domains_processed": 2296,
   "by_status": {
-    "no_products": 1452,
-    "unreachable": 342,
-    "ok": 222,
-    "blocked": 185,
-    "robots_disallow": 60,
-    "no_pages": 6
+    "no_products": 1503,
+    "robots_disallow": 61,
+    "unreachable": 317,
+    "ok": 206,
+    "blocked": 202,
+    "no_pages": 7
   },
-  "pages_ok": 972,
-  "pages_failed": 32,
-  "total_domains_with_pages": 5113,
-  "total_pages_ok": 22208,
+  "pages_ok": 912,
+  "pages_failed": 47,
+  "total_domains_with_pages": 5319,
+  "total_pages_ok": 23120,
   "seeds_left": 0
 }
