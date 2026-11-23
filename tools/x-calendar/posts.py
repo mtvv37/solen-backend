@@ -182,8 +182,8 @@ def friction(n, f):
 
 # C : un post par jour (sauf dimanche = bilan chiffré, écrit avec les vrais chiffres).
 # (type, texte). "Link below" = lien du formulaire en première réponse.
-C = [
- ("Appel", "New plan for Solen.\n\nI'm stopping the free audit offers (7 weeks here, zero takers) and doing what I should have started with: talking to merchants.\n\nHow do you decide what to change on your store? 4-min form below, or a 20-min call if you speak French"),
+C_ORIG = [
+ ("Appel", "New plan for Solen.\n\nI'm stopping the free audit offers (8 weeks here, zero takers) and doing what I should have started with: talking to merchants.\n\nHow do you decide what to change on your store? 4-min form below, or a 20-min call if you speak French"),
  ("Question", "Shopify founders: what are you changing on your store before Black Friday, and what are you deliberately leaving alone?"),
  ("Opinion", "Black Friday is the worst week to run a test and the best week to watch.\n\nTraffic, intent and prices are all unusual. Watch sessions, write down what breaks, test it in January."),
  None,  # dimanche 22/11
@@ -228,6 +228,12 @@ C = [
  ("Appel", "Last post of the year. Thank you for reading.\n\nIf you run a store, the most useful thing you can give Solen is 4 minutes: how you decide what to change. Link below.\n\nHappy new year."),
 ]
 
+# Le calendrier part du mardi 24 novembre (rien n'a été posté du 19 au 23).
+# Le premier post C est l'annonce du nouveau plan ; les suivants gardent leur date d'origine.
+# Retirés : les questions et l'avis d'avant le Black Friday du 20 au 23, qui doublaient ceux du 25 au 27.
+START = (2026, 11, 24)
+C = [C_ORIG[0]] + C_ORIG[6:]
+
 BRANDS = [  # (marque, catégorie, où regarder) : noms seulement, on ne dit pas « on Shopify » sans vérifier
  ("Gymshark", "sport", "fiche produit mobile, tailles, panier"),
  ("Boku", "salle de bain (helloboku.com)", "la fiche produit de référence du robot"),
@@ -267,8 +273,7 @@ BRANDS = [  # (marque, catégorie, où regarder) : noms seulement, on ne dit pas
 # D : 4e post certains jours (lun., mer., ven., hors jours où C est déjà un appel, hors Noël).
 # Uniquement des appels vers le formulaire. (mois, jour) -> texte.
 D = {
- (11, 20): "Comment \"form\" and I'll DM you the link.\n\nIt's 4 minutes on how you decide what to change on your Shopify store. No pitch, no mailing list. Everyone who answers gets the summary in January.",
- (11, 23): "If your store gets under 10k visitors a month, I especially want your answers.\n\nI honestly don't know yet if Solen can help stores your size. 4-min form below.",
+ (11, 28): "If your store gets under 10k visitors a month, I especially want your answers.\n\nI honestly don't know yet if Solen can help stores your size. 4-min form below.",
  (11, 25): "Know someone who runs a Shopify store?\n\nSend them this: 4 minutes on how they decide what to change on their store, and they get the summary of every answer in January.\n\nLink below.",
  (11, 27): "Busy day for merchants, so I'll keep it short.\n\nWhen things calm down, 4 minutes on how you decide what to fix on your store would help me more than anything I could build. Link below.",
  (12, 2): "If you've ever said \"we should test that\" and never did, I want your answer.\n\nWhat stopped you is exactly what I'm trying to understand. 4-min form below.",
@@ -290,3 +295,6 @@ VISUALS = [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 42, 44, 46, 47, 4
 REPLY = ("Run a Shopify store, work in e-commerce, or build Shopify apps?\n\n"
          "I'm building Solen, an AI app that finds what to A/B test on a store, segment by segment. "
          "I need your input: 4 minutes, nothing to buy.\n\nForm: [link]")
+
+# Frictions qui ne tiennent plus avant le 31 décembre : en réserve pour janvier.
+RESERVE = list(range(66, 71))

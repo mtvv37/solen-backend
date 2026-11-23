@@ -1,6 +1,6 @@
 import sys, datetime as dt
 sys.path.insert(0, sys.argv[1])
-from posts import FRICTIONS, C, D, BRANDS, VISUALS, REPLY, friction
+from posts import FRICTIONS, C, D, BRANDS, VISUALS, REPLY, RESERVE, START, friction
 
 def weight(s):
     # Comptage X : 1 pour les plages latines/ponctuation, 2 pour le reste (emoji, €...).
@@ -10,9 +10,9 @@ def weight(s):
         n += 1 if (o <= 4351 or 8192 <= o <= 8205 or 8208 <= o <= 8223 or 8242 <= o <= 8247) else 2
     return n
 
-start = dt.date(2026, 11, 19)
-days = [start + dt.timedelta(d) for d in range(43)]
-assert days[-1] == dt.date(2026, 12, 31) and len(FRICTIONS) == 43 and len(C) == 43
+start = dt.date(*START)
+days = [start + dt.timedelta(d) for d in range(len(C))]
+assert days[-1] == dt.date(2026, 12, 31) and len(FRICTIONS) == len(C) + len(RESERVE)
 JOURS = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
 MOIS = {11: 'novembre', 12: 'décembre'}
 EVENTS = {dt.date(2026,11,26): 'Thanksgiving (US)', dt.date(2026,11,27): 'Black Friday', dt.date(2026,11,30): 'Cyber Monday',
@@ -55,9 +55,9 @@ brand_rows = '\n'.join(f"| {n} | {cat} | {w} |" for n, cat, w in BRANDS)
 wr = weight(REPLY.replace('[link]', 'x' * 23))
 assert wr <= 280, wr
 assert sorted(VISUALS) == VISUALS and len(VISUALS) == 22
-head = f"""# Solen : 3 posts X par jour, du 19 novembre au 31 décembre 2026
+head = f"""# Solen : 3 posts X par jour, du 24 novembre au 31 décembre 2026
 
-> Version 1.3, 19/11/2026 (22 visuels de friction, visuel d'appel au formulaire, liste de marques ; sans tiret ni emoji, selon `design/social/RULES.md`). En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
+> Version 1.4, 23/11/2026 : départ décalé au mardi 24 novembre (rien n'a été posté avant). Frictions #28 à #65 jusqu'au 31 décembre, #66 à #70 en réserve pour janvier. 22 visuels de friction, visuel d'appel au formulaire, liste de marques ; sans tiret ni emoji, selon `design/social/RULES.md`. En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
 > Suite de [`X_BUILD_IN_PUBLIC.md`](X_BUILD_IN_PUBLIC.md). Objectif : obtenir des appels 1:1 et des réponses au formulaire, pas des abonnés.
 
 ## Mode d'emploi
@@ -65,7 +65,7 @@ head = f"""# Solen : 3 posts X par jour, du 19 novembre au 31 décembre 2026
 - **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. » 22 posts sur 43 ont un visuel (`design/social/x-friction/`), en priorité ceux sur l'argent.
 - **B · 13h : Worth stealing**, nouvelle série. Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
-- **D · 21h, 14 jours sur 43 : un 4e post, uniquement un appel vers le formulaire.** Les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les 8 appels en C : 22 appels en 6 semaines, plus le lien en réponse sous chaque post A et B.
+- **D · 21h, {len(D)} jours sur {len(C)} : un 4e post, uniquement un appel vers le formulaire.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les {sum(1 for c in C if c and c[0] == 'Appel')} appels en C : {len(D) + sum(1 for c in C if c and c[0] == 'Appel')} appels, plus le lien en réponse sous chaque post A et B.
 - **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
 - **Sous chaque post A et B**, ta première réponse : ce texte, avec le visuel `design/social/x-friction/cta-form.png`. Remplace `[link]` par le lien Tally.
   ```
@@ -107,6 +107,8 @@ Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy
 ## Calendrier
 """
 head = head.replace('{REPLY_BLOCK}', '\n'.join('  ' + l if l else '' for l in REPLY.split('\n')))
-open(sys.argv[2], 'w', encoding='utf-8').write(head + '\n'.join(out) + '\n')
+reserve = '\n\n## En réserve pour janvier\n\nCes frictions ne tiennent plus avant le 31 décembre.\n\n' + '\n'.join(
+    f"**Friction #{n}** ({weight(friction(n, FRICTIONS[n - 28]))}/280)\n```\n{friction(n, FRICTIONS[n - 28])}\n```\n" for n in RESERVE)
+open(sys.argv[2], 'w', encoding='utf-8').write(head + '\n'.join(out) + reserve + '\n')
 assert nd == len(D), (nd, len(D))
 print('ok, max weight', maxw, '| D posts', nd)

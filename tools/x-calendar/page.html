@@ -112,7 +112,7 @@
       <span>Solen</span>
     </div>
     <h1>Calendrier X, <em>prêt à poster</em></h1>
-    <p class="lead">Chaque post du 19 novembre au 31 décembre, avec son heure, son texte et son visuel. Copie le texte, enregistre l'image en appuyant longuement dessus, coche quand c'est publié.</p>
+    <p class="lead">Chaque post du 24 novembre au 31 décembre, avec son heure, son texte et son visuel. Copie le texte, enregistre l'image en appuyant longuement dessus, coche quand c'est publié.</p>
     <div class="stats" id="stats"></div>
   </header>
 
@@ -196,7 +196,7 @@ Follow for more.</pre>
   </section>
 
   <section id="calendrier">
-    <p class="eyebrow">Du 19 novembre au 31 décembre</p>
+    <p class="eyebrow">Du 24 novembre au 31 décembre</p>
     <h2>Le calendrier complet</h2>
     <p class="note">A à 9h : friction, B à 13h : Worth stealing, C à 18h : question, appel ou avis, D à 21h : appel vers le formulaire (certains jours). Sous chaque post A et B, la réponse type avec son visuel.</p>
     <div class="filters" role="group" aria-label="Filtrer les jours">
@@ -205,6 +205,7 @@ Follow for more.</pre>
       <button type="button" id="f-vis" aria-pressed="false">Avec visuel</button>
     </div>
     <div id="days"></div>
+    <div id="reserve"></div>
   </section>
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
@@ -294,7 +295,6 @@ Follow for more.</pre>
       ["Créer l'événement Cal.com de 20 minutes", 'Puis mettre son lien dans la page française du formulaire.'],
       ['Changer la bio X et épingler le post', 'Textes dans la section Profil.'],
       ['Remplacer [link] par le lien Tally dans la réponse type', 'Section Profil.'],
-      ['Me dire si les posts du 19 au 22 novembre sont partis', "Sinon je décale le calendrier : plusieurs posts sont calés sur le Black Friday (27 novembre)."],
     ],
     daily: [
       ['Poster A à 9h, B à 13h, C à 18h, et D à 21h quand il y en a un', 'Avec le visuel quand il y en a un.'],
@@ -408,6 +408,9 @@ Champs : prénom · lien de ta boutique · email (pour t'envoyer la synthèse)`;
   $('#f-all').addEventListener('click', () => setFilter('all'));
   $('#f-vis').addEventListener('click', () => setFilter('vis'));
   renderDays();
+  // Frictions en réserve pour janvier
+  $('#reserve').innerHTML = `<details class="day"><summary><span class="dname">En réserve pour janvier</span><span class="dmeta">${DATA.reserve.length} frictions</span></summary>
+    <div class="stack">${DATA.reserve.map((r) => { const b = block(r.text); return `<article class="post"><div class="ph"><span class="series">Shopify friction worth testing #${r.num}</span><span class="count">${r.w}/280</span></div>${b.html}<div class="acts">${copyBtn(b.id)}</div></article>`; }).join('')}</div></details>`;
 
   // Un seul écouteur pour les boutons et les cases
   document.addEventListener('click', (e) => {

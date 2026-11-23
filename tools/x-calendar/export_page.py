@@ -10,7 +10,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from posts import BRANDS, C, D, FRICTIONS, REPLY, VISUALS, friction  # noqa: E402
+from posts import BRANDS, C, D, FRICTIONS, REPLY, RESERVE, START, VISUALS, friction  # noqa: E402
 
 
 def weight(s):
@@ -38,8 +38,8 @@ IMAGES.update({
 
 def build():
     days = []
-    start = dt.date(2026, 11, 19)
-    for i in range(43):
+    start = dt.date(*START)
+    for i in range(len(C)):
         d = start + dt.timedelta(i)
         posts = []
         a = friction(28 + i, FRICTIONS[i])
@@ -58,8 +58,9 @@ def build():
         for p in posts:
             assert p.get('w', 0) <= 280, (d, p['slot'])
         days.append(dict(date=d.isoformat(), event=EVENTS.get((d.month, d.day)), posts=posts))
+    reserve = [dict(num=n, text=friction(n, FRICTIONS[n - 28]), w=weight(friction(n, FRICTIONS[n - 28]))) for n in RESERVE]
     data = dict(days=days, reply=REPLY, reply_w=weight(REPLY.replace('[link]', 'x' * 23)),
-                brands=[list(b) for b in BRANDS])
+                brands=[list(b) for b in BRANDS], reserve=reserve)
     page = open(os.path.join(HERE, 'page.html'), encoding='utf-8').read()
     payload = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     out = os.path.join(HERE, 'calendrier-x.html')
