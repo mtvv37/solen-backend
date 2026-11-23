@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Image d'aperçu du lien du formulaire (partage sur X, LinkedIn, messageries). 1200 x 630.
+     Le texte reste au centre : les réseaux recadrent parfois les bords.
+     DA de la bannière X « réseau » : fond sapin, tuiles blanches penchées, deux courbes douces au plus. -->
+<link rel="stylesheet" href="../../../video/vision-film/_src/fonts.css">
+<style>
+  :root{--bg:#040A06;--bright:#2BD07A;--light:#7EF0A5;--text:#EEF5F0;--muted:#93AA9C;--deep:#0B3D24}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1200px;height:630px;background:var(--bg);overflow:hidden}
+  #c{position:relative;width:1200px;height:630px;font-family:'Inter Tight';color:var(--text);overflow:hidden;
+     background:radial-gradient(ellipse 40% 75% at 50% 50%, #0C2416 0%, rgba(4,10,6,0) 72%), var(--bg)}
+  svg.threads{position:absolute;inset:0}
+  .halo{position:absolute;left:220px;top:120px;width:760px;height:380px;background:radial-gradient(closest-side,rgba(4,10,6,.85),rgba(4,10,6,0))}
+  .tile{position:absolute;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:19px;display:flex;align-items:center;justify-content:center;
+        background:linear-gradient(160deg,#FFFFFF,#DDEFE3);box-shadow:0 0 0 1px rgba(126,240,165,.5),0 0 34px rgba(43,208,122,.5)}
+  .tile svg{width:36px;height:36px;fill:none;stroke:var(--deep);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .tile.ab{font-family:'JetBrains Mono';font-weight:600;font-size:22px;color:var(--deep)}
+  .center{position:absolute;left:0;right:0;top:206px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand span{font-family:'Archivo';font-weight:800;font-stretch:125%;font-size:30px}
+  h1{margin-top:24px;font-weight:800;font-size:84px;line-height:1;letter-spacing:-.05em}
+  h1 i{font-style:italic;background:linear-gradient(100deg,#9BF2C2,var(--bright));-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .2em 0 .05em;margin:0 -.07em 0 -.05em}
+  .meta{margin-top:26px;font-family:'JetBrains Mono';font-size:19px;letter-spacing:.2em;text-transform:uppercase;color:var(--light)}
+</style>
+</head>
+<body>
+<div id="c">
+  <svg class="threads" width="1200" height="630" viewBox="0 0 1200 630" aria-hidden="true"></svg>
+  <div class="halo"></div>
+  <!-- Les tuiles de la bannière, hors de la bande centrale -->
+  <div class="tile" style="left:180px;top:120px;transform:rotate(-5deg)"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+  <div class="tile" style="left:96px;top:350px;transform:rotate(4deg)"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></div>
+  <div class="tile" style="left:300px;top:520px;transform:rotate(-4deg)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg></div>
+  <div class="tile ab" style="left:900px;top:522px;transform:rotate(-3deg)">A/B</div>
+  <div class="tile" style="left:1020px;top:118px;transform:rotate(5deg)"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+  <div class="tile" style="left:1104px;top:350px;transform:rotate(-6deg)"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></div>
+
+  <div class="center">
+    <div class="brand">
+      <svg width="46" height="34" viewBox="0 0 65.47 48.00" aria-hidden="true"><g fill="#FFFFFF">
+        <path d="M17.47 0.00 L55.47 0.00 L45.47 11.00 L13.47 11.00 Z"/><path d="M65.47 0.00 L51.64 38.00 L42.82 32.00 L54.47 0.00 Z"/>
+        <path d="M48.00 48.00 L10.00 48.00 L20.00 37.00 L52.00 37.00 Z"/><path d="M0.00 48.00 L13.83 10.00 L22.65 16.00 L11.00 48.00 Z"/></g></svg>
+      <span>Solen</span>
+    </div>
+    <h1>Help me <i>build</i> Solen.</h1>
+    <div class="meta">4 minutes · €0 · No pitch</div>
+  </div>
+</div>
+<script src="threads.js"></script>
+<script>
+// Deux courbes douces, comme sur les visuels X, qui ne passent pas sur le texte.
+drawThreads([
+  [[-60,50], [400,30], [800,70], [1260,30]],
+  [[-60,600], [400,615], [800,585], [1260,610]],
+]);
+</script>
+</body>
+</html>
