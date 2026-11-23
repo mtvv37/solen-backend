@@ -1,0 +1,427 @@
+<title>Calendrier X Solen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  /* Layout : une colonne de lecture, la journée du jour en tête, puis le calendrier jour par jour.
+     DA Solen assumée en sombre (fond sapin, menthe), comme les visuels X. */
+  :root{
+    --bg:#040A06; --panel:#07130C; --panel-2:#0B1D12; --line:#183323;
+    --text:#EEF5F0; --muted:#93AA9C; --mint:#7EF0A5; --green:#2BD07A; --warn:#FFB45B; --ink:#04140A;
+    --display:'Inter Tight', 'Inter', system-ui, sans-serif;
+    --body:'Inter Tight', 'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    --word:'Archivo', 'Inter Tight', system-ui, sans-serif;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.5;
+       padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:0 64px}
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+  .wrap{max-width:860px;margin:0 auto}
+  a{color:var(--mint)}
+  button{font:inherit}
+  :focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+
+  header.top{padding-block:40px 20px;display:grid;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--text)}
+  .brand span{font-family:var(--word);font-weight:800;font-stretch:125%;font-size:20px;letter-spacing:-.01em}
+  h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.045em;text-wrap:balance}
+  h1 em{font-style:italic;color:var(--mint)}
+  .lead{margin:0;color:var(--muted);max-width:62ch}
+  .stats{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--muted)}
+
+  nav.jump{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+           display:flex;gap:6px;overflow-x:auto;padding-block:10px;margin-bottom:8px;scrollbar-width:none}
+  nav.jump a{flex:none;text-decoration:none;color:var(--text);font-size:14px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:var(--panel)}
+  nav.jump a:hover{border-color:var(--green)}
+
+  section{padding-block:28px 8px;scroll-margin-top:64px}
+  h2{margin:0 0 6px;font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.035em;text-wrap:balance}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);margin:0 0 8px}
+  .note{color:var(--muted);margin:0 0 16px;max-width:65ch}
+
+  .stack{display:grid;gap:12px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:10px;min-width:0}
+  .post.done{opacity:.55}
+  .ph{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .time{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink);background:var(--mint);border-radius:7px;padding:2px 7px}
+  .series{font-weight:700}
+  .count{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .ph .spacer{flex:1}
+  .done-box{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);cursor:pointer;user-select:none}
+  .done-box input{accent-color:var(--green);width:16px;height:16px}
+  pre.txt{margin:0;white-space:pre-wrap;word-wrap:break-word;font-family:var(--body);font-size:15.5px;line-height:1.5;background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0}
+  .acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--panel-2);color:var(--text);border-radius:10px;padding:7px 12px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+  .btn:hover{border-color:var(--green)}
+  .btn.primary{background:var(--mint);color:var(--ink);border-color:var(--mint)}
+  .visual{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);max-width:100%}
+  .visual img{display:block;width:100%;height:auto}
+  .hint{font-size:13px;color:var(--muted)}
+  .todo-slot{border-style:dashed;background:transparent}
+  .todo-slot p{margin:0;color:var(--muted)}
+  .todo-slot b{color:var(--text)}
+  .warn{color:var(--warn);font-size:14px}
+  .reply-line{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+
+  details.day{border-top:1px solid var(--line)}
+  details.day > summary{list-style:none;cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;padding-block:14px}
+  details.day > summary::-webkit-details-marker{display:none}
+  .dname{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .dmeta{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em}
+  .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 8px;border:1px solid var(--line);color:var(--muted)}
+  .tag.today{background:var(--mint);color:var(--ink);border-color:var(--mint)}
+  .tag.event{color:var(--warn);border-color:rgba(255,180,91,.4)}
+  .tag.past{opacity:.7}
+  details.day .stack{padding-bottom:16px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .filters button{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer}
+  .filters button[aria-pressed="true"]{background:var(--mint);color:var(--ink);border-color:var(--mint)}
+
+  ol.steps, ul.list{margin:0;padding-left:22px;display:grid;gap:8px;max-width:68ch}
+  .checks{display:grid;gap:8px}
+  .check{display:flex;gap:10px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer}
+  .check input{margin-top:4px;accent-color:var(--green);width:16px;height:16px;flex:none}
+  .check span{min-width:0}
+  .check small{display:block;color:var(--muted)}
+  .check.done span{text-decoration:line-through;color:var(--muted)}
+  .group{margin-top:18px}
+  .group h3{margin:0 0 10px;font-size:15px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  tr:last-child td{border-bottom:0}
+  .swatch{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid var(--line);vertical-align:-1px;margin-right:6px}
+
+  #toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);background:var(--mint);color:var(--ink);font-weight:700;
+         border-radius:999px;padding:8px 16px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+  #toast.on{opacity:1}
+  @media (prefers-reduced-motion: reduce){#toast{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg width="30" height="22" viewBox="0 0 65.47 48.00" aria-hidden="true"><g fill="currentColor">
+        <path d="M17.47 0.00 L55.47 0.00 L45.47 11.00 L13.47 11.00 Z"/><path d="M65.47 0.00 L51.64 38.00 L42.82 32.00 L54.47 0.00 Z"/>
+        <path d="M48.00 48.00 L10.00 48.00 L20.00 37.00 L52.00 37.00 Z"/><path d="M0.00 48.00 L13.83 10.00 L22.65 16.00 L11.00 48.00 Z"/></g></svg>
+      <span>Solen</span>
+    </div>
+    <h1>Calendrier X, <em>prêt à poster</em></h1>
+    <p class="lead">Chaque post du 19 novembre au 31 décembre, avec son heure, son texte et son visuel. Copie le texte, enregistre l'image en appuyant longuement dessus, coche quand c'est publié.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#aujourdhui">Aujourd'hui</a>
+    <a href="#a-faire">Ce qu'il reste à faire</a>
+    <a href="#profil">Profil et réponse type</a>
+    <a href="#worth-stealing">Worth stealing</a>
+    <a href="#formulaire">Formulaire</a>
+    <a href="#calendrier">Calendrier</a>
+  </nav>
+
+  <section id="aujourdhui">
+    <p class="eyebrow" id="today-label">Aujourd'hui</p>
+    <h2 id="today-title"></h2>
+    <p class="note" id="today-note"></p>
+    <div class="stack" id="today"></div>
+  </section>
+
+  <section id="a-faire">
+    <p class="eyebrow">Ce qu'il reste à faire</p>
+    <h2>La liste, dans l'ordre</h2>
+    <p class="note">Les cases se souviennent de ce que tu coches, sur cet appareil.</p>
+    <div class="group"><h3>Une seule fois, avant de poster</h3><div class="checks" id="todo-once"></div></div>
+    <div class="group"><h3>Chaque jour</h3><div class="checks" id="todo-daily"></div></div>
+    <div class="group"><h3>Chaque semaine et à dates fixes</h3><div class="checks" id="todo-weekly"></div></div>
+    <div class="group"><h3>À me dire</h3><div class="checks" id="todo-decide"></div></div>
+    <div class="group"><h3>Hors X, côté Solen</h3><div class="checks" id="todo-solen"></div></div>
+  </section>
+
+  <section id="profil">
+    <p class="eyebrow">À mettre une fois</p>
+    <h2>Profil, post épinglé et réponse type</h2>
+    <div class="stack" id="profile"></div>
+  </section>
+
+  <section id="worth-stealing">
+    <p class="eyebrow">Série de 13h</p>
+    <h2>Worth stealing : comment faire</h2>
+    <p class="note">Tu montres une fonctionnalité d'une marque connue, j'écris le post. Une capture par jour, idéalement avant midi.</p>
+    <ol class="steps">
+      <li>Sur ton téléphone, ouvre une fiche produit de la marque proposée pour le jour (ou une autre de la liste).</li>
+      <li>Repère une chose qui aide l'acheteur à se décider : bouton d'ajout au panier qui reste visible, choix de taille, infos de coupe, délai de livraison, avis, panier, prix d'un pack.</li>
+      <li>Fais une capture d'écran entière, sans recadrer.</li>
+      <li>Envoie-la-moi avec le nom de la marque et le lien de la page.</li>
+      <li>Je t'écris le post (280 caractères maximum, finit par « Follow for more. ») et, si tu veux, je mets ta capture dans le gabarit vert des frictions, avec la mention « Not affiliated ».</li>
+      <li>Tu postes à 13h avec l'image, puis la réponse type et son visuel juste en dessous.</li>
+    </ol>
+    <div class="group"><h3>Les règles du format</h3>
+      <ul class="list">
+        <li>On décrit ce qu'on voit sur la capture, jamais les résultats de la marque : pas de « +20 % de conversion », on ne les connaît pas.</li>
+        <li>« What I'd test », jamais « they should ». C'est un compliment avec une idée, pas une critique.</li>
+        <li>On ne reprend pas une fonctionnalité déjà décortiquée par un autre compte, par exemple le bouton d'ajout au panier de Comfrt.</li>
+        <li>On n'écrit « on Shopify » que si c'est vérifié.</li>
+      </ul>
+    </div>
+    <div class="group"><h3>Le format du post</h3>
+      <div class="post">
+        <pre class="txt" id="ws-template">Worth stealing #1: [Brand]'s [feature].
+
+Why it works:
+· [what the shopper sees]
+· [the question it answers]
+· [the friction it removes]
+
+What I'd test: [one idea, framed as a test]
+
+Follow for more.</pre>
+      </div>
+    </div>
+    <div class="group"><h3>Les marques</h3>
+      <div class="tablewrap"><table><thead><tr><th>Marque</th><th>Catégorie</th><th>Où regarder</th></tr></thead><tbody id="brands"></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="formulaire">
+    <p class="eyebrow">Tally</p>
+    <h2>Le formulaire</h2>
+    <p class="note">À recopier dans Tally. La première question envoie les francophones vers un appel de 20 minutes et les autres vers 12 questions en anglais.</p>
+    <div class="stack" id="form"></div>
+  </section>
+
+  <section id="calendrier">
+    <p class="eyebrow">Du 19 novembre au 31 décembre</p>
+    <h2>Le calendrier complet</h2>
+    <p class="note">A à 9h : friction, B à 13h : Worth stealing, C à 18h : question, appel ou avis, D à 21h : appel vers le formulaire (certains jours). Sous chaque post A et B, la réponse type avec son visuel.</p>
+    <div class="filters" role="group" aria-label="Filtrer les jours">
+      <button type="button" id="f-next" aria-pressed="true">À venir</button>
+      <button type="button" id="f-all" aria-pressed="false">Tous les jours</button>
+      <button type="button" id="f-vis" aria-pressed="false">Avec visuel</button>
+    </div>
+    <div id="days"></div>
+  </section>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById('data').textContent);
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const store = {
+    get(k) { try { return localStorage.getItem('solen-x:' + k); } catch (e) { return null; } },
+    set(k, v) { try { v ? localStorage.setItem('solen-x:' + k, '1') : localStorage.removeItem('solen-x:' + k); } catch (e) {} },
+  };
+  const JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  const parse = (iso) => { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d); };
+  const label = (iso) => { const d = parse(iso); return `${JOURS[d.getDay()]} ${d.getDate()} ${MOIS[d.getMonth()]}`; };
+  const now = new Date();
+  const todayIso = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+  // Copie : le presse-papiers si l'app le permet, sinon le texte est sélectionné pour un copier à la main.
+  let toastTimer;
+  function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 1600); }
+  function copy(text, el) {
+    const fallback = () => { if (el) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); } toast('Texte sélectionné : copie-le'); };
+    try { navigator.clipboard.writeText(text).then(() => toast('Copié'), fallback); } catch (e) { fallback(); }
+  }
+  const copyBtn = (id, labelTxt) => `<button type="button" class="btn primary" data-copy="${id}">${labelTxt || 'Copier le texte'}</button>`;
+  const texts = {};
+  let seq = 0;
+  const block = (text) => { const id = 't' + (seq++); texts[id] = text; return { id, html: `<pre class="txt" id="${id}">${esc(text)}</pre>` }; };
+  const img = (src, alt) => `<a class="visual" href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${esc(alt)}" loading="lazy" width="1200" height="675"></a>`;
+
+  const replyImg = 'img/cta-form.png';
+  function postCard(day, p) {
+    const key = `${day.date}-${p.slot}`;
+    const done = store.get(key) === '1';
+    const doneBox = `<label class="done-box"><input type="checkbox" id="d-${key}" data-done="${key}" ${done ? 'checked' : ''}> Publié</label>`;
+    const head = (extra) => `<div class="ph"><span class="time">${p.time}</span><span class="series">${esc(p.series)}${p.num ? ' #' + p.num : ''}</span>${extra || ''}<span class="spacer"></span>${doneBox}</div>`;
+    if (p.slot === 'B') {
+      return `<article class="post todo-slot ${done ? 'done' : ''}" data-key="${key}">${head()}
+        <p><b>À écrire avec ta capture.</b> Marque suggérée : ${esc(p.brand)} (${esc(p.where)}). Envoie-moi la capture et le lien de la page.</p>
+        <div class="reply-line">Puis en réponse : le texte type et son visuel. <button type="button" class="btn" data-copy="reply">Copier la réponse</button></div></article>`;
+    }
+    if (p.sunday) {
+      return `<article class="post todo-slot ${done ? 'done' : ''}" data-key="${key}">${head()}
+        <p><b>Envoie-moi tes chiffres de la semaine</b> (réponses au formulaire, appels, abonnés) et je l'écris.</p></article>`;
+    }
+    const b = block(p.text);
+    const count = `<span class="count">${p.w}/280</span>`;
+    return `<article class="post ${done ? 'done' : ''}" data-key="${key}">${head(count)}
+      ${b.html}
+      ${p.check ? `<p class="warn">${esc(p.check)}</p>` : ''}
+      ${p.img ? img(p.img, `Visuel friction #${p.num}`) : (p.slot === 'A' ? '<p class="hint">Sans visuel.</p>' : '')}
+      <div class="acts">${copyBtn(b.id)}${p.img ? `<a class="btn" href="${p.img}" target="_blank" rel="noopener">Ouvrir l'image</a>` : ''}</div>
+      ${p.reply ? `<div class="reply-line">En réponse : le texte type et son visuel. <button type="button" class="btn" data-copy="reply">Copier la réponse</button><a class="btn" href="${replyImg}" target="_blank" rel="noopener">Visuel de la réponse</a></div>` : ''}
+    </article>`;
+  }
+  texts.reply = DATA.reply;
+
+  // Statistiques
+  const all = DATA.days.flatMap((d) => d.posts);
+  const written = all.filter((p) => p.text).length;
+  const visuals = all.filter((p) => p.img).length;
+  $('#stats').innerHTML = [`${all.length} posts`, `${written} écrits`, `${visuals} visuels de friction`, `${DATA.days.filter((d) => d.posts.length === 4).length} jours à 4 posts`]
+    .map((s) => `<span class="chip">${s}</span>`).join('');
+
+  // Aujourd'hui (ou le prochain jour du calendrier)
+  const first = DATA.days[0].date, last = DATA.days[DATA.days.length - 1].date;
+  let today = DATA.days.find((d) => d.date === todayIso);
+  if (!today && todayIso < first) { today = DATA.days[0]; $('#today-label').textContent = 'Premier jour'; }
+  if (today) {
+    $('#today-title').textContent = label(today.date).replace(/^./, (c) => c.toUpperCase()) + (today.event ? ' · ' + today.event : '');
+    $('#today-note').textContent = `${today.posts.length} posts aujourd'hui.`;
+    $('#today').innerHTML = today.posts.map((p) => postCard(today, p)).join('');
+  } else {
+    $('#today-title').textContent = todayIso > last ? 'Le calendrier est terminé' : '';
+    $('#today-note').textContent = todayIso > last ? 'Demande-moi le calendrier suivant.' : '';
+  }
+
+  // Ce qu'il reste à faire
+  const TODO = {
+    once: [
+      ['Créer le formulaire dans Tally', 'Questions plus bas, section Formulaire. Garde le lien.'],
+      ['Mettre la couverture, le logo et les couleurs dans Tally', 'Images et couleurs dans la section Formulaire.'],
+      ["Créer l'événement Cal.com de 20 minutes", 'Puis mettre son lien dans la page française du formulaire.'],
+      ['Changer la bio X et épingler le post', 'Textes dans la section Profil.'],
+      ['Remplacer [link] par le lien Tally dans la réponse type', 'Section Profil.'],
+      ['Me dire si les posts du 19 au 22 novembre sont partis', "Sinon je décale le calendrier : plusieurs posts sont calés sur le Black Friday (27 novembre)."],
+    ],
+    daily: [
+      ['Poster A à 9h, B à 13h, C à 18h, et D à 21h quand il y en a un', 'Avec le visuel quand il y en a un.'],
+      ['Sous chaque post A et B : la réponse type avec le visuel « Help me build Solen »', ''],
+      ['M\'envoyer la capture Worth stealing du jour, avant midi', 'Avec le nom de la marque et le lien de la page.'],
+      ['Répondre à 10 à 15 posts de comptes e-commerce et Shopify', 'C\'est ce qui a apporté tes abonnés au premier lot.'],
+    ],
+    weekly: [
+      ['Le dimanche : m\'envoyer tes chiffres pour le bilan', 'Réponses au formulaire, appels réservés, abonnés.'],
+      ["Chaque semaine : m'envoyer l'export CSV des réponses Tally", 'Je t\'en fais la synthèse.'],
+      ['Le 3 décembre : vérifier le post C du jour', 'Toujours 0 client payant ? Prix toujours à 19 € ?'],
+      ['Fin décembre : me demander le calendrier de janvier', 'Et le post du 1er janvier avec les vrais chiffres.'],
+    ],
+    decide: [
+      ['Les hashtags #shopify #ecommerce sur chaque post ?', 'La règle de design/social/RULES.md les demande. Si oui, 32 posts sont à raccourcir.'],
+      ['Les liens de Fincut et de Holy', 'Je n\'ai pas pu vérifier de quelles marques il s\'agit.'],
+      ['Garder ou retirer les deux traits verts des visuels X', 'Ils sont retirés sur les visuels du formulaire.'],
+    ],
+    solen: [
+      ['Publier le site sur Base44', 'Pour mettre en ligne la correction des places fondateur.'],
+      ['Faire un vrai paiement test sur Essentiel (essai de 14 jours, 0 € débité)', 'Puis me dire « fait » pour que je vérifie que l\'abonnement arrive bien.'],
+      ['Verzo : me donner le lien Cal.com, l\'email et le lien Solen', 'À mettre dans la configuration du site Verzo.'],
+    ],
+  };
+  for (const [group, items] of Object.entries(TODO)) {
+    $('#todo-' + group).innerHTML = items.map(([t, s], i) => {
+      const key = `todo-${group}-${i}`; const on = store.get(key) === '1';
+      return `<label class="check ${on ? 'done' : ''}"><input type="checkbox" id="${key}" data-todo="${key}" ${on ? 'checked' : ''}><span>${esc(t)}${s ? `<small>${esc(s)}</small>` : ''}</span></label>`;
+    }).join('');
+  }
+
+  // Profil et réponse type
+  const BIO = "Building Solen. Talking to Shopify merchants about how they decide what to change on their store and know it worked. 4-min form below.";
+  const PINNED = "Talking to Shopify merchants before I build more of Solen.\n\nHow do you decide what to change on your store, and how do you know it worked?\n\n4-min form, no pitch (or a 20-min call if you speak French). Everyone who answers gets the summary.\n\n[lien Tally]";
+  const bio = block(BIO), pin = block(PINNED), rep = block(DATA.reply);
+  $('#profile').innerHTML = `
+    <article class="post"><div class="ph"><span class="series">Réponse type sous chaque post A et B</span><span class="count">${DATA.reply_w}/280</span></div>
+      ${rep.html}${img(replyImg, 'Visuel de la réponse : Help me build Solen')}
+      <div class="acts">${copyBtn(rep.id)}<a class="btn" href="${replyImg}" target="_blank" rel="noopener">Ouvrir l'image</a></div>
+      <p class="hint">Remplace [link] par le lien Tally. Le visuel dit « Link above » : sur X, le texte s'affiche au-dessus de l'image.</p></article>
+    <article class="post"><div class="ph"><span class="series">Post épinglé</span><span class="count">269/280</span></div>${pin.html}<div class="acts">${copyBtn(pin.id)}</div></article>
+    <article class="post"><div class="ph"><span class="series">Bio</span><span class="count">${BIO.length}/160</span></div>${bio.html}
+      <div class="acts">${copyBtn(bio.id)}</div><p class="hint">Mets le lien Tally dans le champ site web du profil.</p></article>`;
+
+  // Marques
+  $('#brands').innerHTML = DATA.brands.map(([n, c, w]) => `<tr><td><b>${esc(n)}</b></td><td>${esc(c)}</td><td>${esc(w)}</td></tr>`).join('');
+
+  // Formulaire
+  const FORM_EN = `Intro text:
+Hi, I'm Thomas. I'm researching how Shopify merchants decide what to change on their store. No pitch, nothing to buy. Takes 4 minutes, and everyone who answers gets a summary of all the answers.
+
+Q0. Would you rather do a 20-minute call in French?
+· Oui, je parle français (go to the French page)
+· No, I'll answer here, 4 min (go to the English page)
+
+English page:
+1. Your role: Founder or owner · E-commerce or growth manager · Agency or freelancer · Shopify app developer · Other
+2. Your store URL (optional, never shared)
+3. Visitors per month, roughly: Under 5k · 5k to 10k · 10k to 50k · 50k to 200k · 200k+ · Not sure
+4. Who makes changes to your store? Me · Someone on the team · An agency or freelancer · Nobody, really
+5. Tell me about the last time you tried to improve conversion on your store. What did you notice, what did you change, and how did you know if it worked? (long answer, required)
+6. Which tools do you use to understand your visitors? (several) Shopify Analytics · Google Analytics · A heatmap tool (Hotjar, Clarity...) · An A/B testing tool · An agency or freelancer · Nothing · Other
+7. Hours per month spent on this: 0 · Under 2 · 2 to 5 · 5 to 10 · 10+
+8. Monthly spend on it (tools, agency, freelancers, $ or €): 0 · Under 50 · 50 to 200 · 200 to 1,000 · 1,000+ · Rather not say
+9. A tool or service you stopped paying for recently, and why? (optional)
+10. What's hardest for you right now? (one choice) Knowing what to change · Finding time or people to make the changes · Knowing whether a change worked · Not enough traffic to test · None, conversion isn't a priority right now
+11. If software spotted a problem on your store, how far would you let it go? Just flag it · Draft the fix, I approve it · Test it on part of my traffic · Ship winning changes automatically, within rules I set
+12. Can I follow up with 2 or 3 questions by email? (email field, optional)`;
+  const FORM_FR = `Page française :
+Top ! Réserve 20 minutes ici : [lien Cal.com]. Pas de pitch : je veux comprendre comment tu décides quoi changer sur ta boutique.
+
+Champs : prénom · lien de ta boutique · email (pour t'envoyer la synthèse)`;
+  const fen = block(FORM_EN), ffr = block(FORM_FR);
+  $('#form').innerHTML = `
+    <article class="post"><div class="ph"><span class="series">Questions en anglais</span></div>${fen.html}<div class="acts">${copyBtn(fen.id, 'Copier les questions')}</div></article>
+    <article class="post"><div class="ph"><span class="series">Page pour les francophones</span></div>${ffr.html}<div class="acts">${copyBtn(ffr.id)}</div></article>
+    <article class="post"><div class="ph"><span class="series">Couverture du formulaire</span><span class="count">1800 × 480</span></div>
+      <a class="visual" href="img/form-cover.png" target="_blank" rel="noopener"><img src="img/form-cover.png" alt="Couverture du formulaire" loading="lazy" width="1800" height="480"></a>
+      <p class="hint">Dans Tally : Add cover. Le texte reste au centre si Tally recadre.</p></article>
+    <div class="grid2">
+      <article class="post"><div class="ph"><span class="series">Aperçu du lien</span><span class="count">1200 × 630</span></div>
+        <a class="visual" href="img/form-share.png" target="_blank" rel="noopener"><img src="img/form-share.png" alt="Aperçu du lien du formulaire" loading="lazy" width="1200" height="630"></a>
+        <p class="hint">Si ton plan Tally permet de changer l'image de partage.</p></article>
+      <article class="post"><div class="ph"><span class="series">Logo</span><span class="count">1024 × 1024</span></div>
+        <a class="visual" href="img/logo.png" target="_blank" rel="noopener" style="max-width:220px"><img src="img/logo.png" alt="Logo Solen" loading="lazy" width="1024" height="1024"></a>
+        <p class="hint">Dans Tally : Add logo.</p></article>
+    </div>
+    <article class="post"><div class="ph"><span class="series">Couleurs à mettre dans Customize</span></div>
+      <div class="tablewrap"><table><tbody>
+        <tr><td>Fond</td><td><span class="swatch" style="background:#040A06"></span><code>#040A06</code></td></tr>
+        <tr><td>Texte</td><td><span class="swatch" style="background:#EEF5F0"></span><code>#EEF5F0</code></td></tr>
+        <tr><td>Boutons</td><td><span class="swatch" style="background:#2BD07A"></span><code>#2BD07A</code>, texte <code>#04140A</code></td></tr>
+        <tr><td>Champs</td><td><span class="swatch" style="background:#07130C"></span><code>#07130C</code>, bordure <code>#183323</code></td></tr>
+      </tbody></table></div><p class="hint">Si ton plan Tally le permet.</p></article>`;
+
+  // Calendrier
+  let filter = 'next';
+  function renderDays() {
+    const days = DATA.days.filter((d) => filter === 'all' || (filter === 'next' ? d.date >= todayIso || d.date === last : d.posts.some((p) => p.img)));
+    $('#days').innerHTML = days.map((d) => {
+      const isToday = d.date === todayIso, past = d.date < todayIso;
+      const tags = [isToday ? '<span class="tag today">Aujourd\'hui</span>' : '', past ? '<span class="tag past">Passé</span>' : '', d.event ? `<span class="tag event">${esc(d.event)}</span>` : ''].join('');
+      const nVis = d.posts.filter((p) => p.img).length;
+      return `<details class="day" id="j-${d.date}" ${isToday || (!past && filter !== 'all') ? 'open' : ''}>
+        <summary><span class="dname">${label(d.date).replace(/^./, (c) => c.toUpperCase())}</span>${tags}<span class="dmeta">${d.posts.length} posts${nVis ? ' · 1 visuel' : ''}</span></summary>
+        <div class="stack">${d.posts.map((p) => postCard(d, p)).join('')}</div></details>`;
+    }).join('') || '<p class="note">Aucun jour pour ce filtre.</p>';
+  }
+  function setFilter(f) { filter = f; for (const [id, v] of [['#f-next', 'next'], ['#f-all', 'all'], ['#f-vis', 'vis']]) $(id).setAttribute('aria-pressed', String(v === f)); renderDays(); }
+  $('#f-next').addEventListener('click', () => setFilter('next'));
+  $('#f-all').addEventListener('click', () => setFilter('all'));
+  $('#f-vis').addEventListener('click', () => setFilter('vis'));
+  renderDays();
+
+  // Un seul écouteur pour les boutons et les cases
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-copy]');
+    if (b) { const id = b.dataset.copy; copy(texts[id], document.getElementById(id)); }
+  });
+  document.addEventListener('change', (e) => {
+    const t = e.target;
+    if (t.dataset.done) {
+      store.set(t.dataset.done, t.checked);
+      document.querySelectorAll(`[data-key="${t.dataset.done}"]`).forEach((a) => a.classList.toggle('done', t.checked));
+      document.querySelectorAll(`[data-done="${t.dataset.done}"]`).forEach((c) => { c.checked = t.checked; });
+    }
+    if (t.dataset.todo) { store.set(t.dataset.todo, t.checked); t.closest('.check').classList.toggle('done', t.checked); }
+  });
+})();
+</script>
