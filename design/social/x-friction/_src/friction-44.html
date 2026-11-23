@@ -132,9 +132,10 @@
 // Comme la bannière : les traits partent d'un même point (caché derrière le téléphone) et balaient l'image, sans passer sur le texte.
 const H = [255, 300];
 // Deux traits au plus (demande de Thomas, 23/11).
+// Deux courbes douces qui sortent de derrière le téléphone, sans relier les tuiles une à une.
 drawThreads([
-  [H, [330,160], [452,84], [700,22], [1000,40], [1128,96], [1185,250], [1260,330]],
-  [H, [420,600], [720,628], [1010,470], [1260,410]],
+  [[250,200], [390,58], [720,18], [1260,64]],
+  [[260,450], [460,622], [820,602], [1260,470]],
 ]);
 </script>
 </body>
