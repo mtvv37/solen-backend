@@ -3,63 +3,108 @@
 <head>
 <meta charset="utf-8">
 <!-- Visuel d'appel au formulaire, en réponse sous chaque post. 1200 x 675.
-     Copie conforme de la DA de la bannière X « réseau » (design/social/banniere-x-reseau-en.png) :
-     traits en dégradé qui partent d'un point sous le titre, tuiles blanches penchées, titre centré sur deux lignes. -->
+     Même mise en page que les visuels de friction (objet à droite, texte à gauche ici) : la question du formulaire en titre,
+     le formulaire lui-même en carte blanche, comme les tuiles de la bannière. Deux courbes au plus, qui ne passent pas sur le texte. -->
 <link rel="stylesheet" href="../../../video/vision-film/_src/fonts.css">
 <style>
-  :root{--bg:#040A06;--bright:#2BD07A;--light:#7EF0A5;--text:#EEF5F0;--muted:#93AA9C}
+  :root{--bg:#040A06;--bright:#2BD07A;--light:#7EF0A5;--text:#EEF5F0;--muted:#93AA9C;--ink:#0B1F14;--deep:#0B3D24}
   *{box-sizing:border-box;margin:0;padding:0}
   body{width:1200px;height:675px;background:var(--bg);overflow:hidden}
   #c{position:relative;width:1200px;height:675px;font-family:'Inter Tight';color:var(--text);overflow:hidden;
-     background:radial-gradient(ellipse 60% 55% at 50% 42%, #0C2416 0%, rgba(4,10,6,0) 72%), var(--bg)}
+     background:radial-gradient(ellipse 42% 60% at 74% 48%, #0E2A19 0%, rgba(4,10,6,0) 70%),
+                radial-gradient(ellipse 40% 55% at 22% 45%, rgba(12,36,22,.6) 0%, rgba(4,10,6,0) 70%), var(--bg)}
   svg.threads{position:absolute;inset:0}
-  .spot{position:absolute;left:470px;top:430px;width:260px;height:180px;border-radius:50%;background:radial-gradient(closest-side,rgba(43,208,122,.2),rgba(43,208,122,0))}
-  .halo{position:absolute;left:250px;top:150px;width:700px;height:330px;background:radial-gradient(closest-side,rgba(4,10,6,.85),rgba(4,10,6,0))}
-  .tile{position:absolute;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:19px;display:flex;align-items:center;justify-content:center;
-        background:linear-gradient(160deg,#FFFFFF,#DDEFE3);box-shadow:0 0 0 1px rgba(126,240,165,.5),0 0 34px rgba(43,208,122,.5)}
-  .tile svg{width:36px;height:36px;fill:none;stroke:#0B3D24;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-  .tile.ab{font-family:'JetBrains Mono';font-weight:600;font-size:22px;color:#0B3D24}
-  .center{position:absolute;left:0;right:0;top:178px;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .brand{display:flex;align-items:center;gap:13px}
-  .brand span{font-family:'Archivo';font-weight:800;font-stretch:125%;font-size:30px}
-  h1{margin-top:30px;font-weight:800;font-size:84px;line-height:1;letter-spacing:-.05em}
+  .mono{font-family:'JetBrains Mono';letter-spacing:.18em;text-transform:uppercase}
+
+  .copy{position:absolute;left:80px;top:122px;width:500px}
+  .eyebrow{font-size:19px;color:var(--light)}
+  h1{margin-top:22px;font-weight:800;font-size:58px;line-height:1.02;letter-spacing:-.045em}
   h1 i{font-style:italic;background:linear-gradient(100deg,#9BF2C2,var(--bright));-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .2em 0 .05em;margin:0 -.07em 0 -.05em}
-  .meta{margin-top:30px;font-family:'JetBrains Mono';font-size:18px;letter-spacing:.2em;text-transform:uppercase;color:var(--light)}
+  .sub{margin-top:22px;font-size:23px;line-height:1.35;font-weight:500;color:var(--muted);letter-spacing:-.01em}
+  .meta{margin-top:26px;font-size:17px;color:var(--light)}
+
+  /* La carte du formulaire : blanche et penchée, comme une grande tuile de la bannière */
+  .glow{position:absolute;left:640px;top:90px;width:520px;height:480px;border-radius:50%;background:radial-gradient(closest-side,rgba(43,208,122,.28),rgba(43,208,122,0))}
+  .form{position:absolute;left:668px;top:86px;width:452px;height:476px;border-radius:30px;padding:28px 30px;color:var(--ink);transform:rotate(-3deg);
+        background:linear-gradient(160deg,#FFFFFF,#E2F0E7);box-shadow:0 0 0 1px rgba(126,240,165,.5),0 40px 90px rgba(0,0,0,.55),0 0 70px rgba(43,208,122,.35)}
+  .fh{display:flex;align-items:center;justify-content:space-between}
+  .fb{display:flex;align-items:center;gap:9px}
+  .fb span{font-family:'Archivo';font-weight:800;font-stretch:125%;font-size:18px}
+  .step{font-family:'JetBrains Mono';font-size:15px;color:#4F6B5B;letter-spacing:.06em}
+  .track{margin-top:16px;height:6px;border-radius:3px;background:#CFE3D6;overflow:hidden}
+  .track i{display:block;width:17%;height:100%;background:var(--bright)}
+  .q{margin-top:24px;font-size:20px;font-weight:700;letter-spacing:-.02em}
+  .chips{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{border:1.5px solid #B6D3C1;border-radius:999px;padding:8px 13px;font-size:15px;font-weight:600}
+  .chips span.on{background:var(--deep);border-color:var(--deep);color:#fff}
+  .area{margin-top:12px;height:96px;border-radius:14px;border:1.5px solid #B6D3C1;background:#fff;padding:13px 14px;font-size:16px;color:#7C9486;line-height:1.35}
+  .area b{display:inline-block;width:2px;height:20px;background:var(--bright);vertical-align:-4px;margin-right:3px}
+  .ff{margin-top:20px;display:flex;align-items:center;justify-content:space-between}
+  .ff .mono{font-size:14px;color:#4F6B5B;letter-spacing:.12em}
+  .next{display:flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:14px;background:var(--deep);color:#fff;font-weight:700;font-size:18px}
+  .next svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+  .tile{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+        background:linear-gradient(160deg,#FFFFFF,#DDEFE3);box-shadow:0 0 0 1px rgba(126,240,165,.5),0 0 32px rgba(43,208,122,.5)}
+  .tile svg{width:32px;height:32px;fill:none;stroke:var(--deep);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .tile.ab{font-family:'JetBrains Mono';font-weight:600;font-size:20px;color:var(--deep)}
+
+  .brand{position:absolute;left:76px;top:574px;display:flex;align-items:center;gap:12px}
+  .brand span{font-family:'Archivo';font-weight:800;font-stretch:125%;font-size:25px}
+  .handle{position:absolute;right:72px;top:582px;font-family:'JetBrains Mono';font-size:22px;color:var(--muted)}
 </style>
 </head>
 <body>
 <div id="c">
   <svg class="threads" width="1200" height="675" viewBox="0 0 1200 675" aria-hidden="true"></svg>
-  <div class="spot"></div>
-  <div class="halo"></div>
-  <!-- Les tuiles de la bannière : observer, recommencer, chercher, panier, A/B, idée, valider, croissance -->
-  <div class="tile" style="left:300px;top:118px;transform:rotate(-5deg)"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
-  <div class="tile" style="left:118px;top:262px;transform:rotate(4deg)"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></div>
-  <div class="tile" style="left:290px;top:492px;transform:rotate(-4deg)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg></div>
-  <div class="tile" style="left:500px;top:600px;transform:rotate(5deg)"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-  <div class="tile ab" style="left:752px;top:590px;transform:rotate(-3deg)">A/B</div>
-  <div class="tile" style="left:910px;top:488px;transform:rotate(6deg)"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></div>
-  <div class="tile" style="left:1086px;top:330px;transform:rotate(-6deg)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
-  <div class="tile" style="left:960px;top:112px;transform:rotate(4deg)"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+  <div class="glow"></div>
 
-  <div class="center">
-    <div class="brand">
-      <svg width="46" height="34" viewBox="0 0 65.47 48.00" aria-hidden="true"><g fill="#FFFFFF">
-        <path d="M17.47 0.00 L55.47 0.00 L45.47 11.00 L13.47 11.00 Z"/><path d="M65.47 0.00 L51.64 38.00 L42.82 32.00 L54.47 0.00 Z"/>
-        <path d="M48.00 48.00 L10.00 48.00 L20.00 37.00 L52.00 37.00 Z"/><path d="M0.00 48.00 L13.83 10.00 L22.65 16.00 L11.00 48.00 Z"/></g></svg>
-      <span>Solen</span>
-    </div>
-    <h1>Help me <i>build</i> Solen.<br>It's just a form.</h1>
-    <div class="meta">4 minutes · €0 · Link above</div>
+  <div class="copy">
+    <div class="eyebrow mono">Help me build Solen</div>
+    <h1>How do you decide what to <i>change</i> on your store?</h1>
+    <div class="sub">A short form for Shopify merchants, e-commerce teams and app developers.</div>
+    <div class="meta mono">4 min · €0 · Link above</div>
   </div>
+
+  <div class="form">
+    <div class="fh">
+      <div class="fb">
+        <svg width="26" height="19" viewBox="0 0 65.47 48.00" aria-hidden="true"><g fill="#0B1F14">
+          <path d="M17.47 0.00 L55.47 0.00 L45.47 11.00 L13.47 11.00 Z"/><path d="M65.47 0.00 L51.64 38.00 L42.82 32.00 L54.47 0.00 Z"/>
+          <path d="M48.00 48.00 L10.00 48.00 L20.00 37.00 L52.00 37.00 Z"/><path d="M0.00 48.00 L13.83 10.00 L22.65 16.00 L11.00 48.00 Z"/></g></svg>
+        <span>Solen</span>
+      </div>
+      <div class="step">2 / 12</div>
+    </div>
+    <div class="track"><i></i></div>
+    <div class="q">What's your role?</div>
+    <div class="chips"><span class="on">Founder</span><span>E-commerce team</span><span>Agency</span><span>Shopify app dev</span></div>
+    <div class="q">Your last change to the store. Did it work?</div>
+    <div class="area"><b></b>Walk me through it, step by step</div>
+    <div class="ff">
+      <span class="mono">No pitch</span>
+      <div class="next">Next<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </div>
+  </div>
+
+  <div class="tile" style="left:1138px;top:96px;transform:rotate(7deg)"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+  <div class="tile ab" style="left:650px;top:540px;transform:rotate(-6deg)">A/B</div>
+  <div class="tile" style="left:1140px;top:470px;transform:rotate(5deg)"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></div>
+
+  <div class="brand">
+    <svg width="40" height="29" viewBox="0 0 65.47 48.00" aria-hidden="true"><g fill="#FFFFFF">
+      <path d="M17.47 0.00 L55.47 0.00 L45.47 11.00 L13.47 11.00 Z"/><path d="M65.47 0.00 L51.64 38.00 L42.82 32.00 L54.47 0.00 Z"/>
+      <path d="M48.00 48.00 L10.00 48.00 L20.00 37.00 L52.00 37.00 Z"/><path d="M0.00 48.00 L13.83 10.00 L22.65 16.00 L11.00 48.00 Z"/></g></svg>
+    <span>Solen</span>
+  </div>
+  <div class="handle">@thomzzss_</div>
 </div>
 <script src="threads.js"></script>
 <script>
-// Comme la bannière : les traits partent d'un point sous le titre et rejoignent les tuiles et les bords.
-// Deux courbes douces au plus (demande de Thomas, 23/11), qui ne relient pas les tuiles une à une.
+// Deux courbes douces qui passent derrière la carte, jamais sur le texte.
 drawThreads([
-  [[-60,40], [350,40], [760,150], [1260,90]],
-  [[-60,520], [260,600], [620,660], [1000,610], [1260,520]],
+  [[-60,70], [420,40], [840,120], [1260,60]],
+  [[-60,652], [420,634], [900,640], [1260,604]],
 ]);
 </script>
 </body>
