@@ -8,12 +8,21 @@ Règles : questions sur ce que les gens ont fait, pas sur ce qu'ils feraient ; a
 
 PAGES = [
  dict(title="Page 1 · Intro", logic="« Oui, je parle français » → page FR. « No, continue in English » → page 2. Le schéma : un bloc image de Tally (taper /image).",
-      images=["img/form-compare.png"], text="""Help me build Solen
+      images=["img/form-compare.png"], text="""Help me uncover how Shopify stores decide what to change in 2026
 
-I'm Thomas, and I'm building Solen, an AI tool for Shopify stores.
+I'm gathering answers from people who run, grow or build for Shopify stores, to see how changes really get decided: what gets tested, what gets guessed, and what quietly gets dropped.
 
-What it is
-Most stores already have the data: Shopify Analytics, GA4, heatmaps. What's missing is the step between "this looks off" and "we changed it, and it worked". Solen tries to do that step for you.
+It takes about 4 minutes, in 3 simple steps:
+1. Share how you decide what to change today, on your store or your clients'
+2. Tell me what gets in the way
+3. Say how far you'd let AI go, and what it would take to trust it
+
+Your answers will shape a short report on how Shopify stores improve conversion. Leave your email at the end and you'll get it in January. Nothing to buy, no sales follow-up.
+
+Thanks for taking the time.
+
+Why I'm asking
+I'm Thomas, and I'm building Solen, an AI tool for Shopify stores. Most stores already have the data: Shopify Analytics, GA4, heatmaps. What's missing is the step between "this looks off" and "we changed it, and it worked". Solen tries to do that step for you.
 
 How it works today
 - you add a small script to your store
@@ -29,14 +38,7 @@ What it isn't: another dashboard. The goal is one clear next step, not more char
 
 [Image: with-vs-without-solen.png]
 
-Before I build more, I need to know how stores really decide what to change today. That's what this form is for.
-
-4 minutes, 3 short parts:
-1. You and your store
-2. How you improve it today
-3. Where AI fits, or doesn't
-
-Nothing to buy, no sales follow-up. Leave your email at the end and you'll get the full report in January.
+Before I build more, I need to know how stores really work today. That's what this form is for.
 
 Would you rather do a 20-minute call in French? (one choice, required)
 - Oui, je parle français
