@@ -71,7 +71,7 @@ const W = 310, H = 180, X = [60, 445, 830], Y1 = 150, Y2 = 470;
 
 const scenes = {
 
-  // Une seule image : With Solen à gauche, Without Solen à droite. Fond blanc, couleurs par côté.
+  // Une seule image : Without Solen à gauche, With Solen à droite. Fond blanc, couleurs par côté.
   compare() {
     size(1400, 1100);
     const G = '#1F9D5C', GF = '#E3F8EC', R = '#D9483B', RF = '#FDE9E4', INKC = '#111';
@@ -95,23 +95,23 @@ const scenes = {
       });
       text(x0 + 300, 1010, cap, 54, 'middle', 700, capColor);
     };
-    col(40, G, GF, 'With Solen', [
+    col(760, G, GF, 'With Solen', [
       { lines: ['Watches how', 'visitors behave'] },
       { lines: ['Spots where', 'they get stuck'] },
       { lines: ['Proposes a fix', '+ how sure it is'] },
       { lines: ['Above your threshold,', 'applies it itself'], dashed: true, size: 42, tag: 'coming next' },
     ], 'One clear next step.', G);
-    col(760, R, RF, 'Without Solen', [
+    col(40, R, RF, 'Without Solen', [
       { lines: ['Data everywhere:', 'Shopify, GA4, heatmaps'], size: 40 },
       { lines: ['You stare at it', 'and guess'] },
       { lines: ['You change', 'something'] },
       { lines: ['Did it work?', '???'] },
     ], 'Lots of data. No next step.', R);
     // Boucle « guess again » à droite de la colonne Without
-    add(rc.curve([[1295, 830], [1340, 760], [1345, 560], [1300, 450]], opt({ stroke: R, strokeWidth: 3 })));
-    add(rc.line(1300, 450, 1302, 474, opt({ stroke: R, strokeWidth: 3 })));
-    add(rc.line(1300, 450, 1320, 464, opt({ stroke: R, strokeWidth: 3 })));
-    const g = text(1372, 640, 'guess again', 34, 'middle', 700, R); g.setAttribute('transform', 'rotate(90 1372 640)');
+    add(rc.curve([[105, 830], [60, 760], [55, 560], [100, 450]], opt({ stroke: R, strokeWidth: 3 })));
+    add(rc.line(100, 450, 98, 474, opt({ stroke: R, strokeWidth: 3 })));
+    add(rc.line(100, 450, 80, 464, opt({ stroke: R, strokeWidth: 3 })));
+    const g = text(28, 640, 'guess again', 34, 'middle', 700, R); g.setAttribute('transform', 'rotate(-90 28 640)');
     // Séparation et « vs »
     add(rc.line(700, 70, 700, 470, opt({ stroke: '#B9BEC4', strokeWidth: 2, strokeLineDash: [10, 12] })));
     add(rc.line(700, 600, 700, 1040, opt({ stroke: '#B9BEC4', strokeWidth: 2, strokeLineDash: [10, 12] })));
