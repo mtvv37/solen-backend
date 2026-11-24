@@ -181,7 +181,7 @@
   <section id="formulaire">
     <p class="eyebrow">Tally</p>
     <h2>Le formulaire</h2>
-    <p class="note">À recopier dans Tally. La première question envoie les francophones vers un appel de 20 minutes et les autres vers 12 questions en anglais.</p>
+    <p class="note">À recopier dans Tally, une carte par page Tally. Les francophones partent vers un appel de 20 minutes. Les autres répondent en anglais : les marchands, équipes e-commerce et agences passent par la page 3A, les développeurs d'apps Shopify par la page 3B. Tout le monde finit par l'IA et le rapport.</p>
     <div class="stack" id="form"></div>
   </section>
 
@@ -340,35 +340,11 @@
   // Marques
   $('#brands').innerHTML = DATA.brands.map(([n, c, w]) => `<tr><td><b>${esc(n)}</b></td><td>${esc(c)}</td><td>${esc(w)}</td></tr>`).join('');
 
-  // Formulaire
-  const FORM_EN = `Intro text:
-Hi, I'm Thomas. I'm researching how Shopify merchants decide what to change on their store. No pitch, nothing to buy. Takes 4 minutes, and everyone who answers gets a summary of all the answers.
-
-Q0. Would you rather do a 20-minute call in French?
-· Oui, je parle français (go to the French page)
-· No, I'll answer here, 4 min (go to the English page)
-
-English page:
-1. Your role: Founder or owner · E-commerce or growth manager · Agency or freelancer · Shopify app developer · Other
-2. Your store URL (optional, never shared)
-3. Visitors per month, roughly: Under 5k · 5k to 10k · 10k to 50k · 50k to 200k · 200k+ · Not sure
-4. Who makes changes to your store? Me · Someone on the team · An agency or freelancer · Nobody, really
-5. Tell me about the last time you tried to improve conversion on your store. What did you notice, what did you change, and how did you know if it worked? (long answer, required)
-6. Which tools do you use to understand your visitors? (several) Shopify Analytics · Google Analytics · A heatmap tool (Hotjar, Clarity...) · An A/B testing tool · An agency or freelancer · Nothing · Other
-7. Hours per month spent on this: 0 · Under 2 · 2 to 5 · 5 to 10 · 10+
-8. Monthly spend on it (tools, agency, freelancers, $ or €): 0 · Under 50 · 50 to 200 · 200 to 1,000 · 1,000+ · Rather not say
-9. A tool or service you stopped paying for recently, and why? (optional)
-10. What's hardest for you right now? (one choice) Knowing what to change · Finding time or people to make the changes · Knowing whether a change worked · Not enough traffic to test · None, conversion isn't a priority right now
-11. If software spotted a problem on your store, how far would you let it go? Just flag it · Draft the fix, I approve it · Test it on part of my traffic · Ship winning changes automatically, within rules I set
-12. Can I follow up with 2 or 3 questions by email? (email field, optional)`;
-  const FORM_FR = `Page française :
-Top ! Réserve 20 minutes ici : [lien Cal.com]. Pas de pitch : je veux comprendre comment tu décides quoi changer sur ta boutique.
-
-Champs : prénom · lien de ta boutique · email (pour t'envoyer la synthèse)`;
-  const fen = block(FORM_EN), ffr = block(FORM_FR);
+  // Formulaire Tally, page par page
+  const fp = DATA.form.map((p) => ({ ...p, b: block(p.text) }));
   $('#form').innerHTML = `
-    <article class="post"><div class="ph"><span class="series">Questions en anglais</span></div>${fen.html}<div class="acts">${copyBtn(fen.id, 'Copier les questions')}</div></article>
-    <article class="post"><div class="ph"><span class="series">Page pour les francophones</span></div>${ffr.html}<div class="acts">${copyBtn(ffr.id)}</div></article>
+    ${fp.map((p) => `<article class="post"><div class="ph"><span class="series">${esc(p.title)}</span></div>${p.b.html}
+      <p class="hint">Logique : ${esc(p.logic)}</p><div class="acts">${copyBtn(p.b.id, 'Copier la page')}</div></article>`).join('')}
     <article class="post"><div class="ph"><span class="series">Couverture du formulaire</span><span class="count">1800 × 480</span></div>
       <a class="visual" href="img/form-cover.png" target="_blank" rel="noopener"><img src="img/form-cover.png" alt="Couverture du formulaire" loading="lazy" width="1800" height="480"></a>
       <p class="hint">Dans Tally : Add cover. Le texte reste au centre si Tally recadre.</p></article>

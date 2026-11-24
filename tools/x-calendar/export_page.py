@@ -13,6 +13,7 @@ sys.path.insert(0, HERE)
 from posts import BRANDS, C, D, FRICTIONS, REPLY, RESERVE, START, VISUALS, friction  # noqa: E402
 from ws_long import EXAMPLE as WS_EXAMPLE, TEMPLATE as WS_TEMPLATE  # noqa: E402
 from ws_posts import WS  # noqa: E402
+from tally_form import PAGES as FORM_PAGES  # noqa: E402
 
 # Captures Worth stealing : publiées à côté de la page, gardées hors du repo (dossier passé en argument).
 WS_IMAGES = {f'img/ws-{i + 1:02d}.' + p['shot'].rsplit('.', 1)[1]: p['shot'] for i, p in enumerate(WS) if not p['shot'].startswith('new:')}
@@ -74,7 +75,7 @@ def build():
     reserve = [dict(num=n, text=friction(n, FRICTIONS[n - 28]), w=weight(friction(n, FRICTIONS[n - 28]))) for n in RESERVE]
     data = dict(days=days, reply=REPLY, reply_w=weight(REPLY.replace('[link]', 'x' * 23)),
                 brands=[list(b) for b in BRANDS], reserve=reserve,
-                ws=dict(template=WS_TEMPLATE, example=WS_EXAMPLE))
+                ws=dict(template=WS_TEMPLATE, example=WS_EXAMPLE), form=FORM_PAGES)
     page = open(os.path.join(HERE, 'page.html'), encoding='utf-8').read()
     payload = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     out = os.path.join(HERE, 'calendrier-x.html')
