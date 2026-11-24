@@ -63,13 +63,13 @@ assert wr <= 280, wr
 assert sorted(VISUALS) == VISUALS and len(VISUALS) == 22
 head = f"""# Solen : 3 posts X par jour, du 24 novembre au 31 décembre 2026
 
-> Version 1.4, 23/11/2026 : départ décalé au mardi 24 novembre (rien n'a été posté avant). Frictions #28 à #65 jusqu'au 31 décembre, #66 à #70 en réserve pour janvier. 22 visuels de friction, visuel d'appel au formulaire, liste de marques ; sans tiret ni emoji, selon `design/social/RULES.md`. En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
+> Version 1.5, 24/11/2026 : Worth stealing complet (38 posts), réécrit en ton parlé, 900 caractères maximum, puces en tiret. Version 1.4, 23/11/2026 : départ décalé au mardi 24 novembre (rien n'a été posté avant). Frictions #28 à #65 jusqu'au 31 décembre, #66 à #70 en réserve pour janvier. 22 visuels de friction, visuel d'appel au formulaire, liste de marques ; sans tiret ni emoji, selon `design/social/RULES.md`. En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
 > Suite de [`X_BUILD_IN_PUBLIC.md`](X_BUILD_IN_PUBLIC.md). Objectif : obtenir des appels 1:1 et des réponses au formulaire, pas des abonnés.
 
 ## Mode d'emploi
 
 - **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. » 22 posts sur 43 ont un visuel (`design/social/x-friction/`), en priorité ceux sur l'argent.
-- **B · 13h : Worth stealing**, nouvelle série en format long (X Premium). Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more breakdowns like this. »
+- **B · 13h : Worth stealing**, nouvelle série en format long (X Premium). Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. 900 caractères maximum, puces en tiret, finit par « Follow for more. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
 - **D · 21h, {len(D)} jours sur {len(C)} : un 4e post, uniquement un appel vers le formulaire.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les {sum(1 for c in C if c and c[0] == 'Appel')} appels en C : {len(D) + sum(1 for c in C if c and c[0] == 'Appel')} appels, plus le lien en réponse sous chaque post A et B.
 - **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
