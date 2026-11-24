@@ -51,7 +51,7 @@ function title(s) {
   text(60, 92, s, 72, 'start', 700);
   add(rc.line(60, 112, 60 + s.length * 27, 108, opt({ strokeWidth: 3 })));
 }
-function caption(s) { text(600, 758, s, 46); }
+function caption(s) { text(600, 772, s, 46); }
 function stick(x, y, s = 1) {
   add(rc.circle(x, y, 26 * s, opt({ strokeWidth: 2.2 })));
   add(rc.line(x, y + 13 * s, x, y + 50 * s, opt({ strokeWidth: 2.2 })));
@@ -90,10 +90,9 @@ const scenes = {
     box(X[0], Y1, W, H, ['Visitors browse', 'your store']);
     box(X[1], Y1, W, H, ['Solen watches', 'how they behave']);
     box(X[2], Y1, W, H, ['Spots where', 'they get stuck']);
-    box(X[2], Y2, W, H, ['Tells you what', 'to test, why, and', 'how sure it is'], { size: 38 });
-    box(X[1], Y2, W, H, ['You decide']);
-    check(X[1] + 235, Y2 + 100);
-    box(X[0], Y2, W, H, ['Test it,', 'measure it', '(coming next)'], { dashed: true, size: 38 });
+    box(X[2], Y2, W, H, ['Proposes a fix,', 'and how sure', 'it is (e.g. 82%)'], { size: 38 });
+    box(X[1], Y2, W, H, ['Above your', 'threshold (say 80%),', 'ships it itself'], { dashed: true, size: 36 });
+    box(X[0], Y2, W, H, ['Measures it,', 'rolls it back', 'if it hurts'], { dashed: true, size: 38 });
     arrow(X[0] + W + 8, Y1 + 90, X[1] - 8, Y1 + 90);
     arrow(X[1] + W + 8, Y1 + 90, X[2] - 8, Y1 + 90);
     arrow(X[2] + 155, Y1 + H + 8, X[2] + 155, Y2 - 8);
@@ -102,6 +101,10 @@ const scenes = {
     curve([[X[0] + 150, Y2 - 8], [X[0] + 230, 405], [X[1] + 30, 385], [X[1] + 120, Y1 + H + 10]]);
     text(X[0] + 380, 458, 'learns for next time', 32);
     text(X[2] + 5, 380, ['e.g. "mobile visitors from', 'Instagram never reach', 'Add to cart"'], 28, 'end');
+    // Garde-fous, sous la 2e rangée
+    text(X[2] + 155, 688, ['prices, promos, checkout:', 'always your call'], 28);
+    text(X[1] + 155, 688, ['below the threshold,', 'it asks you first'], 28);
+    text(X[0] + 155, 688, ['dashed = coming next'], 28);
     caption('AI proposes. Reality decides.');
   },
 };

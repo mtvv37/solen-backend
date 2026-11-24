@@ -10,7 +10,9 @@ PAGES = [
  dict(title="Page 1 · Intro", logic="« Oui, je parle français » → page FR. « No, continue in English » → page 2. Les deux schémas : blocs image de Tally (taper /image).",
       images=["img/form-without.png", "img/form-with.png"], text="""Help me build Solen
 
-I'm Thomas. I'm building Solen, an AI tool for Shopify stores. It watches how visitors use your store, spots where they get stuck, and tells you what to test next, segment by segment: mobile visitors, new visitors, people coming from Instagram...
+I'm Thomas. I'm building Solen, an AI tool for Shopify stores. It watches how visitors use your store, spots where they get stuck, and proposes a fix with how sure it is, segment by segment: mobile visitors, new visitors, people coming from Instagram...
+
+Where it's going: you set a confidence threshold. Above it, Solen applies the fix itself, measures it and rolls it back if it hurts. Below it, it asks you first. Prices, promos and checkout always wait for you.
 
 [Image: without-solen.png]
 
