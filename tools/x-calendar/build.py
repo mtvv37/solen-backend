@@ -2,6 +2,7 @@ import sys, datetime as dt
 sys.path.insert(0, sys.argv[1])
 from posts import FRICTIONS, C, D, BRANDS, VISUALS, REPLY, RESERVE, START, friction
 from ws_long import EXAMPLE as WS_EXAMPLE, TEMPLATE as WS_TEMPLATE
+from ws_posts import WS
 
 def weight(s):
     # Comptage X : 1 pour les plages latines/ponctuation, 2 pour le reste (emoji, €...).
@@ -31,7 +32,11 @@ for i, d in enumerate(days):
     vis = f"\nVisuel : `design/social/x-friction/friction-{28+i}.png`\n" if 28 + i in VISUALS else "\nSans visuel.\n"
     out.append(f"**A · 9h · Friction #{28+i}** ({wa}/280)\n```\n{a}\n```{vis}")
     b = BRANDS[i % len(BRANDS)]
-    out.append(f"**B · 13h · Worth stealing #{i+1}** : envoie-moi ta capture, j'écris le post. Suggestion : {b[0]} ({b[2]}).\n")
+    if i < len(WS):
+        ws = WS[i]
+        out.append(f"**B · 13h · Worth stealing #{i+1} · {ws['brand']}** ({len(ws['text'])} caractères, X Premium)\n```\n{ws['text']}\n```\nImage : ta capture {ws['brand']}.\n")
+    else:
+        out.append(f"**B · 13h · Worth stealing #{i+1}** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.\n")
     c = C[i]
     if c is None:
         assert d.weekday() == 6, d

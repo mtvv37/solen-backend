@@ -12,6 +12,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from posts import BRANDS, C, D, FRICTIONS, REPLY, RESERVE, START, VISUALS, friction  # noqa: E402
 from ws_long import EXAMPLE as WS_EXAMPLE, TEMPLATE as WS_TEMPLATE  # noqa: E402
+from ws_posts import WS  # noqa: E402
+
+# Captures Worth stealing : publiées à côté de la page, gardées hors du repo (dossier passé en argument).
+WS_IMAGES = {f'img/ws-{i + 1:02d}.' + p['shot'].rsplit('.', 1)[1]: p['shot'] for i, p in enumerate(WS)}
+IDEE_DECEMBRE = 'guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes'
 
 
 def weight(s):
@@ -46,8 +51,14 @@ def build():
         a = friction(28 + i, FRICTIONS[i])
         posts.append(dict(slot='A', time='9h', series='Shopify friction worth testing', num=28 + i, text=a, w=weight(a),
                           img=f'img/friction-{28 + i}.png' if 28 + i in VISUALS else None, reply=True))
-        b = BRANDS[i % len(BRANDS)]
-        posts.append(dict(slot='B', time='13h', series='Worth stealing', num=i + 1, brand=b[0], where=b[2], reply=True))
+        if i < len(WS):
+            ws = WS[i]
+            img = f'img/ws-{i + 1:02d}.' + ws['shot'].rsplit('.', 1)[1]
+            posts.append(dict(slot='B', time='13h', series='Worth stealing', num=i + 1, brand=ws['brand'], text=ws['text'],
+                              w=len(ws['text']), long=True, img=img, reply=True))
+        else:
+            b = BRANDS[i % len(BRANDS)]
+            posts.append(dict(slot='B', time='13h', series='Worth stealing', num=i + 1, brand=b[0], where=IDEE_DECEMBRE, reply=True))
         c = C[i]
         if c is None:
             posts.append(dict(slot='C', time='18h', series='Bilan de la semaine', sunday=True))
@@ -57,7 +68,7 @@ def build():
         if t:
             posts.append(dict(slot='D', time='21h', series='Appel', text=t, w=weight(t)))
         for p in posts:
-            assert p.get('w', 0) <= 280, (d, p['slot'])
+            assert p.get('long') or p.get('w', 0) <= 280, (d, p['slot'])
         days.append(dict(date=d.isoformat(), event=EVENTS.get((d.month, d.day)), posts=posts))
     reserve = [dict(num=n, text=friction(n, FRICTIONS[n - 28]), w=weight(friction(n, FRICTIONS[n - 28]))) for n in RESERVE]
     data = dict(days=days, reply=REPLY, reply_w=weight(REPLY.replace('[link]', 'x' * 23)),

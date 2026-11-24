@@ -236,9 +236,9 @@
     const done = store.get(key) === '1';
     const doneBox = `<label class="done-box"><input type="checkbox" id="d-${key}" data-done="${key}" ${done ? 'checked' : ''}> Publié</label>`;
     const head = (extra) => `<div class="ph"><span class="time">${p.time}</span><span class="series">${esc(p.series)}${p.num ? ' #' + p.num : ''}</span>${extra || ''}<span class="spacer"></span>${doneBox}</div>`;
-    if (p.slot === 'B') {
+    if (p.slot === 'B' && !p.text) {
       return `<article class="post todo-slot ${done ? 'done' : ''}" data-key="${key}">${head()}
-        <p><b>À écrire avec ta capture.</b> Marque suggérée : ${esc(p.brand)} (${esc(p.where)}). Envoie-moi la capture et le lien de la page.</p>
+        <p><b>Capture à m'envoyer.</b> Idée pour décembre : ${esc(p.where)}. Une capture, un post.</p>
         <div class="reply-line">Puis en réponse : le texte type et son visuel. <button type="button" class="btn" data-copy="reply">Copier la réponse</button></div></article>`;
     }
     if (p.sunday) {
@@ -246,11 +246,12 @@
         <p><b>Envoie-moi tes chiffres de la semaine</b> (réponses au formulaire, appels, abonnés) et je l'écris.</p></article>`;
     }
     const b = block(p.text);
-    const count = `<span class="count">${p.w}/280</span>`;
+    const count = `<span class="count">${p.long ? p.w + ' caractères · X Premium' : p.w + '/280'}</span>`;
     return `<article class="post ${done ? 'done' : ''}" data-key="${key}">${head(count)}
       ${b.html}
       ${p.check ? `<p class="warn">${esc(p.check)}</p>` : ''}
-      ${p.img ? img(p.img, `Visuel friction #${p.num}`) : (p.slot === 'A' ? '<p class="hint">Sans visuel.</p>' : '')}
+      ${p.img ? img(p.img, p.slot === 'B' ? `Capture ${p.brand}` : `Visuel friction #${p.num}`) : (p.slot === 'A' ? '<p class="hint">Sans visuel.</p>' : '')}
+      ${p.slot === 'B' ? `<p class="hint">Image : ta capture ${esc(p.brand)}, telle quelle.</p>` : ''}
       <div class="acts">${copyBtn(b.id)}${p.img ? `<a class="btn" href="${p.img}" target="_blank" rel="noopener">Ouvrir l'image</a>` : ''}</div>
       ${p.reply ? `<div class="reply-line">En réponse : le texte type et son visuel. <button type="button" class="btn" data-copy="reply">Copier la réponse</button><a class="btn" href="${replyImg}" target="_blank" rel="noopener">Visuel de la réponse</a></div>` : ''}
     </article>`;
