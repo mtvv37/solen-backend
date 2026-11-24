@@ -188,29 +188,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-29.png`
 
-**B · 13h · Worth stealing #2 · Gymshark** (1016 caractères, X Premium)
+**B · 13h · Worth stealing #2 · Arntreal** (1355 caractères, X Premium)
 ```
-Worth stealing #2: Gymshark's cart drawer.
+Worth stealing #2: Arntreal's Black Friday draw.
 
-Open the cart and the first thing you read is how far you are from free shipping: "€31 to go", with a bar from €0 to €59.
+On the product page (translated): "Black Friday draw. Each order = 1 entry to win a luxury watch." Three prizes: a Rolex Oyster Perpetual, an Omega Speedmaster, a Cartier Santos. Then "See the rules".
 
 Why it works:
-· The goal comes before the items, so it frames everything below.
-· Each line repeats colour, size and fit ("Black Wash, M, Boxy Fit"). No doubt about what you picked.
-· Savings are shown per item, in euros, even in the cart.
-· "Your items aren't reserved" adds urgency that happens to be true.
+· The prize fits the promise. The page sells "everything of a luxury bag, except the price". The draw offers the real luxury logo, without paying for it.
+· A discount costs margin on every order. Three watches are a fixed cost: the more orders, the cheaper each entry gets.
+· The price doesn't move, so €149.90 stays the reference after Black Friday.
+· The rule fits in five words, and the rules link sits right under it.
 
-The smart part: the bar turns shipping from a cost into a goal you're already halfway to.
+The smart part: the purchase is reasonable, the reward is a dream. You buy a €149.90 bag and get a ticket for the watch you'd never buy yourself.
 
 What I'd test next:
-The suggestions under it. The 6-pack of socks at €19.60 doesn't close a €31 gap, and with the next pair at €11.20 you'd still be €0.20 short. I'd suggest products priced just above the gap.
-Or simpler: label one product "Unlocks free shipping".
+"Each order" rewards splitting a basket: two orders of one bag earn two entries, one order of two bags earns one. Fincut runs the same kind of draw but ties tickets to the pack: its 3+1 pack earns 3 tickets. I'd test 1 entry per bag.
+Or simpler: a bonus entry for orders of 2 bags or more.
 
-Hypothesis: shoppers add more when one tap clearly gets them over the line. Metric: share of carts reaching the threshold, average order value.
+Hypothesis: entries tied to items push basket size instead of order count. Metric: items per order during the draw, repeat orders from the same customer within the week.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Gymshark.
+Image : ta capture Arntreal.
 
 **C · 18h · Question** (132/280)
 ```
@@ -244,29 +244,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-30.png`
 
-**B · 13h · Worth stealing #3 · Represent** (1044 caractères, X Premium)
+**B · 13h · Worth stealing #3 · Based** (972 caractères, X Premium)
 ```
-Worth stealing #3: Represent's two lines under the buttons.
+Worth stealing #3: Based's Black Friday button.
 
-On the French store: "Express France Shipping" with a flag, then "EU Import Duties Included".
+The main button doesn't say "Add to cart". It says "Buy one get one €21.95", in gold.
 
 Why it works:
-· A UK brand selling into the EU after Brexit. The fear isn't the price, it's a customs bill at the door. They answer it before you ask.
-· The delivery promise names your country, not "worldwide shipping".
-· Klarna is shown as 3 payments of €18.66, under €20 each.
-· "Style With" shows four pieces with their crossed-out prices: the outfit, already on sale.
+· The offer lives in the button, the one place everybody looks before deciding.
+· The price is the same as a single, so "get one free" needs no math.
+· The banner under it repeats it: "Buy one, get one is live."
+· A 60-day satisfaction guarantee closes the page.
 
-The smart part: they localised the risks, the things that make cross-border shoppers hesitate.
+The smart part: they didn't add a promo block next to the product. They changed the action itself.
 
 What I'd test next:
-Localise the words too. The page says "RRP" and "30% OFF, SAUVEGARDER €24". In French, "sauvegarder" means saving a file. "Économisez 24 €" and "Prix conseillé" would read like a local store.
-Or simpler: fix the one discount line.
+Two details for European shoppers. The price is in euros, but the free shipping thresholds are in dollars ($50+, $100+). One currency everywhere.
+And "2.5 g" next to €21.95 can look tiny. "Lasts about X weeks" would answer it, if they know the number.
 
-Hypothesis: copy that reads native builds the same trust as "duties included". Metric: French conversion rate, before and after.
+Hypothesis: on small formats, "how long does it last?" matters more than the weight. Metric: conversion on EU traffic, reviews mentioning "small".
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Represent.
+Image : ta capture Based.
 
 **C · 18h · Opinion** (213/280)
 ```
@@ -291,29 +291,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-31.png`
 
-**B · 13h · Worth stealing #4 · Based** (972 caractères, X Premium)
+**B · 13h · Worth stealing #4 · Arntreal** (1327 caractères, X Premium)
 ```
-Worth stealing #4: Based's Black Friday button.
+Worth stealing #4: Arntreal's empty slot.
 
-The main button doesn't say "Add to cart". It says "Buy one get one €21.95", in gold.
+The Black Friday offer (translated): "1 bought = 1 free. 2 bags, the 2nd one free, colour of your choice." Next to the bag you picked sits a dashed, greyed-out bag with a "+": "Choose your free bag".
 
 Why it works:
-· The offer lives in the button, the one place everybody looks before deciding.
-· The price is the same as a single, so "get one free" needs no math.
-· The banner under it repeats it: "Buy one, get one is live."
-· A 60-day satisfaction guarantee closes the page.
+· The empty slot is a task half done. You picked one bag, the page shows the second place waiting. That's the endowed progress effect: people push harder toward a goal they feel they've already started (Nunes and Drèze, 2006).
+· Based put its buy-one-get-one in the button (#3). Arntreal draws it: the free bag is a picture, not a line of text.
+· The offer is pre-selected and framed; the single bag above it, at the same €149.90, reads like the worse deal.
+· "Colour of your choice" makes the free bag a decision, not a leftover.
 
-The smart part: they didn't add a promo block next to the product. They changed the action itself.
+The smart part: you don't read about a gift, you look at a gap in your order.
 
 What I'd test next:
-Two details for European shoppers. The price is in euros, but the free shipping thresholds are in dollars ($50+, $100+). One currency everywhere.
-And "2.5 g" next to €21.95 can look tiny. "Lasts about X weeks" would answer it, if they know the number.
+The crossed-out price. It shows €149.90 struck through next to €149.90: no visible saving. It should read €299.80 struck through, or "2 bags for €149.90, €74.95 each".
+Or simpler: once the free bag's colour is picked, show "€149.90 saved" in green.
 
-Hypothesis: on small formats, "how long does it last?" matters more than the weight. Metric: conversion on EU traffic, reviews mentioning "small".
+Hypothesis: a visible saving turns "nice offer" into "I lose €149.90 if I skip it". Metric: share of orders taking the 2-bag offer, add-to-cart rate.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Based.
+Image : ta capture Arntreal.
 
 **C · 18h · Opinion** (147/280)
 ```
@@ -442,29 +442,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-34.png`
 
-**B · 13h · Worth stealing #7 · HOLY** (990 caractères, X Premium)
+**B · 13h · Worth stealing #7 · Represent** (1044 caractères, X Premium)
 ```
-Worth stealing #7: HOLY's price per portion.
+Worth stealing #7: Represent's two lines under the buttons.
 
-A €99.99 bundle, and the line right under it: "150 portions. Only €0.80 per portion."
+On the French store: "Express France Shipping" with a flag, then "EU Import Duties Included".
 
 Why it works:
-· It turns a three-digit price into a daily one. Same money, smaller unit.
-· "Total value €119.97" sits above, so €99.99 already reads as a saving.
-· The button is in the first person: "I add to cart". The shopper says it, not the brand.
-· "Mix & match: save up to 20%" keeps the door open for people who don't want every flavour.
+· A UK brand selling into the EU after Brexit. The fear isn't the price, it's a customs bill at the door. They answer it before you ask.
+· The delivery promise names your country, not "worldwide shipping".
+· Klarna is shown as 3 payments of €18.66, under €20 each.
+· "Style With" shows four pieces with their crossed-out prices: the outfit, already on sale.
 
-The smart part: €0.80 is a number shoppers can compare to what they already buy. That comparison happens in their head, for free.
+The smart part: they localised the risks, the things that make cross-border shoppers hesitate.
 
 What I'd test next:
-Make the comparison explicit, only if it holds for their buyers: "€0.80 a portion, less than a can of energy drink".
-Or simpler: next to "Ships in 6 to 10 days", show the actual delivery date.
+Localise the words too. The page says "RRP" and "30% OFF, SAUVEGARDER €24". In French, "sauvegarder" means saving a file. "Économisez 24 €" and "Prix conseillé" would read like a local store.
+Or simpler: fix the one discount line.
 
-Hypothesis: a concrete comparison anchors lower than a bare unit price. Metric: bundle conversion rate, bundle share of orders.
+Hypothesis: copy that reads native builds the same trust as "duties included". Metric: French conversion rate, before and after.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture HOLY.
+Image : ta capture Represent.
 
 **C · 18h · Appel** (181/280)
 ```
@@ -491,29 +491,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-35.png`
 
-**B · 13h · Worth stealing #8 · Alphalete** (1003 caractères, X Premium)
+**B · 13h · Worth stealing #8 · Gymshark** (1016 caractères, X Premium)
 ```
-Worth stealing #8: Alphalete's fit suggestion.
+Worth stealing #8: Gymshark's cart drawer.
 
-"Ilon is 6'1"/185cm, wearing a size L with a 43"/109cm chest."
+Open the cart and the first thing you read is how far you are from free shipping: "€31 to go", with a bar from €0 to €59.
 
 Why it works:
-· Height tells you little about a sweater. Chest size is what decides it. They give both.
-· Imperial and metric in the same line, so nobody converts in their head.
-· "Oversized" is a badge at the top and the first line of the fit note. Said twice, so nobody sizes down by mistake.
-· The "Final sale" badge is as visible as "-70%". No surprise after delivery.
+· The goal comes before the items, so it frames everything below.
+· Each line repeats colour, size and fit ("Black Wash, M, Boxy Fit"). No doubt about what you picked.
+· Savings are shown per item, in euros, even in the cart.
+· "Your items aren't reserved" adds urgency that happens to be true.
 
-The smart part: final sale means no returns. The fit info gets more precise exactly where the safety net disappears.
+The smart part: the bar turns shipping from a cost into a goal you're already halfway to.
 
 What I'd test next:
-Add the garment's own measurements next to the model's: chest width and length of the L.
-Or simpler: one line on what to do between two sizes, if they have a clear rule.
+The suggestions under it. The 6-pack of socks at €19.60 doesn't close a €31 gap, and with the next pair at €11.20 you'd still be €0.20 short. I'd suggest products priced just above the gap.
+Or simpler: label one product "Unlocks free shipping".
 
-Hypothesis: on non-returnable items, precise fit data lowers hesitation more than a bigger discount. Metric: conversion on final sale items, sizing questions to support.
+Hypothesis: shoppers add more when one tap clearly gets them over the line. Metric: share of carts reaching the threshold, average order value.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Alphalete.
+Image : ta capture Gymshark.
 
 **C · 18h · Opinion** (184/280)
 ```
@@ -538,32 +538,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-36.png`
 
-**B · 13h · Worth stealing #9 · Arntreal** (1042 caractères, X Premium)
+**B · 13h · Worth stealing #9 · HOLY** (990 caractères, X Premium)
 ```
-Worth stealing #9: Arntreal's three lines of copy.
+Worth stealing #9: HOLY's price per portion.
 
-Right under the product name (translated from French):
-"A basic bag is bad quality.
-A luxury bag is €3,000, and you pay for the logo.
-This one has everything of luxury, at €149.90."
+A €99.99 bundle, and the line right under it: "150 portions. Only €0.80 per portion."
 
 Why it works:
-· It sets two bad options, then places the product between them. The compromise effect, done in copy instead of a pricing table.
-· €3,000 anchors the price before €149.90 shows up.
-· It talks like a friend ("tu"), not like a catalogue.
-· Below, three chips answer "when would I use it?": luxury look, every day, cabin size.
+· It turns a three-digit price into a daily one. Same money, smaller unit.
+· "Total value €119.97" sits above, so €99.99 already reads as a saving.
+· The button is in the first person: "I add to cart". The shopper says it, not the brand.
+· "Mix & match: save up to 20%" keeps the door open for people who don't want every flavour.
 
-The smart part: the shopper isn't asked "is €149.90 a lot?" but "do I want to overpay for a logo?". Different question, easier answer.
+The smart part: €0.80 is a number shoppers can compare to what they already buy. That comparison happens in their head, for free.
 
 What I'd test next:
-Make the chips do something: "Cabin size" shows the bag in an overhead bin, with its dimensions.
-Or simpler: put the dimensions inside the "Cabin size" chip.
+Make the comparison explicit, only if it holds for their buyers: "€0.80 a portion, less than a can of energy drink".
+Or simpler: next to "Ships in 6 to 10 days", show the actual delivery date.
 
-Hypothesis: concrete proof behind each use case removes the last doubt. Metric: add-to-cart rate after a chip tap.
+Hypothesis: a concrete comparison anchors lower than a bare unit price. Metric: bundle conversion rate, bundle share of orders.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Arntreal.
+Image : ta capture HOLY.
 
 **C · 18h · Question** (110/280)
 ```
@@ -595,29 +592,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-37.png`
 
-**B · 13h · Worth stealing #10 · Gymshark** (971 caractères, X Premium)
+**B · 13h · Worth stealing #10 · Alphalete** (1004 caractères, X Premium)
 ```
-Worth stealing #10: Gymshark's "224 XP".
+Worth stealing #10: Alphalete's fit suggestion.
 
-Under the add-to-cart button: "Buying this product earns you 224 XP".
+"Ilon is 6'1"/185cm, wearing a size L with a 43"/109cm chest."
 
 Why it works:
-· XP, not "points". It's the language of games, and of people who track their reps.
-· It's specific to this product, not a generic "join our rewards".
-· The same box answers the last two questions: free shipping from €59, express available.
-· Paying in 4 is shown as 4 x €7.00. A smaller number than €28, same total.
+· Height tells you little about a sweater. Chest size is what decides it. They give both.
+· Imperial and metric in the same line, so nobody converts in their head.
+· "Oversized" is a badge at the top and the first line of the fit note. Said twice, so nobody sizes down by mistake.
+· The "Final sale" badge is as visible as "-70%". No surprise after delivery.
 
-The smart part: loyalty framed as progress, not as a discount. For a gym brand, levelling up is the identity.
+The smart part: final sale means no returns. The fit info gets more precise exactly where the safety net disappears.
 
 What I'd test next:
-Give the XP a meaning: "224 XP, one order away from your next level", or what it's worth on the next order. Points without an exchange rate are just a number.
-Or simpler: show the XP total this cart would get you to.
+Add the garment's own measurements next to the model's: chest width and length of the L.
+Or simpler: one line on what to do between two sizes, if they have a clear rule.
 
-Hypothesis: a reward you can picture pulls harder than an abstract one. Metric: account sign-ups from product pages, repeat purchase rate.
+Hypothesis: on non-returnable items, precise fit data lowers hesitation more than a bigger discount. Metric: conversion on final sale items, sizing questions to support.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Gymshark.
+Image : ta capture Alphalete.
 
 **C · 18h · Journal** (202/280)
 ```
@@ -697,29 +694,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-39.png`
 
-**B · 13h · Worth stealing #12 · AYBL** (975 caractères, X Premium)
+**B · 13h · Worth stealing #12 · Gymshark** (971 caractères, X Premium)
 ```
-Worth stealing #12: AYBL's add-to-cart button.
+Worth stealing #12: Gymshark's "224 XP".
 
-Until you pick a size, the button doesn't say "Add to cart". It says "Select your size".
+Under the add-to-cart button: "Buying this product earns you 224 XP".
 
 Why it works:
-· The button tells you the next step instead of throwing an error after you tap.
-· The model's height and size are written on the first photo: 1.67m, wearing XS. The fit answer is where your eyes already are.
-· "Fits true to size" closes the key features box.
-· The newsletter isn't a pop-up. It's a small side tab: "Never miss a drop". Easy to ignore, easy to find later.
+· XP, not "points". It's the language of games, and of people who track their reps.
+· It's specific to this product, not a generic "join our rewards".
+· The same box answers the last two questions: free shipping from €59, express available.
+· Paying in 4 is shown as 4 x €7.00. A smaller number than €28, same total.
 
-The smart part: they prevent the mistake instead of correcting it. No red error text, no shake, just the right instruction in the right place.
+The smart part: loyalty framed as progress, not as a discount. For a gym brand, levelling up is the identity.
 
 What I'd test next:
-Once a size is picked, echo it in the button: "Add XS to cart".
-Or simpler: show the model's size on every photo, not only the first one.
+Give the XP a meaning: "224 XP, one order away from your next level", or what it's worth on the next order. Points without an exchange rate are just a number.
+Or simpler: show the XP total this cart would get you to.
 
-Hypothesis: confirming the choice in the button cuts wrong-size orders. Metric: size exchanges and returns.
+Hypothesis: a reward you can picture pulls harder than an abstract one. Metric: account sign-ups from product pages, repeat purchase rate.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture AYBL.
+Image : ta capture Gymshark.
 
 **C · 18h · Question** (118/280)
 ```
@@ -744,29 +741,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-40.png`
 
-**B · 13h · Worth stealing #13 · Oner Active** (996 caractères, X Premium)
+**B · 13h · Worth stealing #13 · AYBL** (975 caractères, X Premium)
 ```
-Worth stealing #13: Oner Active's colour names.
+Worth stealing #13: AYBL's add-to-cart button.
 
-The selected colour isn't "Brown". It's "70% Cocoa".
+Until you pick a size, the button doesn't say "Add to cart". It says "Select your size".
 
 Why it works:
-· You know the exact shade before you zoom: dark chocolate, not beige, not black.
-· It sticks. "The 70% Cocoa jacket" is easier to talk about than "the brown one".
-· Points are shown as 6,660 for a €66.60 jacket. Big numbers feel generous.
-· "In stock" in green sits next to the price, so availability is settled before the button.
+· The button tells you the next step instead of throwing an error after you tap.
+· The model's height and size are written on the first photo: 1.67m, wearing XS. The fit answer is where your eyes already are.
+· "Fits true to size" closes the key features box.
+· The newsletter isn't a pop-up. It's a small side tab: "Never miss a drop". Easy to ignore, easy to find later.
 
-The smart part: a colour name does the job of a photo and of a brand voice at once. Research backs it: unusual colour names tend to raise preference (Miller and Kahn, 2005).
+The smart part: they prevent the mistake instead of correcting it. No red error text, no shake, just the right instruction in the right place.
 
 What I'd test next:
-Show every swatch's name on hover or tap, not only the selected one, so shoppers browse names, not dots.
-Or simpler: keep the colour name in the cart line and the order confirmation.
+Once a size is picked, echo it in the button: "Add XS to cart".
+Or simpler: show the model's size on every photo, not only the first one.
 
-Hypothesis: named colours get explored more, and more of them get bought. Metric: swatch taps per session, colour mix of orders.
+Hypothesis: confirming the choice in the button cuts wrong-size orders. Metric: size exchanges and returns.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Oner Active.
+Image : ta capture AYBL.
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -789,29 +786,32 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-41.png`
 
-**B · 13h · Worth stealing #14 · Broken Planet** (932 caractères, X Premium)
+**B · 13h · Worth stealing #14 · Arntreal** (1043 caractères, X Premium)
 ```
-Worth stealing #14: Broken Planet's two models.
+Worth stealing #14: Arntreal's three lines of copy.
 
-"Dawn is 6'2, wearing size XL. Supriya is 5'3, wearing size M." Same sweatpants, two very different bodies.
+Right under the product name (translated from French):
+"A basic bag is bad quality.
+A luxury bag is €3,000, and you pay for the logo.
+This one has everything of luxury, at €149.90."
 
 Why it works:
-· One model gives you one data point. Two give you a range you can place yourself in.
-· It says unisex without a label.
-· "540 GSM organic cotton" comes first. For heavyweight streetwear buyers, fabric weight is the quality proof.
-· Sold-out sizes stay visible, crossed out. You see what exists and what's gone.
+· It sets two bad options, then places the product between them. The compromise effect, done in copy instead of a pricing table.
+· €3,000 anchors the price before €149.90 shows up.
+· It talks like a friend ("tu"), not like a catalogue.
+· Below, three chips answer "when would I use it?": luxury look, every day, cabin size.
 
-The smart part: they don't ask you to trust a size chart. They let you compare yourself to two real people.
+The smart part: the shopper isn't asked "is €149.90 a lot?" but "do I want to overpay for a logo?". Different question, easier answer.
 
 What I'd test next:
-Make the crossed-out sizes tappable: "XS is gone. Get notified when it's back."
-Or simpler: tag each lifestyle photo with who's wearing what size.
+Make the chips do something: "Cabin size" shows the bag in an overhead bin, with its dimensions.
+Or simpler: put the dimensions inside the "Cabin size" chip.
 
-Hypothesis: sold-out sizes are demand signals they currently throw away. Metric: back-in-stock sign-ups, sales from restock emails.
+Hypothesis: concrete proof behind each use case removes the last doubt. Metric: add-to-cart rate after a chip tap.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Broken Planet.
+Image : ta capture Arntreal.
 
 **C · 18h · Opinion** (162/280)
 ```
@@ -845,29 +845,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-42.png`
 
-**B · 13h · Worth stealing #15 · Alphalete** (1048 caractères, X Premium)
+**B · 13h · Worth stealing #15 · Oner Active** (996 caractères, X Premium)
 ```
-Worth stealing #15: Alphalete's size guide.
+Worth stealing #15: Oner Active's colour names.
 
-Most size charts give you numbers. This one first teaches you how to get yours.
+The selected colour isn't "Brown". It's "70% Cocoa".
 
 Why it works:
-· Body landmarks instead of jargon: "about 1 inch below the armpit", "in line with your belly button".
-· A physical cue for the waist: "bend to the side to find the natural crease". You can do it alone, in your room.
-· An IN / CM switch, so nobody converts in their head.
-· Ranges, not single numbers: chest 39 to 42 for an M. Real bodies sit between sizes.
+· You know the exact shade before you zoom: dark chocolate, not beige, not black.
+· It sticks. "The 70% Cocoa jacket" is easier to talk about than "the brown one".
+· Points are shown as 6,660 for a €66.60 jacket. Big numbers feel generous.
+· "In stock" in green sits next to the price, so availability is settled before the button.
 
-The smart part: a size chart is only as good as the measurement people bring to it. They fixed the input, not just the table.
+The smart part: a colour name does the job of a photo and of a brand voice at once. Research backs it: unusual colour names tend to raise preference (Miller and Kahn, 2005).
 
 What I'd test next:
-A "no tape measure?" option: lay a sweater you own flat, measure armpit to armpit, match it to the garment.
-And one small fix: the product page sells XXL and XXXL, the guide says 2XL and 3XL. Same labels on both.
+Show every swatch's name on hover or tap, not only the selected one, so shoppers browse names, not dots.
+Or simpler: keep the colour name in the cart line and the order confirmation.
 
-Hypothesis: easier measuring means more people use the guide, and fewer order two sizes. Metric: guide opens followed by add to cart, size exchanges.
+Hypothesis: named colours get explored more, and more of them get bought. Metric: swatch taps per session, colour mix of orders.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Alphalete.
+Image : ta capture Oner Active.
 
 **C · 18h · Question** (127/280)
 ```
@@ -892,29 +892,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #16 · Kosbiotic** (1142 caractères, X Premium)
+**B · 13h · Worth stealing #16 · Broken Planet** (932 caractères, X Premium)
 ```
-Worth stealing #16: Kosbiotic's subscription option.
+Worth stealing #16: Broken Planet's two models.
 
-The subscription is selected by default. What makes that acceptable is the three lines inside it (translated).
+"Dawn is 6'2, wearing size XL. Supriya is 5'3, wearing size M." Same sweatpants, two very different bodies.
 
 Why it works:
-· "Save 10% · No commitment" sits right under the price.
-· "Cancel in 1 click" answers the fear behind every subscription: will I get stuck?
-· "Automatic delivery every 28 days" matches the length of a cure. The next box lands when the last one runs out.
-· The button repeats the unit: "€66.11 / month". No doubt that it's recurring.
+· One model gives you one data point. Two give you a range you can place yourself in.
+· It says unisex without a label.
+· "540 GSM organic cotton" comes first. For heavyweight streetwear buyers, fabric weight is the quality proof.
+· Sold-out sizes stay visible, crossed out. You see what exists and what's gone.
 
-The smart part: the default does the selling, the reassurance does the trust. A pre-selected subscription without those lines would feel like a trap. And every 28 days means 13 deliveries a year, not 12: the cure length and the revenue line up.
+The smart part: they don't ask you to trust a size chart. They let you compare yourself to two real people.
 
 What I'd test next:
-Prove the 1-click cancel: a link that shows the account screen where you do it.
-Or simpler: add "Skip or pause anytime", for people afraid of a pile of boxes.
+Make the crossed-out sizes tappable: "XS is gone. Get notified when it's back."
+Or simpler: tag each lifestyle photo with who's wearing what size.
 
-Hypothesis: visible proof of an easy exit raises subscription take-up more than a bigger discount. Metric: subscription share of orders, cancellations in month 1.
+Hypothesis: sold-out sizes are demand signals they currently throw away. Metric: back-in-stock sign-ups, sales from restock emails.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Kosbiotic.
+Image : ta capture Broken Planet.
 
 **C · 18h · Opinion** (165/280)
 ```
@@ -948,29 +948,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-44.png`
 
-**B · 13h · Worth stealing #17 · Alo** (1051 caractères, X Premium)
+**B · 13h · Worth stealing #17 · Boku** (1302 caractères, X Premium)
 ```
-Worth stealing #17: Alo's annotated product photo.
+Worth stealing #17: Boku's three percentages.
 
-The second photo has labels pointing at the garment: "Soft Performance Fabric", "Fitted Sleeves", "Relaxed Fit".
+A product image, not a review block (translated): "Tested under dermatological control". Then: 95% of users find it improves hygiene, 97% of women users find it improves hygiene during periods, 98% find it pleasant to use. The bottle rests on an open hand.
 
 Why it works:
-· Each feature is named where it is, on the body, not in an accordion below.
-· Shoppers look at photos before they read. The copy goes where the attention already is.
-· "Fit: true to size, relaxed cut" repeats the fit right above the size guide.
-· The member price ("€47 for members only, sign up") turns the discount into an account.
+· Each number answers a different doubt: does it work, does it work for me, is it unpleasant to use.
+· The middle figure names a use most brands in this category stay vague about. The women it concerns see themselves in it at once.
+· The claims are worded as perception ("find that"), which is what a user survey can honestly measure.
+· The hand gives the scale: you see it's portable before reading a word.
 
-The smart part: it's the spatial contiguity principle from learning research. People understand faster when the words sit next to what they describe.
+The smart part: in an awkward category, the numbers ask the question so the shopper doesn't have to.
 
 What I'd test next:
-Make the labels tappable: "Soft Performance Fabric" opens a close-up of the fabric.
-Or simpler: add a fourth label for the question their 1,943 reviews raise most.
+Make the numbers checkable. Without a base, 95% could mean 19 people out of 20. "95% of [n] users, after [x] weeks", with their real figures, turns a claim into a result.
+Or simpler: one line of small print under the title with the study size and length.
 
-Hypothesis: annotated photos answer questions earlier, so fewer shoppers scroll down hunting for details. Metric: add-to-cart rate, accordion opens per session.
+Hypothesis: a stated sample size makes the same percentages more believable. Metric: add-to-cart rate after viewing this image, review taps after viewing it.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Alo.
+Image : ta capture Boku.
 
 **C · 18h · Appel** (150/280)
 ```
@@ -995,29 +995,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #18 · Horace** (1057 caractères, X Premium)
+**B · 13h · Worth stealing #18 · Alphalete** (1048 caractères, X Premium)
 ```
-Worth stealing #18: Horace's two questions.
+Worth stealing #18: Alphalete's size guide.
 
-The product description is two questions in bold (translated): "What does it do?" and "How do I use it?"
+Most size charts give you numbers. This one first teaches you how to get yours.
 
 Why it works:
-· For a first-time buyer, "how do I use it?" is a real question. The answer is plain: morning and/or evening, lather on a wet face and neck.
-· They're the questions you'd ask a friend at the counter, not marketing headings.
-· "Fragrance: none" gets its own line. For many buyers, that's the deal-breaker.
-· The price is in the button: "Add to cart, €13". No scrolling back up.
+· Body landmarks instead of jargon: "about 1 inch below the armpit", "in line with your belly button".
+· A physical cue for the waist: "bend to the side to find the natural crease". You can do it alone, in your room.
+· An IN / CM switch, so nobody converts in their head.
+· Ranges, not single numbers: chest 39 to 42 for an M. Real bodies sit between sizes.
 
-The smart part: they sell the routine, not just the product. Knowing how to use it removes the fear of buying something that will sit in the cabinet.
+The smart part: a size chart is only as good as the measurement people bring to it. They fixed the input, not just the table.
 
 What I'd test next:
-A third question: "What goes with it?", showing the next step of the routine and how close it gets you to free delivery at €40.
-Or simpler: a 10-second video of the "how to use" part.
+A "no tape measure?" option: lay a sweater you own flat, measure armpit to armpit, match it to the garment.
+And one small fix: the product page sells XXL and XXXL, the guide says 2XL and 3XL. Same labels on both.
 
-Hypothesis: shoppers who see a full routine buy more than one product. Metric: items per order, routine bundle take-up.
+Hypothesis: easier measuring means more people use the guide, and fewer order two sizes. Metric: guide opens followed by add to cart, size exchanges.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Horace.
+Image : ta capture Alphalete.
 
 **C · 18h · Question** (114/280)
 ```
@@ -1049,29 +1049,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-46.png`
 
-**B · 13h · Worth stealing #19 · Le Slip Français** (955 caractères, X Premium)
+**B · 13h · Worth stealing #19 · Kosbiotic** (1142 caractères, X Premium)
 ```
-Worth stealing #19: Le Slip Français's discount ladder.
+Worth stealing #19: Kosbiotic's subscription option.
 
-Three small chips under the price (translated): "-5% extra from 3", "-10% extra from 4", "-20% extra from 5".
+The subscription is selected by default. What makes that acceptable is the three lines inside it (translated).
 
 Why it works:
-· The reward for buying more is visible before you choose the quantity, not discovered at checkout.
-· Three steps instead of one threshold. Each step is a small yes.
-· "Extra" means it stacks on a price already reduced (€99 instead of €125).
-· Green dots on every size: stock is answered without a click.
+· "Save 10% · No commitment" sits right under the price.
+· "Cancel in 1 click" answers the fear behind every subscription: will I get stuck?
+· "Automatic delivery every 28 days" matches the length of a cure. The next box lands when the last one runs out.
+· The button repeats the unit: "€66.11 / month". No doubt that it's recurring.
 
-The smart part: the ladder turns "how many?" into "which step do I stop at?". Shoppers anchor on the next step, not on 1.
+The smart part: the default does the selling, the reassurance does the trust. A pre-selected subscription without those lines would feel like a trap. And every 28 days means 13 deliveries a year, not 12: the cure length and the revenue line up.
 
 What I'd test next:
-Carry the ladder into the cart: "Add 1 more item to unlock -10%."
-Or simpler: highlight the step the current cart has reached.
+Prove the 1-click cancel: a link that shows the account screen where you do it.
+Or simpler: add "Skip or pause anytime", for people afraid of a pile of boxes.
 
-Hypothesis: shoppers climb a ladder they can see from the cart, not only from the product page. Metric: items per order, share of orders at 3, 4 and 5 items.
+Hypothesis: visible proof of an easy exit raises subscription take-up more than a bigger discount. Metric: subscription share of orders, cancellations in month 1.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Le Slip Français.
+Image : ta capture Kosbiotic.
 
 **C · 18h · Journal** (153/280)
 ```
@@ -1100,29 +1100,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-47.png`
 
-**B · 13h · Worth stealing #20 · Le Slip Français** (1132 caractères, X Premium)
+**B · 13h · Worth stealing #20 · Alo** (1051 caractères, X Premium)
 ```
-Worth stealing #20: Le Slip Français's "Frequently bought together".
+Worth stealing #20: Alo's annotated product photo.
 
-Under a 5-pack at €99, the suggestions aren't socks or belts. They're bigger packs: 7 boxers at €160, 10 at €185.
+The second photo has labels pointing at the garment: "Soft Performance Fabric", "Fitted Sleeves", "Relaxed Fit".
 
 Why it works:
-· It's upsizing dressed as cross-selling. The next step up is already in view.
-· The 7-pack photo is a gift: red background, a gold bag that says "a little gift, a pretty package".
-· The designs have festive names (garland, ski run). In December, the product names do the seasonal marketing.
-· Crossed-out prices on both keep the deal frame going.
+· Each feature is named where it is, on the body, not in an accordion below.
+· Shoppers look at photos before they read. The copy goes where the attention already is.
+· "Fit: true to size, relaxed cut" repeats the fit right above the size guide.
+· The member price ("€47 for members only, sign up") turns the discount into an account.
 
-The smart part: the 10-pack is €18.50 a boxer, cheaper than the 5-pack (€19.80). The 7-pack is €22.86, more per boxer. It sells the wrapping, not the unit price.
+The smart part: it's the spatial contiguity principle from learning research. People understand faster when the words sit next to what they describe.
 
 What I'd test next:
-Show the price per boxer only where it helps: "€18.50 each" on the 10-pack.
-And sell the gift pack on the moment instead: "Gift-wrapped, delivered before Christmas", if they can promise it.
+Make the labels tappable: "Soft Performance Fabric" opens a close-up of the fabric.
+Or simpler: add a fourth label for the question their 1,943 reviews raise most.
 
-Hypothesis: unit prices push bulk buyers, gift framing pushes gift buyers. Mixing both in one carousel blurs each. Metric: take-up of each suggestion, average order value.
+Hypothesis: annotated photos answer questions earlier, so fewer shoppers scroll down hunting for details. Metric: add-to-cart rate, accordion opens per session.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Le Slip Français.
+Image : ta capture Alo.
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -1145,29 +1145,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-48.png`
 
-**B · 13h · Worth stealing #21 · Polène** (951 caractères, X Premium)
+**B · 13h · Worth stealing #21 · Horace** (1057 caractères, X Premium)
 ```
-Worth stealing #21: Polène's split screen.
+Worth stealing #21: Horace's two questions.
 
-Left half: the bag worn, in a wide landscape. Right half: the same bag alone on white, name, price, one button.
+The product description is two questions in bold (translated): "What does it do?" and "How do I use it?"
 
 Why it works:
-· Emotion and facts sit side by side. You don't scroll from one to the other.
-· The left side is read first. Desire before details.
-· The packshot has a lot of white space around it. At €380, room signals value.
-· "3D view" lets you turn the bag yourself, instead of a row of six angles.
+· For a first-time buyer, "how do I use it?" is a real question. The answer is plain: morning and/or evening, lather on a wet face and neck.
+· They're the questions you'd ask a friend at the counter, not marketing headings.
+· "Fragrance: none" gets its own line. For many buyers, that's the deal-breaker.
+· The price is in the button: "Add to cart, €13". No scrolling back up.
 
-The smart part: the page is half magazine, half shop window. It never makes you choose between wanting it and checking it.
+The smart part: they sell the routine, not just the product. Knowing how to use it removes the fear of buying something that will sit in the cabinet.
 
 What I'd test next:
-The question a compact bag always gets: what fits inside? A photo of it open with a phone, cards and keys.
-Or simpler: one line under the price saying what fits, if it does.
+A third question: "What goes with it?", showing the next step of the routine and how close it gets you to free delivery at €40.
+Or simpler: a 10-second video of the "how to use" part.
 
-Hypothesis: for small bags, "will my things fit?" is the last doubt before buying. Metric: add-to-cart rate, returns for "too small".
+Hypothesis: shoppers who see a full routine buy more than one product. Metric: items per order, routine bundle take-up.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Polène.
+Image : ta capture Horace.
 
 **C · 18h · Question** (137/280)
 ```
@@ -1199,29 +1199,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #22 · Typology** (1098 caractères, X Premium)
+**B · 13h · Worth stealing #22 · Based** (1319 caractères, X Premium)
 ```
-Worth stealing #22: Typology's lab codes.
+Worth stealing #22: Based's ingredient tiles.
 
-The serum is called "A63". Above the name, a reference like a lab sample: "LAB1035-30ML-SG". The description is set in a typewriter font.
+A product image: "The Key Ingredients. Endless Benefits." Four tiles, each with an ingredient name, a strip of the raw powder's texture, and one line on what it does for your hair.
 
 Why it works:
-· The name is the active and its concentration ("PDRN-EGF Complex 3%"), not a mood word like "Glow".
-· Precise numbers read as honest (translated): "150,000 vegan micro-spicules per gram", "95% ingredients of natural origin".
-· A 15 ml option next to the 30 ml lowers the cost of trying a new product.
-· "Is this product compatible with your skin type?" opens a diagnostic, right under the button.
+· You see the ingredients, not just their names. Silica, arrowroot, rice powder and mica each get a texture you can almost touch.
+· Every chemical name is translated into a result: volume, less oil, softness, a matte finish.
+· Four ingredients, four jobs. Nothing is listed without a reason to be there.
+· The footer packs three trust cues: science-backed, naturally derived, formulated and filled in the USA.
 
-The smart part: the page looks like a lab sheet because the promise is science. The design itself is the proof of seriousness.
+The smart part: this image answers the question a €21.95 product weighing 2.5 g raises: what exactly am I paying for? Four named actives make a small format feel dense instead of tiny.
 
 What I'd test next:
-Name the 15 ml for what it is, "Trial size", and show its price on the toggle.
-Or simpler: show the price difference before the click, not after.
+Start from the problem instead of the ingredient: "Flat hair? Silica silylate. Oily roots by noon? Arrowroot." Shoppers know their problem, not the ingredient.
+And for EU shoppers, "filled in the USA" raises a delivery question: say where it ships from and how long it takes.
 
-Hypothesis: on a new product, an explicit trial size converts first-time buyers who would skip the 30 ml. Metric: first-order conversion, repurchase from 15 ml to 30 ml.
+Hypothesis: problem-first tiles help shoppers recognise themselves, and buy. Metric: add-to-cart rate after viewing this image, gallery swipes.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Typology.
+Image : ta capture Based.
 
 **C · 18h · Opinion** (150/280)
 ```
@@ -1246,29 +1246,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #23 · Stüssy** (988 caractères, X Premium)
+**B · 13h · Worth stealing #23 · Le Slip Français** (955 caractères, X Premium)
 ```
-Worth stealing #23: Stüssy's product page, for what it leaves out.
+Worth stealing #23: Le Slip Français's discount ladder.
 
-A €70 glass ashtray. No reviews, no "only 3 left", no countdown, no upsell carousel.
+Three small chips under the price (translated): "-5% extra from 3", "-10% extra from 4", "-20% extra from 5".
 
 Why it works:
-· The product details are open by default, as a plain list: shape, notches, etched logo, material.
-· Every dimension in inches and centimetres. For an object, size is the first unknown.
-· The holiday shipping guide sits at the top, with a "Hide" link. Useful, and easy to dismiss.
-· The page looks like the brand: a list, a photo, one black button.
+· The reward for buying more is visible before you choose the quantity, not discovered at checkout.
+· Three steps instead of one threshold. Each step is a small yes.
+· "Extra" means it stacks on a price already reduced (€99 instead of €125).
+· Green dots on every size: stock is answered without a click.
 
-The smart part: for a cult brand, persuasion tricks would cheapen the product. The restraint is the signal.
+The smart part: the ladder turns "how many?" into "which step do I stop at?". Shoppers anchor on the next step, not on 1.
 
 What I'd test next:
-Scale. On a white background, 20cm reads as nothing. One photo of the ashtray next to a hand or a lighter.
-Or simpler: a side view showing the 2.5cm height.
+Carry the ladder into the cart: "Add 1 more item to unlock -10%."
+Or simpler: highlight the step the current cart has reached.
 
-Hypothesis: shoppers who can picture the real size hesitate less on a €70 object. Metric: add-to-cart rate, returns for "smaller than expected".
+Hypothesis: shoppers climb a ladder they can see from the cart, not only from the product page. Metric: items per order, share of orders at 3, 4 and 5 items.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Stüssy.
+Image : ta capture Le Slip Français.
 
 **C · 18h · Appel** (179/280)
 ```
@@ -1295,29 +1295,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #24 · Based** (1085 caractères, X Premium)
+**B · 13h · Worth stealing #24 · Polène** (951 caractères, X Premium)
 ```
-Worth stealing #24: Based's packaging notice.
+Worth stealing #24: Polène's split screen.
 
-On the product page, two tubes side by side: "New Packaging, Same Texture Powder." Then: "You may receive either our previous or new packaging. The product inside is the same."
+Left half: the bag worn, in a wide landscape. Right half: the same bag alone on white, name, price, one button.
 
 Why it works:
-· During a rebrand, the risk isn't the design. It's a customer opening a box that doesn't match the photo and thinking it's fake.
-· They show both versions, so whatever arrives was expected.
-· It answers a support ticket before it's written.
-· It turns a logistics problem into a small piece of brand news.
+· Emotion and facts sit side by side. You don't scroll from one to the other.
+· The left side is read first. Desire before details.
+· The packshot has a lot of white space around it. At €380, room signals value.
+· "3D view" lets you turn the bag yourself, instead of a row of six angles.
 
-The smart part: satisfaction is the gap between what people expect and what they get. They moved the expectation instead of hoping the old stock runs out first.
+The smart part: the page is half magazine, half shop window. It never makes you choose between wanting it and checking it.
 
 What I'd test next:
-Put the same image in the shipping confirmation email. The doubt happens at the unboxing, not on the product page.
-Or simpler: one line on the packing slip.
+The question a compact bag always gets: what fits inside? A photo of it open with a phone, cards and keys.
+Or simpler: one line under the price saying what fits, if it does.
 
-Hypothesis: fewer "is this the right product?" tickets and returns during the transition. Metric: support tickets about packaging, returns tagged "wrong item".
+Hypothesis: for small bags, "will my things fit?" is the last doubt before buying. Metric: add-to-cart rate, returns for "too small".
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Based.
+Image : ta capture Polène.
 
 **C · 18h · Question** (67/280)
 ```
@@ -1340,29 +1340,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #25 · Apple** (1122 caractères, X Premium)
+**B · 13h · Worth stealing #25 · Typology** (1098 caractères, X Premium)
 ```
-Worth stealing #25: Apple's step-by-step configurator.
+Worth stealing #25: Typology's lab codes.
 
-Each step opens with one short sentence in two colours (translated): "Model." in black, "Choose the size." in grey. Then two big cards: 13-inch and 15-inch.
+The serum is called "A63". Above the name, a reference like a lab sample: "LAB1035-30ML-SG". The description is set in a typewriter font.
 
 Why it works:
-· One decision per step. The black word names the step, the grey words tell you what to do.
-· Dots on the side show how many steps are left. No surprise at the end.
-· Each card gives the total and the monthly price: from €1,399, or €41.80 a month over 36 months.
-· Size comes first: the one question every buyer can answer without reading specs.
+· The name is the active and its concentration ("PDRN-EGF Complex 3%"), not a mood word like "Glow".
+· Precise numbers read as honest (translated): "150,000 vegan micro-spicules per gram", "95% ingredients of natural origin".
+· A 15 ml option next to the 30 ml lowers the cost of trying a new product.
+· "Is this product compatible with your skin type?" opens a diagnostic, right under the button.
 
-The smart part: in totals, the 15-inch costs €300 more. In monthly terms, it's €8.96 more. Same gap, and one of them sounds like a coffee a week.
+The smart part: the page looks like a lab sheet because the promise is science. The design itself is the proof of seriousness.
 
 What I'd test next:
-Show each upgrade as a difference from the current choice: "+€8.96 a month" on the 15-inch card once the 13-inch is selected.
-Or simpler: one line under each size saying who it's for.
+Name the 15 ml for what it is, "Trial size", and show its price on the toggle.
+Or simpler: show the price difference before the click, not after.
 
-Hypothesis: upgrades framed as small monthly differences get picked more than upgrades framed as totals. Metric: share of 15-inch, average configured price.
+Hypothesis: on a new product, an explicit trial size converts first-time buyers who would skip the 30 ml. Metric: first-order conversion, repurchase from 15 ml to 30 ml.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Apple.
+Image : ta capture Typology.
 
 **C · 18h · Opinion** (131/280)
 ```
@@ -1394,29 +1394,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #26 · Decathlon** (1171 caractères, X Premium)
+**B · 13h · Worth stealing #26 · Arntreal** (1241 caractères, X Premium)
 ```
-Worth stealing #26: Decathlon's price block.
+Worth stealing #26: Arntreal's proof before the promise.
 
-A €459.99 outdoor table tennis table. Under the price (translated): "€85 off" in red, then "Promotion from 03/11/2026 to 26/01/2027".
+Above the product name, before anything else: five stars, "Over 100,000 bags sold" with a French flag, and five small customer photos (translated).
 
 Why it works:
-· The saving is in euros, not in percent. On a €545 product, €85 sounds bigger than 16%. The rule of 100, applied right.
-· The promotion has real dates. Urgency without a fake countdown, and credible because it's specific.
-· The description sells the use: friends and family, outdoors, big wheels to move it, storage for the paddles.
-· 4.7 stars from 103 reviews sit right under the name.
+· Most pages go product, promise, then reviews at the bottom. Arntreal flips it: proof, promise, product.
+· The bold claim that follows ("Everything of a luxury bag. Except the price.") lands on a crowd that already bought.
+· Faces turn 100,000 into people. A number is abstract; five faces are someone like you.
+· The flag answers "who's behind this?" with one small icon.
 
-The smart part: a dated promotion is the honest version of a timer. You know exactly how long you have, so you believe the discount.
+The smart part: the first thing your eye hits is "other people did this". The pitch comes second, already backed.
 
 What I'd test next:
-Two small conflicts. The top badge says "Free delivery", the price block says "Delivery fees may be added". One message, at the top, with its condition if there is one.
-And "Size: no size" can go. A line that says nothing still costs attention.
+The stars have no rating and no count. "Over 100,000 bags sold" is a sales figure, not a review figure, so five stars with nothing next to them can read as decoration. I'd show the real average and the number of reviews, and make the stars jump to them.
+Or simpler: make the five faces tappable, each opening that customer's photo review.
 
-Hypothesis: removing the shipping contradiction lowers hesitation right before the button. Metric: add-to-cart rate, drop-off at the shipping step.
+Hypothesis: proof you can check beats proof you have to trust. Metric: taps on the rating, conversion of visitors who open reviews.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Decathlon.
+Image : ta capture Arntreal.
 
 **C · 18h · Question** (57/280)
 ```
@@ -1439,29 +1439,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-54.png`
 
-**B · 13h · Worth stealing #27 · Garmin** (1227 caractères, X Premium)
+**B · 13h · Worth stealing #27 · Le Slip Français** (1132 caractères, X Premium)
 ```
-Worth stealing #27: Garmin's version selector.
+Worth stealing #27: Le Slip Français's "Frequently bought together".
 
-On the fēnix E page, the other versions aren't hidden in another menu. They're buttons under the case size: fēnix 8 AMOLED, fēnix 8 Solar, fēnix 8 Pro AMOLED, fēnix 8 Pro MicroLED.
+Under a 5-pack at €99, the suggestions aren't socks or belts. They're bigger packs: 7 boxers at €160, 10 at €185.
 
 Why it works:
-· The whole range is one tap away, on one page. No back button, no new tab to compare.
-· You land on the entry model, so the first price you see is the lowest. Everything above is a choice, not a default.
-· Case size is a row of buttons in mm, with an info icon for anyone who doesn't know their wrist.
-· The discount is in euros (€150 off), and Klarna splits the price into 3 payments of €149.99, just under €150.
+· It's upsizing dressed as cross-selling. The next step up is already in view.
+· The 7-pack photo is a gift: red background, a gold bag that says "a little gift, a pretty package".
+· The designs have festive names (garland, ski run). In December, the product names do the seasonal marketing.
+· Crossed-out prices on both keep the deal frame going.
 
-The smart part: the product range becomes a single page with an upgrade ladder. Comparing never means leaving.
+The smart part: the 10-pack is €18.50 a boxer, cheaper than the 5-pack (€19.80). The 7-pack is €22.86, more per boxer. It sells the wrapping, not the unit price.
 
 What I'd test next:
-Tell people why to climb. "Solar", "AMOLED", "MicroLED" are specs, not reasons. Under each version: the price difference and one benefit in plain words ("charges in the sun").
-Or simpler: an info icon on each version, like the one on case size.
+Show the price per boxer only where it helps: "€18.50 each" on the 10-pack.
+And sell the gift pack on the moment instead: "Gift-wrapped, delivered before Christmas", if they can promise it.
 
-Hypothesis: shoppers upgrade when they understand what the difference buys them. Metric: share of orders above the entry version, version button taps.
+Hypothesis: unit prices push bulk buyers, gift framing pushes gift buyers. Mixing both in one carousel blurs each. Metric: take-up of each suggestion, average order value.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Garmin.
+Image : ta capture Le Slip Français.
 
 **C · 18h · Bilan de la semaine** : envoie-moi tes chiffres (réponses au formulaire, appels, abonnés), je l'écris.
 
@@ -1484,29 +1484,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #28 · Charles Tyrwhitt** (1192 caractères, X Premium)
+**B · 13h · Worth stealing #28 · Apple** (1122 caractères, X Premium)
 ```
-Worth stealing #28: Charles Tyrwhitt's shirt builder.
+Worth stealing #28: Apple's step-by-step configurator.
 
-A €29.95 shirt (was €84.95), and the red banner under the price says (translated): "Save €55 today, no promo code needed."
+Each step opens with one short sentence in two colours (translated): "Model." in black, "Choose the size." in grey. Then two big cards: 13-inch and 15-inch.
 
 Why it works:
-· "No promo code needed" stops the detour to Google in search of a code, the leak from friction #27, closed in five words.
-· The fit is chosen with drawings of the shirt, not with words like "slim" that mean something different to everyone.
-· Collar sizes in cm are grouped under S, M, L, XL. Experts read the centimetres, everyone else reads the letter.
-· "Your selections" recaps the choices so far, each with a tick.
+· One decision per step. The black word names the step, the grey words tell you what to do.
+· Dots on the side show how many steps are left. No surprise at the end.
+· Each card gives the total and the monthly price: from €1,399, or €41.80 a month over 36 months.
+· Size comes first: the one question every buyer can answer without reading specs.
 
-The smart part: two sizing languages on one screen, so neither the made-to-measure buyer nor the casual one feels lost.
+The smart part: in totals, the 15-inch costs €300 more. In monthly terms, it's €8.96 more. Same gap, and one of them sounds like a coffee a week.
 
 What I'd test next:
-The "Most popular" label sits on Slim, which is crossed out, unavailable. The badge points shoppers to something they can't buy. When an option sells out, move the label, or swap it for "Notify me".
-Or simpler: grey the label out with the option.
+Show each upgrade as a difference from the current choice: "+€8.96 a month" on the 15-inch card once the 13-inch is selected.
+Or simpler: one line under each size saying who it's for.
 
-Hypothesis: a popularity badge on an unavailable option creates frustration instead of reassurance. Metric: exits at the fit step, notify-me sign-ups.
+Hypothesis: upgrades framed as small monthly differences get picked more than upgrades framed as totals. Metric: share of 15-inch, average configured price.
 
 Follow for more breakdowns like this.
 ```
-Image : ta capture Charles Tyrwhitt.
+Image : ta capture Apple.
 
 **C · 18h · Journal** (213/280)
 ```
@@ -1540,7 +1540,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #29** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.
+**B · 13h · Worth stealing #29 · Decathlon** (1171 caractères, X Premium)
+```
+Worth stealing #29: Decathlon's price block.
+
+A €459.99 outdoor table tennis table. Under the price (translated): "€85 off" in red, then "Promotion from 03/11/2026 to 26/01/2027".
+
+Why it works:
+· The saving is in euros, not in percent. On a €545 product, €85 sounds bigger than 16%. The rule of 100, applied right.
+· The promotion has real dates. Urgency without a fake countdown, and credible because it's specific.
+· The description sells the use: friends and family, outdoors, big wheels to move it, storage for the paddles.
+· 4.7 stars from 103 reviews sit right under the name.
+
+The smart part: a dated promotion is the honest version of a timer. You know exactly how long you have, so you believe the discount.
+
+What I'd test next:
+Two small conflicts. The top badge says "Free delivery", the price block says "Delivery fees may be added". One message, at the top, with its condition if there is one.
+And "Size: no size" can go. A line that says nothing still costs attention.
+
+Hypothesis: removing the shipping contradiction lowers hesitation right before the button. Metric: add-to-cart rate, drop-off at the shipping step.
+
+Follow for more breakdowns like this.
+```
+Image : ta capture Decathlon.
 
 **C · 18h · Appel** (155/280)
 ```
@@ -1565,7 +1587,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #30** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.
+**B · 13h · Worth stealing #30 · Garmin** (1227 caractères, X Premium)
+```
+Worth stealing #30: Garmin's version selector.
+
+On the fēnix E page, the other versions aren't hidden in another menu. They're buttons under the case size: fēnix 8 AMOLED, fēnix 8 Solar, fēnix 8 Pro AMOLED, fēnix 8 Pro MicroLED.
+
+Why it works:
+· The whole range is one tap away, on one page. No back button, no new tab to compare.
+· You land on the entry model, so the first price you see is the lowest. Everything above is a choice, not a default.
+· Case size is a row of buttons in mm, with an info icon for anyone who doesn't know their wrist.
+· The discount is in euros (€150 off), and Klarna splits the price into 3 payments of €149.99, just under €150.
+
+The smart part: the product range becomes a single page with an upgrade ladder. Comparing never means leaving.
+
+What I'd test next:
+Tell people why to climb. "Solar", "AMOLED", "MicroLED" are specs, not reasons. Under each version: the price difference and one benefit in plain words ("charges in the sun").
+Or simpler: an info icon on each version, like the one on case size.
+
+Hypothesis: shoppers upgrade when they understand what the difference buys them. Metric: share of orders above the entry version, version button taps.
+
+Follow for more breakdowns like this.
+```
+Image : ta capture Garmin.
 
 **C · 18h · Opinion** (142/280)
 ```
@@ -1600,7 +1644,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-58.png`
 
-**B · 13h · Worth stealing #31** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.
+**B · 13h · Worth stealing #31 · Stüssy** (988 caractères, X Premium)
+```
+Worth stealing #31: Stüssy's product page, for what it leaves out.
+
+A €70 glass ashtray. No reviews, no "only 3 left", no countdown, no upsell carousel.
+
+Why it works:
+· The product details are open by default, as a plain list: shape, notches, etched logo, material.
+· Every dimension in inches and centimetres. For an object, size is the first unknown.
+· The holiday shipping guide sits at the top, with a "Hide" link. Useful, and easy to dismiss.
+· The page looks like the brand: a list, a photo, one black button.
+
+The smart part: for a cult brand, persuasion tricks would cheapen the product. The restraint is the signal.
+
+What I'd test next:
+Scale. On a white background, 20cm reads as nothing. One photo of the ashtray next to a hand or a lighter.
+Or simpler: a side view showing the 2.5cm height.
+
+Hypothesis: shoppers who can picture the real size hesitate less on a €70 object. Metric: add-to-cart rate, returns for "smaller than expected".
+
+Follow for more breakdowns like this.
+```
+Image : ta capture Stüssy.
 
 **C · 18h · Question** (93/280)
 ```
@@ -1623,7 +1689,29 @@ Follow for more.
 ```
 Visuel : `design/social/x-friction/friction-59.png`
 
-**B · 13h · Worth stealing #32** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.
+**B · 13h · Worth stealing #32 · Charles Tyrwhitt** (1192 caractères, X Premium)
+```
+Worth stealing #32: Charles Tyrwhitt's shirt builder.
+
+A €29.95 shirt (was €84.95), and the red banner under the price says (translated): "Save €55 today, no promo code needed."
+
+Why it works:
+· "No promo code needed" stops the detour to Google in search of a code, the leak from friction #27, closed in five words.
+· The fit is chosen with drawings of the shirt, not with words like "slim" that mean something different to everyone.
+· Collar sizes in cm are grouped under S, M, L, XL. Experts read the centimetres, everyone else reads the letter.
+· "Your selections" recaps the choices so far, each with a tick.
+
+The smart part: two sizing languages on one screen, so neither the made-to-measure buyer nor the casual one feels lost.
+
+What I'd test next:
+The "Most popular" label sits on Slim, which is crossed out, unavailable. The badge points shoppers to something they can't buy. When an option sells out, move the label, or swap it for "Notify me".
+Or simpler: grey the label out with the option.
+
+Hypothesis: a popularity badge on an unavailable option creates frustration instead of reassurance. Metric: exits at the fit step, notify-me sign-ups.
+
+Follow for more breakdowns like this.
+```
+Image : ta capture Charles Tyrwhitt.
 
 **C · 18h · Question** (90/280)
 ```
@@ -1646,7 +1734,29 @@ Follow for more.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #33** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.
+**B · 13h · Worth stealing #33 · Based** (1085 caractères, X Premium)
+```
+Worth stealing #33: Based's packaging notice.
+
+On the product page, two tubes side by side: "New Packaging, Same Texture Powder." Then: "You may receive either our previous or new packaging. The product inside is the same."
+
+Why it works:
+· During a rebrand, the risk isn't the design. It's a customer opening a box that doesn't match the photo and thinking it's fake.
+· They show both versions, so whatever arrives was expected.
+· It answers a support ticket before it's written.
+· It turns a logistics problem into a small piece of brand news.
+
+The smart part: satisfaction is the gap between what people expect and what they get. They moved the expectation instead of hoping the old stock runs out first.
+
+What I'd test next:
+Put the same image in the shipping confirmation email. The doubt happens at the unboxing, not on the product page.
+Or simpler: one line on the packing slip.
+
+Hypothesis: fewer "is this the right product?" tickets and returns during the transition. Metric: support tickets about packaging, returns tagged "wrong item".
+
+Follow for more breakdowns like this.
+```
+Image : ta capture Based.
 
 **C · 18h · Question** (121/280)
 ```

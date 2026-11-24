@@ -567,7 +567,114 @@ Or simpler: grey the label out with the option.
 Hypothesis: a popularity badge on an unavailable option creates frustration instead of reassurance. Metric: exits at the fit step, notify-me sign-ups.
 
 Follow for more breakdowns like this."""),
+ dict(brand='Arntreal', shot='39.png', text="""Worth stealing #0: Arntreal's Black Friday draw.
+
+On the product page (translated): "Black Friday draw. Each order = 1 entry to win a luxury watch." Three prizes: a Rolex Oyster Perpetual, an Omega Speedmaster, a Cartier Santos. Then "See the rules".
+
+Why it works:
+· The prize fits the promise. The page sells "everything of a luxury bag, except the price". The draw offers the real luxury logo, without paying for it.
+· A discount costs margin on every order. Three watches are a fixed cost: the more orders, the cheaper each entry gets.
+· The price doesn't move, so €149.90 stays the reference after Black Friday.
+· The rule fits in five words, and the rules link sits right under it.
+
+The smart part: the purchase is reasonable, the reward is a dream. You buy a €149.90 bag and get a ticket for the watch you'd never buy yourself.
+
+What I'd test next:
+"Each order" rewards splitting a basket: two orders of one bag earn two entries, one order of two bags earns one. Fincut runs the same kind of draw but ties tickets to the pack: its 3+1 pack earns 3 tickets. I'd test 1 entry per bag.
+Or simpler: a bonus entry for orders of 2 bags or more.
+
+Hypothesis: entries tied to items push basket size instead of order count. Metric: items per order during the draw, repeat orders from the same customer within the week.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Arntreal', shot='41.png', text="""Worth stealing #0: Arntreal's empty slot.
+
+The Black Friday offer (translated): "1 bought = 1 free. 2 bags, the 2nd one free, colour of your choice." Next to the bag you picked sits a dashed, greyed-out bag with a "+": "Choose your free bag".
+
+Why it works:
+· The empty slot is a task half done. You picked one bag, the page shows the second place waiting. That's the endowed progress effect: people push harder toward a goal they feel they've already started (Nunes and Drèze, 2006).
+· Based put its buy-one-get-one in the button (#3). Arntreal draws it: the free bag is a picture, not a line of text.
+· The offer is pre-selected and framed; the single bag above it, at the same €149.90, reads like the worse deal.
+· "Colour of your choice" makes the free bag a decision, not a leftover.
+
+The smart part: you don't read about a gift, you look at a gap in your order.
+
+What I'd test next:
+The crossed-out price. It shows €149.90 struck through next to €149.90: no visible saving. It should read €299.80 struck through, or "2 bags for €149.90, €74.95 each".
+Or simpler: once the free bag's colour is picked, show "€149.90 saved" in green.
+
+Hypothesis: a visible saving turns "nice offer" into "I lose €149.90 if I skip it". Metric: share of orders taking the 2-bag offer, add-to-cart rate.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Boku', shot='38.webp', text="""Worth stealing #0: Boku's three percentages.
+
+A product image, not a review block (translated): "Tested under dermatological control". Then: 95% of users find it improves hygiene, 97% of women users find it improves hygiene during periods, 98% find it pleasant to use. The bottle rests on an open hand.
+
+Why it works:
+· Each number answers a different doubt: does it work, does it work for me, is it unpleasant to use.
+· The middle figure names a use most brands in this category stay vague about. The women it concerns see themselves in it at once.
+· The claims are worded as perception ("find that"), which is what a user survey can honestly measure.
+· The hand gives the scale: you see it's portable before reading a word.
+
+The smart part: in an awkward category, the numbers ask the question so the shopper doesn't have to.
+
+What I'd test next:
+Make the numbers checkable. Without a base, 95% could mean 19 people out of 20. "95% of [n] users, after [x] weeks", with their real figures, turns a claim into a result.
+Or simpler: one line of small print under the title with the study size and length.
+
+Hypothesis: a stated sample size makes the same percentages more believable. Metric: add-to-cart rate after viewing this image, review taps after viewing it.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Based', shot='42.png', text="""Worth stealing #0: Based's ingredient tiles.
+
+A product image: "The Key Ingredients. Endless Benefits." Four tiles, each with an ingredient name, a strip of the raw powder's texture, and one line on what it does for your hair.
+
+Why it works:
+· You see the ingredients, not just their names. Silica, arrowroot, rice powder and mica each get a texture you can almost touch.
+· Every chemical name is translated into a result: volume, less oil, softness, a matte finish.
+· Four ingredients, four jobs. Nothing is listed without a reason to be there.
+· The footer packs three trust cues: science-backed, naturally derived, formulated and filled in the USA.
+
+The smart part: this image answers the question a €21.95 product weighing 2.5 g raises: what exactly am I paying for? Four named actives make a small format feel dense instead of tiny.
+
+What I'd test next:
+Start from the problem instead of the ingredient: "Flat hair? Silica silylate. Oily roots by noon? Arrowroot." Shoppers know their problem, not the ingredient.
+And for EU shoppers, "filled in the USA" raises a delivery question: say where it ships from and how long it takes.
+
+Hypothesis: problem-first tiles help shoppers recognise themselves, and buy. Metric: add-to-cart rate after viewing this image, gallery swipes.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Arntreal', shot='40.png', text="""Worth stealing #0: Arntreal's proof before the promise.
+
+Above the product name, before anything else: five stars, "Over 100,000 bags sold" with a French flag, and five small customer photos (translated).
+
+Why it works:
+· Most pages go product, promise, then reviews at the bottom. Arntreal flips it: proof, promise, product.
+· The bold claim that follows ("Everything of a luxury bag. Except the price.") lands on a crowd that already bought.
+· Faces turn 100,000 into people. A number is abstract; five faces are someone like you.
+· The flag answers "who's behind this?" with one small icon.
+
+The smart part: the first thing your eye hits is "other people did this". The pitch comes second, already backed.
+
+What I'd test next:
+The stars have no rating and no count. "Over 100,000 bags sold" is a sales figure, not a review figure, so five stars with nothing next to them can read as decoration. I'd show the real average and the number of reviews, and make the stars jump to them.
+Or simpler: make the five faces tappable, each opening that customer's photo review.
+
+Hypothesis: proof you can check beats proof you have to trust. Metric: taps on the rating, conversion of visitors who open reviews.
+
+Follow for more breakdowns like this."""),
 ]
+
+# Ordre de publication à 13h (24 novembre + rang - 1). Les offres Black Friday tombent pendant la semaine du Black Friday.
+ORDER = ['9.webp', '39.png', '30.png', '41.png', '14.png', '33.png', '16.png', '10.png', '15.png', '19.webp',
+         '12.webp', '11.png', '18.png', '13.webp', '17.webp', '22.png', '38.webp', '20.png', '23.webp', '24.webp',
+         '25.png', '42.png', '26.png', '28.webp', '29.png', '40.png', '27.png', '34.png', '35.png', '36.png',
+         '32.png', '37.png', '31.png']
+assert sorted(ORDER) == sorted(p['shot'] for p in WS) and len(set(ORDER)) == len(ORDER)
+WS = sorted(WS, key=lambda p: ORDER.index(p['shot']))
 
 import re as _re
 for _i, _p in enumerate(WS, 1):
