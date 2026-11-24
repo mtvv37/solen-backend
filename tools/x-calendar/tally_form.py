@@ -17,6 +17,8 @@ It takes about 4 minutes, in 3 simple steps:
 2. Tell me what gets in the way
 3. Say how far you'd let AI go, and what it would take to trust it
 
+After that, an optional part goes deeper, about 4 more minutes. It's the part that helps me most.
+
 Your answers will shape a short report on how Shopify stores improve conversion. Leave your email at the end and you'll get it in January. Nothing to buy, no sales follow-up.
 
 Thanks for taking the time.
@@ -70,13 +72,22 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 - 200k+
 - Not sure
 
-3. Store URL (optional, never shared)"""),
+3. What do you sell? Your store, or most of your clients'. (one choice)
+- Fashion and apparel
+- Beauty and skincare
+- Food, drinks and supplements
+- Sports and fitness
+- Home and living
+- Electronics and gadgets
+- Other
 
- dict(title="Page 3A · How you improve your store today", logic="« I tried and stopped » → affiche la question 6b. Si la 7 contient « None », masque la 8. La 8 : bloc « Linear scale » de Tally, 1 à 5, libellés Not at all / Extremely well, l'exemple en description. Fin de page → page 4.", text="""How you improve your store today
+4. Store URL (optional, never shared)"""),
 
-4. Tell me about the last change you made to improve conversion. What did you notice, what did you change, and did it work? (long answer, required)
+ dict(title="Page 3A · How you improve your store today", logic="« I tried and stopped » → affiche la 7b. Si la 8 contient « None », masque la 9. La 9 : bloc « Linear scale » de Tally, 1 à 5, libellés Not at all / Extremely well, l'exemple en description. Fin de page → page 4.", text="""How you improve your store today
 
-5. How do you usually decide what to change? (several)
+5. Tell me about the last change you made to improve conversion. What did you notice, what did you change, and did it work? (long answer, required)
+
+6. How do you usually decide what to change? (several)
 - Analytics (Shopify, GA4)
 - Heatmaps or session recordings
 - Reviews, support tickets, customer feedback
@@ -85,14 +96,14 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 - A/B test results
 - Gut feeling
 
-6. Do you run A/B tests? (one choice)
+7. Do you run A/B tests? (one choice)
 - Regularly
 - I tried and stopped
 - Never
 
-6b. What made you stop? (short answer)
+7b. What made you stop? (short answer)
 
-7. Which of these do you use? (several)
+8. Which of these do you use? (several)
 - Shopify Analytics
 - Google Analytics
 - Heatmaps (Hotjar, Clarity...)
@@ -100,17 +111,17 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 - An agency or freelancer
 - None
 
-8. How well do these tools help you decide what to change on your store? (linear scale 1 to 5: 1 = Not at all, 5 = Extremely well)
+9. How well do these tools help you decide what to change on your store? (linear scale 1 to 5: 1 = Not at all, 5 = Extremely well)
 Example: "My heatmap showed most mobile visitors never reached Add to cart, so I moved it up" (extremely well) vs. "I open Google Analytics once a month and don't really act on it" (not at all).
 
-9. Hours a month spent on this (one choice)
+10. Hours a month spent on this (one choice)
 - 0
 - Under 2
 - 2 to 5
 - 5 to 10
 - 10+
 
-10. Monthly spend on it, tools and people, € or $ (one choice)
+11. Monthly spend on it, tools and people, € or $ (one choice)
 - 0
 - Under 50
 - 50 to 200
@@ -118,7 +129,7 @@ Example: "My heatmap showed most mobile visitors never reached Add to cart, so I
 - 1,000+
 - Rather not say
 
-11. What's hardest right now? (one choice)
+12. What's hardest right now? (one choice)
 - Knowing what to change
 - Finding the time or people to do it
 - Knowing if a change worked
@@ -127,20 +138,20 @@ Example: "My heatmap showed most mobile visitors never reached Add to cart, so I
 
  dict(title="Page 3B · The app you're building", logic="Seulement pour « Shopify app developer ». Fin de page → page 4.", text="""The app you're building
 
-4. What does your app do, in one line? (short answer)
+5. What does your app do, in one line? (short answer)
 
-5. Active installs (one choice)
+6. Active installs (one choice)
 - Under 100
 - 100 to 1,000
 - 1,000 to 10,000
 - 10,000+
 
-6. Do merchants ask you for analytics or recommendations inside your app? (one choice)
+7. Do merchants ask you for analytics or recommendations inside your app? (one choice)
 - Often
 - Sometimes
 - Never
 
-7. When they do, what do they ask for? (several)
+8. When they do, what do they ask for? (several)
 - Reports and dashboards
 - Benchmarks against similar stores
 - What to do next
@@ -148,20 +159,20 @@ Example: "My heatmap showed most mobile visitors never reached Add to cart, so I
 - A/B testing
 - Other
 
-8. Does your app show merchants what to change, or only what happened? (one choice)
+9. Does your app show merchants what to change, or only what happened? (one choice)
 - Only what happened
 - Some recommendations
 - Mostly recommendations"""),
 
- dict(title="Page 4 · Where AI fits", logic="Tout le monde passe par cette page.", text="""Where AI fits, or doesn't
+ dict(title="Page 4 · Where AI fits", logic="Tout le monde passe par cette page. La 15b s'affiche si la 15 = « Yes, regularly » ou « I tried it ». La 17 : « Yes, go deeper » → page 5A, ou 5B si la 1 = « Shopify app developer ». « No, take me to the end » → page 6.", text="""Where AI fits, or doesn't
 
-12. If software spotted a problem on a store, how far would you let it go? (one choice)
+13. If software spotted a problem on a store, how far would you let it go? (one choice)
 - Just flag it
 - Draft the fix, I approve it
 - Test it on part of the traffic
 - Ship winning changes on its own, within rules I set
 
-13. What would make you trust an AI recommendation about a store? (several)
+14. What would make you trust an AI recommendation about a store? (several)
 - Seeing the data behind it
 - A confidence level
 - Testing it before it goes live
@@ -169,25 +180,141 @@ Example: "My heatmap showed most mobile visitors never reached Add to cart, so I
 - A one-click undo
 - Nothing would
 
-14. Have you used AI (ChatGPT, Shopify Sidekick...) to decide what to change on a store? (one choice)
+15. Have you used AI (ChatGPT, Shopify Sidekick...) to decide what to change on a store? (one choice)
 - Yes, regularly
 - I tried it
-- Never"""),
+- Never
 
- dict(title="Page 5 · Get the report (optional)", logic="Dernière page de questions, tout est facultatif.", text="""Get the report
+15b. What did you ask it, and did you act on the answer? (short answer)
+
+16. Which of these would you never let software change on its own, even if it tested it first? (several)
+- Prices
+- Discounts and promos
+- Checkout
+- Product titles and descriptions
+- Product photos
+- Page layout and section order
+- Shipping and returns info
+- Brand look (logo, colours, fonts)
+- None, as long as it's tested and I can undo it
+
+17. Got 4 more minutes? The next part goes deeper, and it's the part that helps me most. (one choice, required)
+- Yes, go deeper
+- No, take me to the end"""),
+
+ dict(title="Page 5A · Go deeper: your store (optional)", logic="Seulement si « Yes, go deeper » et rôle ≠ « Shopify app developer ». Tout est facultatif. La 28b s'affiche si la 28 commence par « Yes ». Fin de page → page 6.", text="""Go deeper: your store
+
+Thanks for staying. Everything here is optional, skip anything you'd rather not answer.
+
+18. How often do you change something on the store to improve conversion? (one choice)
+- Every week
+- Every month
+- A few times a year
+- Almost never
+
+19. Do you know your store's conversion rate, roughly? (one choice)
+- Under 1%
+- 1 to 2%
+- 2 to 3%
+- Over 3%
+- I don't track it
+
+20. Roughly what share of your visitors are on mobile? (one choice)
+- Under 50%
+- 50 to 70%
+- 70 to 85%
+- Over 85%
+- Not sure
+
+21. Where does most of your traffic come from? (one choice)
+- Paid social (Meta, TikTok...)
+- Google Ads
+- Google search, unpaid
+- Social media, unpaid
+- Email and SMS
+- Influencers or affiliates
+- Not sure
+
+22. Who makes the call on changes to the store? (one choice)
+- Me, alone
+- Me, with a small team
+- A growth or marketing team
+- Our agency
+- Depends on the change
+
+23. Do you look at results separately for mobile and desktop, or for new and returning visitors? (one choice)
+- Yes, always
+- Sometimes
+- No, one number for everything
+
+24. Where do you keep track of what you changed and how it went? (one choice)
+- Nowhere, honestly
+- In my head
+- A doc or spreadsheet
+- A project tool (Notion, Trello...)
+- Our A/B testing app
+- Our agency keeps it
+
+25. Has a change ever hurt your sales without you noticing right away? What happened, and how did you find out? (long answer)
+
+26. Which apps or services do you pay for today to sell more? Reviews, upsells, bundles, quizzes, testing, an agency... (short answer)
+
+27. In the last 12 months, did you stop paying for an analytics, testing or conversion tool? Which one, and why? (short answer)
+
+28. Have you ever paid for a conversion audit or a CRO agency? (one choice)
+- Yes, and it was worth it
+- Yes, and it wasn't
+- No
+
+28b. What made it worth it, or not? (short answer)
+
+29. If you could ask your store's data one question and get a straight answer, what would you ask? (long answer)"""),
+
+ dict(title="Page 5B · Go deeper: your app (optional)", logic="Seulement si « Yes, go deeper » et rôle = « Shopify app developer ». Tout est facultatif. Fin de page → page 6.", text="""Go deeper: your app
+
+Thanks for staying. Everything here is optional, skip anything you'd rather not answer.
+
+18. What category is your app in? (one choice)
+- Conversion and upsells
+- Reviews and social proof
+- Analytics and reporting
+- Marketing, email and SMS
+- Store design and page builders
+- Operations and shipping
+- Other
+
+19. How do you charge? (one choice)
+- Free
+- Freemium
+- Paid plans only
+- Usage-based
+- A mix
+
+20. How do merchants find out whether your app actually helped them? (several)
+- A report inside the app
+- They check Shopify Analytics themselves
+- We send them results
+- They don't really know
+
+21. What's the most common reason merchants uninstall your app? (short answer)
+
+22. Have you tried adding recommendations to your app, the "do this next" kind? What happened? (long answer)"""),
+
+ dict(title="Page 6 · Get the report (optional)", logic="Dernière page de questions, tout est facultatif.", text="""Get the report
 
 Optional. Leave your email and you'll get the full report in January.
 
-15. Email (optional)
+30. Email (optional)
 
-16. If your store could fix one thing on its own every week, what would it be? (long answer, optional)
+31. If your store could fix one thing on its own every week, what would it be? (long answer, optional)
 
-17. You can email me 2 or 3 follow-up questions (checkbox, optional)"""),
+32. You can email me 2 or 3 follow-up questions (checkbox, optional)"""),
 
  dict(title="Page de fin · Merci", logic="Page « Thank you » de Tally.", text="""Thanks, that really helps.
 
 The report lands in January. If you'd rather talk, 20 minutes here: [lien Cal.com]"""),
 ]
+
 
 if __name__ == '__main__':
     import re
