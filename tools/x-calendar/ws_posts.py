@@ -666,13 +666,113 @@ Or simpler: make the five faces tappable, each opening that customer's photo rev
 Hypothesis: proof you can check beats proof you have to trust. Metric: taps on the rating, conversion of visitors who open reviews.
 
 Follow for more breakdowns like this."""),
+ dict(brand='Based', shot='new:based-cart', text="""Worth stealing #0: Based's cart, built like a game.
+
+Open the cart during the buy-one-get-one: "Your haul. 1 pick, 0 free." A big gold "€255.76 left", "€277 max per order", a progress bar, and next to your item, a dashed slot marked "FREE".
+
+Why it works:
+· The words come from unboxing videos: "haul", "picks". The cart talks like the people who buy.
+· "BOGO savings €0.00" in gold. A zero you're invited to fix.
+· The dashed free slot is the same endowed-progress trick as Arntreal's empty bag (#4): one pick in, one place waiting.
+· The cap does more than stop resellers. Purchase limits signal value: in a classic study, "limit 12 per person" signs raised the quantity people bought (Wansink, Kent and Hoch, 1998).
+
+The smart part: Based put the offer in the button (#3), then turned the cart into a scoreboard.
+
+What I'd test next:
+The biggest number in the cart is "€255.76 left", a budget nobody planned. The bar measures the distance to the cap, not to the next reward. I'd make the next step the headline: "Pick 1 more, it's free", and keep the cap in small print.
+Or simpler: swap "BOGO savings €0.00" for "Add 1 pick, save €21.95".
+
+Hypothesis: shoppers respond to the next step, not to the remaining budget. Metric: share of carts with 2 picks or more, items per order.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='HOLY', shot='new:holy-cart', text="""Worth stealing #0: HOLY's cart, one cent short.
+
+The cart has a reward bar with steps from €49 to €200. Under it (translated): "You'll now receive Cap + Shaker. Only €0.01 left for the blue Thermo Shaker."
+
+Why it works:
+· Unlocked gifts sit in the cart as real lines: "Free!", the crossed-out value, "Gift unlocked" in green. You can see what you'd lose by removing items.
+· The next gift waits right below: "Free from €100.00", with a padlock.
+· The bundle costs €99.99. One cent from the next reward is the strongest possible pull: people speed up as a goal gets closer (Kivetz, Urminsky and Zheng, 2006).
+· Shipping shows "Free", so the bar is only about gifts.
+
+The smart part: a charm price (€99.99) sitting one cent under a round threshold (€100). Planned or not, the hero product lands right before the next reward.
+
+What I'd test next:
+Two things. "Total savings -€33.97" only counts the two gifts. With the bundle discount (€119.97 down to €99.99), the real figure is €53.95. They undersell their own deal by €19.98.
+And the one cent can read as a trick. I'd test rounding in the shopper's favour: unlock the shaker at €99.99 and say "We rounded up for you".
+
+Hypothesis: a generous gesture at €0.01 earns more goodwill than the extra item earns money. Metric: conversion and average order value, both versions.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Fincut', shot='new:fincut-cart', text="""Worth stealing #0: Fincut's tickets in the cart.
+
+Fincut runs a Black Friday draw for 3 cars (translated): "Each item bought = 1 ticket." In the cart, the tickets aren't a banner. They're a line item: "Ticket, Grand Jeu. Free. x3".
+
+Why it works:
+· The entries sit in the cart like things you own. Remove a t-shirt, lose a ticket. People value what they already hold more than what they could get (the endowment effect, Kahneman, Knetsch and Thaler, 1990).
+· The free shirt of the 3+1 pack earns no ticket: 4 shirts, 3 tickets. The rule holds, "each item bought".
+· The shipping bar is already full: "Congratulations, you get free delivery".
+· The first add-on suggested is a €9 gift box, the one that matches the season a month before Christmas.
+· The button carries the price and the old one, and the last line repeats "You save €28 on this cart".
+
+The smart part: the draw lives where the decision happens. Nobody has to remember a homepage banner.
+
+What I'd test next:
+The code. A black banner says "Code BLACK20: -20% on your cart, enter it in 'Promo code'". That field is collapsed at the bottom, and the €84 total doesn't include it yet. Why make shoppers type a code the cart already knows? I'd apply it automatically. And say whether it stacks with the pack, already at -25%.
+Or simpler: a one-tap "Apply" on the banner.
+
+Hypothesis: every code shoppers must type is a chance to leave and look for a better one. Metric: share of orders using BLACK20, checkout completion.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Cabaia', shot='new:cabaia-product', text="""Worth stealing #0: Cabaia's sizes in litres.
+
+A backpack page (translated): "Size: Medium, 18L. Large, 23L", with a "Compare sizes" link right above the two buttons.
+
+Why it works:
+· Litres are the right unit for a bag. "Medium" means nothing until you know what fits.
+· Every colour swatch is a photo of the bag with its matching pouch, not a flat dot. You see the whole product in each colourway.
+· The price lives in the button: "Add, €53.40".
+· Under €100, the badge leads with the percentage (-40%) rather than the euros: the rule of 100 from #1, applied right.
+
+The smart part: size, capacity and a comparison link on one line. "Will it be big enough?" is answered before it's asked.
+
+What I'd test next:
+Turn litres into objects. Most people can't picture 18 litres. "18L: a 14-inch laptop, a jumper and a water bottle. 23L: add a pair of trainers", if that's what actually fits.
+Or simpler: show the "Compare sizes" answer inline, under the two buttons, instead of behind a link.
+
+Hypothesis: shoppers who can picture the capacity pick the right size first time. Metric: add-to-cart rate, exchanges between Medium and Large.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Cabaia', shot='new:cabaia-cart', text="""Worth stealing #0: Cabaia's cart, ready for December.
+
+One backpack in the cart, and the last three questions answered before checkout (translated).
+
+Why it works:
+· When will it arrive? "In stock. Delivered Thursday 26 Nov", with the shopper's postcode and a link to compare delivery options. A date, not "3 to 5 business days".
+· Is it a gift? A checkbox on the line itself: "Gift wrap (€2.80)". The fix for friction #41, gift options hidden until checkout.
+· What goes with it? The suggestions include "Side pocket Pau, €7", and the backpack is called "Pau" too. Products named after cities make the match obvious without a "goes with" label.
+· Free delivery is confirmed right above a checkout button that repeats the price.
+
+The smart part: in December, the delivery date is the decision. Putting it in the cart, with your own postcode, removes the last "will it arrive in time?".
+
+What I'd test next:
+Make the gift option complete: once "Gift wrap" is ticked, offer a gift message and a receipt without prices.
+Or simpler: a cutoff next to the date, "Order before 2pm for Thursday", if that's their real cutoff.
+
+Hypothesis: a complete gift option turns more December carts into orders. Metric: gift wrap take-up, December conversion rate.
+
+Follow for more breakdowns like this."""),
 ]
 
 # Ordre de publication à 13h (24 novembre + rang - 1). Les offres Black Friday tombent pendant la semaine du Black Friday.
-ORDER = ['9.webp', '39.png', '30.png', '41.png', '14.png', '33.png', '16.png', '10.png', '15.png', '19.webp',
-         '12.webp', '11.png', '18.png', '13.webp', '17.webp', '22.png', '38.webp', '20.png', '23.webp', '24.webp',
-         '25.png', '42.png', '26.png', '28.webp', '29.png', '40.png', '27.png', '34.png', '35.png', '36.png',
-         '32.png', '37.png', '31.png']
+ORDER = ['9.webp', '39.png', '30.png', '41.png', 'new:based-cart', '33.png', 'new:holy-cart', 'new:fincut-cart',
+         '16.png', '19.webp', '15.png', '12.webp', '10.png', '14.png', '18.png', '13.webp', '17.webp', 'new:cabaia-product',
+         '38.webp', '22.png', '11.png', '20.png', '23.webp', 'new:cabaia-cart', '24.webp', '25.png', '27.png', '42.png',
+         '28.webp', '29.png', '32.png', '37.png', '26.png', '40.png', '34.png', '35.png', '36.png', '31.png']
 assert sorted(ORDER) == sorted(p['shot'] for p in WS) and len(set(ORDER)) == len(ORDER)
 WS = sorted(WS, key=lambda p: ORDER.index(p['shot']))
 

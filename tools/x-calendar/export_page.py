@@ -15,7 +15,7 @@ from ws_long import EXAMPLE as WS_EXAMPLE, TEMPLATE as WS_TEMPLATE  # noqa: E402
 from ws_posts import WS  # noqa: E402
 
 # Captures Worth stealing : publiées à côté de la page, gardées hors du repo (dossier passé en argument).
-WS_IMAGES = {f'img/ws-{i + 1:02d}.' + p['shot'].rsplit('.', 1)[1]: p['shot'] for i, p in enumerate(WS)}
+WS_IMAGES = {f'img/ws-{i + 1:02d}.' + p['shot'].rsplit('.', 1)[1]: p['shot'] for i, p in enumerate(WS) if not p['shot'].startswith('new:')}
 IDEE_DECEMBRE = 'guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes'
 
 
@@ -53,7 +53,8 @@ def build():
                           img=f'img/friction-{28 + i}.png' if 28 + i in VISUALS else None, reply=True))
         if i < len(WS):
             ws = WS[i]
-            img = f'img/ws-{i + 1:02d}.' + ws['shot'].rsplit('.', 1)[1]
+            # Captures arrivées sans fichier : pas d'image sur la page, Thomas a la sienne.
+            img = None if ws['shot'].startswith('new:') else f'img/ws-{i + 1:02d}.' + ws['shot'].rsplit('.', 1)[1]
             posts.append(dict(slot='B', time='13h', series='Worth stealing', num=i + 1, brand=ws['brand'], text=ws['text'],
                               w=len(ws['text']), long=True, img=img, reply=True))
         else:
