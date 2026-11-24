@@ -344,6 +344,7 @@
   const fp = DATA.form.map((p) => ({ ...p, b: block(p.text) }));
   $('#form').innerHTML = `
     ${fp.map((p) => `<article class="post"><div class="ph"><span class="series">${esc(p.title)}</span></div>${p.b.html}
+      ${(p.images || []).map((src) => `<a class="visual" href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="Schéma ${src.includes('without') ? 'sans' : 'avec'} Solen" loading="lazy" width="2400" height="1600"></a>`).join('')}
       <p class="hint">Logique : ${esc(p.logic)}</p><div class="acts">${copyBtn(p.b.id, 'Copier la page')}</div></article>`).join('')}
     <article class="post"><div class="ph"><span class="series">Couverture du formulaire</span><span class="count">1800 × 480</span></div>
       <a class="visual" href="img/form-cover.png" target="_blank" rel="noopener"><img src="img/form-cover.png" alt="Couverture du formulaire" loading="lazy" width="1800" height="480"></a>

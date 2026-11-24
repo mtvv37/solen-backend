@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Schémas « Without Solen / With Solen » pour l'intro du formulaire Tally. Noir sur blanc, dessiné à la main (rough.js + Caveat).
+     Rendu : sketch.html#without ou #with, 1200 x 800. Les dépendances (rough.js, Caveat) sont passées par render_sketch.js. -->
+<style>
+  @font-face{font-family:'Caveat';font-weight:600;src:url(FONT_URL) format('woff2')}
+  html,body{margin:0;background:#fff}
+  #c{width:1200px;height:800px;background:#fff}
+  text{font-family:'Caveat',cursive;fill:#111;font-weight:600}
+</style>
+<script src="ROUGH_URL"></script>
+</head>
+<body>
+<svg id="c" xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"></svg>
+<script>
+const svg = document.getElementById('c');
+const rc = rough.svg(svg);
+const INK = { stroke: '#111', strokeWidth: 2.6, roughness: 1.6, bowing: 1.4 };
+const add = (n) => svg.appendChild(n);
+let seed = 7;
+const opt = (o = {}) => ({ ...INK, seed: seed++, ...o });
+
+function text(x, y, lines, size = 40, anchor = 'middle', weight = 600) {
+  const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  t.setAttribute('x', x); t.setAttribute('y', y); t.setAttribute('text-anchor', anchor);
+  t.setAttribute('font-size', size); t.setAttribute('font-weight', weight);
+  [].concat(lines).forEach((l, i) => {
+    const s = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+    s.setAttribute('x', x); s.setAttribute('dy', i === 0 ? 0 : size * 1.08); s.textContent = l; t.appendChild(s);
+  });
+  add(t); return t;
+}
+function box(x, y, w, h, lines, o = {}) {
+  add(rc.rectangle(x, y, w, h, opt(o.dashed ? { strokeLineDash: [12, 10] } : {})));
+  const size = o.size || 40, n = [].concat(lines).length;
+  text(x + w / 2, y + h / 2 - ((n - 1) * size * 1.08) / 2 + size * 0.32, lines, size);
+}
+function head(x1, y1, x2, y2) {
+  const a = Math.atan2(y2 - y1, x2 - x1), L = 20;
+  add(rc.line(x2, y2, x2 - L * Math.cos(a - 0.45), y2 - L * Math.sin(a - 0.45), opt()));
+  add(rc.line(x2, y2, x2 - L * Math.cos(a + 0.45), y2 - L * Math.sin(a + 0.45), opt()));
+}
+function arrow(x1, y1, x2, y2) { add(rc.line(x1, y1, x2, y2, opt())); head(x1, y1, x2, y2); }
+function curve(points) {
+  add(rc.curve(points, opt()));
+  const [p, q] = points.slice(-2); head(p[0], p[1], q[0], q[1]);
+}
+function title(s) {
+  text(60, 92, s, 72, 'start', 700);
+  add(rc.line(60, 112, 60 + s.length * 27, 108, opt({ strokeWidth: 3 })));
+}
+function caption(s) { text(600, 758, s, 46); }
+function stick(x, y, s = 1) {
+  add(rc.circle(x, y, 26 * s, opt({ strokeWidth: 2.2 })));
+  add(rc.line(x, y + 13 * s, x, y + 50 * s, opt({ strokeWidth: 2.2 })));
+  add(rc.line(x, y + 26 * s, x - 18 * s, y + 38 * s, opt({ strokeWidth: 2.2 })));
+  add(rc.line(x, y + 26 * s, x + 18 * s, y + 18 * s, opt({ strokeWidth: 2.2 })));
+  add(rc.line(x, y + 50 * s, x - 14 * s, y + 74 * s, opt({ strokeWidth: 2.2 })));
+  add(rc.line(x, y + 50 * s, x + 14 * s, y + 74 * s, opt({ strokeWidth: 2.2 })));
+}
+function check(x, y) { add(rc.linearPath([[x, y], [x + 14, y + 16], [x + 40, y - 18]], opt({ strokeWidth: 4 }))); }
+
+// Grille : 2 rangées de 3 cases (310 x 180), la 2e se lit de droite à gauche.
+const W = 310, H = 180, X = [60, 445, 830], Y1 = 150, Y2 = 470;
+
+const scenes = {
+  without() {
+    title('Without Solen');
+    box(X[0], Y1, W, H, ['Visitors browse', 'your store']);
+    box(X[1], Y1, W, H, ['Data everywhere', 'Shopify, GA4,', 'heatmaps...']);
+    box(X[2], Y1, W, H, ['You stare at it', 'and guess']);
+    box(X[2], Y2, W, H, ['You change', 'something', '"move the button?"'], { size: 38 });
+    box(X[1], Y2, W, H, ['Did it work?', '???'], { size: 44 });
+    arrow(X[0] + W + 8, Y1 + 90, X[1] - 8, Y1 + 90);
+    arrow(X[1] + W + 8, Y1 + 90, X[2] - 8, Y1 + 90);
+    arrow(X[2] + 155, Y1 + H + 8, X[2] + 155, Y2 - 8);
+    arrow(X[2] - 8, Y2 + 90, X[1] + W + 8, Y2 + 90);
+    curve([[X[1] + 70, Y2 - 8], [X[1] + 150, 405], [X[2] - 60, 385], [X[2] + 40, Y1 + H + 10]]);
+    text(X[1] + 250, 440, 'guess again', 36);
+    // Le marchand perdu, en bas à gauche
+    stick(215, 505, 1.15);
+    text(150, 515, '?', 54); text(285, 500, '?', 44); text(262, 560, '?', 36);
+    text(215, 625, 'weeks later, still not sure', 32);
+    caption('Lots of data. No clear next step.');
+  },
+  with() {
+    title('With Solen');
+    box(X[0], Y1, W, H, ['Visitors browse', 'your store']);
+    box(X[1], Y1, W, H, ['Solen watches', 'how they behave']);
+    box(X[2], Y1, W, H, ['Spots where', 'they get stuck']);
+    box(X[2], Y2, W, H, ['Tells you what', 'to test, why, and', 'how sure it is'], { size: 38 });
+    box(X[1], Y2, W, H, ['You decide']);
+    check(X[1] + 235, Y2 + 100);
+    box(X[0], Y2, W, H, ['Test it,', 'measure it', '(coming next)'], { dashed: true, size: 38 });
+    arrow(X[0] + W + 8, Y1 + 90, X[1] - 8, Y1 + 90);
+    arrow(X[1] + W + 8, Y1 + 90, X[2] - 8, Y1 + 90);
+    arrow(X[2] + 155, Y1 + H + 8, X[2] + 155, Y2 - 8);
+    arrow(X[2] - 8, Y2 + 90, X[1] + W + 8, Y2 + 90);
+    arrow(X[1] - 8, Y2 + 90, X[0] + W + 8, Y2 + 90);
+    curve([[X[0] + 150, Y2 - 8], [X[0] + 230, 405], [X[1] + 30, 385], [X[1] + 120, Y1 + H + 10]]);
+    text(X[0] + 380, 458, 'learns for next time', 32);
+    text(X[2] + 5, 380, ['e.g. "mobile visitors from', 'Instagram never reach', 'Add to cart"'], 28, 'end');
+    caption('AI proposes. Reality decides.');
+  },
+};
+(scenes[location.hash.slice(1)] || scenes.without)();
+</script>
+</body>
+</html>

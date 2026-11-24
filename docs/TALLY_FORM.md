@@ -2,15 +2,22 @@
 
 > Généré depuis `tools/x-calendar/tally_form.py`. Une section = une page Tally. Structure inspirée du modèle Tally « B2B SaaS Research Report », réécrite pour Solen.
 > Pas de question « combien paieriez-vous » : on demande ce que les gens dépensent déjà.
+> Schémas de l'intro : `design/social/form/without-solen.png` et `with-solen.png` (blocs image de Tally).
 
 ## Page 1 · Intro
 
-**Logique :** « Oui, je parle français » → page FR. « No, continue in English » → page 2.
+**Logique :** « Oui, je parle français » → page FR. « No, continue in English » → page 2. Les deux schémas : blocs image de Tally (taper /image).
 
 ```
 Help me build Solen
 
-I'm Thomas, building Solen. Before I build more, I want to understand how Shopify stores actually decide what to change.
+I'm Thomas. I'm building Solen, an AI tool for Shopify stores. It watches how visitors use your store, spots where they get stuck, and tells you what to test next, segment by segment: mobile visitors, new visitors, people coming from Instagram...
+
+[Image: without-solen.png]
+
+[Image: with-solen.png]
+
+Before I build more, I need to know how stores really decide what to change today. That's what this form is for.
 
 4 minutes, 3 short parts:
 1. You and your store

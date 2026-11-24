@@ -7,9 +7,16 @@ Règles : questions sur ce que les gens ont fait, pas sur ce qu'ils feraient ; a
 """
 
 PAGES = [
- dict(title="Page 1 · Intro", logic="« Oui, je parle français » → page FR. « No, continue in English » → page 2.", text="""Help me build Solen
+ dict(title="Page 1 · Intro", logic="« Oui, je parle français » → page FR. « No, continue in English » → page 2. Les deux schémas : blocs image de Tally (taper /image).",
+      images=["img/form-without.png", "img/form-with.png"], text="""Help me build Solen
 
-I'm Thomas, building Solen. Before I build more, I want to understand how Shopify stores actually decide what to change.
+I'm Thomas. I'm building Solen, an AI tool for Shopify stores. It watches how visitors use your store, spots where they get stuck, and tells you what to test next, segment by segment: mobile visitors, new visitors, people coming from Instagram...
+
+[Image: without-solen.png]
+
+[Image: with-solen.png]
+
+Before I build more, I need to know how stores really decide what to change today. That's what this form is for.
 
 4 minutes, 3 short parts:
 1. You and your store

@@ -40,6 +40,8 @@ IMAGES.update({
     'img/form-cover.png': 'design/social/form/cover.png',
     'img/form-share.png': 'design/social/form/share.png',
     'img/logo.png': 'design/social/avatar-01-blanc-sur-sapin.png',
+    'img/form-without.png': 'design/social/form/without-solen.png',
+    'img/form-with.png': 'design/social/form/with-solen.png',
 })
 
 
