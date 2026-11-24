@@ -2,11 +2,11 @@
 
 > Généré depuis `tools/x-calendar/tally_form.py`. Une section = une page Tally. Structure inspirée du modèle Tally « B2B SaaS Research Report », réécrite pour Solen.
 > Pas de question « combien paieriez-vous » : on demande ce que les gens dépensent déjà.
-> Schémas de l'intro : `design/social/form/without-solen.png` et `with-solen.png` (blocs image de Tally). L'intro sépare ce que Solen fait aujourd'hui de ce qui vient ensuite (application automatique au-dessus d'un seuil, segments plus fins).
+> Schéma de l'intro : `design/social/form/with-vs-without-solen.png` (bloc image de Tally). L'intro sépare ce que Solen fait aujourd'hui de ce qui vient ensuite.
 
 ## Page 1 · Intro
 
-**Logique :** « Oui, je parle français » → page FR. « No, continue in English » → page 2. Les deux schémas : blocs image de Tally (taper /image).
+**Logique :** « Oui, je parle français » → page FR. « No, continue in English » → page 2. Le schéma : un bloc image de Tally (taper /image).
 
 ```
 Help me build Solen
@@ -28,9 +28,7 @@ You set a confidence threshold. Above it, Solen applies the fix itself, tests it
 
 What it isn't: another dashboard. The goal is one clear next step, not more charts.
 
-[Image: without-solen.png]
-
-[Image: with-solen.png]
+[Image: with-vs-without-solen.png]
 
 Before I build more, I need to know how stores really decide what to change today. That's what this form is for.
 

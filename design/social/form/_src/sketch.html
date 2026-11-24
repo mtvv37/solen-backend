@@ -7,7 +7,7 @@
 <style>
   @font-face{font-family:'Caveat';font-weight:600;src:url(FONT_URL) format('woff2')}
   html,body{margin:0;background:#fff}
-  #c{width:1200px;height:800px;background:#fff}
+  #c{display:block;background:#FFFFFF}
   text{font-family:'Caveat',cursive;fill:#111;font-weight:600}
 </style>
 <script src="ROUGH_URL"></script>
@@ -22,10 +22,10 @@ const add = (n) => svg.appendChild(n);
 let seed = 7;
 const opt = (o = {}) => ({ ...INK, seed: seed++, ...o });
 
-function text(x, y, lines, size = 40, anchor = 'middle', weight = 600) {
+function text(x, y, lines, size = 40, anchor = 'middle', weight = 600, fill = '#111') {
   const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
   t.setAttribute('x', x); t.setAttribute('y', y); t.setAttribute('text-anchor', anchor);
-  t.setAttribute('font-size', size); t.setAttribute('font-weight', weight);
+  t.setAttribute('font-size', size); t.setAttribute('font-weight', weight); t.style.fill = fill;
   [].concat(lines).forEach((l, i) => {
     const s = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
     s.setAttribute('x', x); s.setAttribute('dy', i === 0 ? 0 : size * 1.08); s.textContent = l; t.appendChild(s);
@@ -62,10 +62,62 @@ function stick(x, y, s = 1) {
 }
 function check(x, y) { add(rc.linearPath([[x, y], [x + 14, y + 16], [x + 40, y - 18]], opt({ strokeWidth: 4 }))); }
 
+function size(w, h) {
+  svg.setAttribute('width', w); svg.setAttribute('height', h); svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+}
+size(1200, 800);
 // Grille : 2 rangées de 3 cases (310 x 180), la 2e se lit de droite à gauche.
 const W = 310, H = 180, X = [60, 445, 830], Y1 = 150, Y2 = 470;
 
 const scenes = {
+
+  // Une seule image : With Solen à gauche, Without Solen à droite. Fond blanc, couleurs par côté.
+  compare() {
+    size(1400, 1100);
+    const G = '#1F9D5C', GF = '#E3F8EC', R = '#D9483B', RF = '#FDE9E4', INKC = '#111';
+    const col = (x0, color, fill, ttl, steps, cap, capColor) => {
+      text(x0 + 300, 112, ttl, 78, 'middle', 700, color);
+      add(rc.line(x0 + 300 - ttl.length * 15, 132, x0 + 300 + ttl.length * 15, 128, opt({ stroke: color, strokeWidth: 3.2 })));
+      const bx = x0 + 70, bw = 460, bh = 140, ys = [190, 380, 570, 760];
+      steps.forEach((st, k) => {
+        const y = ys[k];
+        add(rc.rectangle(bx, y, bw, bh, opt({ stroke: color, fill: st.dashed ? undefined : fill, fillStyle: 'solid',
+          strokeLineDash: st.dashed ? [14, 10] : undefined, strokeWidth: 3 })));
+        const n = st.lines.length, sz = st.size || 44;
+        text(bx + bw / 2, y + bh / 2 - ((n - 1) * sz * 1.08) / 2 + sz * 0.32, st.lines, sz, 'middle', 600, INKC);
+        if (st.tag) text(bx + bw - 6, y - 12, st.tag, 32, 'end', 700, color);
+        if (k < 3) {
+          add(rc.line(bx + bw / 2, y + bh + 6, bx + bw / 2, ys[k + 1] - 8, opt({ stroke: color, strokeWidth: 3 })));
+          const tx = bx + bw / 2, ty = ys[k + 1] - 8;
+          add(rc.line(tx, ty, tx - 14, ty - 18, opt({ stroke: color, strokeWidth: 3 })));
+          add(rc.line(tx, ty, tx + 14, ty - 18, opt({ stroke: color, strokeWidth: 3 })));
+        }
+      });
+      text(x0 + 300, 1010, cap, 54, 'middle', 700, capColor);
+    };
+    col(40, G, GF, 'With Solen', [
+      { lines: ['Watches how', 'visitors behave'] },
+      { lines: ['Spots where', 'they get stuck'] },
+      { lines: ['Proposes a fix', '+ how sure it is'] },
+      { lines: ['Above your threshold,', 'applies it itself'], dashed: true, size: 42, tag: 'coming next' },
+    ], 'One clear next step.', G);
+    col(760, R, RF, 'Without Solen', [
+      { lines: ['Data everywhere:', 'Shopify, GA4, heatmaps'], size: 40 },
+      { lines: ['You stare at it', 'and guess'] },
+      { lines: ['You change', 'something'] },
+      { lines: ['Did it work?', '???'] },
+    ], 'Lots of data. No next step.', R);
+    // Boucle « guess again » à droite de la colonne Without
+    add(rc.curve([[1295, 830], [1340, 760], [1345, 560], [1300, 450]], opt({ stroke: R, strokeWidth: 3 })));
+    add(rc.line(1300, 450, 1302, 474, opt({ stroke: R, strokeWidth: 3 })));
+    add(rc.line(1300, 450, 1320, 464, opt({ stroke: R, strokeWidth: 3 })));
+    const g = text(1372, 640, 'guess again', 34, 'middle', 700, R); g.setAttribute('transform', 'rotate(90 1372 640)');
+    // Séparation et « vs »
+    add(rc.line(700, 70, 700, 470, opt({ stroke: '#B9BEC4', strokeWidth: 2, strokeLineDash: [10, 12] })));
+    add(rc.line(700, 600, 700, 1040, opt({ stroke: '#B9BEC4', strokeWidth: 2, strokeLineDash: [10, 12] })));
+    add(rc.circle(700, 535, 96, opt({ stroke: INKC, fill: '#FFFFFF', fillStyle: 'solid' })));
+    text(700, 550, 'vs', 48, 'middle', 700, INKC);
+  },
   without() {
     title('Without Solen');
     box(X[0], Y1, W, H, ['Visitors browse', 'your store']);

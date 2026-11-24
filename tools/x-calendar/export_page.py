@@ -42,6 +42,7 @@ IMAGES.update({
     'img/logo.png': 'design/social/avatar-01-blanc-sur-sapin.png',
     'img/form-without.png': 'design/social/form/without-solen.png',
     'img/form-with.png': 'design/social/form/with-solen.png',
+    'img/form-compare.png': 'design/social/form/with-vs-without-solen.png',
 })
 
 

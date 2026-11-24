@@ -7,8 +7,8 @@ Règles : questions sur ce que les gens ont fait, pas sur ce qu'ils feraient ; a
 """
 
 PAGES = [
- dict(title="Page 1 · Intro", logic="« Oui, je parle français » → page FR. « No, continue in English » → page 2. Les deux schémas : blocs image de Tally (taper /image).",
-      images=["img/form-without.png", "img/form-with.png"], text="""Help me build Solen
+ dict(title="Page 1 · Intro", logic="« Oui, je parle français » → page FR. « No, continue in English » → page 2. Le schéma : un bloc image de Tally (taper /image).",
+      images=["img/form-compare.png"], text="""Help me build Solen
 
 I'm Thomas, and I'm building Solen, an AI tool for Shopify stores.
 
@@ -27,9 +27,7 @@ You set a confidence threshold. Above it, Solen applies the fix itself, tests it
 
 What it isn't: another dashboard. The goal is one clear next step, not more charts.
 
-[Image: without-solen.png]
-
-[Image: with-solen.png]
+[Image: with-vs-without-solen.png]
 
 Before I build more, I need to know how stores really decide what to change today. That's what this form is for.
 
