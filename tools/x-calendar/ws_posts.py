@@ -106,6 +106,26 @@ Hypothesis: when the pack math is instant, more shoppers pick the biggest pack. 
 
 Follow for more breakdowns like this."""),
 
+ dict(brand='DJI', shot='33.png', text="""Worth stealing #0: DJI's Black Friday, without a discount.
+
+A €1,599 drone bundle during Black Friday, and the price doesn't move. Instead (translated): a free DJI Pro backpack, tagged "Gift", and "5 times more DJI credit on your purchase".
+
+Why it works:
+· No price cut means no new reference price. €1,599 stays credible after November 30.
+· Credit can only be spent at DJI. The deal brings you back for batteries, filters, the next drone.
+· The gift is an object you can picture, first in the box, before the specs.
+· 30-day returns and the official warranty sit right under it: the risk side of a big purchase.
+
+The smart part: on high-ticket products, discounts hurt the brand and its resellers. Value added instead of value removed protects both.
+
+What I'd test next:
+Put the credit in euros. If the base is the 1% shown above, 5 times more is about €80 on this bundle. "5x" sounds clever, "€80 back" is money you can already spend in your head. Above 100, the amount beats the ratio (the rule of 100 from #1).
+Or simpler: "€80 in DJI credit" right next to the price.
+
+Hypothesis: a concrete euro amount pulls harder than a multiplier on a percentage nobody remembers. Metric: conversion during the promotion, share of credit redeemed within 90 days.
+
+Follow for more breakdowns like this."""),
+
  dict(brand="HOLY", shot="15.png", text="""Worth stealing #6: HOLY's price per portion.
 
 A €99.99 bundle, and the line right under it: "150 portions. Only €0.80 per portion."
@@ -468,7 +488,90 @@ Or simpler: one line on the packing slip.
 Hypothesis: fewer "is this the right product?" tickets and returns during the transition. Metric: support tickets about packaging, returns tagged "wrong item".
 
 Follow for more breakdowns like this."""),
+ dict(brand='Apple', shot='34.png', text="""Worth stealing #0: Apple's step-by-step configurator.
+
+Each step opens with one short sentence in two colours (translated): "Model." in black, "Choose the size." in grey. Then two big cards: 13-inch and 15-inch.
+
+Why it works:
+· One decision per step. The black word names the step, the grey words tell you what to do.
+· Dots on the side show how many steps are left. No surprise at the end.
+· Each card gives the total and the monthly price: from €1,399, or €41.80 a month over 36 months.
+· Size comes first: the one question every buyer can answer without reading specs.
+
+The smart part: in totals, the 15-inch costs €300 more. In monthly terms, it's €8.96 more. Same gap, and one of them sounds like a coffee a week.
+
+What I'd test next:
+Show each upgrade as a difference from the current choice: "+€8.96 a month" on the 15-inch card once the 13-inch is selected.
+Or simpler: one line under each size saying who it's for.
+
+Hypothesis: upgrades framed as small monthly differences get picked more than upgrades framed as totals. Metric: share of 15-inch, average configured price.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Decathlon', shot='35.png', text="""Worth stealing #0: Decathlon's price block.
+
+A €459.99 outdoor table tennis table. Under the price (translated): "€85 off" in red, then "Promotion from 03/11/2026 to 26/01/2027".
+
+Why it works:
+· The saving is in euros, not in percent. On a €545 product, €85 sounds bigger than 16%. The rule of 100, applied right.
+· The promotion has real dates. Urgency without a fake countdown, and credible because it's specific.
+· The description sells the use: friends and family, outdoors, big wheels to move it, storage for the paddles.
+· 4.7 stars from 103 reviews sit right under the name.
+
+The smart part: a dated promotion is the honest version of a timer. You know exactly how long you have, so you believe the discount.
+
+What I'd test next:
+Two small conflicts. The top badge says "Free delivery", the price block says "Delivery fees may be added". One message, at the top, with its condition if there is one.
+And "Size: no size" can go. A line that says nothing still costs attention.
+
+Hypothesis: removing the shipping contradiction lowers hesitation right before the button. Metric: add-to-cart rate, drop-off at the shipping step.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Garmin', shot='36.png', text="""Worth stealing #0: Garmin's version selector.
+
+On the fēnix E page, the other versions aren't hidden in another menu. They're buttons under the case size: fēnix 8 AMOLED, fēnix 8 Solar, fēnix 8 Pro AMOLED, fēnix 8 Pro MicroLED.
+
+Why it works:
+· The whole range is one tap away, on one page. No back button, no new tab to compare.
+· You land on the entry model, so the first price you see is the lowest. Everything above is a choice, not a default.
+· Case size is a row of buttons in mm, with an info icon for anyone who doesn't know their wrist.
+· The discount is in euros (€150 off), and Klarna splits the price into 3 payments of €149.99, just under €150.
+
+The smart part: the product range becomes a single page with an upgrade ladder. Comparing never means leaving.
+
+What I'd test next:
+Tell people why to climb. "Solar", "AMOLED", "MicroLED" are specs, not reasons. Under each version: the price difference and one benefit in plain words ("charges in the sun").
+Or simpler: an info icon on each version, like the one on case size.
+
+Hypothesis: shoppers upgrade when they understand what the difference buys them. Metric: share of orders above the entry version, version button taps.
+
+Follow for more breakdowns like this."""),
+
+ dict(brand='Charles Tyrwhitt', shot='37.png', text="""Worth stealing #0: Charles Tyrwhitt's shirt builder.
+
+A €29.95 shirt (was €84.95), and the red banner under the price says (translated): "Save €55 today, no promo code needed."
+
+Why it works:
+· "No promo code needed" stops the detour to Google in search of a code, the leak from friction #27, closed in five words.
+· The fit is chosen with drawings of the shirt, not with words like "slim" that mean something different to everyone.
+· Collar sizes in cm are grouped under S, M, L, XL. Experts read the centimetres, everyone else reads the letter.
+· "Your selections" recaps the choices so far, each with a tick.
+
+The smart part: two sizing languages on one screen, so neither the made-to-measure buyer nor the casual one feels lost.
+
+What I'd test next:
+The "Most popular" label sits on Slim, which is crossed out, unavailable. The badge points shoppers to something they can't buy. When an option sells out, move the label, or swap it for "Notify me".
+Or simpler: grey the label out with the option.
+
+Hypothesis: a popularity badge on an unavailable option creates frustration instead of reassurance. Metric: exits at the fit step, notify-me sign-ups.
+
+Follow for more breakdowns like this."""),
 ]
+
+import re as _re
+for _i, _p in enumerate(WS, 1):
+    _p['text'] = _re.sub(r'^Worth stealing #\d+:', f'Worth stealing #{_i}:', _p['text'])
 
 if __name__ == '__main__':
     import re
