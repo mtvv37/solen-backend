@@ -6,7 +6,7 @@
 ## Mode d'emploi
 
 - **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. » 22 posts sur 43 ont un visuel (`design/social/x-friction/`), en priorité ceux sur l'argent.
-- **B · 13h : Worth stealing**, nouvelle série. Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more. »
+- **B · 13h : Worth stealing**, nouvelle série en format long (X Premium). Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more breakdowns like this. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
 - **D · 21h, 13 jours sur 38 : un 4e post, uniquement un appel vers le formulaire.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les 7 appels en C : 20 appels, plus le lien en réponse sous chaque post A et B.
 - **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
@@ -20,21 +20,57 @@
   ```
 - **« Link below »** dans un post C : le lien du formulaire va en première réponse, jamais dans le post.
 
-## Worth stealing : le format
+## Worth stealing : le format long
 
-Une capture, un nom de marque, ce qui marche, une chose qu'on testerait.
+Une capture, un nom de marque, ce qui marche, une chose qu'on testerait. Au-delà de 280 caractères, X demande un compte Premium ;
+le fil coupe après quelques lignes avec « Show more », donc la marque et la fonctionnalité tiennent dans les deux premières lignes.
+
+Le gabarit :
 
 ```
 Worth stealing #1: [Brand]'s [feature].
 
+Really like how [Brand] handles [feature] on mobile.
+
 Why it works:
 · [what the shopper sees]
-· [the question it answers]
+· [the question it answers before they ask]
 · [the friction it removes]
+· [how it backs up the offer or the brand]
 
-What I'd test: [one idea, framed as a test]
+The smart part: [one insight, in one or two sentences].
 
-Follow for more.
+What I'd test next:
+[one idea, framed as a test]
+Or simpler: [a smaller version of the same idea].
+
+Hypothesis: [who it helps and why]. Metric: [what to watch].
+
+Follow for more breakdowns like this.
+```
+
+Un exemple rempli (892 caractères ; la marque reste entre crochets, le vrai post ne décrit que ce qu'on voit sur la capture) :
+
+```
+Worth stealing #1: [Brand]'s size picker.
+
+Really like how [Brand] handles sizing on mobile.
+
+Why it works:
+· Every size is visible at once. No dropdown to open.
+· Sold-out sizes stay on screen, greyed out, so you know they exist.
+· A short fit note sits right under the sizes: "Runs small, size up if you're between two."
+· Add to cart stays inactive until a size is picked, so nobody adds the wrong one by accident.
+
+The smart part: it answers "which size do I take?" at the exact moment the shopper decides, without sending them to a size chart.
+
+What I'd test next:
+A "Between two sizes?" link that opens the fit guide in a drawer, right where you are.
+Or simpler: show the model's height and the size they wear next to the sizes.
+
+Hypothesis: fewer shoppers leave the page to check sizing. Metric: mobile add-to-cart rate, and size-related returns.
+
+Follow for more breakdowns like this.
 ```
 
 **Règles**

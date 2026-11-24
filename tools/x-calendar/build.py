@@ -1,6 +1,7 @@
 import sys, datetime as dt
 sys.path.insert(0, sys.argv[1])
 from posts import FRICTIONS, C, D, BRANDS, VISUALS, REPLY, RESERVE, START, friction
+from ws_long import EXAMPLE as WS_EXAMPLE, TEMPLATE as WS_TEMPLATE
 
 def weight(s):
     # Comptage X : 1 pour les plages latines/ponctuation, 2 pour le reste (emoji, €...).
@@ -63,7 +64,7 @@ head = f"""# Solen : 3 posts X par jour, du 24 novembre au 31 décembre 2026
 ## Mode d'emploi
 
 - **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. » 22 posts sur 43 ont un visuel (`design/social/x-friction/`), en priorité ceux sur l'argent.
-- **B · 13h : Worth stealing**, nouvelle série. Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more. »
+- **B · 13h : Worth stealing**, nouvelle série en format long (X Premium). Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. Finit par « Follow for more breakdowns like this. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
 - **D · 21h, {len(D)} jours sur {len(C)} : un 4e post, uniquement un appel vers le formulaire.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les {sum(1 for c in C if c and c[0] == 'Appel')} appels en C : {len(D) + sum(1 for c in C if c and c[0] == 'Appel')} appels, plus le lien en réponse sous chaque post A et B.
 - **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
@@ -73,21 +74,21 @@ head = f"""# Solen : 3 posts X par jour, du 24 novembre au 31 décembre 2026
   ```
 - **« Link below »** dans un post C : le lien du formulaire va en première réponse, jamais dans le post.
 
-## Worth stealing : le format
+## Worth stealing : le format long
 
-Une capture, un nom de marque, ce qui marche, une chose qu'on testerait.
+Une capture, un nom de marque, ce qui marche, une chose qu'on testerait. Au-delà de 280 caractères, X demande un compte Premium ;
+le fil coupe après quelques lignes avec « Show more », donc la marque et la fonctionnalité tiennent dans les deux premières lignes.
+
+Le gabarit :
 
 ```
-Worth stealing #1: [Brand]'s [feature].
+{WS_TEMPLATE}
+```
 
-Why it works:
-· [what the shopper sees]
-· [the question it answers]
-· [the friction it removes]
+Un exemple rempli ({len(WS_EXAMPLE)} caractères ; la marque reste entre crochets, le vrai post ne décrit que ce qu'on voit sur la capture) :
 
-What I'd test: [one idea, framed as a test]
-
-Follow for more.
+```
+{WS_EXAMPLE}
 ```
 
 **Règles**

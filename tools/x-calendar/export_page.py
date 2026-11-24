@@ -11,6 +11,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from posts import BRANDS, C, D, FRICTIONS, REPLY, RESERVE, START, VISUALS, friction  # noqa: E402
+from ws_long import EXAMPLE as WS_EXAMPLE, TEMPLATE as WS_TEMPLATE  # noqa: E402
 
 
 def weight(s):
@@ -60,7 +61,8 @@ def build():
         days.append(dict(date=d.isoformat(), event=EVENTS.get((d.month, d.day)), posts=posts))
     reserve = [dict(num=n, text=friction(n, FRICTIONS[n - 28]), w=weight(friction(n, FRICTIONS[n - 28]))) for n in RESERVE]
     data = dict(days=days, reply=REPLY, reply_w=weight(REPLY.replace('[link]', 'x' * 23)),
-                brands=[list(b) for b in BRANDS], reserve=reserve)
+                brands=[list(b) for b in BRANDS], reserve=reserve,
+                ws=dict(template=WS_TEMPLATE, example=WS_EXAMPLE))
     page = open(os.path.join(HERE, 'page.html'), encoding='utf-8').read()
     payload = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     out = os.path.join(HERE, 'calendrier-x.html')

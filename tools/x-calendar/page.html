@@ -158,7 +158,7 @@
       <li>Repère une chose qui aide l'acheteur à se décider : bouton d'ajout au panier qui reste visible, choix de taille, infos de coupe, délai de livraison, avis, panier, prix d'un pack.</li>
       <li>Fais une capture d'écran entière, sans recadrer.</li>
       <li>Envoie-la-moi avec le nom de la marque et le lien de la page.</li>
-      <li>Je t'écris le post (280 caractères maximum, finit par « Follow for more. ») et, si tu veux, je mets ta capture dans le gabarit vert des frictions, avec la mention « Not affiliated ».</li>
+      <li>Je t'écris le post en format long (600 à 900 caractères, finit par « Follow for more breakdowns like this. ») et, si tu veux, je mets ta capture dans le gabarit vert des frictions, avec la mention « Not affiliated ».</li>
       <li>Tu postes à 13h avec l'image, puis la réponse type et son visuel juste en dessous.</li>
     </ol>
     <div class="group"><h3>Les règles du format</h3>
@@ -169,19 +169,9 @@
         <li>On n'écrit « on Shopify » que si c'est vérifié.</li>
       </ul>
     </div>
-    <div class="group"><h3>Le format du post</h3>
-      <div class="post">
-        <pre class="txt" id="ws-template">Worth stealing #1: [Brand]'s [feature].
-
-Why it works:
-· [what the shopper sees]
-· [the question it answers]
-· [the friction it removes]
-
-What I'd test: [one idea, framed as a test]
-
-Follow for more.</pre>
-      </div>
+    <div class="group"><h3>Le format du post, en version longue</h3>
+      <p class="note">Au-delà de 280 caractères, X demande un compte Premium. Le fil coupe après quelques lignes avec « Show more » : la marque et la fonctionnalité doivent tenir dans les deux premières lignes.</p>
+      <div class="stack" id="ws-format"></div>
     </div>
     <div class="group"><h3>Les marques</h3>
       <div class="tablewrap"><table><thead><tr><th>Marque</th><th>Catégorie</th><th>Où regarder</th></tr></thead><tbody id="brands"></tbody></table></div>
@@ -338,6 +328,13 @@ Follow for more.</pre>
     <article class="post"><div class="ph"><span class="series">Post épinglé</span><span class="count">269/280</span></div>${pin.html}<div class="acts">${copyBtn(pin.id)}</div></article>
     <article class="post"><div class="ph"><span class="series">Bio</span><span class="count">${BIO.length}/160</span></div>${bio.html}
       <div class="acts">${copyBtn(bio.id)}</div><p class="hint">Mets le lien Tally dans le champ site web du profil.</p></article>`;
+
+  // Format long de Worth stealing
+  const wt = block(DATA.ws.template), we = block(DATA.ws.example);
+  $('#ws-format').innerHTML = `
+    <article class="post"><div class="ph"><span class="series">Le gabarit</span><span class="count">${DATA.ws.template.length} caractères</span></div>${wt.html}<div class="acts">${copyBtn(wt.id)}</div></article>
+    <article class="post"><div class="ph"><span class="series">Un exemple rempli</span><span class="count">${DATA.ws.example.length} caractères</span></div>${we.html}
+      <p class="hint">La marque reste entre crochets : le vrai post ne décrit que ce qu'on voit sur ta capture.</p><div class="acts">${copyBtn(we.id)}</div></article>`;
 
   // Marques
   $('#brands').innerHTML = DATA.brands.map(([n, c, w]) => `<tr><td><b>${esc(n)}</b></td><td>${esc(c)}</td><td>${esc(w)}</td></tr>`).join('');
