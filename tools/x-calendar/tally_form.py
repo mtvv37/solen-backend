@@ -72,7 +72,7 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 
 3. Store URL (optional, never shared)"""),
 
- dict(title="Page 3A · How you improve your store today", logic="« I tried and stopped » → affiche la question 6b. Fin de page → page 4.", text="""How you improve your store today
+ dict(title="Page 3A · How you improve your store today", logic="« I tried and stopped » → affiche la question 6b. Si la 7 contient « None », masque la 8. La 8 : bloc « Linear scale » de Tally, 1 à 5, libellés Not at all / Extremely well, l'exemple en description. Fin de page → page 4.", text="""How you improve your store today
 
 4. Tell me about the last change you made to improve conversion. What did you notice, what did you change, and did it work? (long answer, required)
 
@@ -100,14 +100,17 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 - An agency or freelancer
 - None
 
-8. Hours a month spent on this (one choice)
+8. How well do these tools help you decide what to change on your store? (linear scale 1 to 5: 1 = Not at all, 5 = Extremely well)
+Example: "My heatmap showed most mobile visitors never reached Add to cart, so I moved it up" (extremely well) vs. "I open Google Analytics once a month and don't really act on it" (not at all).
+
+9. Hours a month spent on this (one choice)
 - 0
 - Under 2
 - 2 to 5
 - 5 to 10
 - 10+
 
-9. Monthly spend on it, tools and people, € or $ (one choice)
+10. Monthly spend on it, tools and people, € or $ (one choice)
 - 0
 - Under 50
 - 50 to 200
@@ -115,7 +118,7 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 - 1,000+
 - Rather not say
 
-10. What's hardest right now? (one choice)
+11. What's hardest right now? (one choice)
 - Knowing what to change
 - Finding the time or people to do it
 - Knowing if a change worked
@@ -152,13 +155,13 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 
  dict(title="Page 4 · Where AI fits", logic="Tout le monde passe par cette page.", text="""Where AI fits, or doesn't
 
-11. If software spotted a problem on a store, how far would you let it go? (one choice)
+12. If software spotted a problem on a store, how far would you let it go? (one choice)
 - Just flag it
 - Draft the fix, I approve it
 - Test it on part of the traffic
 - Ship winning changes on its own, within rules I set
 
-12. What would make you trust an AI recommendation about a store? (several)
+13. What would make you trust an AI recommendation about a store? (several)
 - Seeing the data behind it
 - A confidence level
 - Testing it before it goes live
@@ -166,7 +169,7 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 - A one-click undo
 - Nothing would
 
-13. Have you used AI (ChatGPT, Shopify Sidekick...) to decide what to change on a store? (one choice)
+14. Have you used AI (ChatGPT, Shopify Sidekick...) to decide what to change on a store? (one choice)
 - Yes, regularly
 - I tried it
 - Never"""),
@@ -175,11 +178,11 @@ Email, pour t'envoyer le rapport en janvier (email)"""),
 
 Optional. Leave your email and you'll get the full report in January.
 
-14. Email (optional)
+15. Email (optional)
 
-15. If your store could fix one thing on its own every week, what would it be? (long answer, optional)
+16. If your store could fix one thing on its own every week, what would it be? (long answer, optional)
 
-16. You can email me 2 or 3 follow-up questions (checkbox, optional)"""),
+17. You can email me 2 or 3 follow-up questions (checkbox, optional)"""),
 
  dict(title="Page de fin · Merci", logic="Page « Thank you » de Tally.", text="""Thanks, that really helps.
 
