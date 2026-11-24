@@ -2,7 +2,7 @@
 
 > Généré depuis `tools/x-calendar/tally_form.py`. Une section = une page Tally. Structure inspirée du modèle Tally « B2B SaaS Research Report », réécrite pour Solen.
 > Pas de question « combien paieriez-vous » : on demande ce que les gens dépensent déjà.
-> Schémas de l'intro : `design/social/form/without-solen.png` et `with-solen.png` (blocs image de Tally). L'application automatique au-dessus d'un seuil est présentée comme la suite, pas comme l'existant.
+> Schémas de l'intro : `design/social/form/without-solen.png` et `with-solen.png` (blocs image de Tally). L'intro sépare ce que Solen fait aujourd'hui de ce qui vient ensuite (application automatique au-dessus d'un seuil, segments plus fins).
 
 ## Page 1 · Intro
 
@@ -11,9 +11,22 @@
 ```
 Help me build Solen
 
-I'm Thomas. I'm building Solen, an AI tool for Shopify stores. It watches how visitors use your store, spots where they get stuck, and proposes a fix with how sure it is, segment by segment: mobile visitors, new visitors, people coming from Instagram...
+I'm Thomas, and I'm building Solen, an AI tool for Shopify stores.
 
-Where it's going: you set a confidence threshold. Above it, Solen applies the fix itself, measures it and rolls it back if it hurts. Below it, it asks you first. Prices, promos and checkout always wait for you.
+What it is
+Most stores already have the data: Shopify Analytics, GA4, heatmaps. What's missing is the step between "this looks off" and "we changed it, and it worked". Solen tries to do that step for you.
+
+How it works today
+- you add a small script to your store
+- it records how visitors click and scroll, page by page, on mobile and desktop
+- it spots where they drop off or get stuck
+- it proposes a fix, with how sure it is. The less data it has, the lower that number goes, on purpose.
+- you can ask it questions in plain English, like "why are mobile visitors leaving my product page?"
+
+Where it's going
+You set a confidence threshold. Above it, Solen applies the fix itself, tests it on part of your traffic, measures it, and rolls it back if it hurts. Below it, it asks you first. Prices, promos and checkout always wait for you. Every result is kept, so later suggestions can learn from earlier ones. Finer segments come next too: new visitors, people coming from Instagram, and so on.
+
+What it isn't: another dashboard. The goal is one clear next step, not more charts.
 
 [Image: without-solen.png]
 
@@ -26,7 +39,7 @@ Before I build more, I need to know how stores really decide what to change toda
 2. How you improve it today
 3. Where AI fits, or doesn't
 
-No pitch, nothing to buy. Leave your email at the end and you'll get the full report in January.
+Nothing to buy, no sales follow-up. Leave your email at the end and you'll get the full report in January.
 
 Would you rather do a 20-minute call in French? (one choice, required)
 - Oui, je parle français
