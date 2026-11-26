@@ -1,212 +1,212 @@
 {
-  "stores": 2156,
-  "pages": 10443,
+  "stores": 2255,
+  "pages": 10927,
   "features": {
     "ld_product": {
       "label": "Product structured data",
-      "stores_with": 1858,
-      "stores_measured": 2156,
-      "pct": 86.2
+      "stores_with": 1945,
+      "stores_measured": 2255,
+      "pct": 86.3
     },
     "price": {
       "label": "Price in structured data",
-      "stores_with": 1768,
-      "stores_measured": 2156,
-      "pct": 82.0
+      "stores_with": 1851,
+      "stores_measured": 2255,
+      "pct": 82.1
     },
     "rating": {
       "label": "Star rating in structured data",
-      "stores_with": 473,
-      "stores_measured": 2156,
-      "pct": 21.9
+      "stores_with": 498,
+      "stores_measured": 2255,
+      "pct": 22.1
     },
     "return_policy_markup": {
       "label": "Return policy in structured data",
-      "stores_with": 306,
-      "stores_measured": 2156,
-      "pct": 14.2
+      "stores_with": 316,
+      "stores_measured": 2255,
+      "pct": 14.0
     },
     "shipping_markup": {
       "label": "Shipping in structured data",
-      "stores_with": 324,
-      "stores_measured": 2156,
-      "pct": 15.0
+      "stores_with": 334,
+      "stores_measured": 2255,
+      "pct": 14.8
     },
     "cta_found": {
       "label": "Add to cart button or cart form found",
-      "stores_with": 1527,
-      "stores_measured": 2156,
-      "pct": 70.8
+      "stores_with": 1601,
+      "stores_measured": 2255,
+      "pct": 71.0
     },
     "cta_text": {
       "label": "Add to cart style button text",
-      "stores_with": 1232,
-      "stores_measured": 2156,
-      "pct": 57.1
+      "stores_with": 1291,
+      "stores_measured": 2255,
+      "pct": 57.3
     },
     "returns_near_cta": {
       "label": "Returns mentioned right after the button",
-      "stores_with": 458,
-      "stores_measured": 1232,
-      "pct": 37.2
+      "stores_with": 478,
+      "stores_measured": 1291,
+      "pct": 37.0
     },
     "shipping_near_cta": {
       "label": "Shipping or delivery mentioned right after the button",
-      "stores_with": 631,
-      "stores_measured": 1232,
-      "pct": 51.2
+      "stores_with": 665,
+      "stores_measured": 1291,
+      "pct": 51.5
     },
     "free_shipping": {
       "label": "Free shipping mentioned",
-      "stores_with": 707,
-      "stores_measured": 2156,
-      "pct": 32.8
+      "stores_with": 750,
+      "stores_measured": 2255,
+      "pct": 33.3
     },
     "secure_checkout": {
       "label": "Secure checkout wording",
-      "stores_with": 179,
-      "stores_measured": 2156,
-      "pct": 8.3
+      "stores_with": 190,
+      "stores_measured": 2255,
+      "pct": 8.4
     },
     "guarantee": {
       "label": "Guarantee wording",
-      "stores_with": 504,
-      "stores_measured": 2156,
-      "pct": 23.4
+      "stores_with": 530,
+      "stores_measured": 2255,
+      "pct": 23.5
     },
     "payment_logos": {
       "label": "Card or PayPal brand marks on the page",
-      "stores_with": 1139,
-      "stores_measured": 2156,
-      "pct": 52.8
+      "stores_with": 1180,
+      "stores_measured": 2255,
+      "pct": 52.3
     },
     "wallet_buttons": {
       "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
-      "stores_with": 892,
-      "stores_measured": 2156,
-      "pct": 41.4
+      "stores_with": 923,
+      "stores_measured": 2255,
+      "pct": 40.9
     },
     "viewport": {
       "label": "Mobile viewport tag",
-      "stores_with": 2133,
-      "stores_measured": 2156,
+      "stores_with": 2231,
+      "stores_measured": 2255,
       "pct": 98.9
     }
   },
   "numeric": {
     "imgs": {
       "label": "Images in the page",
-      "median_across_stores": 37
+      "median_across_stores": 38
     },
     "scripts": {
       "label": "Scripts in the page",
-      "median_across_stores": 61
+      "median_across_stores": 62
     },
     "bytes": {
       "label": "HTML size (bytes)",
-      "median_across_stores": 493784
+      "median_across_stores": 497825
     }
   },
-  "sites_sampled": 5756,
+  "sites_sampled": 5928,
   "french": {
-    "stores": 116,
-    "pages": 579,
+    "stores": 121,
+    "pages": 609,
     "features": {
       "ld_product": {
         "label": "Product structured data",
-        "stores_with": 104,
-        "stores_measured": 116,
-        "pct": 89.7
+        "stores_with": 107,
+        "stores_measured": 121,
+        "pct": 88.4
       },
       "price": {
         "label": "Price in structured data",
-        "stores_with": 99,
-        "stores_measured": 116,
-        "pct": 85.3
+        "stores_with": 102,
+        "stores_measured": 121,
+        "pct": 84.3
       },
       "rating": {
         "label": "Star rating in structured data",
-        "stores_with": 30,
-        "stores_measured": 116,
-        "pct": 25.9
+        "stores_with": 31,
+        "stores_measured": 121,
+        "pct": 25.6
       },
       "return_policy_markup": {
         "label": "Return policy in structured data",
         "stores_with": 17,
-        "stores_measured": 116,
-        "pct": 14.7
+        "stores_measured": 121,
+        "pct": 14.0
       },
       "shipping_markup": {
         "label": "Shipping in structured data",
         "stores_with": 17,
-        "stores_measured": 116,
-        "pct": 14.7
+        "stores_measured": 121,
+        "pct": 14.0
       },
       "cta_found": {
         "label": "Add to cart button or cart form found",
-        "stores_with": 96,
-        "stores_measured": 116,
-        "pct": 82.8
+        "stores_with": 101,
+        "stores_measured": 121,
+        "pct": 83.5
       },
       "cta_text": {
         "label": "Add to cart style button text",
-        "stores_with": 90,
-        "stores_measured": 116,
-        "pct": 77.6
+        "stores_with": 94,
+        "stores_measured": 121,
+        "pct": 77.7
       },
       "returns_near_cta": {
         "label": "Returns mentioned right after the button",
         "stores_with": 37,
-        "stores_measured": 90,
-        "pct": 41.1
+        "stores_measured": 94,
+        "pct": 39.4
       },
       "shipping_near_cta": {
         "label": "Shipping or delivery mentioned right after the button",
-        "stores_with": 51,
-        "stores_measured": 90,
-        "pct": 56.7
+        "stores_with": 53,
+        "stores_measured": 94,
+        "pct": 56.4
       },
       "free_shipping": {
         "label": "Free shipping mentioned",
-        "stores_with": 59,
-        "stores_measured": 116,
-        "pct": 50.9
+        "stores_with": 61,
+        "stores_measured": 121,
+        "pct": 50.4
       },
       "secure_checkout": {
         "label": "Secure checkout wording",
-        "stores_with": 40,
-        "stores_measured": 116,
-        "pct": 34.5
+        "stores_with": 42,
+        "stores_measured": 121,
+        "pct": 34.7
       },
       "guarantee": {
         "label": "Guarantee wording",
         "stores_with": 49,
-        "stores_measured": 116,
-        "pct": 42.2
+        "stores_measured": 121,
+        "pct": 40.5
       },
       "payment_logos": {
         "label": "Card or PayPal brand marks on the page",
-        "stores_with": 74,
-        "stores_measured": 116,
-        "pct": 63.8
+        "stores_with": 77,
+        "stores_measured": 121,
+        "pct": 63.6
       },
       "wallet_buttons": {
         "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
-        "stores_with": 60,
-        "stores_measured": 116,
-        "pct": 51.7
+        "stores_with": 61,
+        "stores_measured": 121,
+        "pct": 50.4
       },
       "viewport": {
         "label": "Mobile viewport tag",
-        "stores_with": 115,
-        "stores_measured": 116,
-        "pct": 99.1
+        "stores_with": 120,
+        "stores_measured": 121,
+        "pct": 99.2
       }
     },
     "numeric": {
       "imgs": {
         "label": "Images in the page",
-        "median_across_stores": 52
+        "median_across_stores": 50
       },
       "scripts": {
         "label": "Scripts in the page",
@@ -214,116 +214,116 @@
       },
       "bytes": {
         "label": "HTML size (bytes)",
-        "median_across_stores": 453811
+        "median_across_stores": 456073
       }
     }
   },
-  "french_count": 116,
-  "generated_at": "2026-11-25T11:37:18+00:00",
+  "french_count": 121,
+  "generated_at": "2026-11-26T11:13:49+00:00",
   "platforms": {
-    "shopify": 752,
-    "other": 965,
-    "woocommerce": 143,
+    "shopify": 800,
+    "other": 1001,
+    "woocommerce": 150,
     "prestashop": 6,
-    "sfcc": 180,
+    "sfcc": 182,
     "wix": 2,
-    "magento": 97,
+    "magento": 102,
     "squarespace": 5,
-    "bigcommerce": 6
+    "bigcommerce": 7
   },
   "by_platform": {
     "other": {
-      "stores": 965,
-      "pages": 4599,
+      "stores": 1001,
+      "pages": 4768,
       "features": {
         "ld_product": {
           "label": "Product structured data",
-          "stores_with": 791,
-          "stores_measured": 965,
-          "pct": 82.0
+          "stores_with": 823,
+          "stores_measured": 1001,
+          "pct": 82.2
         },
         "price": {
           "label": "Price in structured data",
-          "stores_with": 766,
-          "stores_measured": 965,
-          "pct": 79.4
+          "stores_with": 797,
+          "stores_measured": 1001,
+          "pct": 79.6
         },
         "rating": {
           "label": "Star rating in structured data",
-          "stores_with": 195,
-          "stores_measured": 965,
-          "pct": 20.2
+          "stores_with": 206,
+          "stores_measured": 1001,
+          "pct": 20.6
         },
         "return_policy_markup": {
           "label": "Return policy in structured data",
-          "stores_with": 154,
-          "stores_measured": 965,
-          "pct": 16.0
+          "stores_with": 159,
+          "stores_measured": 1001,
+          "pct": 15.9
         },
         "shipping_markup": {
           "label": "Shipping in structured data",
-          "stores_with": 162,
-          "stores_measured": 965,
-          "pct": 16.8
+          "stores_with": 165,
+          "stores_measured": 1001,
+          "pct": 16.5
         },
         "cta_found": {
           "label": "Add to cart button or cart form found",
-          "stores_with": 472,
-          "stores_measured": 965,
-          "pct": 48.9
+          "stores_with": 485,
+          "stores_measured": 1001,
+          "pct": 48.5
         },
         "cta_text": {
           "label": "Add to cart style button text",
-          "stores_with": 431,
-          "stores_measured": 965,
-          "pct": 44.7
+          "stores_with": 444,
+          "stores_measured": 1001,
+          "pct": 44.4
         },
         "returns_near_cta": {
           "label": "Returns mentioned right after the button",
-          "stores_with": 148,
-          "stores_measured": 431,
-          "pct": 34.3
+          "stores_with": 154,
+          "stores_measured": 444,
+          "pct": 34.7
         },
         "shipping_near_cta": {
           "label": "Shipping or delivery mentioned right after the button",
-          "stores_with": 201,
-          "stores_measured": 431,
-          "pct": 46.6
+          "stores_with": 209,
+          "stores_measured": 444,
+          "pct": 47.1
         },
         "free_shipping": {
           "label": "Free shipping mentioned",
-          "stores_with": 167,
-          "stores_measured": 965,
-          "pct": 17.3
+          "stores_with": 176,
+          "stores_measured": 1001,
+          "pct": 17.6
         },
         "secure_checkout": {
           "label": "Secure checkout wording",
-          "stores_with": 45,
-          "stores_measured": 965,
-          "pct": 4.7
+          "stores_with": 46,
+          "stores_measured": 1001,
+          "pct": 4.6
         },
         "guarantee": {
           "label": "Guarantee wording",
-          "stores_with": 198,
-          "stores_measured": 965,
-          "pct": 20.5
+          "stores_with": 207,
+          "stores_measured": 1001,
+          "pct": 20.7
         },
         "payment_logos": {
           "label": "Card or PayPal brand marks on the page",
-          "stores_with": 336,
-          "stores_measured": 965,
-          "pct": 34.8
+          "stores_with": 343,
+          "stores_measured": 1001,
+          "pct": 34.3
         },
         "wallet_buttons": {
           "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
-          "stores_with": 174,
-          "stores_measured": 965,
-          "pct": 18.0
+          "stores_with": 178,
+          "stores_measured": 1001,
+          "pct": 17.8
         },
         "viewport": {
           "label": "Mobile viewport tag",
-          "stores_with": 944,
-          "stores_measured": 965,
+          "stores_with": 979,
+          "stores_measured": 1001,
           "pct": 97.8
         }
       },
@@ -338,102 +338,102 @@
         },
         "bytes": {
           "label": "HTML size (bytes)",
-          "median_across_stores": 346285
+          "median_across_stores": 348220
         }
       }
     },
     "shopify": {
-      "stores": 752,
-      "pages": 3738,
+      "stores": 800,
+      "pages": 3981,
       "features": {
         "ld_product": {
           "label": "Product structured data",
-          "stores_with": 701,
-          "stores_measured": 752,
+          "stores_with": 746,
+          "stores_measured": 800,
           "pct": 93.2
         },
         "price": {
           "label": "Price in structured data",
-          "stores_with": 665,
-          "stores_measured": 752,
-          "pct": 88.4
+          "stores_with": 708,
+          "stores_measured": 800,
+          "pct": 88.5
         },
         "rating": {
           "label": "Star rating in structured data",
-          "stores_with": 207,
-          "stores_measured": 752,
+          "stores_with": 220,
+          "stores_measured": 800,
           "pct": 27.5
         },
         "return_policy_markup": {
           "label": "Return policy in structured data",
-          "stores_with": 102,
-          "stores_measured": 752,
-          "pct": 13.6
+          "stores_with": 107,
+          "stores_measured": 800,
+          "pct": 13.4
         },
         "shipping_markup": {
           "label": "Shipping in structured data",
-          "stores_with": 99,
-          "stores_measured": 752,
-          "pct": 13.2
+          "stores_with": 104,
+          "stores_measured": 800,
+          "pct": 13.0
         },
         "cta_found": {
           "label": "Add to cart button or cart form found",
-          "stores_with": 700,
-          "stores_measured": 752,
-          "pct": 93.1
+          "stores_with": 747,
+          "stores_measured": 800,
+          "pct": 93.4
         },
         "cta_text": {
           "label": "Add to cart style button text",
-          "stores_with": 518,
-          "stores_measured": 752,
-          "pct": 68.9
+          "stores_with": 556,
+          "stores_measured": 800,
+          "pct": 69.5
         },
         "returns_near_cta": {
           "label": "Returns mentioned right after the button",
-          "stores_with": 210,
-          "stores_measured": 518,
-          "pct": 40.5
+          "stores_with": 223,
+          "stores_measured": 556,
+          "pct": 40.1
         },
         "shipping_near_cta": {
           "label": "Shipping or delivery mentioned right after the button",
-          "stores_with": 300,
-          "stores_measured": 518,
+          "stores_with": 322,
+          "stores_measured": 556,
           "pct": 57.9
         },
         "free_shipping": {
           "label": "Free shipping mentioned",
-          "stores_with": 406,
-          "stores_measured": 752,
-          "pct": 54.0
+          "stores_with": 435,
+          "stores_measured": 800,
+          "pct": 54.4
         },
         "secure_checkout": {
           "label": "Secure checkout wording",
-          "stores_with": 94,
-          "stores_measured": 752,
-          "pct": 12.5
+          "stores_with": 103,
+          "stores_measured": 800,
+          "pct": 12.9
         },
         "guarantee": {
           "label": "Guarantee wording",
-          "stores_with": 205,
-          "stores_measured": 752,
-          "pct": 27.3
+          "stores_with": 218,
+          "stores_measured": 800,
+          "pct": 27.2
         },
         "payment_logos": {
           "label": "Card or PayPal brand marks on the page",
-          "stores_with": 578,
-          "stores_measured": 752,
-          "pct": 76.9
+          "stores_with": 604,
+          "stores_measured": 800,
+          "pct": 75.5
         },
         "wallet_buttons": {
           "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
-          "stores_with": 564,
-          "stores_measured": 752,
-          "pct": 75.0
+          "stores_with": 588,
+          "stores_measured": 800,
+          "pct": 73.5
         },
         "viewport": {
           "label": "Mobile viewport tag",
-          "stores_with": 751,
-          "stores_measured": 752,
+          "stores_with": 799,
+          "stores_measured": 800,
           "pct": 99.9
         }
       },
@@ -448,102 +448,102 @@
         },
         "bytes": {
           "label": "HTML size (bytes)",
-          "median_across_stores": 751689
+          "median_across_stores": 742131
         }
       }
     },
     "sfcc": {
-      "stores": 180,
-      "pages": 887,
+      "stores": 182,
+      "pages": 897,
       "features": {
         "ld_product": {
           "label": "Product structured data",
-          "stores_with": 164,
-          "stores_measured": 180,
-          "pct": 91.1
+          "stores_with": 166,
+          "stores_measured": 182,
+          "pct": 91.2
         },
         "price": {
           "label": "Price in structured data",
-          "stores_with": 153,
-          "stores_measured": 180,
-          "pct": 85.0
+          "stores_with": 155,
+          "stores_measured": 182,
+          "pct": 85.2
         },
         "rating": {
           "label": "Star rating in structured data",
           "stores_with": 42,
-          "stores_measured": 180,
-          "pct": 23.3
+          "stores_measured": 182,
+          "pct": 23.1
         },
         "return_policy_markup": {
           "label": "Return policy in structured data",
           "stores_with": 32,
-          "stores_measured": 180,
-          "pct": 17.8
+          "stores_measured": 182,
+          "pct": 17.6
         },
         "shipping_markup": {
           "label": "Shipping in structured data",
           "stores_with": 37,
-          "stores_measured": 180,
-          "pct": 20.6
+          "stores_measured": 182,
+          "pct": 20.3
         },
         "cta_found": {
           "label": "Add to cart button or cart form found",
-          "stores_with": 119,
-          "stores_measured": 180,
-          "pct": 66.1
+          "stores_with": 120,
+          "stores_measured": 182,
+          "pct": 65.9
         },
         "cta_text": {
           "label": "Add to cart style button text",
-          "stores_with": 119,
-          "stores_measured": 180,
-          "pct": 66.1
+          "stores_with": 120,
+          "stores_measured": 182,
+          "pct": 65.9
         },
         "returns_near_cta": {
           "label": "Returns mentioned right after the button",
-          "stores_with": 67,
-          "stores_measured": 119,
-          "pct": 56.3
+          "stores_with": 68,
+          "stores_measured": 120,
+          "pct": 56.7
         },
         "shipping_near_cta": {
           "label": "Shipping or delivery mentioned right after the button",
-          "stores_with": 81,
-          "stores_measured": 119,
-          "pct": 68.1
+          "stores_with": 82,
+          "stores_measured": 120,
+          "pct": 68.3
         },
         "free_shipping": {
           "label": "Free shipping mentioned",
-          "stores_with": 84,
-          "stores_measured": 180,
-          "pct": 46.7
+          "stores_with": 86,
+          "stores_measured": 182,
+          "pct": 47.3
         },
         "secure_checkout": {
           "label": "Secure checkout wording",
           "stores_with": 16,
-          "stores_measured": 180,
-          "pct": 8.9
+          "stores_measured": 182,
+          "pct": 8.8
         },
         "guarantee": {
           "label": "Guarantee wording",
           "stores_with": 49,
-          "stores_measured": 180,
-          "pct": 27.2
+          "stores_measured": 182,
+          "pct": 26.9
         },
         "payment_logos": {
           "label": "Card or PayPal brand marks on the page",
-          "stores_with": 130,
-          "stores_measured": 180,
-          "pct": 72.2
+          "stores_with": 132,
+          "stores_measured": 182,
+          "pct": 72.5
         },
         "wallet_buttons": {
           "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
-          "stores_with": 119,
-          "stores_measured": 180,
-          "pct": 66.1
+          "stores_with": 121,
+          "stores_measured": 182,
+          "pct": 66.5
         },
         "viewport": {
           "label": "Mobile viewport tag",
-          "stores_with": 180,
-          "stores_measured": 180,
+          "stores_with": 182,
+          "stores_measured": 182,
           "pct": 100.0
         }
       },
@@ -558,102 +558,102 @@
         },
         "bytes": {
           "label": "HTML size (bytes)",
-          "median_across_stores": 512042
+          "median_across_stores": 506442
         }
       }
     },
     "woocommerce": {
-      "stores": 143,
-      "pages": 692,
+      "stores": 150,
+      "pages": 724,
       "features": {
         "ld_product": {
           "label": "Product structured data",
-          "stores_with": 114,
-          "stores_measured": 143,
-          "pct": 79.7
+          "stores_with": 118,
+          "stores_measured": 150,
+          "pct": 78.7
         },
         "price": {
           "label": "Price in structured data",
-          "stores_with": 103,
-          "stores_measured": 143,
-          "pct": 72.0
+          "stores_with": 106,
+          "stores_measured": 150,
+          "pct": 70.7
         },
         "rating": {
           "label": "Star rating in structured data",
-          "stores_with": 9,
-          "stores_measured": 143,
-          "pct": 6.3
+          "stores_with": 10,
+          "stores_measured": 150,
+          "pct": 6.7
         },
         "return_policy_markup": {
           "label": "Return policy in structured data",
           "stores_with": 5,
-          "stores_measured": 143,
-          "pct": 3.5
+          "stores_measured": 150,
+          "pct": 3.3
         },
         "shipping_markup": {
           "label": "Shipping in structured data",
           "stores_with": 4,
-          "stores_measured": 143,
-          "pct": 2.8
+          "stores_measured": 150,
+          "pct": 2.7
         },
         "cta_found": {
           "label": "Add to cart button or cart form found",
-          "stores_with": 131,
-          "stores_measured": 143,
-          "pct": 91.6
+          "stores_with": 138,
+          "stores_measured": 150,
+          "pct": 92.0
         },
         "cta_text": {
           "label": "Add to cart style button text",
-          "stores_with": 109,
-          "stores_measured": 143,
-          "pct": 76.2
+          "stores_with": 114,
+          "stores_measured": 150,
+          "pct": 76.0
         },
         "returns_near_cta": {
           "label": "Returns mentioned right after the button",
           "stores_with": 14,
-          "stores_measured": 109,
-          "pct": 12.8
+          "stores_measured": 114,
+          "pct": 12.3
         },
         "shipping_near_cta": {
           "label": "Shipping or delivery mentioned right after the button",
-          "stores_with": 22,
-          "stores_measured": 109,
+          "stores_with": 23,
+          "stores_measured": 114,
           "pct": 20.2
         },
         "free_shipping": {
           "label": "Free shipping mentioned",
-          "stores_with": 19,
-          "stores_measured": 143,
+          "stores_with": 20,
+          "stores_measured": 150,
           "pct": 13.3
         },
         "secure_checkout": {
           "label": "Secure checkout wording",
-          "stores_with": 7,
-          "stores_measured": 143,
-          "pct": 4.9
+          "stores_with": 8,
+          "stores_measured": 150,
+          "pct": 5.3
         },
         "guarantee": {
           "label": "Guarantee wording",
           "stores_with": 14,
-          "stores_measured": 143,
-          "pct": 9.8
+          "stores_measured": 150,
+          "pct": 9.3
         },
         "payment_logos": {
           "label": "Card or PayPal brand marks on the page",
-          "stores_with": 42,
-          "stores_measured": 143,
-          "pct": 29.4
+          "stores_with": 44,
+          "stores_measured": 150,
+          "pct": 29.3
         },
         "wallet_buttons": {
           "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
           "stores_with": 6,
-          "stores_measured": 143,
-          "pct": 4.2
+          "stores_measured": 150,
+          "pct": 4.0
         },
         "viewport": {
           "label": "Mobile viewport tag",
-          "stores_with": 142,
-          "stores_measured": 143,
+          "stores_with": 149,
+          "stores_measured": 150,
           "pct": 99.3
         }
       },
@@ -668,124 +668,124 @@
         },
         "bytes": {
           "label": "HTML size (bytes)",
-          "median_across_stores": 248899
+          "median_across_stores": 249376
         }
       }
     },
     "magento": {
-      "stores": 97,
-      "pages": 445,
+      "stores": 102,
+      "pages": 470,
       "features": {
         "ld_product": {
           "label": "Product structured data",
-          "stores_with": 72,
-          "stores_measured": 97,
-          "pct": 74.2
+          "stores_with": 75,
+          "stores_measured": 102,
+          "pct": 73.5
         },
         "price": {
           "label": "Price in structured data",
-          "stores_with": 67,
-          "stores_measured": 97,
-          "pct": 69.1
+          "stores_with": 70,
+          "stores_measured": 102,
+          "pct": 68.6
         },
         "rating": {
           "label": "Star rating in structured data",
           "stores_with": 16,
-          "stores_measured": 97,
-          "pct": 16.5
+          "stores_measured": 102,
+          "pct": 15.7
         },
         "return_policy_markup": {
           "label": "Return policy in structured data",
           "stores_with": 10,
-          "stores_measured": 97,
-          "pct": 10.3
+          "stores_measured": 102,
+          "pct": 9.8
         },
         "shipping_markup": {
           "label": "Shipping in structured data",
-          "stores_with": 19,
-          "stores_measured": 97,
-          "pct": 19.6
+          "stores_with": 21,
+          "stores_measured": 102,
+          "pct": 20.6
         },
         "cta_found": {
           "label": "Add to cart button or cart form found",
-          "stores_with": 89,
-          "stores_measured": 97,
-          "pct": 91.8
+          "stores_with": 94,
+          "stores_measured": 102,
+          "pct": 92.2
         },
         "cta_text": {
           "label": "Add to cart style button text",
-          "stores_with": 39,
-          "stores_measured": 97,
-          "pct": 40.2
+          "stores_with": 40,
+          "stores_measured": 102,
+          "pct": 39.2
         },
         "returns_near_cta": {
           "label": "Returns mentioned right after the button",
           "stores_with": 14,
-          "stores_measured": 39,
-          "pct": 35.9
+          "stores_measured": 40,
+          "pct": 35.0
         },
         "shipping_near_cta": {
           "label": "Shipping or delivery mentioned right after the button",
-          "stores_with": 19,
-          "stores_measured": 39,
-          "pct": 48.7
+          "stores_with": 20,
+          "stores_measured": 40,
+          "pct": 50.0
         },
         "free_shipping": {
           "label": "Free shipping mentioned",
-          "stores_with": 21,
-          "stores_measured": 97,
+          "stores_with": 22,
+          "stores_measured": 102,
           "pct": 21.6
         },
         "secure_checkout": {
           "label": "Secure checkout wording",
           "stores_with": 14,
-          "stores_measured": 97,
-          "pct": 14.4
+          "stores_measured": 102,
+          "pct": 13.7
         },
         "guarantee": {
           "label": "Guarantee wording",
-          "stores_with": 33,
-          "stores_measured": 97,
-          "pct": 34.0
+          "stores_with": 36,
+          "stores_measured": 102,
+          "pct": 35.3
         },
         "payment_logos": {
           "label": "Card or PayPal brand marks on the page",
-          "stores_with": 46,
-          "stores_measured": 97,
-          "pct": 47.4
+          "stores_with": 50,
+          "stores_measured": 102,
+          "pct": 49.0
         },
         "wallet_buttons": {
           "label": "Wallet payment (Shop Pay, Apple Pay, Google Pay) on the page",
-          "stores_with": 25,
-          "stores_measured": 97,
-          "pct": 25.8
+          "stores_with": 26,
+          "stores_measured": 102,
+          "pct": 25.5
         },
         "viewport": {
           "label": "Mobile viewport tag",
-          "stores_with": 97,
-          "stores_measured": 97,
+          "stores_with": 102,
+          "stores_measured": 102,
           "pct": 100.0
         }
       },
       "numeric": {
         "imgs": {
           "label": "Images in the page",
-          "median_across_stores": 48
+          "median_across_stores": 49
         },
         "scripts": {
           "label": "Scripts in the page",
-          "median_across_stores": 92
+          "median_across_stores": 91
         },
         "bytes": {
           "label": "HTML size (bytes)",
-          "median_across_stores": 534244
+          "median_across_stores": 530976
         }
       }
     }
   },
   "references": {
     "arntreal.com": {
-      "pages": 12,
+      "pages": 20,
       "platform": "shopify",
       "practices": {
         "ld_product": true,
