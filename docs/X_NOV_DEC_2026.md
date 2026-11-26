@@ -1,87 +1,89 @@
 # Solen : 3 posts X par jour, du 24 novembre au 31 décembre 2026
 
-> Version 1.5, 24/11/2026 : Worth stealing complet (38 posts), réécrit en ton parlé, 900 caractères maximum, puces en tiret. Version 1.4, 23/11/2026 : départ décalé au mardi 24 novembre (rien n'a été posté avant). Frictions #28 à #65 jusqu'au 31 décembre, #66 à #70 en réserve pour janvier. 22 visuels de friction, visuel d'appel au formulaire, liste de marques ; sans tiret ni emoji, selon `design/social/RULES.md`. En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
+> Version 2.0, 26/11/2026 : tout passe en français (tutoiement). Les frictions sont réécrites pour ne pas être évidentes (pièges Shopify réels, effets de bord, le bon indicateur), en format long X Premium ; « Worth stealing » devient « Idée à piquer », citations recopiées depuis les captures. Appels : 20 min en visio d'abord, le formulaire en option. Les versions anglaises sont dans l'historique git.
+> Version 1.5, 24/11/2026 : Worth stealing complet (38 posts). Version 1.4, 23/11/2026 : départ décalé au mardi 24 novembre. Frictions #28 à #65 jusqu'au 31 décembre, #66 à #70 en réserve pour janvier. 22 visuels de friction, visuel d'appel ; sans tiret long ni emoji, selon `design/social/RULES.md`. Compteur X : les emoji et « € » comptent double.
 > Suite de [`X_BUILD_IN_PUBLIC.md`](X_BUILD_IN_PUBLIC.md). Objectif : obtenir des appels 1:1 et des réponses au formulaire, pas des abonnés.
 
 ## Mode d'emploi
 
-- **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. » 22 posts sur 43 ont un visuel (`design/social/x-friction/`), en priorité ceux sur l'argent.
-- **B · 13h : Worth stealing**, nouvelle série en format long (X Premium). Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. 900 caractères maximum, puces en tiret, finit par « Follow for more. »
+- **A · 9h : Friction Shopify à tester**, #28 à #70. Une friction qu'on ne voit pas en testant sa propre boutique, l'hypothèse, le test, l'indicateur. Finit par « Abonne-toi pour la suite. » Entre 280 et 500 caractères (X Premium) : le titre et le début de l'hypothèse restent visibles avant « Afficher plus ». 22 posts sur 43 ont un visuel (`design/social/x-friction/`).
+- **B · 13h : Idée à piquer**, format long (X Premium). Une capture d'une fonctionnalité d'un site, ce qui marche, le mécanisme pas évident, ce qu'on testerait. 900 caractères maximum, puces en tiret, finit par « Abonne-toi pour la suite. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
-- **D · 21h, 13 jours sur 38 : un 4e post, uniquement un appel vers le formulaire.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les 7 appels en C : 20 appels, plus le lien en réponse sous chaque post A et B.
-- **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
-- **Sous chaque post A et B**, ta première réponse : ce texte, avec le visuel `design/social/x-friction/cta-form.png`. Remplace `[link]` par le lien Tally.
+- **D · 21h, 13 jours sur 38 : un 4e post, uniquement un appel.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les 7 appels en C : 20 appels, plus la réponse type sous chaque post A et B.
+- **« Réponds "appel" »** : envoie le lien Cal.com en message privé à chaque personne qui répond.
+- **Sous chaque post A et B**, ta première réponse : ce texte, avec le visuel `design/social/x-friction/cta-form.png`. Remplace `[lien Cal.com]` et `[lien Tally]`.
   ```
-  Run a Shopify store, work in e-commerce, or build Shopify apps?
+  Boutique Shopify, e-commerce ou dev d'apps Shopify ?
 
-  I'm building Solen, an AI app that finds what to A/B test on a store, segment by segment. I need your input: 4 minutes, nothing to buy.
+  Je construis Solen, une app IA qui trouve quoi tester sur une boutique, segment par segment. J'ai besoin de ton avis, rien à acheter :
 
-  Form: [link]
+  20 min en visio : [lien Cal.com]
+  4 min de formulaire : [lien Tally]
   ```
-- **« Link below »** dans un post C : le lien du formulaire va en première réponse, jamais dans le post.
+- **« Lien en réponse »** dans un post C ou D : les liens vont en première réponse (la réponse type), jamais dans le post.
 
-## Worth stealing : le format long
+## Idée à piquer : le format long
 
 Une capture, un nom de marque, ce qui marche, une chose qu'on testerait. Au-delà de 280 caractères, X demande un compte Premium ;
-le fil coupe après quelques lignes avec « Show more », donc la marque et la fonctionnalité tiennent dans les deux premières lignes.
+le fil coupe après quelques lignes avec « Afficher plus », donc la marque et la fonctionnalité tiennent dans les deux premières lignes.
 
 Le gabarit :
 
 ```
-Worth stealing #1: [Brand]'s [feature].
+Idée à piquer #1 : [le détail] de [Marque].
 
-Really like how [Brand] handles [feature] on mobile.
+[Ce qu'on voit, en une ou deux phrases, avec le texte exact du site entre « »].
 
-Why it works:
-- [what the shopper sees]
-- [the question it answers before they ask]
-- [the friction it removes]
-- [how it backs up the offer or the brand]
+Pourquoi ça marche :
+- [ce que le client voit]
+- [la question à laquelle ça répond avant qu'il la pose]
+- [la friction que ça enlève]
+- [comment ça soutient l'offre ou la marque]
 
-The smart part: [one insight, in one or two sentences].
+Le vrai tour : [une idée pas évidente, en une ou deux phrases : le mécanisme, pas la description].
 
-What I'd test next:
-[one idea, framed as a test]
-Or simpler: [a smaller version of the same idea].
+Ce que je testerais : [une idée précise, formulée comme un test].
+Ou plus simple : [une version plus petite de la même idée].
 
-Hypothesis: [who it helps and why]. Metric: [what to watch].
+Je regarderais [l'indicateur, et le segment si ça compte].
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 
-Un exemple rempli (871 caractères ; la marque reste entre crochets, le vrai post ne décrit que ce qu'on voit sur la capture) :
+Un exemple rempli (889 caractères ; la marque reste entre crochets, le vrai post ne décrit que ce qu'on voit sur la capture) :
 
 ```
-Worth stealing #1: [Brand]'s size picker.
+Idée à piquer #1 : le choix de taille de [Marque].
 
-Really like how [Brand] handles sizing on mobile.
+Toutes les tailles visibles d'un coup, les épuisées barrées, et une ligne sous les tailles : « Taille petit, prends au-dessus si tu hésites. »
 
-Why it works:
-- Every size is visible at once. No dropdown to open.
-- Sold-out sizes stay on screen, greyed out, so you know they exist.
-- A short fit note sits right under the sizes: "Runs small, size up if you're between two."
-- Add to cart stays inactive until a size is picked, so nobody adds the wrong one by accident.
+Pourquoi ça marche :
+- pas de menu déroulant à ouvrir
+- les tailles épuisées restent à l'écran, donc tu sais qu'elles existent
+- le conseil de taille arrive pile au moment du choix, pas dans un guide à part
+- le bouton reste inactif tant qu'aucune taille n'est choisie
 
-The smart part: it answers "which size do I take?" at the exact moment the shopper decides, without sending them to a size chart.
+Le vrai tour : le conseil vient des avis. L'info existait déjà, ils l'ont juste déplacée là où le client décide.
 
-What I'd test next:
-A "Between two sizes?" link that opens the fit guide in a drawer, right where you are.
-Or simpler: show the model's height and the size they wear next to the sizes.
+Ce que je testerais : un lien « Entre deux tailles ? » qui ouvre le guide dans un tiroir, sans quitter la page.
+Ou plus simple : la taille du mannequin et la taille qu'il porte, à côté des tailles.
 
-Hypothesis: fewer shoppers leave the page to check sizing. Metric: mobile add-to-cart rate, and size-related returns.
+Je regarderais le taux d'ajout au panier sur mobile, et les retours pour la taille.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 
 **Règles**
 - On parle de ce qu'on voit sur la capture, jamais des résultats de la marque : pas de « +20 % de conversion », on ne les connaît pas.
-- « What I'd test », jamais « they should ». Ce n'est pas une critique.
+- On cite le texte du site tel qu'il est écrit, même en anglais. Si on n'a pas la capture sous les yeux, on paraphrase sans guillemets.
+- « Ce que je testerais », jamais « ils devraient ». Ce n'est pas une critique.
+- Pas évident : on explique le mécanisme (pourquoi ça marche), pas seulement ce qu'on voit.
 - On ne refait pas une fonctionnalité déjà décortiquée par un autre compte (par exemple le sticky add-to-cart de Comfrt).
-- On n'écrit « on Shopify » que si on l'a vérifié.
+- On n'écrit « sur Shopify » que si on l'a vérifié.
 
 ## Marques à décortiquer
 
-Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy. Pour chacune, où regarder en premier ; si rien ne ressort, prends une autre fonctionnalité ou une autre marque. Pour Fincut et Holy, envoie-moi les liens : je n'ai pas pu vérifier de quelles marques il s'agit.
+Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy. Pour chacune, où regarder en premier ; si rien ne ressort, prends une autre fonctionnalité ou une autre marque.
 
 | Marque | Catégorie | Où regarder |
 |---|---|---|
@@ -125,276 +127,276 @@ Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy
 
 ### Mardi 24 novembre
 
-**A · 9h · Friction #28** (244/280)
+**A · 9h · Friction #28** (357 caractères, X Premium)
 ```
-Shopify friction worth testing #28:
+Friction Shopify à tester #28 :
 
-Sale price shown without the original price.
+Un prix barré pour une remise de 5 %.
 
-Hypothesis: shoppers can't tell how good the deal is.
-Test: struck-through original price + "Save €X".
-Metric: add-to-cart rate on sale items.
+Hypothèse : une petite remise affichée rappelle surtout que l'affaire est petite. Le client se dit qu'il y aura mieux, et attend.
+Test : le prix barré seulement au-dessus de 15 %, le prix seul en dessous.
+À mesurer : ajout au panier des articles peu remisés.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-28.png`
 
-**B · 13h · Worth stealing #1 · Gymshark** (603 caractères, X Premium)
+**B · 13h · Idée à piquer #1 · Gymshark** (740 caractères, X Premium)
 ```
-Worth stealing #1: Gymshark's discount badge.
+Idée à piquer #1 : le badge promo de Gymshark.
 
-Tiny label above the product name: "-30% | €12 saved".
+Une petite étiquette au-dessus du nom du produit : « -30% | 12 € D'ÉCONOMIE ».
 
-What I like:
-- you read the deal before the product
-- same discount, said twice: percent and euros
-- old price (€40) right next to the new one (€28), zero math
+Ce que j'aime :
+- tu lis l'affaire avant le produit
+- la même remise, dite deux fois : en pourcentage et en euros
+- l'ancien prix (40 €) juste à côté du nouveau (28 €), zéro calcul
 
-And the order isn't random. On a €40 item, 30% sounds bigger than €12. That's the rule of 100: under 100, lead with the percent. Over 100, lead with the money.
+Et l'ordre n'est pas un hasard. Sur un article à 40 €, « -30 % » sonne plus fort que « 12 € ». C'est la règle des 100 : sous 100 €, commence par le pourcentage. Au-dessus, commence par les euros.
 
-What I'd test: flip it on anything over €100. "€45 saved | -30%" instead of "-30% | €45 saved".
+Ce que je testerais : l'inverser sur tout ce qui dépasse 100 €. « 45 € D'ÉCONOMIE | -30% » au lieu de « -30% | 45 € D'ÉCONOMIE ».
 
-I'd watch add-to-cart on discounted items, split by price band.
+Je regarderais l'ajout au panier des articles remisés, par tranche de prix.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Gymshark.
 
-**C · 18h · Appel** (252/280)
+**C · 18h · Appel** (280/280)
 ```
-New plan for Solen.
+Nouveau plan, et je passe en français.
 
-I'm stopping the free audit offers (8 weeks here, zero takers) and doing what I should have started with: talking to merchants.
+J'arrête les audits gratuits (8 semaines, zéro preneur) et je fais ce que j'aurais dû faire dès le début : parler aux e-commerçants.
 
-How do you decide what to change on your store? 4-min form below, or a 20-min call if you speak French
+Comment tu décides quoi changer sur ta boutique ? 20 min en visio ou 4 min de formulaire. Lien en réponse.
 ```
 
 ### Mercredi 25 novembre
 
-**A · 9h · Friction #29** (258/280)
+**A · 9h · Friction #29** (471 caractères, X Premium)
 ```
-Shopify friction worth testing #29:
+Friction Shopify à tester #29 :
 
-Black Friday discount applied only at checkout.
+Ton Black Friday passe par un code, et le panier affiche les prix pleins avec « réductions calculées au paiement ».
 
-Hypothesis: full prices in the cart make shoppers doubt the offer applies.
-Test: show the discounted price before checkout.
-Metric: cart-to-checkout rate.
+Hypothèse : le client qui n'a pas vu le code croit qu'il lui en faut un, part le chercher sur Google, et revient via un site de codes promo. Ou pas du tout.
+Test : une remise automatique, visible dans le panier.
+À mesurer : passage du panier au paiement, ventes attribuées à des sites de codes.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-29.png`
 
-**B · 13h · Worth stealing #2 · Arntreal** (772 caractères, X Premium)
+**B · 13h · Idée à piquer #2 · Arntreal** (881 caractères, X Premium)
 ```
-Worth stealing #2: Arntreal's Black Friday draw.
+Idée à piquer #2 : le tirage au sort Black Friday d'Arntreal.
 
-On the product page: every order = 1 entry to win a Rolex, an Omega Speedmaster or a Cartier Santos. Rules linked right under it.
+Sur la fiche produit : « Chaque commande = 1 participation pour gagner une montre de luxe ». Une Rolex, une Omega Speedmaster ou une Cartier Santos. Le règlement juste en dessous.
 
-Why I think it's clever:
-- the brand sells "everything of a luxury bag, except the price". The prize is the actual luxury logo. Same story.
-- a discount eats margin on every order. Three watches are a fixed cost, cheaper per order the more you sell.
-- the €149.90 price doesn't move, so it's still believable in January
+Pourquoi c'est malin :
+- la marque vend « tout d'un sac de luxe, sauf le prix ». Le lot, c'est le vrai logo de luxe. Même histoire.
+- une remise mange de la marge sur chaque commande. Trois montres, c'est un coût fixe.
+- le prix de 149,90 € ne bouge pas, donc il reste crédible en janvier
 
-What I'd test: "each order" rewards splitting your basket. Two orders of one bag = 2 entries, one order of two bags = 1. Fincut runs a similar draw but gives a ticket per item bought. I'd try 1 entry per bag.
+Ce que je testerais : « chaque commande » récompense le fait de couper son panier. Deux commandes d'un sac = 2 participations, une commande de deux sacs = 1. Fincut fait un tirage proche, mais donne un ticket par article. J'essaierais 1 participation par sac.
 
-I'd watch items per order during the draw.
+Je regarderais les articles par commande pendant le tirage.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Arntreal.
 
-**C · 18h · Question** (132/280)
+**C · 18h · Question** (137/280)
 ```
-What's the one thing that breaks on your store every Black Friday?
+Quel est LE truc qui casse sur ta boutique à chaque Black Friday ?
 
-Discount codes, stock, speed, the support inbox, something else?
+Codes promo, stock, vitesse du site, boîte mail du SAV, autre chose ?
 ```
 
-**D · 21h · Appel** (181/280)
+**D · 21h · Appel** (213/280)
 ```
-Know someone who runs a Shopify store?
+Tu connais quelqu'un qui a une boutique Shopify ?
 
-Send them this: 4 minutes on how they decide what to change on their store, and they get the summary of every answer in January.
+Envoie-lui ce post : 20 minutes d'échange sur comment on décide quoi changer sur une boutique, et la synthèse de toutes les réponses en janvier.
 
-Link below.
+Lien en réponse.
 ```
 
 ### Jeudi 26 novembre · Thanksgiving (US)
 
-**A · 9h · Friction #30** (263/280)
+**A · 9h · Friction #30** (421 caractères, X Premium)
 ```
-Shopify friction worth testing #30:
+Friction Shopify à tester #30 :
 
-No express checkout in the cart drawer.
+Les boutons Apple Pay et Shop Pay sur la fiche produit.
 
-Hypothesis: mobile shoppers ready to pay face one more step and a full form.
-Test: Shop Pay / Apple Pay buttons in the cart drawer.
-Metric: mobile checkout completion.
+Hypothèse : ils sautent le panier, donc ta barre de livraison offerte et tes suggestions. Plus de commandes, mais peut-être plus petites.
+Test : le paiement express seulement dans le panier, pour les produits sous ton seuil de livraison offerte.
+À mesurer : conversion et panier moyen, regardés ensemble.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-30.png`
 
-**B · 13h · Worth stealing #3 · Based** (744 caractères, X Premium)
+**B · 13h · Idée à piquer #3 · Based** (851 caractères, X Premium)
 ```
-Worth stealing #3: Based's Black Friday button.
+Idée à piquer #3 : le bouton Black Friday de Based.
 
-The main button doesn't say "Add to cart". It says "Buy one get one €21.95", in gold.
+Le bouton principal ne dit pas « Ajouter au panier ». Il dit « BUY ONE GET ONE €21,95 », en doré.
 
-- the offer lives where everyone looks right before deciding
-- same price as one, so "get one free" needs no math
-- the banner underneath repeats it, and a 60-day guarantee closes the page
+- l'offre est là où tout le monde regarde juste avant de décider
+- même prix qu'un seul, donc « un offert » ne demande aucun calcul
+- la bannière en dessous le répète, et une garantie de 60 jours ferme la page
 
-They didn't add a promo block next to the product. They changed the action itself.
+Ils n'ont pas ajouté un bloc promo à côté du produit. Ils ont changé l'action elle-même.
 
-What I'd test, for European shoppers:
-- prices are in euros but the free shipping thresholds are in dollars ($50+, $100+). One currency please.
-- "2.5 g" next to €21.95 looks tiny. "Lasts about X weeks" would answer that, if they know the number.
+Ce que je testerais, pour les clients européens :
+- les prix sont en euros, mais les seuils de livraison offerte en dollars (50 $+, 100 $+). Une seule devise, s'il te plaît.
+- « 2.5 g » à côté de 21,95 € paraît minuscule. « Dure environ X semaines » répondrait à ça, s'ils ont le chiffre.
 
-I'd watch conversion on EU traffic and reviews that mention "small".
+Je regarderais la conversion du trafic européen et les avis qui disent « petit ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Based.
 
-**C · 18h · Opinion** (213/280)
+**C · 18h · Opinion** (249/280)
 ```
-Every holiday promo adds a line to the product page. Discount, free shipping threshold, gift wrap, delivery cutoff.
+Chaque promo des fêtes ajoute une ligne sur la fiche produit. Remise, seuil de livraison offerte, emballage cadeau, date limite de livraison.
 
-At some point "Add to cart" is the 6th thing people read. Worth a quick look before the weekend.
+À un moment, « Ajouter au panier » devient la 6e chose qu'on lit. Ça vaut un coup d'œil avant le week-end.
 ```
 
 ### Vendredi 27 novembre · Black Friday
 
-**A · 9h · Friction #31** (270/280)
+**A · 9h · Friction #31** (412 caractères, X Premium)
 ```
-Shopify friction worth testing #31:
+Friction Shopify à tester #31 :
 
-A countdown timer that restarts every time you reload.
+Un compte à rebours qui repart à zéro à chaque visite.
 
-Hypothesis: shoppers notice, and every other claim on the page loses credibility.
-Test: a real deadline, or no timer.
-Metric: conversion of returning visitors.
+Hypothèse : ceux qui reviennent, tes acheteurs les plus probables, sont justement ceux qui le voient repartir. Le truc coûte la confiance du segment le plus chaud.
+Test : une vraie date de fin, ou pas de compte à rebours.
+À mesurer : conversion des visiteurs qui reviennent, séparée des nouveaux.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-31.png`
 
-**B · 13h · Worth stealing #4 · Arntreal** (760 caractères, X Premium)
+**B · 13h · Idée à piquer #4 · Arntreal** (815 caractères, X Premium)
 ```
-Worth stealing #4: Arntreal's empty slot.
+Idée à piquer #4 : la case vide d'Arntreal.
 
-Black Friday offer: buy 1 bag, get the 2nd free, any colour. Next to the bag you picked there's a greyed-out bag with a "+" on it. "Choose your free bag."
+Offre Black Friday : « 1 acheté = 1 offert », couleur au choix. À côté du sac choisi, un sac grisé avec un « + » : « CHOISIS TON SAC OFFERT ».
 
-Based put its BOGO in the button (#3). Arntreal draws it.
+Based met son offre dans le bouton (#3). Arntreal la dessine.
 
-That empty slot is a task half done. You've picked one, a space is waiting. People push harder toward a goal they feel they've already started (Nunes and Drèze called it the endowed progress effect).
+Cette case vide, c'est une tâche à moitié faite. Tu en as choisi un, une place t'attend. On pousse plus fort vers un objectif qu'on croit déjà entamé. Nunes et Drèze ont un nom pour ça : l'endowed progress effect.
 
-One thing bugs me: the offer shows €149.90 crossed out next to €149.90. No visible saving at all.
+Un détail me gêne : l'offre affiche 149.90 € barré à côté de 149.90 €. Aucune économie visible.
 
-What I'd test: €299.80 crossed out, or "2 bags for €149.90, €74.95 each". And once the free colour is picked, "€149.90 saved" in green.
+Ce que je testerais : 299,80 € barré, ou « 2 sacs pour 149,90 €, soit 74,95 € le sac ». Et une fois la couleur offerte choisie, « 149,90 € économisés » en vert.
 
-I'd watch how many orders take the 2-bag offer.
+Je regarderais combien de commandes prennent l'offre à 2 sacs.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Arntreal.
 
-**C · 18h · Opinion** (163/280)
+**C · 18h · Opinion** (190/280)
 ```
-My Black Friday rule for any store: don't change anything today.
+Ma règle du Black Friday, pour n'importe quelle boutique : ne rien changer aujourd'hui.
 
-Just write down every "hm, that looks off" moment. That list is basically your January test plan.
+Note juste chaque moment « hmm, ça cloche ». Cette liste, c'est en gros ton plan de tests de janvier.
 ```
 
-**D · 21h · Appel** (184/280)
+**D · 21h · Appel** (222/280)
 ```
-Busy day for merchants, so I'll keep it short.
+Grosse journée pour les e-commerçants, donc je fais court.
 
-When things calm down, 4 minutes on how you decide what to fix on your store would help me more than anything I could build. Link below.
+Quand ça se calme : 20 minutes pour me dire comment tu décides quoi corriger sur ta boutique m'aideraient plus que tout ce que je pourrais coder. Lien en réponse.
 ```
 
 ### Samedi 28 novembre
 
-**A · 9h · Friction #32** (278/280)
+**A · 9h · Friction #32** (456 caractères, X Premium)
 ```
-Shopify friction worth testing #32:
+Friction Shopify à tester #32 :
 
-A "Sale" collection mixing discounted and full-price products.
+Un badge « Promo » sur la carte produit, alors que seule la taille XS est remisée.
 
-Hypothesis: shoppers looking for deals waste clicks and leave.
-Test: only discounted items, sorted by discount.
-Metric: sale collection to product page clicks.
+Hypothèse : le client clique pour une affaire, choisit sa taille, voit le prix plein. Il ne se sent pas déçu, il se sent piégé.
+Test : le badge seulement si toutes les tailles sont remisées, sinon « Promo sur certaines tailles ».
+À mesurer : retours en arrière depuis la fiche, ajout au panier depuis les soldes.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-32.png`
 
-**B · 13h · Worth stealing #5 · Based** (700 caractères, X Premium)
+**B · 13h · Idée à piquer #5 · Based** (869 caractères, X Premium)
 ```
-Worth stealing #5: Based's cart.
+Idée à piquer #5 : le panier de Based.
 
-During the BOGO the cart turns into a game. "Your haul. 1 pick, 0 free." A progress bar, a dashed slot marked FREE next to your item, and "BOGO savings €0.00" in gold. A zero you kind of want to fix.
+Pendant l'offre « 1 acheté, 1 offert », le panier devient un jeu. « Your haul. 1 pick, 0 free. » Une barre de progression, une case en pointillés marquée FREE à côté de ton article, et « BOGO savings €0.00 » en doré. Un zéro qu'on a envie de corriger.
 
-"Haul" and "picks" is unboxing-video talk. The cart speaks like the people buying.
+« Haul » et « picks », c'est le vocabulaire des vidéos d'unboxing. Le panier parle comme ceux qui achètent.
 
-There's also a cap, "€277 max per order". A limit makes a deal feel precious.
+Il y a aussi un plafond par commande. Une limite rend l'affaire précieuse.
 
-But the biggest number in the cart is "€255.76 left". A budget nobody planned. The bar measures the distance to the cap, not to the next reward.
+Mais le plus gros chiffre du panier, c'est « €255.76 left ». Un budget que personne n'avait prévu. La barre mesure la distance jusqu'au plafond, pas jusqu'à la prochaine récompense.
 
-What I'd test: make the next step the headline. "Pick 1 more, it's free." Cap in small print.
+Ce que je testerais : faire de la prochaine étape le titre. « Choisis-en 1 de plus, il est offert. » Le plafond en petit.
 
-I'd watch the share of carts with 2+ picks.
+Je regarderais la part de paniers avec 2 articles ou plus.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Based.
 
-**C · 18h · Question** (80/280)
+**C · 18h · Question** (86/280)
 ```
-Merchants: what surprised you most on your store this Black Friday? Good or bad.
+Qu'est-ce qui t'a le plus surpris sur ta boutique ce Black Friday ? En bien ou en mal.
 ```
 
-**D · 21h · Appel** (159/280)
+**D · 21h · Appel** (229/280)
 ```
-If your store gets under 10k visitors a month, I especially want your answers.
+Si ta boutique fait moins de 10k visiteurs par mois, ta réponse m'intéresse encore plus.
 
-I honestly don't know yet if Solen can help stores your size. 4-min form below.
+Honnêtement, je ne sais pas encore si Solen peut aider les boutiques de ta taille. 20 min en visio ou 4 min de formulaire, lien en réponse.
 ```
 
 ### Dimanche 29 novembre
 
-**A · 9h · Friction #33** (250/280)
+**A · 9h · Friction #33** (373 caractères, X Premium)
 ```
-Shopify friction worth testing #33:
+Friction Shopify à tester #33 :
 
-Unclear promo rules: does my code work on sale items?
+Un code promo refusé au paiement, avec juste « code non valide ».
 
-Hypothesis: shoppers leave to find the answer, or wait.
-Test: one line in the cart on what the code applies to.
-Metric: checkout completion.
+Hypothèse : le code est bon, il ne se cumule pas avec ta remise en cours. Mais le client comprend « on m'a menti » et s'en va.
+Test : dire pourquoi : « Ne se cumule pas avec -20 %, déjà appliqué. »
+À mesurer : abandons juste après un code refusé.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-33.png`
 
-**B · 13h · Worth stealing #6 · DJI** (798 caractères, X Premium)
+**B · 13h · Idée à piquer #6 · DJI** (895 caractères, X Premium)
 ```
-Worth stealing #6: DJI's Black Friday, without a discount.
+Idée à piquer #6 : le Black Friday de DJI, sans remise.
 
-A €1,599 drone bundle and the price doesn't move. Instead: a free DJI Pro backpack tagged "Gift", and 5x more DJI credit on your purchase.
+Un bundle drone à 1 599 €, et le prix ne bouge pas. À la place : un sac à dos DJI Pro marqué « Cadeau », et « 5 fois plus de crédit DJI sur votre achat ».
 
-Why it's smart:
-- no price cut = no new reference price. €1,599 stays believable after November.
-- credit only works at DJI, so it brings you back for batteries, filters, the next drone
-- the gift is something you can picture, listed before the specs
+Pourquoi c'est malin :
+- pas de baisse de prix = pas de nouveau prix de référence. 1 599 € reste crédible après novembre.
+- le crédit ne marche que chez DJI, donc il te ramène pour les batteries, les filtres, le prochain drone
+- le cadeau est un objet qu'on visualise, listé avant les caractéristiques
 
-What I'd test: put the credit in euros. If the base is the 1% shown above, 5x is about €80 on this bundle. "5x" sounds clever. "€80 back" is money you're already spending in your head. Over 100, the money beats the ratio (rule of 100, see #1).
+Ce que je testerais : le crédit en euros. La base affichée, c'est « Récompense 1 % en crédit DJI ». 5 fois plus, ça fait environ 80 € sur ce bundle. « 80 € offerts » parle plus que « 5 fois plus ». Au-dessus de 100, les euros battent le ratio (règle des 100, voir #1).
 
-I'd watch conversion during the promo and how much credit gets used within 90 days.
+Je regarderais la conversion pendant la promo, et le crédit utilisé sous 90 jours.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture DJI.
 
@@ -405,318 +407,318 @@ Image : ta capture DJI.
 
 ### Lundi 30 novembre · Cyber Monday
 
-**A · 9h · Friction #34** (260/280)
+**A · 9h · Friction #34** (382 caractères, X Premium)
 ```
-Shopify friction worth testing #34:
+Friction Shopify à tester #34 :
 
-"Buy 2, save 10%" explained only in small print.
+« 2 achetés, -10 % » écrit sur la fiche produit, et plus un mot dans le panier.
 
-Hypothesis: shoppers don't do the math, so the bundle changes nothing.
-Test: show the bundle price and the saving next to the CTA.
-Metric: units per order.
+Hypothèse : c'est dans le panier qu'on décide d'ajouter un 2e article. Pile là, l'offre a disparu.
+Test : dans le panier : « Ajoute 1 article, -10 % sur les deux », avec l'économie en euros.
+À mesurer : part des paniers à 2 articles ou plus.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-34.png`
 
-**B · 13h · Worth stealing #7 · HOLY** (809 caractères, X Premium)
+**B · 13h · Idée à piquer #7 · HOLY** (887 caractères, X Premium)
 ```
-Worth stealing #7: HOLY's cart, one cent short.
+Idée à piquer #7 : le panier de HOLY, à un centime près.
 
-Reward bar from €49 to €200. Under it: "You'll now get the Cap + Shaker. Only €0.01 left for the blue Thermo Shaker."
+Une barre de récompenses de 49 € à 200 €. En dessous : la casquette et le shaker sont débloqués, et il ne manque que 0,01 € pour le Thermo Shaker bleu.
 
-The bundle costs €99.99. The next gift unlocks at €100.
+Le bundle coûte 99,99 €. Le cadeau suivant se débloque à 100 €.
 
-What they nail:
-- unlocked gifts sit in the cart as real lines, "Free!", crossed-out value, "Gift unlocked" in green
-- the next one is right below, with a padlock
-- shipping's already free, so the bar is only about gifts
+Ce qu'ils font bien :
+- les cadeaux débloqués sont de vraies lignes du panier, gratuites, valeur barrée
+- le suivant est juste en dessous, avec un cadenas
+- la livraison est déjà offerte, la barre ne parle que de cadeaux
 
-One cent away is about the strongest pull you can create. People speed up when a goal gets close.
+À un centime du but, l'attraction est maximale : on accélère quand l'objectif se rapproche.
 
-Two things I'd change:
-- "Total savings -€33.97" only counts the gifts. Add the bundle discount and it's €53.95. They undersell their own deal.
-- 1 cent can feel like a trick. I'd test unlocking the shaker at €99.99 with "we rounded up for you".
+Ce que je changerais :
+- le total des économies ne compte que les cadeaux (33,97 €). Avec la remise du bundle, c'est 53,95 €. Ils sous-vendent leur offre.
+- 1 centime peut ressembler à un piège. Je testerais le shaker débloqué à 99,99 €, avec « on a arrondi pour toi ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture HOLY.
 
-**C · 18h · Appel** (181/280)
+**C · 18h · Appel** (204/280)
 ```
-Right after Black Friday is when merchants remember best what broke.
+C'est juste après le Black Friday qu'on se souvient le mieux de ce qui a cassé.
 
-If you run a store: 4 minutes on how you decide what to fix, or a 20-min call if you speak French.
+Si tu as une boutique : 20 min pour me raconter comment tu décides quoi corriger, ou 4 min de formulaire.
 
-Link below.
+Lien en réponse.
 ```
 
 ### Mardi 1 décembre
 
-**A · 9h · Friction #35** (260/280)
+**A · 9h · Friction #35** (414 caractères, X Premium)
 ```
-Shopify friction worth testing #35:
+Friction Shopify à tester #35 :
 
-Shipping protection added to the cart by default.
+Une protection de livraison payante, cochée d'office dans le panier.
 
-Hypothesis: a line shoppers didn't choose makes them doubt the order.
-Test: unchecked by default, one line on what it covers.
-Metric: checkout completion.
+Hypothèse : le client qui la repère doute de tout le reste de la commande. Et dans l'UE, un supplément payant pré-coché ne vaut pas consentement (directive 2011/83, art. 22).
+Test : décochée, avec une ligne sur ce qu'elle couvre.
+À mesurer : taux d'adhésion réel, paiements finalisés.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-35.png`
 
-**B · 13h · Worth stealing #8 · Fincut** (795 caractères, X Premium)
+**B · 13h · Idée à piquer #8 · Fincut** (897 caractères, X Premium)
 ```
-Worth stealing #8: Fincut's tickets in the cart.
+Idée à piquer #8 : les tickets dans le panier de Fincut.
 
-Black Friday draw for 3 cars, 1 ticket per item bought. In the cart, the tickets show up as a line item: "Ticket, Grand Jeu. Free. x3."
+Grand jeu Black Friday pour gagner 3 voitures, 1 ticket par article acheté. Dans le panier, les tickets sont une vraie ligne : ticket Grand Jeu, offert, x3.
 
-Remove a t-shirt, lose a ticket. People hate giving up stuff they already "have".
+Tu retires un t-shirt, tu perds un ticket. On déteste lâcher ce qu'on « a » déjà.
 
-Also:
-- the free shirt in the 3+1 pack earns no ticket. 4 shirts, 3 tickets. The rule holds.
-- the free shipping bar is already full
-- first add-on is a €9 gift box. Very on season.
+Aussi :
+- le t-shirt offert du pack 3+1 ne donne pas de ticket. 4 t-shirts, 3 tickets. La règle tient.
+- la barre de livraison offerte est déjà pleine
+- première suggestion : une boîte cadeau à 9 €. Très de saison.
 
-What bugs me: a banner says "Code BLACK20: -20%, enter it in Promo code". That field is collapsed at the bottom and the €84 total doesn't include it. Why make me type a code the cart already knows?
+Ce qui me gêne : un bandeau donne le code BLACK20 (-20 %), à taper dans le champ code promo. Ce champ est replié tout en bas, et le total de 84 € ne l'inclut pas. Pourquoi me faire taper un code que le panier connaît déjà ?
 
-What I'd test: apply it automatically, or a one-tap "Apply" on the banner. And say if it stacks with the pack (already -25%).
+Ce que je testerais : l'appliquer automatiquement, ou un bouton « Appliquer » sur le bandeau. Et dire s'il se cumule avec le pack.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Fincut.
 
-**C · 18h · Opinion** (194/280)
+**C · 18h · Opinion** (232/280)
 ```
-Honestly, the best December move for most stores is to not redesign anything.
+Honnêtement, le meilleur move de décembre pour la plupart des boutiques, c'est de ne rien refaire.
 
-Gift buyers aren't your usual visitors. Note what trips them up, fix it in January for the people who stick around.
+Ceux qui achètent des cadeaux ne sont pas tes visiteurs habituels. Note ce qui les bloque, corrige en janvier pour ceux qui restent.
 ```
 
 ### Mercredi 2 décembre
 
-**A · 9h · Friction #36** (265/280)
+**A · 9h · Friction #36** (439 caractères, X Premium)
 ```
-Shopify friction worth testing #36:
+Friction Shopify à tester #36 :
 
-A chat bubble sitting on the add-to-cart button on mobile.
+La bulle de chat qui apparaît quelques secondes après le chargement, pile sur le bouton « Ajouter au panier » mobile.
 
-Hypothesis: some taps open the chat instead of adding to cart.
-Test: move the bubble up, or hide it on product pages.
-Metric: mobile add-to-cart rate.
+Hypothèse : le pouce visait le bouton et ouvre le chat. Invisible sur ordi, invisible dans tes stats de chat.
+Test : masquer la bulle sur les fiches produit mobiles, ou la remonter.
+À mesurer : chats ouverts sans aucun message envoyé : la trace des taps ratés.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-36.png`
 
-**B · 13h · Worth stealing #9 · Represent** (772 caractères, X Premium)
+**B · 13h · Idée à piquer #9 · Represent** (864 caractères, X Premium)
 ```
-Worth stealing #9: Represent's two lines under the buttons.
+Idée à piquer #9 : les deux lignes sous les boutons de Represent.
 
-French store, UK brand. Under the buttons: "Express France Shipping" with a flag, and "EU Import Duties Included".
+Boutique française, marque anglaise. Sous les boutons : « Express France Shipping » avec un drapeau, et « EU Import Duties Included ».
 
-After Brexit the fear isn't the price, it's a customs bill at the door. They kill it before you even ask.
+Depuis le Brexit, la peur n'est pas le prix, c'est la facture de douane à la porte. Ils la tuent avant même que tu poses la question.
 
-- delivery names your country, not "worldwide shipping"
-- Klarna shown as 3 x €18.66, each under €20
-- "Style With" shows 4 pieces, all with crossed-out prices
+- la livraison nomme ton pays, pas « livraison internationale »
+- Klarna en 3 paiements de 18,66 €, chacun sous 20 €
+- « Style With » montre 4 pièces, toutes avec un prix barré
 
-They localised the risks. Now localise the words. The page says "RRP" and "30% OFF - SAUVEGARDER €24". In French, "sauvegarder" means saving a file. "Économisez 24 €" and "Prix conseillé" would read like a local store.
+Ils ont localisé les risques. Reste à localiser les mots. La page dit « RRP » et « 30% OFF - SAUVEGARDER €24 ». Sauvegarder, c'est pour un fichier. « Économisez 24 € » et « Prix conseillé » feraient boutique française.
 
-What I'd test: fix that one discount line and compare French conversion before and after.
+Ce que je testerais : corriger cette seule ligne, et comparer la conversion française avant et après.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Represent.
 
-**C · 18h · Question** (110/280)
+**C · 18h · Question** (111/280)
 ```
-Store owners: who actually makes changes on your site?
+Qui fait vraiment les changements sur ton site ?
 
-You, someone on the team, an agency, or nobody really?
+Toi, quelqu'un de l'équipe, une agence, ou en vrai personne ?
 ```
 
-**D · 21h · Appel** (154/280)
+**D · 21h · Appel** (171/280)
 ```
-If you've ever said "we should test that" and never did, I want your answer.
+Si tu as déjà dit « faudrait tester ça » sans jamais le faire, je veux ta réponse.
 
-What stopped you is exactly what I'm trying to understand. 4-min form below.
+Ce qui t'en a empêché, c'est exactement ce que j'essaie de comprendre. Lien en réponse.
 ```
 
 ### Jeudi 3 décembre
 
-**A · 9h · Friction #37** (269/280)
+**A · 9h · Friction #37** (413 caractères, X Premium)
 ```
-Shopify friction worth testing #37:
+Friction Shopify à tester #37 :
 
-"Quick add" on collection pages that picks a size for you.
+L'« Ajout rapide » des collections qui ajoute la première variante : souvent le XS.
 
-Hypothesis: wrong sizes end up in the cart, noticed only at delivery.
-Test: quick add opens a size picker first.
-Metric: cart edits, size-related returns.
+Hypothèse : le client ne vérifie pas, la mauvaise taille part, et le retour coûte plus que la vente gagnée.
+Test : l'ajout rapide ouvre d'abord le choix de taille.
+À mesurer : taux de retour des commandes en ajout rapide, comparé aux commandes passées depuis la fiche.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-37.png`
 
-**B · 13h · Worth stealing #10 · Alphalete** (777 caractères, X Premium)
+**B · 13h · Idée à piquer #10 · Alphalete** (892 caractères, X Premium)
 ```
-Worth stealing #10: Alphalete's fit suggestion.
+Idée à piquer #10 : l'info de coupe d'Alphalete.
 
-"Ilon is 6'1"/185cm, wearing a size L with a 43"/109cm chest."
+« Ilon is 6'1"/185cm, wearing a size L with a 43"/109cm chest. »
 
-Height alone tells you almost nothing about a sweater. Chest size does. They give both, in inches and cm, so nobody converts in their head.
+La taille du mannequin seule ne dit presque rien pour un sweat. Son tour de poitrine, si. Ils donnent les deux, en pouces et en cm, pour que personne ne convertisse de tête.
 
-- "Oversized" is a badge at the top and the first line of the fit note. Said twice, so nobody sizes down by mistake.
-- "Final sale" is as visible as the -70%. No surprise after delivery.
+- « Oversized » est un badge en haut et la première ligne de l'info de coupe. Dit deux fois, pour que personne ne prenne une taille en dessous.
+- « Final sale » est aussi visible que le -70 %. Pas de surprise après la livraison.
 
-Final sale means no returns. And that's exactly where the fit info gets more precise. Love that.
+Final sale, ça veut dire pas de retour. Et c'est justement là que l'info de coupe devient plus précise. J'adore.
 
-What I'd test: the garment's own measurements next to the model's, chest width and length of the L. Or one line on what to do between two sizes.
+Ce que je testerais : les mesures du vêtement à côté de celles du mannequin (largeur et longueur du L). Ou une ligne sur quoi faire entre deux tailles.
 
-I'd watch conversion on final sale items and sizing questions to support.
+Je regarderais les questions de taille au SAV sur les articles en final sale.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Alphalete.
 
-**C · 18h · Journal** (199/280)
+**C · 18h · Journal** (246/280)
 ```
-Solen today, honestly:
+Solen aujourd'hui, honnêtement :
 
-- live site
-- paid plans from €19/month
-- 0 paying customers
+- site en ligne
+- offres payantes à partir de 19 €/mois
+- 0 client payant
 
-Next step isn't a feature. It's 15 conversations with merchants. That's the only number I care about this month.
+La prochaine étape n'est pas une feature. C'est 15 conversations avec des e-commerçants. Le seul chiffre qui compte pour moi ce mois-ci.
 ```
 
 > Vérifie le jour même : toujours 0 client payant ? Prix toujours à 19 € ?
 
 ### Vendredi 4 décembre
 
-**A · 9h · Friction #38** (276/280)
+**A · 9h · Friction #38** (453 caractères, X Premium)
 ```
-Shopify friction worth testing #38:
+Friction Shopify à tester #38 :
 
-Sold-out products still at the top of collections after a big sale.
+Une pub Google Shopping qui envoie sur une taille épuisée.
 
-Hypothesis: shoppers hit "sold out" twice and give up before scrolling.
-Test: push sold-out items to the end.
-Metric: collection to product page clicks.
+Hypothèse : le lien pointe vers une variante précise. Si elle est épuisée, la page s'ouvre sur « Épuisé », même s'il reste d'autres tailles. Tu paies le clic, le client part.
+Test : rediriger vers la première taille dispo quand celle du lien est épuisée, ou la retirer du flux.
+À mesurer : rebond des visites payantes sur ces fiches.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #11 · HOLY** (717 caractères, X Premium)
+**B · 13h · Idée à piquer #11 · HOLY** (877 caractères, X Premium)
 ```
-Worth stealing #11: HOLY's price per portion.
+Idée à piquer #11 : le prix par portion de HOLY.
 
-€99.99 bundle. Right under it: "150 portions. Only €0.80 per portion."
+Bundle à 99,99 €. Juste en dessous : « 150 PORTIONS / Seulement €0,80 PAR PORTION ».
 
-Same money, smaller unit. A three-digit price becomes a daily one.
+Même somme, plus petite unité. Un prix à trois chiffres devient un prix de tous les jours.
 
-- "Total value €119.97" sits above, so €99.99 already reads like a saving
-- the button is first person: "I add to cart". The shopper says it, not the brand.
-- "Mix & match, save up to 20%" for people who don't want every flavour
+- « Valeur totale : €119,97 » est juste au-dessus, donc 99,99 € se lit déjà comme une économie
+- le bouton est à la première personne : « J'AJOUTE AU PANIER ». C'est le client qui parle, pas la marque.
+- « Mix & match : économise jusqu'à 20 % » pour ceux qui ne veulent pas tous les goûts
 
-€0.80 is a number you instantly compare to what you already buy. That comparison happens in your head, for free.
+0,80 €, c'est un chiffre que tu compares tout de suite à ce que tu achètes déjà. La comparaison se fait dans ta tête, gratuitement.
 
-What I'd test: make it explicit, if it's true for their buyers. "€0.80 a portion, less than a can of energy drink." And next to "Ships in 6 to 10 days", an actual date.
+Ce que je testerais : la rendre explicite, si c'est vrai pour leurs clients. « 0,80 € la portion, moins qu'une canette d'energy drink. » Et à côté de « Expédition sous 6 à 10 jours », une vraie date.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture HOLY.
 
-**C · 18h · Appel** (175/280)
+**C · 18h · Appel** (214/280)
 ```
-French-speaking merchants: I'd love 20 minutes with you. No pitch. I want to understand how you decide what to change on your store.
+Si tu as une boutique en ligne, j'aimerais 20 minutes avec toi. Pas de pitch. Je veux comprendre comment tu décides quoi changer sur ta boutique.
 
-Everyone else: a 4-min form.
+Pas le temps pour un appel ? 4 min de formulaire.
 
-Link below.
+Lien en réponse.
 ```
 
 ### Samedi 5 décembre
 
-**A · 9h · Friction #39** (258/280)
+**A · 9h · Friction #39** (432 caractères, X Premium)
 ```
-Shopify friction worth testing #39:
+Friction Shopify à tester #39 :
 
-The newsletter discount lives only in the pop-up. Close it, it's gone.
+Tu fermes la pop-up « -10 % », le code disparaît pour de bon.
 
-Hypothesis: shoppers come back for the code and can't find it.
-Test: a small persistent "Get 10%" tab.
-Metric: signups, conversion.
+Hypothèse : fermer, ce n'est pas dire non à -10 %, c'est dire « pas maintenant ». Le client revient au moment de payer, et le code n'existe plus nulle part.
+Test : un petit onglet « -10 % » qui reste après la fermeture.
+À mesurer : inscriptions depuis l'onglet, conversion de ceux qui avaient fermé la pop-up.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-39.png`
 
-**B · 13h · Worth stealing #12 · Boku** (800 caractères, X Premium)
+**B · 13h · Idée à piquer #12 · Boku** (897 caractères, X Premium)
 ```
-Worth stealing #12: Boku's compatibility button.
+Idée à piquer #12 : le bouton compatibilité de Boku.
 
-A bidet you fit on your own toilet comes with one obvious question. Boku turns it into a button: "Is this bidet compatible with your toilet?"
+Un bidet qu'on installe sur ses propres toilettes amène une question évidente. Boku en fait un bouton : « Ce bidet est-il compatible avec vos WC ? »
 
-- it names the doubt in the shopper's words, before they go google it
-- "10-minute install, no works, no electricity", with a video link, handles the next fear
-- the first add-on is a 3-way tap for rigid water inlets. The fix for the most likely blocker, sold right there.
+- il nomme le doute avec les mots du client, avant qu'il aille le googler
+- « Installation en 10 minutes sans travaux, sans électricité », avec une vidéo, règle la peur suivante
+- la première suggestion est un robinet 3 voies pour les arrivées d'eau rigides. La solution au blocage le plus probable, vendue juste là.
 
-That add-on feels less like an upsell and more like help.
+Ça ressemble moins à une vente additionnelle qu'à de l'aide.
 
-What I'd test: turn the button into a 3-question check (toilet shape, seat, water inlet) that ends on "Compatible" and adds the right part. Or at least carry the answer into the cart.
+Ce que je testerais : transformer le bouton en test de 3 questions (forme des WC, abattant, arrivée d'eau) qui finit sur « Compatible » et ajoute la bonne pièce. Ou au moins garder la réponse jusqu'au panier.
 
-I'd watch conversion after the check and returns marked "incompatible".
+Je regarderais la conversion après le test, et les retours « incompatible ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Boku.
 
-**C · 18h · Question** (123/280)
+**C · 18h · Question** (150/280)
 ```
-What's the last app you uninstalled from your store, and why?
+Quelle est la dernière app que tu as désinstallée de ta boutique, et pourquoi ?
 
-I learn more from what people quit than from what they keep.
+J'apprends plus de ce que les gens arrêtent que de ce qu'ils gardent.
 ```
 
 ### Dimanche 6 décembre
 
-**A · 9h · Friction #40** (271/280)
+**A · 9h · Friction #40** (394 caractères, X Premium)
 ```
-Shopify friction worth testing #40:
+Friction Shopify à tester #40 :
 
-No "order by" date for Christmas delivery.
+« Expédié sous 3 à 5 jours ouvrés », en décembre.
 
-Hypothesis: gift buyers unsure it'll arrive in time buy elsewhere.
-Test: "Order by Dec 18 for Christmas delivery" near the CTA and in the cart.
-Metric: December conversion.
+Hypothèse : le client refait le calcul avec les week-ends, prend le pire cas, et conclut que ce ne sera pas là pour Noël. Même quand ça le serait.
+Test : une date : « Commande avant le 18/12, reçu avant Noël. »
+À mesurer : conversion en décembre, questions « ça arrivera à temps ? ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-40.png`
 
-**B · 13h · Worth stealing #13 · Gymshark** (737 caractères, X Premium)
+**B · 13h · Idée à piquer #13 · Gymshark** (878 caractères, X Premium)
 ```
-Worth stealing #13: Gymshark's cart drawer.
+Idée à piquer #13 : le panier latéral de Gymshark.
 
-Open the cart and the first thing you see is how far you are from free shipping. "€31 to go", a bar from €0 to €59.
+Tu ouvres le panier, et la première chose que tu vois, c'est la distance jusqu'à la livraison offerte : « Il manque 31 € », une barre de 0 € à 59 €.
 
-- the goal comes before the items, so it frames everything below
-- each line repeats colour, size and fit ("Black Wash, M, Boxy Fit")
-- savings per item, in euros, even here
-- "Your items aren't reserved", urgency that happens to be true
+- l'objectif passe avant les articles, donc il cadre tout ce qui suit
+- chaque ligne répète couleur, taille et coupe (« Black Wash, M, Boxy Fit »)
+- l'économie par article, en euros, même ici
+- « Vos articles ne sont pas réservés », une urgence qui se trouve être vraie
 
-The bar turns shipping from a cost into a goal you're already halfway to.
+La barre change la livraison : ce n'est plus un coût, c'est un objectif déjà à moitié atteint.
 
-But look at the suggestions. The 6-pack of socks is €19.60, it doesn't close a €31 gap. Add the next pair at €11.20 and you're still €0.20 short.
+Mais regarde les suggestions. Le lot de 6 paires de chaussettes à 19,60 € ne comble pas 31 €. Ajoute la paire suivante à 11,20 €, et il manque encore 0,20 €.
 
-What I'd test: suggest products priced just above the gap. Or label one "Unlocks free shipping".
+Ce que je testerais : suggérer des produits juste au-dessus de l'écart. Ou en marquer un « Débloque la livraison offerte ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Gymshark.
 
@@ -727,331 +729,333 @@ Image : ta capture Gymshark.
 
 ### Lundi 7 décembre
 
-**A · 9h · Friction #41** (271/280)
+**A · 9h · Friction #41** (425 caractères, X Premium)
 ```
-Shopify friction worth testing #41:
+Friction Shopify à tester #41 :
 
-Gift options (wrap, message, gift receipt) missing or hidden until checkout.
+Aucune option pour que le prix ne soit pas dans le colis.
 
-Hypothesis: gift buyers hesitate when they can't make it a gift.
-Test: a gift toggle in the cart.
-Metric: conversion, average order value.
+Hypothèse : celui qui offre se soucie moins de l'emballage que de la facture avec le prix dans la boîte, surtout quand le colis part direct chez la personne.
+Test : une case « C'est un cadeau » : facture sans prix + petit message.
+À mesurer : conversion en décembre, part des commandes avec la case cochée.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-41.png`
 
-**B · 13h · Worth stealing #14 · Fincut** (779 caractères, X Premium)
+**B · 13h · Idée à piquer #14 · Fincut** (898 caractères, X Premium)
 ```
-Worth stealing #14: Fincut's pack selector.
+Idée à piquer #14 : le choix de pack de Fincut.
 
-Three options. Only the single t-shirt shows a cost on top: "+ shipping €7.90".
+Trois options. Seul le t-shirt à l'unité affiche un coût en plus : « + Livraison 7,90 € ».
 
-So shipping shows up at the moment you choose, on the option they'd rather you skip. It's the price of not taking the pack.
+La livraison apparaît au moment du choix, sur l'option qu'ils préfèrent que tu évites. C'est le prix de ne pas prendre le pack.
 
-- the free t-shirt in the 3+1 gets its own row, colour and size. You picked it, it already feels yours.
-- "Best seller" on the middle pack, "best offer, ending soon" on the big one. Two different reasons to move up.
-- "Take your usual size." One line, no size doubt.
+- le t-shirt offert du 3+1 a sa propre ligne, couleur et taille. Tu l'as choisi, il est déjà un peu à toi.
+- « Meilleure vente » sur le pack du milieu, « Meilleure offre (bientôt terminée) » sur le gros. Deux raisons différentes de monter d'un cran.
+- « Prenez votre taille habituelle. » Une ligne, plus de doute.
 
-1 shirt is €35.90 delivered. 4 shirts are €84, free shipping. The single option mostly exists to make the pack obvious.
+1 t-shirt revient à 35,90 € livré. 4 t-shirts, 84 €, livraison offerte. L'option à l'unité existe surtout pour rendre le pack évident.
 
-What I'd test: price per t-shirt on each option. €21 each for 3+1, under €20 for 5+2. Or "€21 per t-shirt" in the button.
+Ce que je testerais : le prix par t-shirt sur chaque option. 21 € pièce pour le 3+1, moins de 20 € pour le 5+2. Ou « 21 € le t-shirt » dans le bouton.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Fincut.
 
-**C · 18h · Opinion** (162/280)
+**C · 18h · Opinion** (203/280)
 ```
-Conversion rate alone hides who you lost.
+Le taux de conversion seul cache qui tu as perdu.
 
-Split it by device, and by new vs returning visitors, before deciding anything. A "stable" rate can hide a mobile drop.
+Découpe-le par appareil, et entre nouveaux et anciens visiteurs, avant de décider quoi que ce soit. Un taux « stable » peut cacher une chute sur mobile.
 ```
 
-**D · 21h · Appel** (170/280)
+**D · 21h · Appel** (213/280)
 ```
-French-speaking founders in France, Belgium, Switzerland or Québec:
+Tu as une marque en France, en Belgique, en Suisse ou au Québec ?
 
-I'd rather talk than send you a form: 20 minutes, no pitch.
+Je préfère parler que t'envoyer un formulaire : 20 minutes, pas de pitch. Juste comment tu décides quoi changer sur ta boutique.
 
-Everyone else: a 4-min form. Link below.
+Lien en réponse.
 ```
 
 ### Mardi 8 décembre
 
-**A · 9h · Friction #42** (278/280)
+**A · 9h · Friction #42** (476 caractères, X Premium)
 ```
-Shopify friction worth testing #42:
+Friction Shopify à tester #42 :
 
-Shipping options without delivery dates. "Standard: €4.95" says nothing in December.
+Le panier dit « Livraison offerte » à 52 €. Au paiement, le code -10 % fait repasser sous 50 €, et les frais reviennent.
 
-Hypothesis: shoppers can't choose, or pick one and worry.
-Test: an estimated delivery date for each option.
-Metric: checkout completion.
+Hypothèse : la barre du panier compte avant le code, le seuil de livraison après. Le client voit revenir des frais qu'on lui avait annoncés offerts.
+Test : une barre qui compte après remise, ou un seuil calculé avant remise.
+À mesurer : abandons à l'étape livraison quand un code est utilisé.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-42.png`
 
-**B · 13h · Worth stealing #15 · AYBL** (711 caractères, X Premium)
+**B · 13h · Idée à piquer #15 · AYBL** (839 caractères, X Premium)
 ```
-Worth stealing #15: AYBL's add-to-cart button.
+Idée à piquer #15 : le bouton d'AYBL.
 
-Until you pick a size, the button doesn't say "Add to cart". It says "Select your size".
+Tant que tu n'as pas choisi de taille, le bouton ne dit pas « Ajouter au panier ». Il dit « SÉLECTIONNEZ LA TAILLE ».
 
-No red error after you tap, no shake. Just the next step, where you're already looking.
+Pas d'erreur rouge après le tap, pas de bouton qui tremble. Juste l'étape suivante, là où tu regardes déjà.
 
-- the model's height and size are written on the first photo: 1.67m, wearing XS
-- "Fits true to size" closes the key features box
-- the newsletter is a small side tab ("Never miss a drop"), not a pop-up. Easy to ignore, easy to find later.
+- la taille du mannequin est écrite sur la première photo : 1,67 m, porte du XS
+- « Taille normalement » ferme le bloc des caractéristiques clés
+- la newsletter est un petit onglet sur le côté (« Ne manque plus aucun drop »), pas une pop-up. Facile à ignorer, facile à retrouver.
 
-They prevent the mistake instead of correcting it.
+Ils évitent l'erreur au lieu de la corriger.
 
-What I'd test: once a size is picked, echo it in the button. "Add XS to cart." Small, but it confirms the choice right before the tap.
+Ce que je testerais : une fois la taille choisie, la répéter dans le bouton. « Ajouter le XS au panier. » Petit, mais ça confirme le choix juste avant le tap.
 
-I'd watch size exchanges and returns.
+Je regarderais les échanges et les retours pour la taille.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture AYBL.
 
-**C · 18h · Question** (127/280)
+**C · 18h · Question** (132/280)
 ```
-How many hours a month do you spend trying to improve your store?
+Combien d'heures par mois tu passes à essayer d'améliorer ta boutique ?
 
-Rough guess is fine. I'm trying to understand the real cost.
+Une estimation suffit. J'essaie de comprendre le vrai coût.
 ```
 
 ### Mercredi 9 décembre
 
-**A · 9h · Friction #43** (259/280)
+**A · 9h · Friction #43** (461 caractères, X Premium)
 ```
-Shopify friction worth testing #43:
+Friction Shopify à tester #43 :
 
-Choosing a color doesn't change the product photos.
+Tu choisis « Vert sapin », le panier affiche la photo du noir.
 
-Hypothesis: shoppers aren't sure what they'll receive.
-Test: sync the gallery with the selected variant.
-Metric: add-to-cart rate, wrong-color returns.
+Hypothèse : sans image par variante, le panier montre la photo principale. Le client doute de sa couleur, retourne vérifier sur la fiche, et une partie ne revient pas.
+Test : une image pour chaque variante, reprise dans le panier et l'email de confirmation.
+À mesurer : allers-retours entre panier et fiche, retours « mauvaise couleur ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #16 · Arntreal** (762 caractères, X Premium)
+**B · 13h · Idée à piquer #16 · Arntreal** (840 caractères, X Premium)
 ```
-Worth stealing #16: Arntreal's three lines of copy.
+Idée à piquer #16 : les trois lignes d'Arntreal.
 
-Right under the product name (translated):
-"A basic bag is bad quality.
-A luxury bag is €3,000, and you pay for the logo.
-This one has everything of luxury, at €149.90."
+Juste sous le nom du produit :
+« Un sac basique, c'est de la mauvaise qualité.
+Un sac de luxe, c'est 3 000 €, et tu paies le logo.
+Celui-là a tout du luxe, à 149.90 €. »
 
-Two bad options, then the product sits in the middle. The compromise effect, done in copy instead of a pricing table. And €3,000 anchors the price before €149.90 even shows up.
+Deux mauvaises options, et le produit se place au milieu. L'effet de compromis, fait en texte au lieu d'un tableau de prix. Et 3 000 € ancre le prix avant même que 149,90 € apparaisse.
 
-It talks like a friend ("tu"), not like a catalogue.
+Ça parle comme un pote, pas comme un catalogue.
 
-The real trick: you stop asking "is €149.90 a lot?" and start asking "do I want to overpay for a logo?". Much easier answer.
+Le vrai tour : tu arrêtes de te demander « 149,90 €, c'est cher ? » et tu te demandes « je veux payer un logo trop cher ? ». Réponse beaucoup plus facile.
 
-What I'd test: the 3 chips below (luxury look, every day, cabin size) don't do anything yet. Tap "Cabin size", see the bag in an overhead bin with its dimensions.
+Ce que je testerais : les 3 boutons en dessous (Look luxe, Tous les jours, Format cabine) ne font encore rien. Tape « Format cabine », vois le sac dans un coffre à bagages d'avion, avec ses dimensions.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Arntreal.
 
-**C · 18h · Opinion** (176/280)
+**C · 18h · Opinion** (219/280)
 ```
-Cheapest conversion research I know: one question on your order confirmation page.
+La recherche en conversion la moins chère que je connaisse : une question sur ta page de confirmation de commande.
 
-"What almost stopped you from buying today?"
+« Qu'est-ce qui a failli t'empêcher d'acheter aujourd'hui ? »
 
-Read 50 answers before you run your next test.
+Lis 50 réponses avant ton prochain test.
 ```
 
-**D · 21h · Appel** (152/280)
+**D · 21h · Appel** (188/280)
 ```
-Tried A/B testing on your store and stopped? I want to know why.
+Tu as essayé l'A/B testing sur ta boutique et tu as arrêté ? Je veux savoir pourquoi.
 
-Not enough traffic, tools, time, results you didn't trust? 4-min form below, no pitch.
+Pas assez de trafic, les outils, le temps, des résultats pas fiables ? Lien en réponse, pas de pitch.
 ```
 
 ### Jeudi 10 décembre
 
-**A · 9h · Friction #44** (274/280)
+**A · 9h · Friction #44** (391 caractères, X Premium)
 ```
-Shopify friction worth testing #44:
+Friction Shopify à tester #44 :
 
-No fit info next to the size picker: no model height, no size worn.
+Tes avis répètent « taille petit », ta fiche produit n'en dit rien.
 
-Hypothesis: shoppers between two sizes guess, or leave.
-Test: "Model is 1.85m and wears M. Fits true to size."
-Metric: add-to-cart rate, size returns.
+Hypothèse : personne ne lit 30 avis avant de choisir sa taille. L'info existe, mais pas là où le client décide.
+Test : une ligne sous les tailles, tirée des avis : « Taille petit selon les avis, prends au-dessus. »
+À mesurer : échanges et retours pour la taille.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-44.png`
 
-**B · 13h · Worth stealing #17 · Oner Active** (772 caractères, X Premium)
+**B · 13h · Idée à piquer #17 · Oner Active** (886 caractères, X Premium)
 ```
-Worth stealing #17: Oner Active's colour names.
+Idée à piquer #17 : les noms de couleur d'Oner Active.
 
-The selected colour isn't "Brown". It's "70% Cocoa".
+La couleur choisie ne s'appelle pas « Brown ». Elle s'appelle « 70% Cocoa ».
 
-You know the shade before you zoom. Dark chocolate, not beige, not black. And it sticks: "the 70% Cocoa jacket" is way easier to talk about than "the brown one".
+Tu connais la teinte avant de zoomer. Chocolat noir, pas beige, pas noir. Et ça reste en tête : « la veste 70% Cocoa », c'est bien plus facile à raconter que « la marron ».
 
-There's research on this too. Unusual colour names tend to make people like the product more (Miller and Kahn, 2005).
+Il y a même de la recherche là-dessus : des noms de couleur inhabituels tendent à faire plus aimer le produit (Miller et Kahn, 2005).
 
-Other details:
-- points shown as 6,660 for a €66.60 jacket. Big numbers feel generous.
-- "In stock" in green, right next to the price
+Autres détails :
+- les points affichés : 6 660 pour une veste à 66,60 €. Les gros chiffres font généreux.
+- « In Stock » en vert, juste à côté du prix
 
-What I'd test: show every swatch's name on tap, not only the selected one. People would browse names, not dots. And keep the name in the cart and the confirmation email.
+Ce que je testerais : le nom de chaque pastille au tap, pas seulement celle choisie. Les gens parcourraient des noms, pas des points. Et garder le nom dans le panier et l'email de confirmation.
 
-I'd watch swatch taps per session and the colour mix of orders.
+Je regarderais les taps sur les pastilles et les couleurs commandées.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Oner Active.
 
-**C · 18h · Appel** (150/280)
+**C · 18h · Appel** (201/280)
 ```
-Agency owners and CRO freelancers: I'd love your view too.
+Agences et freelances CRO, ton avis m'intéresse aussi.
 
-How do you decide what to test first for a client? 4-min form below. Answers stay private.
+Comment tu choisis quoi tester en premier pour un client ? 20 min en visio ou 4 min de formulaire, lien en réponse. Les réponses restent privées.
 ```
 
 ### Vendredi 11 décembre
 
-**A · 9h · Friction #45** (267/280)
+**A · 9h · Friction #45** (388 caractères, X Premium)
 ```
-Shopify friction worth testing #45:
+Friction Shopify à tester #45 :
 
-A wishlist that requires creating an account.
+Une liste d'envies qu'on ne peut pas partager, en décembre.
 
-Hypothesis: December shoppers comparing gifts won't sign up just to save a product.
-Test: a guest wishlist saved on the device.
-Metric: wishlist adds, return visits.
+Hypothèse : en décembre, la liste d'envies devient la liste au Père Noël. Si on ne peut pas l'envoyer à sa famille, elle ne sert à rien.
+Test : un bouton « Partager ma liste » : un lien, sans compte.
+À mesurer : visites venues de listes partagées, et leurs commandes.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #18 · Cabaia** (776 caractères, X Premium)
+**B · 13h · Idée à piquer #18 · Cabaia** (889 caractères, X Premium)
 ```
-Worth stealing #18: Cabaia's sizes in litres.
+Idée à piquer #18 : les tailles en litres de Cabaia.
 
-Backpack page: "Medium, 18L. Large, 23L", with "Compare sizes" right above.
+Fiche d'un sac à dos : Medium, 18 L. Large, 23 L. Avec un lien pour comparer les tailles juste au-dessus.
 
-Litres are the right unit for a bag. "Medium" means nothing until you know what fits.
+Le litre, c'est la bonne unité pour un sac. « Medium » ne veut rien dire tant que tu ne sais pas ce qui rentre.
 
-- every swatch is a photo of the bag with its matching pouch, not a flat dot
-- the price is in the button: "Add, €53.40"
-- under €100 they lead with the percentage (-40%). Rule of 100 from #1, done right.
+- chaque pastille est une photo du sac avec sa pochette assortie, pas un rond de couleur
+- le prix est dans le bouton d'ajout, 53,40 €
+- sous 100 €, ils commencent par le pourcentage (-40 %). La règle des 100 du #1, bien appliquée.
 
-What I'd test: turn litres into objects. Most people can't picture 18 litres. "18L: a 14-inch laptop, a jumper, a water bottle. 23L: add a pair of trainers." Only if that's what really fits, obviously.
+Ce que je testerais : transformer les litres en objets. Presque personne ne visualise 18 litres. « 18 L : un ordi 14 pouces, un pull, une gourde. 23 L : en plus, une paire de baskets. » Si c'est vraiment ce qui rentre.
 
-Or simpler: show the "Compare sizes" answer under the two buttons instead of behind a link.
+Ou plus simple : la comparaison des tailles sous les boutons, pas derrière un lien.
 
-I'd watch exchanges between Medium and Large.
+Je regarderais les échanges entre Medium et Large.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Cabaia.
 
-**C · 18h · Question** (114/280)
+**C · 18h · Question** (132/280)
 ```
-Do you ask buyers why they almost didn't buy?
+Tu demandes à tes clients pourquoi ils ont failli ne pas acheter ?
 
-If yes: what's the one answer that changed something on your store?
+Si oui : quelle réponse a changé quelque chose sur ta boutique ?
 ```
 
-**D · 21h · Appel** (129/280)
+**D · 21h · Appel** (155/280)
 ```
-Worked with a CRO agency or freelancer and stopped? I'd love to know what didn't work.
+Tu as bossé avec une agence ou un freelance CRO et tu as arrêté ? J'aimerais savoir ce qui n'a pas marché.
 
-Answers stay anonymous. 4-min form below.
+Les réponses restent anonymes. Lien en réponse.
 ```
 
 ### Samedi 12 décembre
 
-**A · 9h · Friction #46** (271/280)
+**A · 9h · Friction #46** (374 caractères, X Premium)
 ```
-Shopify friction worth testing #46:
+Friction Shopify à tester #46 :
 
-European visitors seeing prices in dollars.
+Des prix convertis automatiquement : 49,37 € au lieu de 49 €.
 
-Hypothesis: shoppers convert in their head, add imagined fees, and hesitate.
-Test: local currency, prices rounded per market.
-Metric: conversion of international visitors.
+Hypothèse : un prix pas rond trahit la conversion. Le client comprend que la boutique n'est pas faite pour son pays, et imagine des frais de douane.
+Test : des règles d'arrondi par marché (Shopify Markets le permet).
+À mesurer : conversion par pays.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-46.png`
 
-**B · 13h · Worth stealing #19 · Boku** (759 caractères, X Premium)
+**B · 13h · Idée à piquer #19 · Boku** (900 caractères, X Premium)
 ```
-Worth stealing #19: Boku's three percentages.
+Idée à piquer #19 : les trois pourcentages de Boku.
 
-A product image, not a review block. "Tested under dermatological control", then:
-- 95% of users find it improves hygiene
-- 97% of women find it improves hygiene during periods
-- 98% find it pleasant to use
+Une image produit, pas un bloc d'avis. « Testé sous contrôle dermatologique », puis :
+- 95 % des utilisateurs trouvent qu'il améliore l'hygiène
+- 97 % des utilisatrices trouvent qu'il améliore l'hygiène lors des menstruations
+- 98 % le trouvent agréable à utiliser
 
-Each number answers a different doubt. Does it work, does it work for me, is it weird to use.
+Chaque chiffre répond à un doute différent. Est-ce que ça marche, est-ce que ça marche pour moi, est-ce bizarre à utiliser.
 
-The middle one names a use most brands in this category stay vague about. The women it's for see themselves in it right away.
+Celui du milieu nomme un usage que la plupart des marques laissent dans le flou. Les concernées s'y reconnaissent tout de suite.
 
-And the bottle rests on an open hand. You see it's portable before reading a word.
+Et le flacon repose sur une main ouverte : nomade, avant même de lire un mot.
 
-What I'd test: make the numbers checkable. Without a base, 95% could be 19 people out of 20. "95% of [n] users after [x] weeks", with the real figures, turns a claim into a result.
+Ce que je testerais : rendre les chiffres vérifiables. Sans base, 95 % peut vouloir dire 19 personnes sur 20. « 95 % de [n] utilisateurs après [x] semaines », avec les vrais chiffres, transforme une promesse en résultat.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Boku.
 
-**C · 18h · Journal** (143/280)
+**C · 18h · Journal** (184/280)
 ```
-What I'll do with the form answers:
+Ce que je fais des réponses au formulaire et des appels :
 
-- read every single one
-- tag the problems
-- publish a summary in January
+- tout lire, une par une
+- classer les problèmes
+- publier une synthèse en janvier
 
-No names, no store names, ever.
+Aucun nom, aucun nom de boutique, jamais.
 ```
 
 ### Dimanche 13 décembre
 
-**A · 9h · Friction #47** (268/280)
+**A · 9h · Friction #47** (420 caractères, X Premium)
 ```
-Shopify friction worth testing #47:
+Friction Shopify à tester #47 :
 
-Import duties paid on delivery, common for UK-EU orders since Brexit.
+Des droits de douane payés à la livraison, le cas de beaucoup de marques UK depuis le Brexit.
 
-Hypothesis: surprised shoppers don't reorder, and some refuse the parcel.
-Test: duties included at checkout.
-Metric: international conversion.
+Hypothèse : le client paie la douane et les frais du transporteur à sa porte, sans prévenir. Il ne recommande pas, et certains refusent le colis, que tu paies deux fois.
+Test : droits inclus au paiement.
+À mesurer : colis refusés, taux de recommande des clients UE.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-47.png`
 
-**B · 13h · Worth stealing #20 · Broken Planet** (686 caractères, X Premium)
+**B · 13h · Idée à piquer #20 · Broken Planet** (897 caractères, X Premium)
 ```
-Worth stealing #20: Broken Planet's two models.
+Idée à piquer #20 : les deux mannequins de Broken Planet.
 
-"Dawn is 6'2, wearing size XL. Supriya is 5'3, wearing size M."
+« Dawn is 6'2, wearing size XL sweatpants. Supriya is 5'3, wearing size M sweatpants. »
 
-Same sweatpants, two very different bodies. One model gives you one data point. Two give you a range you can place yourself in. It says unisex without a label.
+Même jogging, deux morphologies très différentes. Un mannequin te donne un repère. Deux te donnent une fourchette où te placer. Ça dit unisexe sans l'écrire.
 
-- "540 GSM organic cotton" comes first. For heavyweight streetwear buyers, fabric weight is the quality proof.
-- sold-out sizes stay visible, crossed out. You see what exists and what's gone.
+- « 540 GSM organic cotton fabric » arrive en premier. Pour le streetwear épais, le grammage est la preuve de qualité.
+- les tailles épuisées restent visibles, barrées. Tu vois ce qui existe et ce qui est parti.
 
-What I'd test: make those crossed-out sizes tappable. "XS is gone. Get notified when it's back." Right now that demand just disappears.
+Ces cases barrées sont la donnée la plus précieuse de la page, et personne ne la compte. Chaque tap dessus est une demande perdue.
 
-I'd watch back-in-stock sign-ups and sales from restock emails.
+Ce que je testerais : les rendre tapables. « XS épuisé. Préviens-moi au retour. » Puis utiliser le nombre d'inscrits par taille pour décider combien en refaire.
 
-Follow for more.
+Je regarderais les ventes des emails de retour en stock.
+
+Abonne-toi pour la suite.
 ```
 Image : ta capture Broken Planet.
 
@@ -1062,309 +1066,309 @@ Image : ta capture Broken Planet.
 
 ### Lundi 14 décembre
 
-**A · 9h · Friction #48** (271/280)
+**A · 9h · Friction #48** (382 caractères, X Premium)
 ```
-Shopify friction worth testing #48:
+Friction Shopify à tester #48 :
 
-A required phone number at checkout, with no reason given.
+Un téléphone obligatoire au paiement, sans dire pourquoi.
 
-Hypothesis: some shoppers stop because they expect sales calls.
-Test: optional, or "Only for delivery updates" under the field.
-Metric: checkout completion.
+Hypothèse : le client imagine du démarchage. Or le vrai motif, le SMS du livreur, est justement celui qui lui donnerait envie de le donner.
+Test : sous le champ : « Pour le SMS du livreur, rien d'autre. »
+À mesurer : abandons à l'étape contact, livraisons ratées.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-48.png`
 
-**B · 13h · Worth stealing #21 · Gymshark** (775 caractères, X Premium)
+**B · 13h · Idée à piquer #21 · Gymshark** (884 caractères, X Premium)
 ```
-Worth stealing #21: Gymshark's "224 XP".
+Idée à piquer #21 : les « 224 XP » de Gymshark.
 
-Under the add-to-cart button: "Buying this product earns you 224 XP".
+Sous le bouton d'achat : « L'achat de ce produit rapporte 224 XP ».
 
-XP, not "points". That's gaming talk, and gym people track progress anyway. For a gym brand, levelling up is the whole identity.
+XP, pas « points ». C'est le langage du jeu vidéo, et les gens qui vont à la salle suivent déjà leur progression. Pour une marque de sport, monter de niveau, c'est toute l'identité.
 
-- it's specific to this product, not a generic "join our rewards"
-- the same box answers the last questions: free shipping from €59, express available
-- pay in 4 shown as 4 x €7.00. Smaller number, same total.
+- c'est propre à ce produit, pas un « rejoins notre programme » générique
+- le même bloc répond aux dernières questions : livraison gratuite dès 59 €, express disponible
+- le paiement en 4 fois affiché en 4 x 7,00 €. Plus petit chiffre, même total.
 
-Problem: 224 XP of what? Points without an exchange rate are just a number.
+Problème : 224 XP de quoi ? Des points sans taux de change, c'est juste un nombre.
 
-What I'd test: give it meaning. "224 XP, one order away from your next level", or what it's worth on the next order. Or show the total this cart gets you to.
+Ce que je testerais : lui donner un sens. « 224 XP, à une commande de ton prochain niveau », ou ce qu'ils valent sur la prochaine commande.
 
-I'd watch account sign-ups from product pages and repeat purchases.
+Je regarderais les créations de compte depuis les fiches produit, et les rachats.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Gymshark.
 
-**C · 18h · Question** (137/280)
+**C · 18h · Question** (165/280)
 ```
-If software flagged one problem on your store every week, where should it look first?
+Si un logiciel te signalait un problème sur ta boutique chaque semaine, où devrait-il regarder en premier ?
 
-Product pages, cart, checkout, or traffic sources?
+Fiches produit, panier, paiement, ou sources de trafic ?
 ```
 
-**D · 21h · Appel** (167/280)
+**D · 21h · Appel** (193/280)
 ```
-Growth and e-commerce managers at bigger brands: your answers matter too.
+Tu gères la growth ou l'e-commerce d'une plus grosse marque ? Ta réponse compte aussi.
 
-You probably have more data than time. How do you pick what to test first? 4-min form below.
+Tu as sûrement plus de données que de temps. Comment tu choisis quoi tester en premier ? Lien en réponse.
 ```
 
 ### Mardi 15 décembre
 
-**A · 9h · Friction #49** (276/280)
+**A · 9h · Friction #49** (495 caractères, X Premium)
 ```
-Shopify friction worth testing #49:
+Friction Shopify à tester #49 :
 
-A sticky header that takes a fifth of the mobile screen.
+Sur iPhone, ta fiche produit perd une bonne partie de l'écran : barre Safari, header fixe, bandeau promo, bannière cookies.
 
-Hypothesis: less room for the product, more scrolling to reach price and button.
-Test: a slimmer header that hides on scroll down.
-Metric: mobile add-to-cart rate.
+Hypothèse : tu ne le vois jamais : tu as accepté les cookies et tu testes sur ordi. Un nouveau visiteur, lui, voit tout en même temps.
+Test : ouvre ta fiche en navigation privée sur un téléphone, puis teste un header qui se cache au scroll.
+À mesurer : scroll et ajout au panier des nouveaux visiteurs mobiles.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #22 · Alphalete** (765 caractères, X Premium)
+**B · 13h · Idée à piquer #22 · Alphalete** (880 caractères, X Premium)
 ```
-Worth stealing #22: Alphalete's size guide.
+Idée à piquer #22 : le guide des tailles d'Alphalete.
 
-Most size charts just give you numbers. This one first teaches you how to get yours.
+La plupart des guides te donnent des chiffres. Celui-là t'apprend d'abord à trouver les tiens.
 
-- body landmarks, no jargon: "about 1 inch below the armpit", "in line with your belly button"
-- a physical cue for the waist: bend to the side, find the crease. Doable alone in your room.
-- an IN / CM switch
-- ranges, not single numbers: chest 39 to 42 for an M. Real bodies sit between sizes.
+- des repères sur le corps, sans jargon : environ un pouce sous l'aisselle, au niveau du nombril
+- un geste pour la taille : penche-toi sur le côté, trouve le pli. Faisable seul dans ta chambre.
+- un bouton IN / CM
+- des fourchettes, pas un chiffre unique : poitrine de 39 à 42 pouces pour un M. Les vrais corps sont entre deux tailles.
 
-A size chart is only as good as the measurement people bring to it. They fixed the input, not just the table.
+Un guide des tailles ne vaut que la mesure qu'on y apporte. Ils ont corrigé l'entrée, pas seulement le tableau.
 
-What I'd test: a "no tape measure?" option. Lay a sweater you own flat, measure armpit to armpit, match it.
+Ce que je testerais : une option « pas de mètre ruban ? ». Pose à plat un sweat que tu as déjà, mesure d'aisselle à aisselle, compare.
 
-Small fix too: the product page sells XXL and XXXL, the guide says 2XL and 3XL. Same labels on both.
+Petite correction aussi : la fiche produit vend du XXL et du XXXL, le guide dit 2XL et 3XL. Les mêmes noms partout.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Alphalete.
 
-**C · 18h · Opinion** (149/280)
+**C · 18h · Opinion** (191/280)
 ```
-A test that "lost" is only wasted if you never wrote down why you ran it.
+Un test « perdant » n'est du gâchis que si tu n'as jamais noté pourquoi tu l'as lancé.
 
-Hypothesis first, result second. That's how a store actually gets smarter.
+L'hypothèse d'abord, le résultat ensuite. C'est comme ça qu'une boutique devient vraiment plus maligne.
 ```
 
 ### Mercredi 16 décembre
 
-**A · 9h · Friction #50** (274/280)
+**A · 9h · Friction #50** (351 caractères, X Premium)
 ```
-Shopify friction worth testing #50:
+Friction Shopify à tester #50 :
 
-A mobile gallery with no sign there are more photos: no dots, no peek of the next one.
+Sur mobile, la photo portée arrive en 4e position dans la galerie.
 
-Hypothesis: shoppers see one photo and miss the rest.
-Test: dots, or a partial next image.
-Metric: images viewed, add-to-cart rate.
+Hypothèse : beaucoup ne swipent pas jusque-là. Ils jugent un vêtement posé à plat, sans jamais voir comment il tombe.
+Test : la photo portée en 1re ou 2e position.
+À mesurer : swipes dans la galerie, ajout au panier mobile.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #23 · Kosbiotic** (780 caractères, X Premium)
+**B · 13h · Idée à piquer #23 · Kosbiotic** (895 caractères, X Premium)
 ```
-Worth stealing #23: Kosbiotic's subscription.
+Idée à piquer #23 : l'abonnement de Kosbiotic.
 
-The subscription is selected by default. What makes that OK is what's written inside it (translated):
-- "Save 10%, no commitment"
-- "Cancel in 1 click"
-- "Automatic delivery every 28 days"
+L'abonnement est sélectionné par défaut. Ce qui le rend acceptable, c'est ce qui est écrit dedans :
+- « Économisez 10% », « Sans engagement »
+- « Livraison automatique tous les 28 jours »
+- « Annulation en 1 clic »
 
-A pre-selected subscription without those lines would feel like a trap. With them, it just feels like the obvious choice.
+Un abonnement présélectionné sans ces lignes ressemblerait à un piège. Avec elles, il ressemble au choix évident.
 
-28 days matches the length of a cure, so the next box lands when the last one runs out. Also, every 28 days = 13 deliveries a year, not 12. The cure and the revenue line up nicely.
+28 jours, c'est la durée d'une cure, donc la boîte suivante arrive quand la précédente se termine. Et tous les 28 jours, ça fait 13 livraisons par an, pas 12. La cure et le chiffre d'affaires s'alignent.
 
-What I'd test: prove the 1-click cancel, with a small link showing the screen where you do it. Or add "Skip or pause anytime" for people scared of a pile of boxes.
+Ce que je testerais : prouver l'annulation en 1 clic, avec un petit lien qui montre l'écran où on le fait. Ou ajouter « Décale ou mets en pause quand tu veux » pour ceux qui ont peur de crouler sous les boîtes.
 
-I'd watch subscription share and month-1 cancellations.
+Je regarderais la part d'abonnements et les annulations du premier mois.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Kosbiotic.
 
-**C · 18h · Appel** (179/280)
+**C · 18h · Appel** (172/280)
 ```
-Halfway through December.
+Mi-décembre.
 
-If you run a Shopify store and have 4 minutes between orders: how do you decide what to change? Link below.
+Si tu as une boutique Shopify et 20 minutes entre deux commandes : comment tu décides quoi changer ? Lien en réponse.
 
-Thank you to everyone who already answered.
+Merci à tous ceux qui ont déjà répondu.
 ```
 
 ### Jeudi 17 décembre
 
-**A · 9h · Friction #51** (264/280)
+**A · 9h · Friction #51** (409 caractères, X Premium)
 ```
-Shopify friction worth testing #51:
+Friction Shopify à tester #51 :
 
-Product names cut off on mobile collection pages.
+Sur mobile, tes noms de produits sont coupés pile avant ce qui les distingue.
 
-Hypothesis: shoppers can't tell similar products apart without opening each.
-Test: two-line titles, or the color in the name.
-Metric: clicks to product pages.
+Hypothèse : six cartes « Sweat oversize bro... » : il faut tout ouvrir pour savoir lequel est lequel. Le client en ouvre deux et s'arrête.
+Test : mettre la différence au début : « Vert sapin, sweat oversize ».
+À mesurer : clics vers les fiches, produits vus par session.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #24 · Cabaia** (761 caractères, X Premium)
+**B · 13h · Idée à piquer #24 · Cabaia** (884 caractères, X Premium)
 ```
-Worth stealing #24: Cabaia's cart, ready for December.
+Idée à piquer #24 : le panier de Cabaia, prêt pour décembre.
 
-One backpack in the cart, and the last three questions answered before checkout.
+Un sac à dos dans le panier, et les trois dernières questions réglées.
 
-When does it arrive? An actual delivery date, using your postcode, plus a link to compare options. Not "3 to 5 business days".
+Quand ça arrive ? Une vraie date, calculée avec ton code postal, et un lien pour comparer les options. Pas « 3 à 5 jours ouvrés ».
 
-Is it a gift? A checkbox right on the line: "Gift wrap (€2.80)". That's the fix for friction #41.
+C'est un cadeau ? Une case directement sur la ligne : emballage cadeau, 2,80 €.
 
-What goes with it? A "Side pocket Pau, €7". The backpack is called Pau too. They name products after cities, so the match is obvious without a "goes with" label.
+Qu'est-ce qui va avec ? Une poche latérale Pau, à 7 €. Le sac s'appelle Pau aussi. Des noms de villes : l'association se fait sans étiquette « va avec ».
 
-In December the delivery date basically is the decision. Having it in the cart removes the last "will it arrive in time?".
+En décembre, la date de livraison, c'est quasiment la décision. L'avoir dans le panier enlève le dernier « est-ce que ça arrivera à temps ? ».
 
-What I'd test: once gift wrap is ticked, offer a gift message and a receipt without prices.
+Ce que je testerais : une fois l'emballage coché, proposer un message et une facture sans prix. L'emballage, c'est la moitié du cadeau. L'autre moitié, c'est que le prix ne soit pas dans la boîte (friction #41).
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Cabaia.
 
-**C · 18h · Question** (67/280)
+**C · 18h · Question** (80/280)
 ```
-Which page of your store do you look at least, but probably should?
+Quelle page de ta boutique tu regardes le moins, alors que tu devrais sûrement ?
 ```
 
 ### Vendredi 18 décembre
 
-**A · 9h · Friction #52** (264/280)
+**A · 9h · Friction #52** (397 caractères, X Premium)
 ```
-Shopify friction worth testing #52:
+Friction Shopify à tester #52 :
 
-No color swatches on collection cards.
+Chaque couleur créée comme un produit à part.
 
-Hypothesis: shoppers looking for one color open products one by one, then give up.
-Test: swatches under each card that switch the image.
-Metric: clicks to product pages.
+Hypothèse : tes avis sont éparpillés : six fiches à 12 avis au lieu d'une à 72. Même produit, moins de preuves sur chaque page.
+Test : regrouper les avis des couleurs (beaucoup d'apps d'avis le permettent), ou passer en variantes.
+À mesurer : ajout au panier des couleurs les moins vendues.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #25 · Alo** (793 caractères, X Premium)
+**B · 13h · Idée à piquer #25 · Alo** (889 caractères, X Premium)
 ```
-Worth stealing #25: Alo's annotated product photo.
+Idée à piquer #25 : la photo annotée d'Alo.
 
-Second photo, little labels pointing at the shirt: "Soft Performance Fabric", "Fitted Sleeves", "Relaxed Fit".
+Deuxième photo, des petites étiquettes qui pointent le t-shirt : « Soft Performance Fabric », « Fitted Sleeves », « Relaxed Fit ».
 
-People look at photos before they read. So the copy goes where the attention already is, on the body, instead of in an accordion nobody opens. Learning research calls it spatial contiguity: words next to what they describe get understood faster.
+On regarde les photos avant de lire. Donc le texte va là où l'attention est déjà, sur le corps, au lieu d'un accordéon que personne n'ouvre. La recherche appelle ça la contiguïté spatiale : un mot placé à côté de ce qu'il décrit se comprend plus vite.
 
-- "Fit: true to size, relaxed cut" right above the size guide
-- a member price, €47 instead of €68 if you sign up. The discount becomes an account.
+- l'info de coupe (taille normalement, coupe ample) juste au-dessus du guide des tailles
+- un prix membre, 47 € au lieu de 68 € si tu crées un compte. La remise devient un compte.
 
-What I'd test: make the labels tappable. "Soft Performance Fabric" opens a close-up of the fabric. Or add a 4th label for whatever their 1,943 reviews ask about most.
+Ce que je testerais : rendre les étiquettes tapables. « Soft Performance Fabric » ouvre un gros plan du tissu. Ou une 4e étiquette sur ce que leurs 1 943 avis demandent le plus.
 
-I'd watch add-to-cart rate and accordion opens.
+Je regarderais le taux d'ajout au panier et les ouvertures d'accordéons.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Alo.
 
-**C · 18h · Opinion** (127/280)
+**C · 18h · Opinion** (134/280)
 ```
-Most "we doubled conversion" screenshots compare December to November.
+La plupart des captures « on a doublé la conversion » comparent décembre à novembre.
 
-That's just the season. Ask them for the control group.
+C'est juste la saison. Demande le groupe témoin.
 ```
 
-**D · 21h · Appel** (189/280)
+**D · 21h · Appel** (201/280)
 ```
-Every form answer gets read, tagged and counted. None of it is used to sell to you.
+Chaque réponse est lue, classée et comptée. Rien n'est utilisé pour te vendre quoi que ce soit.
 
-If you run a store and have 4 minutes before the holidays: how do you decide what to change? Link below.
+Si tu as une boutique et 20 minutes avant les fêtes : comment tu décides quoi changer ? Lien en réponse.
 ```
 
 ### Samedi 19 décembre
 
-**A · 9h · Friction #53** (263/280)
+**A · 9h · Friction #53** (426 caractères, X Premium)
 ```
-Shopify friction worth testing #53:
+Friction Shopify à tester #53 :
 
-Infinite scroll that drops you back at the top when you return from a product.
+Tu ouvres le 40e produit d'une collection, tu reviens en arrière : retour tout en haut.
 
-Hypothesis: shoppers lose their place and stop browsing.
-Test: restore the scroll position.
-Metric: products viewed per session.
+Hypothèse : personne ne refait 40 produits de scroll. Le client s'arrête au premier ouvert, et ta collection est jugée sur une seule fiche.
+Test : garder la position au retour, ou un bouton « Voir plus » à la place du scroll infini.
+À mesurer : produits vus par session mobile.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #26 · Horace** (788 caractères, X Premium)
+**B · 13h · Idée à piquer #26 · Horace** (877 caractères, X Premium)
 ```
-Worth stealing #26: Horace's two questions.
+Idée à piquer #26 : les deux questions d'Horace.
 
-The description is just two questions in bold (translated): "What does it do?" and "How do I use it?"
+La description, c'est juste deux questions en gras : « Que fait-il ? » et « Comment l'utiliser ? »
 
-For a first-time buyer, "how do I use it?" is a real question. Answer: morning and/or evening, lather on a wet face and neck. Done.
+Pour un premier achat, « comment l'utiliser ? » est une vraie question. Réponse : le matin et/ou le soir, à faire mousser sur visage et cou humides. Fini.
 
-- they're the questions you'd ask a friend at the counter, not marketing headings
-- "Fragrance: none" gets its own line. For a lot of guys that's the deal-breaker.
-- the price is in the button: "Add to cart, €13"
+- ce sont les questions qu'on poserait à un pote au comptoir, pas des titres marketing
+- « Parfum : Sans parfum » a sa propre ligne. Pour beaucoup d'hommes, c'est le critère éliminatoire.
+- le prix est dans le bouton : « AJOUTER AU PANIER - 13 € »
 
-They sell the routine, not just the bottle. Knowing how to use it kills the fear of buying something that ends up stuck in the cabinet.
+Ils vendent la routine, pas juste le flacon. Savoir comment l'utiliser enlève la peur d'acheter un truc qui finira au fond du placard.
 
-What I'd test: a third question, "What goes with it?", showing the next step of the routine and how close you are to free delivery at €40.
+Ce que je testerais : une troisième question, « Avec quoi ? », qui montre l'étape suivante de la routine et la distance jusqu'à la livraison offerte, dès 40 €.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Horace.
 
-**C · 18h · Question** (57/280)
+**C · 18h · Question** (83/280)
 ```
-What do you wish your analytics told you that it doesn't?
+Qu'est-ce que tu aimerais que tes analytics te disent, et qu'ils ne te disent pas ?
 ```
 
 ### Dimanche 20 décembre
 
-**A · 9h · Friction #54** (275/280)
+**A · 9h · Friction #54** (440 caractères, X Premium)
 ```
-Shopify friction worth testing #54:
+Friction Shopify à tester #54 :
 
-Gift cards hidden in the footer.
+Le 22 décembre, la carte cadeau est le seul produit qui arrive encore à temps. Et elle est dans le footer.
 
-Hypothesis: last-minute buyers after the shipping cutoff don't find them and buy elsewhere.
-Test: gift cards in the main menu from mid-December.
-Metric: gift card sales after the cutoff.
+Hypothèse : les retardataires ne la cherchent pas, ils partent ailleurs.
+Test : dès la date limite de livraison passée, un bandeau : « Trop tard pour la livraison ? Carte cadeau envoyée par email, tout de suite. »
+À mesurer : ventes de cartes cadeaux après la date limite.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-54.png`
 
-**B · 13h · Worth stealing #27 · Le Slip Français** (816 caractères, X Premium)
+**B · 13h · Idée à piquer #27 · Le Slip Français** (897 caractères, X Premium)
 ```
-Worth stealing #27: Le Slip Français's "Frequently bought together".
+Idée à piquer #27 : le « Fréquemment achetés ensemble » du Slip Français.
 
-Under a 5-pack at €99, the suggestions aren't socks or belts. They're bigger packs: 7 boxers for €160, 10 for €185.
+Sous un lot de 5 boxers à 99 €, les suggestions ne sont ni des chaussettes ni des ceintures. Ce sont des lots plus gros : 7 boxers à 160 €, 10 à 185 €.
 
-Upsizing dressed up as cross-selling.
+De la montée en gamme déguisée en vente croisée.
 
-- the 7-pack photo is a gift: red background, gold bag saying "a little gift, a pretty package"
-- the designs have festive names (garland, ski run). In December the product names do the seasonal marketing.
+- la photo du lot de 7 est un cadeau : fond rouge, sachet doré « Un petit cadeau, un joli paquet »
+- les motifs ont des noms de fête (Guirlande, Tout Schuss). En décembre, les noms de produits font le marketing de saison.
 
-Now the math. The 10-pack is €18.50 a boxer, cheaper than the 5-pack (€19.80). The 7-pack is €22.86 a boxer, more expensive. It sells the wrapping, not the unit price.
+Maintenant, le calcul. Le lot de 10 revient à 18,50 € le boxer, moins cher que le lot de 5 (19,80 €). Le lot de 7 : 22,86 €, plus cher. Il vend l'emballage, pas le prix unitaire.
 
-What I'd test: show the price per boxer only where it helps, "€18.50 each" on the 10-pack. And sell the gift pack on the moment: "gift-wrapped, delivered before Christmas", if they can promise it.
+Ce que je testerais : le prix par boxer seulement là où il aide, « 18,50 € pièce » sur le lot de 10. Et vendre le lot cadeau sur le moment : « emballé, livré avant Noël », si c'est tenable.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Le Slip Français.
 
@@ -1375,311 +1379,311 @@ Image : ta capture Le Slip Français.
 
 ### Lundi 21 décembre
 
-**A · 9h · Friction #55** (272/280)
+**A · 9h · Friction #55** (413 caractères, X Premium)
 ```
-Shopify friction worth testing #55:
+Friction Shopify à tester #55 :
 
-No word on holiday returns: can a gift be exchanged in January?
+Un cadeau livré le 5 décembre, ouvert le 25 : ton délai de retour de 14 jours est déjà fini.
 
-Hypothesis: gift buyers hesitate when the size might be wrong.
-Test: if your policy allows it, "Gift returns until Jan 31".
-Metric: December conversion.
+Hypothèse : celui qui offre y pense, surtout pour une taille. Il hésite, ou choisit une boutique qui en parle.
+Test : « Retours des commandes de décembre jusqu'au 31 janvier », écrit sur la fiche, si ta politique le permet.
+À mesurer : conversion en décembre.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #28 · Based** (791 caractères, X Premium)
+**B · 13h · Idée à piquer #28 · Based** (876 caractères, X Premium)
 ```
-Worth stealing #28: Based's ingredient tiles.
+Idée à piquer #28 : les tuiles ingrédients de Based.
 
-A product image: "The Key Ingredients. Endless Benefits." Four tiles, each with an ingredient, a strip of the actual powder's texture, and one line on what it does.
+Une image produit : « The Key Ingredients. Endless Benefits. » Quatre tuiles, chacune avec un ingrédient, une bande de la vraie texture de la poudre, et une ligne sur ce qu'il fait.
 
-- you see silica, arrowroot, rice powder and mica. You don't just read their names.
-- every chemical name becomes a result: volume, less oil, softness, matte finish
-- 4 ingredients, 4 jobs. Nothing's there without a reason.
+- tu vois la silice, l'arrow-root, la poudre de riz et le mica. Tu ne fais pas que lire leurs noms.
+- chaque nom chimique devient un résultat : volume, moins de gras, douceur, fini mat
+- 4 ingrédients, 4 rôles. Rien n'est là sans raison.
 
-This image quietly answers the question a €21.95 product weighing 2.5 g raises: what am I paying for? Four named actives make a small format feel dense instead of tiny.
+Cette image répond en silence à la question que pose un produit à 21,95 € qui pèse 2,5 g : je paie quoi ? Quatre actifs nommés font paraître un petit format dense plutôt que minuscule.
 
-What I'd test: start from the problem, not the ingredient. "Flat hair? Silica silylate. Oily roots by noon? Arrowroot." People know their problem, not the chemistry.
+Ce que je testerais : partir du problème, pas de l'ingrédient. « Cheveux plats ? Silica silylate. Racines grasses à midi ? Arrow-root. » Les gens connaissent leur problème, pas la chimie.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Based.
 
-**C · 18h · Journal** (232/280)
+**C · 18h · Journal** (255/280)
 ```
-27 "Shopify friction worth testing" posts in, here's what I noticed:
+Ce que j'ai remarqué sur les 27 premières frictions Shopify :
 
-the most-read ones were all about surprises on the way to paying. Hidden payment options, late shipping costs, early pop-ups.
+les plus lues parlaient toutes de surprises sur le chemin du paiement. Moyens de paiement cachés, frais de port qui arrivent tard, pop-ups trop tôt.
 
-Nobody likes surprises at the till.
+Personne n'aime les surprises à la caisse.
 ```
 
-**D · 21h · Appel** (179/280)
+**D · 21h · Appel** (189/280)
 ```
-Reply "form" and I'll send you the link.
+Réponds « appel » et je t'envoie le lien.
 
-4 minutes before the holiday break on how you decide what to change on your store. The summary goes to everyone who answered, in January.
+20 minutes avant la pause des fêtes, sur comment tu décides quoi changer sur ta boutique. La synthèse part en janvier à tous ceux qui ont répondu.
 ```
 
 ### Mardi 22 décembre
 
-**A · 9h · Friction #56** (257/280)
+**A · 9h · Friction #56** (375 caractères, X Premium)
 ```
-Shopify friction worth testing #56:
+Friction Shopify à tester #56 :
 
-Size buttons too small to tap on mobile, XS to XXL crammed in one row.
+Une taille sélectionnée qui se voit à peine : juste un contour un peu plus épais.
 
-Hypothesis: mis-taps and wrong sizes.
-Test: bigger buttons, at least a thumb wide.
-Metric: size changes in cart, add-to-cart rate.
+Hypothèse : dehors, au soleil, le client ne sait plus s'il a pris M ou L. Il retape, doute, et va vérifier dans le panier.
+Test : la taille choisie en plein (fond noir, texte blanc).
+À mesurer : changements de taille dans le panier.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #29 · Polène** (763 caractères, X Premium)
+**B · 13h · Idée à piquer #29 · Polène** (882 caractères, X Premium)
 ```
-Worth stealing #29: Polène's split screen.
+Idée à piquer #29 : l'écran coupé en deux de Polène.
 
-Left half: the bag worn, in a huge landscape. Right half: the same bag alone on white, name, price, one button.
+Moitié gauche : le sac porté, dans un immense paysage. Moitié droite : le même sac seul sur fond blanc, nom, prix, un bouton.
 
-Emotion and facts side by side. You never scroll from one to the other. And you read the left side first, so it's desire before details.
+L'émotion et les faits côte à côte. Tu ne scrolles jamais de l'un à l'autre. Et tu lis le côté gauche en premier, donc l'envie passe avant les détails.
 
-- tons of white space around the packshot. At €380, room signals value.
-- "3D view" lets you turn the bag yourself instead of scrolling six angles
+- énormément de blanc autour du packshot. À 380 €, l'espace signale la valeur.
+- la « Vue 3D » te laisse tourner le sac toi-même au lieu de faire défiler six angles
 
-Half magazine, half shop window. It never makes you choose between wanting it and checking it.
+Moitié magazine, moitié vitrine. La page ne te force jamais à choisir entre en avoir envie et vérifier.
 
-What I'd test: the question every compact bag gets. What fits inside? One photo of it open with a phone, cards and keys. Or one line under the price.
+Ce que je testerais : la question que pose chaque petit sac. Qu'est-ce qui rentre dedans ? Une photo ouvert avec un téléphone, des cartes et des clés. Ou une ligne sous le prix.
 
-I'd watch add-to-cart rate and returns for "too small".
+Je regarderais le taux d'ajout au panier et les retours « trop petit ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Polène.
 
-**C · 18h · Appel** (155/280)
+**C · 18h · Appel** (202/280)
 ```
-Before you close for the holidays: 4 minutes on how you decide what to change on your store.
+Avant de fermer pour les fêtes : 20 min en visio, ou 4 min de formulaire, sur comment tu décides quoi changer sur ta boutique.
 
-Everyone who answers gets the summary in January. Link below.
+Tous ceux qui répondent reçoivent la synthèse en janvier. Lien en réponse.
 ```
 
 ### Mercredi 23 décembre
 
-**A · 9h · Friction #57** (275/280)
+**A · 9h · Friction #57** (418 caractères, X Premium)
 ```
-Shopify friction worth testing #57:
+Friction Shopify à tester #57 :
 
-Variant names like "Style 2" or "Dark".
+Des couleurs nommées « Coloris 2 » ou « Dark ».
 
-Hypothesis: shoppers can't tell what they're picking, especially if the photo doesn't change.
-Test: descriptive names with a swatch: "Forest green".
-Metric: wrong-variant returns.
+Hypothèse : le nom suit le produit partout : panier, email, formulaire de retour, souvent sans photo. Là, « Coloris 2 » ne veut plus rien dire, et le client doute de sa commande.
+Test : un nom qu'on voit dans sa tête : « Vert sapin ».
+À mesurer : questions au SAV sur la couleur, retours « mauvaise couleur ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #30 · Typology** (802 caractères, X Premium)
+**B · 13h · Idée à piquer #30 · Typology** (898 caractères, X Premium)
 ```
-Worth stealing #30: Typology's lab codes.
+Idée à piquer #30 : les codes labo de Typology.
 
-The serum is called "A63". Above the name there's a reference like a lab sample, "LAB1035-30ML-SG". The description is in a typewriter font.
+Le sérum s'appelle « A63 ». Au-dessus du nom, une référence comme sur un échantillon de labo : « LAB1035-30ML-SG ». La description est en police machine à écrire.
 
-- the name is the active and its concentration ("PDRN-EGF Complex 3%"), not a mood word like "Glow"
-- precise numbers read as honest: "150,000 vegan micro-spicules per gram", "95% natural origin"
-- a 15 ml option next to the 30 ml, a cheaper way to try something new
-- "Is this compatible with your skin type?" right under the button
+- le nom, c'est l'actif et sa concentration (« Complexe PDRN-EGF 3% »), pas un mot d'ambiance comme « Glow »
+- les chiffres précis font honnête : « 150 000 micro-spicules véganes par gramme », « 95% d'ingrédients d'origine naturelle »
+- un 15 ml à côté du 30 ml, pour essayer moins cher
+- « Ce produit est-il compatible avec votre type de peau? » juste sous le bouton
 
-The page looks like a lab sheet because the promise is science. The design is the proof.
+La promesse, c'est la science, donc la page ressemble à une fiche de labo.
 
-What I'd test: call the 15 ml what it is, "Trial size", and show its price on the toggle before the click.
+Ce que je testerais : appeler le 15 ml par ce qu'il est, « Format découverte », et afficher son prix sur le bouton avant le clic.
 
-I'd watch first-order conversion and repurchases from 15 to 30 ml.
+Je regarderais la conversion des premières commandes et le passage du 15 au 30 ml.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Typology.
 
-**C · 18h · Opinion** (145/280)
+**C · 18h · Opinion** (185/280)
 ```
-My January plan for any store:
+Mon plan de janvier pour n'importe quelle boutique :
 
-- pick 3 changes, not 30
-- one metric each
-- write the hypothesis before you ship
-- check it before you celebrate
+- choisir 3 changements, pas 30
+- un indicateur pour chacun
+- écrire l'hypothèse avant de mettre en ligne
+- vérifier avant de fêter
 ```
 
-**D · 21h · Appel** (150/280)
+**D · 21h · Appel** (188/280)
 ```
-Apparel and beauty stores: size, shade and fit questions seem to drive a lot of hesitation. Is that true for yours?
+Boutiques de mode et de beauté : les questions de taille, de teinte et de coupe ont l'air de créer beaucoup d'hésitation. C'est vrai chez toi ?
 
-Tell me in 4 minutes. Link below.
+Raconte-moi en 20 minutes. Lien en réponse.
 ```
 
 ### Jeudi 24 décembre · Réveillon
 
-**A · 9h · Friction #58** (261/280)
+**A · 9h · Friction #58** (374 caractères, X Premium)
 ```
-Shopify friction worth testing #58:
+Friction Shopify à tester #58 :
 
-Multi-packs without a per-unit price.
+Le lot de 3 paires affiché à 29 €, sans dire que ça fait 9,67 € la paire contre 12 €.
 
-Hypothesis: shoppers don't see the 3-pack is the better deal, so they buy one.
-Test: "€8 per pair" under each pack.
-Metric: pack share of orders, average order value.
+Hypothèse : le client compare 29 € à 12 €, pas 9,67 € à 12 €. Le gros chiffre fait peur, l'économie reste invisible.
+Test : « 9,67 € la paire au lieu de 12 € » sous le lot.
+À mesurer : part des lots dans les commandes.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-58.png`
 
-**B · 13h · Worth stealing #31 · Stüssy** (716 caractères, X Premium)
+**B · 13h · Idée à piquer #31 · Stüssy** (838 caractères, X Premium)
 ```
-Worth stealing #31: Stüssy's product page, for what it leaves out.
+Idée à piquer #31 : la fiche produit de Stüssy, pour ce qu'elle n'a pas.
 
-A €70 glass ashtray. No reviews, no "only 3 left", no countdown, no upsell carousel.
+Un cendrier en verre à 70 €. Pas d'avis, pas de « plus que 3 », pas de compte à rebours, pas de carrousel de suggestions.
 
-- product details open by default, as a plain list
-- every dimension in inches and cm. For an object, size is the first unknown.
-- a holiday shipping guide at the top, with a "Hide" link
-- a list, a photo, one black button. The page looks like the brand.
+- les détails du produit sont ouverts par défaut, en simple liste
+- chaque dimension en pouces et en cm. Pour un objet, la taille est la première inconnue.
+- un guide des livraisons des fêtes en haut, avec un lien « Hide »
+- une liste, une photo, un bouton noir. La page ressemble à la marque.
 
-For a cult brand, persuasion tricks would cheapen the product. The restraint is the signal.
+Pour une marque culte, les techniques de persuasion feraient cheap. La retenue est le signal.
 
-What I'd test: scale. On a white background, 20cm reads as nothing. One photo next to a hand or a lighter. Or a side view showing the 2.5cm height.
+Ce que je testerais : l'échelle. Sur fond blanc, 20 cm ne se voit pas. Une photo à côté d'une main ou d'un briquet. Ou une vue de profil qui montre les 2,5 cm de hauteur.
 
-I'd watch returns for "smaller than expected".
+Je regarderais les retours « plus petit que prévu ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Stüssy.
 
-**C · 18h · Question** (93/280)
+**C · 18h · Question** (106/280)
 ```
-Merchants: when things calm down after tonight, what's the first thing you'll fix in January?
+Quand ça se calme après ce soir, quelle est la première chose que tu corriges sur ta boutique en janvier ?
 ```
 
 ### Vendredi 25 décembre · Noël
 
-**A · 9h · Friction #59** (269/280)
+**A · 9h · Friction #59** (417 caractères, X Premium)
 ```
-Shopify friction worth testing #59:
+Friction Shopify à tester #59 :
 
-Subscription pre-selected over one-time purchase.
+L'abonnement coché par défaut sur la fiche produit.
 
-Hypothesis: first-time buyers distrust being opted into recurring charges.
-Test: one-time as default, the subscription saving next to it.
-Metric: add-to-cart rate.
+Hypothèse : il fait monter la part d'abonnements, mais une partie annule dès le 1er prélèvement, ou conteste le paiement. Le chiffre qui monte n'est pas le bon.
+Test : l'achat unique par défaut, l'économie de l'abonnement juste à côté.
+À mesurer : abonnés encore là au 3e mois, pas la part d'abonnements.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-59.png`
 
-**B · 13h · Worth stealing #32 · Charles Tyrwhitt** (769 caractères, X Premium)
+**B · 13h · Idée à piquer #32 · Charles Tyrwhitt** (893 caractères, X Premium)
 ```
-Worth stealing #32: Charles Tyrwhitt's shirt builder.
+Idée à piquer #32 : la chemise à composer de Charles Tyrwhitt.
 
-€29.95 shirt (was €84.95), and a red banner: "Save €55 today, no promo code needed."
+Chemise à 29,95 € (au lieu de 84,95 €), et un bandeau rouge : « ÉCONOMISEZ 55 € AUJOURD'HUI - SANS CODE PROMOTION ».
 
-"No promo code needed" stops the trip to Google looking for one. The leak from friction #27, closed in five words.
+« Sans code promotion » évite le détour par Google pour en chercher un. La fuite de la friction #27, fermée en trois mots.
 
-- the fit is picked from drawings of the shirt, not words like "slim" that mean something different to everyone
-- collar sizes in cm, grouped under S, M, L, XL. Experts read the cm, everyone else reads the letter.
-- "Your selections" recaps each choice with a tick
+- la coupe se choisit sur des dessins de la chemise, pas avec des mots comme « slim » qui veulent dire autre chose pour chacun
+- les tailles de col en cm, regroupées sous S, M, L, XL. Les experts lisent les cm, les autres lisent la lettre.
+- « Vos Sélections » récapitule chaque choix avec une coche
 
-One thing's off: the "Most popular" badge sits on Slim, which is crossed out. Unavailable. The badge sends people to something they can't buy.
+Un détail cloche : le badge « LES PLUS POPULAIRES » est sur Ajustée, qui est barrée. Indisponible. Le badge pousse vers ce qu'on ne peut pas acheter.
 
-What I'd test: when an option sells out, move the badge, or swap it for "Notify me".
+Ce que je testerais : quand une option est épuisée, déplacer le badge, ou le remplacer par « Préviens-moi ».
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Charles Tyrwhitt.
 
-**C · 18h · Question** (90/280)
+**C · 18h · Question** (108/280)
 ```
-No tips today. One question: what was the best decision you made for your store this year?
+Pas de conseil aujourd'hui. Une question : quelle a été ta meilleure décision pour ta boutique cette année ?
 ```
 
 ### Samedi 26 décembre · Boxing Day
 
-**A · 9h · Friction #60** (273/280)
+**A · 9h · Friction #60** (371 caractères, X Premium)
 ```
-Shopify friction worth testing #60:
+Friction Shopify à tester #60 :
 
-A wall of trust badges under the add-to-cart button.
+« Paiement 100 % sécurisé » avec un cadenas, collé au bouton « Ajouter au panier ».
 
-Hypothesis: eight logos add noise and push the details shoppers need further down.
-Test: keep the two or three that matter to your buyers.
-Metric: add-to-cart rate.
+Hypothèse : à cette étape, personne ne paie encore. Parler de sécurité trop tôt peut faire penser au risque plutôt qu'au produit.
+Test : le garder au paiement, l'enlever de la fiche produit.
+À mesurer : taux d'ajout au panier.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #33 · Le Slip Français** (757 caractères, X Premium)
+**B · 13h · Idée à piquer #33 · Le Slip Français** (863 caractères, X Premium)
 ```
-Worth stealing #33: Le Slip Français's discount ladder.
+Idée à piquer #33 : l'échelle de remises du Slip Français.
 
-Three small chips under the price: "-5% extra from 3", "-10% extra from 4", "-20% extra from 5".
+Trois petites pastilles sous le prix : « -5% supp. dès 3 », « -10% supp. dès 4 », « -20% supp. dès 5 ».
 
-- you see the reward for buying more before choosing the quantity, not at checkout
-- three steps instead of one threshold. Each one is a small yes.
-- "extra" means it stacks on a price that's already reduced (€99 instead of €125)
-- green dots on every size, so stock is answered without a click
+- tu vois la récompense d'acheter plus avant de choisir la quantité, pas au paiement
+- trois marches au lieu d'un seul seuil. Chacune est un petit oui.
+- « supp. » veut dire que ça se cumule sur un prix déjà réduit (99 € au lieu de 125 €)
+- un point vert sur chaque taille, donc le stock est réglé sans un clic
 
-The ladder turns "how many?" into "which step do I stop at?". People anchor on the next step, not on 1.
+L'échelle transforme « combien ? » en « à quelle marche je m'arrête ? ». On s'ancre sur la marche suivante, pas sur 1.
 
-What I'd test: carry it into the cart. "Add 1 more item to unlock -10%." Or highlight the step the cart has reached.
+Ce que je testerais : la prolonger dans le panier. « Ajoute 1 article pour débloquer -10 %. » Ou mettre en avant la marche que le panier a atteinte.
 
-I'd watch items per order and how many orders land on 3, 4 and 5.
+Je regarderais les articles par commande, et combien de commandes s'arrêtent à 3, 4 et 5.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Le Slip Français.
 
-**C · 18h · Question** (121/280)
+**C · 18h · Question** (122/280)
 ```
-What's one store you buy from partly because the site is a pleasure to use?
+Une boutique où tu achètes en partie parce que le site est agréable à utiliser ?
 
-I'm looking for the next ones to break down.
+Je cherche les prochaines à décortiquer.
 ```
 
 ### Dimanche 27 décembre
 
-**A · 9h · Friction #61** (257/280)
+**A · 9h · Friction #61** (444 caractères, X Premium)
 ```
-Shopify friction worth testing #61:
+Friction Shopify à tester #61 :
 
-An auto-rotating carousel as the homepage hero.
+Tu passes des heures sur la bannière de ta page d'accueil.
 
-Hypothesis: most visitors see slide one only, and the motion competes with it.
-Test: one static hero with one offer.
-Metric: hero clicks, homepage exits.
+Hypothèse : les visiteurs venus des pubs et de Google Shopping arrivent souvent direct sur une fiche produit. Ta vraie page d'accueil, c'est peut-être ta fiche la plus visitée.
+Test : regarder les pages d'entrée dans Shopify Analytics avant de toucher à l'accueil.
+À mesurer : part des sessions qui commencent sur l'accueil.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #34 · Arntreal** (828 caractères, X Premium)
+**B · 13h · Idée à piquer #34 · Arntreal** (875 caractères, X Premium)
 ```
-Worth stealing #34: Arntreal's proof before the promise.
+Idée à piquer #34 : la preuve avant la promesse, chez Arntreal.
 
-Above the product name, before anything else: five stars, "Over 100,000 bags sold" with a French flag, and five tiny customer photos.
+Au-dessus du nom du produit, avant tout le reste : cinq étoiles, « Plus de 100 000 sacs vendus » avec un drapeau français, et cinq mini photos de clients.
 
-Most pages go product, promise, then reviews way down. Arntreal flips it. Proof, promise, product.
+La plupart des pages font produit, promesse, puis les avis tout en bas. Arntreal inverse : preuve, promesse, produit.
 
-- the bold claim that follows ("Everything of a luxury bag. Except the price.") lands on a crowd that already bought
-- faces turn 100,000 into people. A number is abstract, five faces are someone like you.
+- la phrase forte qui suit (« Tout d'un sac de luxe. Sauf le prix. ») tombe sur une foule qui a déjà acheté
+- les visages transforment 100 000 en personnes. Un chiffre, c'est abstrait. Cinq visages, c'est quelqu'un comme toi.
 
-But the stars have no rating and no count. "100,000 bags sold" is a sales number, not a review number, so five stars alone can look like decoration.
+Mais les étoiles n'ont ni note ni nombre d'avis. 100 000 sacs vendus, c'est un chiffre de ventes, pas d'avis : seules, cinq étoiles font déco.
 
-What I'd test: show the real average and the number of reviews, and make the stars jump to them. Or make each face tappable, opening that person's photo review.
+Ce que je testerais : la vraie moyenne et le nombre d'avis, avec les étoiles qui y mènent. Ou chaque visage tapable, vers son avis photo.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Arntreal.
 
@@ -1690,189 +1694,187 @@ Image : ta capture Arntreal.
 
 ### Lundi 28 décembre
 
-**A · 9h · Friction #62** (268/280)
+**A · 9h · Friction #62** (415 caractères, X Premium)
 ```
-Shopify friction worth testing #62:
+Friction Shopify à tester #62 :
 
-Shipping, materials and sizing hidden in accordions that are all closed.
+Des accordéons fermés nommés « Description », « Détails », « Infos ».
 
-Hypothesis: shoppers don't open them and leave with unanswered questions.
-Test: 3 key facts above the accordions.
-Metric: add-to-cart rate.
+Hypothèse : personne n'ouvre « Détails » en espérant y trouver sa réponse. Les titres ne disent pas ce qu'il y a dedans.
+Test : les titrer avec les vraies questions du SAV : « Ça taille comment ? », « Livré quand ? ».
+À mesurer : ouvertures d'accordéons, questions au SAV avant achat.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #35 · Apple** (807 caractères, X Premium)
+**B · 13h · Idée à piquer #35 · Apple** (883 caractères, X Premium)
 ```
-Worth stealing #35: Apple's step-by-step configurator.
+Idée à piquer #35 : le configurateur étape par étape d'Apple.
 
-Each step opens with one short sentence in two colours (translated): "Model." in black, "Choose the size." in grey. Then two big cards, 13-inch and 15-inch.
+Chaque étape s'ouvre sur une phrase en deux couleurs : « Modèle. » en noir, « Choisissez la taille. » en gris. Puis deux grandes cartes, 13 pouces et 15 pouces.
 
-- one decision per step. Black names the step, grey tells you what to do.
-- dots on the side show how many steps are left
-- size first, the one question anyone can answer without reading specs
-- every card shows the total and the monthly price
+- une décision par étape. Le noir nomme l'étape, le gris dit quoi faire.
+- des points sur le côté montrent combien d'étapes il reste
+- la taille d'abord, la question à laquelle tout le monde sait répondre
+- chaque carte affiche le total et la mensualité
 
-Now look at the gap. In totals, the 15-inch is €300 more. Monthly, it's €8.96 more. Same difference, and one of them sounds like a coffee a week.
+Maintenant, regarde l'écart. En total, le 15 pouces coûte 300 € de plus. Par mois, 8,96 € de plus. Même différence, et l'une des deux sonne comme un café par semaine.
 
-What I'd test: once the 13-inch is selected, show the upgrade as a difference, "+€8.96 a month", on the 15-inch card.
+Ce que je testerais : une fois le 13 pouces choisi, afficher la montée en gamme comme une différence, « +8,96 €/mois », sur la carte 15 pouces.
 
-I'd watch the share of 15-inch and the average configured price.
+Je regarderais la part de 15 pouces et le prix moyen configuré.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Apple.
 
-**C · 18h · Question** (57/280)
+**C · 18h · Question** (84/280)
 ```
-What's on your store's January list? One thing is enough.
+Qu'est-ce qu'il y a sur la liste de janvier de ta boutique ? Une seule chose suffit.
 ```
 
-**D · 21h · Appel** (168/280)
+**D · 21h · Appel** (190/280)
 ```
-Quiet week between the holidays. A good moment for 4 minutes on how you'll decide what to change on your store in January.
+Semaine calme entre les fêtes. Un bon moment pour 20 minutes sur comment tu vas décider quoi changer sur ta boutique en janvier.
 
-Link below. Summary to everyone who answers.
+Lien en réponse. Synthèse envoyée à tous ceux qui répondent.
 ```
 
 ### Mardi 29 décembre
 
-**A · 9h · Friction #63** (259/280)
+**A · 9h · Friction #63** (417 caractères, X Premium)
 ```
-Shopify friction worth testing #63:
+Friction Shopify à tester #63 :
 
-No order tracking link in the header or footer.
+Un suivi de colis qui ne bouge pas pendant 2 jours après « Expédié ».
 
-Hypothesis: anxious gift buyers email "where is my order?" instead of checking.
-Test: a visible "Track my order" link.
-Metric: "where is my order" tickets.
+Hypothèse : le colis est étiqueté mais pas encore scanné. Le client voit « Expédié » sans aucun mouvement, et écrit au SAV.
+Test : dans l'email d'expédition : « Le suivi peut mettre 24 à 48 h à s'activer. »
+À mesurer : tickets « Où est ma commande ? » dans les 3 jours après expédition.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #36 · Decathlon** (774 caractères, X Premium)
+**B · 13h · Idée à piquer #36 · Decathlon** (898 caractères, X Premium)
 ```
-Worth stealing #36: Decathlon's price block.
+Idée à piquer #36 : le bloc prix de Decathlon.
 
-€459.99 outdoor table tennis table. Under the price: "€85 off" in red, then "Promotion from 03/11/2026 to 26/01/2027".
+Table de ping-pong d'extérieur à 459,99 €. Sous le prix : « 85 € de réduction » en rouge, puis « Promotion du 03/11/2026 au 26/01/2027 ».
 
-- the saving is in euros, not percent. On a €545 product, €85 sounds bigger than 16%. Rule of 100, done right.
-- the promo has real dates. Urgency without a fake countdown, and you believe it because it's specific.
-- the description sells the use: friends, family, outdoors, big wheels, room for the paddles
+- l'économie en euros, pas en pourcentage. Sur un produit à 544,99 €, 85 € sonne plus fort que 16 %. La règle des 100, bien appliquée.
+- la promo a de vraies dates. De l'urgence sans faux compte à rebours, et tu y crois parce que c'est précis.
+- la description vend l'usage : entre amis, en famille, dehors, grandes roues, rangement des raquettes
 
-A dated promo is the honest version of a timer.
+Une promo datée, c'est la version honnête d'un timer.
 
-Two small conflicts though. The top badge says "Free delivery", the price block says "Delivery fees may be added". Pick one, at the top, with its condition. And "Size: no size" can go. A line that says nothing still costs attention.
+Deux petits conflits quand même. Le badge du haut dit « Livraison offerte », le bloc prix dit « Des frais de livraison peuvent être ajoutés ». Un seul message, en haut, avec sa condition. Et « Taille : Sans taille » peut disparaître. Une ligne vide coûte quand même de l'attention.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Decathlon.
 
-**C · 18h · Opinion** (177/280)
+**C · 18h · Opinion** (196/280)
 ```
-The stores I break down in "Worth stealing" all have one thing in common.
+Les boutiques que je décortique dans « Idée à piquer » ont toutes un point commun.
 
-Nothing on the product page is there by accident. Every block answers a question someone actually has.
+Rien sur la fiche produit n'est là par hasard. Chaque bloc répond à une question que quelqu'un se pose vraiment.
 ```
 
 ### Mercredi 30 décembre
 
-**A · 9h · Friction #64** (276/280)
+**A · 9h · Friction #64** (400 caractères, X Premium)
 ```
-Shopify friction worth testing #64:
+Friction Shopify à tester #64 :
 
-An empty cart that's a dead end: "Your cart is empty" and nothing else.
+Panier rempli sur mobile le midi, retour sur ordi le soir : panier vide.
 
-Hypothesis: shoppers coming back later have nowhere to go.
-Test: best sellers and a search bar on the empty cart.
-Metric: exits from the empty cart.
+Hypothèse : sans compte, le panier ne suit pas d'un appareil à l'autre. Le client croit à un bug, ou n'a pas le courage de tout retrouver.
+Test : dans le panier mobile, « Envoie-toi ton panier par email ».
+À mesurer : paniers récupérés par email, et leurs commandes.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Sans visuel.
 
-**B · 13h · Worth stealing #37 · Garmin** (822 caractères, X Premium)
+**B · 13h · Idée à piquer #37 · Garmin** (895 caractères, X Premium)
 ```
-Worth stealing #37: Garmin's version selector.
+Idée à piquer #37 : le choix de version de Garmin.
 
-On the fēnix E page, the other versions are buttons right under the case size: fēnix 8 AMOLED, Solar, Pro AMOLED, Pro MicroLED.
+Sur la fiche de la fēnix E, les autres versions sont des boutons juste sous la taille du boîtier : fēnix 8 AMOLED, Solar, Pro AMOLED, Pro MicroLED.
 
-- the whole range is one tap away, on one page. No back button, no new tab to compare.
-- case size is a row of buttons in mm, with an info icon if you don't know your wrist
-- €150 off shown in euros, and Klarna splits it into 3 x €149.99, just under €150
+- toute la gamme est à un tap, sans quitter la page
+- la taille du boîtier est une rangée de boutons en mm, avec une icône info si tu ne connais pas ton poignet
+- la remise affichée en euros (150 €), et Klarna la coupe en 3 paiements de 149,99 €, juste sous 150 €
 
-Comparing never means leaving the page.
+Mais « Solar », « AMOLED », « MicroLED » sont des caractéristiques, pas des raisons. Personne ne monte en gamme pour un mot qu'il ne comprend pas.
 
-But "Solar", "AMOLED", "MicroLED" are specs, not reasons. Nobody upgrades for a word they don't understand.
+Ce que je testerais : sous chaque version, l'écart de prix et un bénéfice en mots simples (« se recharge au soleil »). Ou une icône info sur chaque version, comme sur la taille du boîtier.
 
-What I'd test: under each version, the price difference and one benefit in plain words ("charges in the sun"). Or an info icon on each version, like the one on case size.
+Je regarderais la part des commandes au-dessus de cette version.
 
-I'd watch the share of orders above this version.
-
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Garmin.
 
-**C · 18h · Journal** (153/280)
+**C · 18h · Journal** (180/280)
 ```
-On January 1 I'll post the honest numbers: form answers, calls, customers, followers.
+Le 1er janvier, je poste les vrais chiffres : réponses au formulaire, appels, clients, abonnés.
 
-Whatever they are. Same rule as day one: the zeros are public too.
+Quels qu'ils soient. Même règle que le premier jour : les zéros aussi sont publics.
 ```
 
-**D · 21h · Appel** (158/280)
+**D · 21h · Appel** (179/280)
 ```
-Last call of 2026: I start writing the summary of the answers in January.
+Dernier appel de 2026 : je commence à écrire la synthèse des réponses en janvier.
 
-If you run a Shopify store: 4 minutes on how you decide what to change. Link below.
+Si tu as une boutique Shopify : 20 minutes sur comment tu décides quoi changer. Lien en réponse.
 ```
 
 ### Jeudi 31 décembre · Dernier jour de l'année
 
-**A · 9h · Friction #65** (271/280)
+**A · 9h · Friction #65** (387 caractères, X Premium)
 ```
-Shopify friction worth testing #65:
+Friction Shopify à tester #65 :
 
-A sale page you can't filter by size.
+Le filtre « Taille M » de ta page soldes montre aussi les produits où le M est épuisé.
 
-Hypothesis: shoppers want deals in their size and give up scrolling past the rest.
-Test: a size filter that only shows items in stock in that size.
-Metric: sale page conversion.
+Hypothèse : le client clique, tombe trois fois sur « Épuisé », et conclut qu'il n'y a plus rien pour lui.
+Test : un filtre qui ne garde que le stock dispo dans la taille choisie.
+À mesurer : conversion de la page soldes filtrée par taille.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Visuel : `design/social/x-friction/friction-65.png`
 
-**B · 13h · Worth stealing #38 · Based** (822 caractères, X Premium)
+**B · 13h · Idée à piquer #38 · Based** (899 caractères, X Premium)
 ```
-Worth stealing #38: Based's packaging notice.
+Idée à piquer #38 : l'annonce de packaging de Based.
 
-On the product page, two tubes side by side: "New Packaging, Same Texture Powder." Then: "You may receive either our previous or new packaging. The product inside is the same."
+Sur la fiche produit, deux tubes côte à côte : « New Packaging, Same Texture Powder. » Puis une ligne : tu peux recevoir l'ancien ou le nouveau packaging, le produit dedans est le même.
 
-During a rebrand, the risk isn't the design. It's someone opening a box that doesn't match the photo and thinking it's fake.
+Pendant un changement de marque, le risque n'est pas le design. C'est quelqu'un qui ouvre un colis qui ne ressemble pas à la photo, et qui croit à une contrefaçon.
 
-- they show both versions, so whatever arrives was expected
-- it answers a support ticket before anyone writes it
-- a logistics problem becomes a little piece of brand news
+- ils montrent les deux versions, donc ce qui arrive était prévu
+- ça répond à un ticket SAV avant que quelqu'un l'écrive
+- un problème de logistique devient une petite actu de marque
 
-Satisfaction is basically the gap between what you expected and what you got. They moved the expectation instead of hoping the old stock runs out first.
+La satisfaction, c'est en gros l'écart entre ce que tu attendais et ce que tu reçois. Ils ont déplacé l'attente au lieu d'espérer écouler l'ancien stock d'abord.
 
-What I'd test: put the same image in the shipping confirmation email. The doubt happens at unboxing, not on the product page.
+Ce que je testerais : la même image dans l'email d'expédition. Le doute arrive au déballage, pas sur la fiche produit.
 
-Follow for more.
+Abonne-toi pour la suite.
 ```
 Image : ta capture Based.
 
-**C · 18h · Appel** (181/280)
+**C · 18h · Appel** (197/280)
 ```
-Last post of the year. Thank you for reading.
+Dernier post de l'année. Merci de m'avoir lu.
 
-If you run a store, the most useful thing you can give Solen is 4 minutes: how you decide what to change. Link below.
+Si tu as une boutique, le plus utile que tu puisses donner à Solen, c'est 20 minutes : comment tu décides quoi changer. Lien en réponse.
 
-Happy new year.
+Bonne année.
 ```
 
 
@@ -1880,68 +1882,68 @@ Happy new year.
 
 Ces frictions ne tiennent plus avant le 31 décembre.
 
-**Friction #66** (265/280)
+**Friction #66** (397 caractères)
 ```
-Shopify friction worth testing #66:
+Friction Shopify à tester #66 :
 
-"Add to cart" that sends you to the cart page.
+Dans le panier latéral mobile, les suggestions repoussent le bouton « Paiement » sous l'écran.
 
-Hypothesis: shoppers who wanted to keep browsing get pulled out of the flow.
-Test: a cart drawer, or a confirmation with "Keep shopping".
-Metric: items per order.
+Hypothèse : le client prêt à payer doit scroller pour trouver le bouton. Certains pensent qu'il n'y en a pas.
+Test : le bouton de paiement fixé en bas du panier, les suggestions réduites.
+À mesurer : passage du panier au paiement sur mobile.
 
-Follow for more.
-```
-
-**Friction #67** (247/280)
-```
-Shopify friction worth testing #67:
-
-Default sort putting new products with zero reviews first.
-
-Hypothesis: first-time visitors miss the proven best sellers.
-Test: "Best selling" as default sort.
-Metric: clicks to product pages.
-
-Follow for more.
+Abonne-toi pour la suite.
 ```
 
-**Friction #68** (246/280)
+**Friction #67** (373 caractères)
 ```
-Shopify friction worth testing #68:
+Friction Shopify à tester #67 :
 
-Cart recommendations suggesting what's already in the cart.
+Une collection triée « manuellement » depuis le lancement.
 
-Hypothesis: it looks careless, and nobody adds anything.
-Test: complementary items only.
-Metric: add-to-cart from recommendations.
+Hypothèse : l'ordre ne bouge plus, mais tes ventes, si. Tes meilleurs produits d'aujourd'hui sont peut-être en bas de page.
+Test : comparer l'ordre actuel au tri « Meilleures ventes » des 30 derniers jours.
+À mesurer : clics sur les 8 premiers produits.
 
-Follow for more.
-```
-
-**Friction #69** (251/280)
-```
-Shopify friction worth testing #69:
-
-A 404 page with no search and no products.
-
-Hypothesis: visitors from old links or ads land there and leave.
-Test: search, best sellers and main collections on the 404.
-Metric: exits from the 404.
-
-Follow for more.
+Abonne-toi pour la suite.
 ```
 
-**Friction #70** (273/280)
+**Friction #68** (407 caractères)
 ```
-Shopify friction worth testing #70:
+Friction Shopify à tester #68 :
 
-Promo banners still live after the sale ended.
+Un sweat dans le panier, et les suggestions proposent d'autres sweats.
 
-Hypothesis: shoppers click, find full prices, and feel misled.
-Test: an end date on every promo, banners removed automatically.
-Metric: conversion, price-related tickets.
+Hypothèse : un produit similaire ne s'ajoute pas, il remplace. Il rouvre la décision au moment de payer.
+Test : des produits complémentaires plutôt que similaires (l'app Search & Discovery de Shopify le permet).
+À mesurer : ajouts depuis les suggestions, passage au paiement.
 
-Follow for more.
+Abonne-toi pour la suite.
+```
+
+**Friction #69** (430 caractères)
+```
+Friction Shopify à tester #69 :
+
+Des produits supprimés qui renvoient une 404, alors que Google et des influenceurs pointent encore dessus.
+
+Hypothèse : ces visiteurs arrivent avec une intention d'achat et tombent sur une impasse.
+Test : une redirection vers le produit le plus proche ou sa collection (redirections d'URL de Shopify).
+À mesurer : visites sur la 404, conversions depuis les redirections.
+
+Abonne-toi pour la suite.
+```
+
+**Friction #70** (432 caractères)
+```
+Friction Shopify à tester #70 :
+
+Le Black Friday est fini, mais le prix barré est resté sur une partie du catalogue.
+
+Hypothèse : un prix barré permanent ne fait plus effet. Et dans l'UE, le prix de référence d'une réduction doit être le plus bas des 30 derniers jours.
+Test : une date de fin sur chaque prix barré, vérifiée le lendemain de chaque promo.
+À mesurer : produits encore barrés après la promo.
+
+Abonne-toi pour la suite.
 ```
 

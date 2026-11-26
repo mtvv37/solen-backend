@@ -1,44 +1,42 @@
-"""Format long de la série Worth stealing : 900 caractères maximum (au-delà de 280, X Premium), puces en tiret simple."""
+"""Format long de la série Idée à piquer : 900 caractères maximum (au-delà de 280, X Premium), puces en tiret simple."""
 
-TEMPLATE = """Worth stealing #1: [Brand]'s [feature].
+TEMPLATE = """Idée à piquer #1 : [le détail] de [Marque].
 
-Really like how [Brand] handles [feature] on mobile.
+[Ce qu'on voit, en une ou deux phrases, avec le texte exact du site entre « »].
 
-Why it works:
-- [what the shopper sees]
-- [the question it answers before they ask]
-- [the friction it removes]
-- [how it backs up the offer or the brand]
+Pourquoi ça marche :
+- [ce que le client voit]
+- [la question à laquelle ça répond avant qu'il la pose]
+- [la friction que ça enlève]
+- [comment ça soutient l'offre ou la marque]
 
-The smart part: [one insight, in one or two sentences].
+Le vrai tour : [une idée pas évidente, en une ou deux phrases : le mécanisme, pas la description].
 
-What I'd test next:
-[one idea, framed as a test]
-Or simpler: [a smaller version of the same idea].
+Ce que je testerais : [une idée précise, formulée comme un test].
+Ou plus simple : [une version plus petite de la même idée].
 
-Hypothesis: [who it helps and why]. Metric: [what to watch].
+Je regarderais [l'indicateur, et le segment si ça compte].
 
-Follow for more."""
+Abonne-toi pour la suite."""
 
-EXAMPLE = """Worth stealing #1: [Brand]'s size picker.
+EXAMPLE = """Idée à piquer #1 : le choix de taille de [Marque].
 
-Really like how [Brand] handles sizing on mobile.
+Toutes les tailles visibles d'un coup, les épuisées barrées, et une ligne sous les tailles : « Taille petit, prends au-dessus si tu hésites. »
 
-Why it works:
-- Every size is visible at once. No dropdown to open.
-- Sold-out sizes stay on screen, greyed out, so you know they exist.
-- A short fit note sits right under the sizes: "Runs small, size up if you're between two."
-- Add to cart stays inactive until a size is picked, so nobody adds the wrong one by accident.
+Pourquoi ça marche :
+- pas de menu déroulant à ouvrir
+- les tailles épuisées restent à l'écran, donc tu sais qu'elles existent
+- le conseil de taille arrive pile au moment du choix, pas dans un guide à part
+- le bouton reste inactif tant qu'aucune taille n'est choisie
 
-The smart part: it answers "which size do I take?" at the exact moment the shopper decides, without sending them to a size chart.
+Le vrai tour : le conseil vient des avis. L'info existait déjà, ils l'ont juste déplacée là où le client décide.
 
-What I'd test next:
-A "Between two sizes?" link that opens the fit guide in a drawer, right where you are.
-Or simpler: show the model's height and the size they wear next to the sizes.
+Ce que je testerais : un lien « Entre deux tailles ? » qui ouvre le guide dans un tiroir, sans quitter la page.
+Ou plus simple : la taille du mannequin et la taille qu'il porte, à côté des tailles.
 
-Hypothesis: fewer shoppers leave the page to check sizing. Metric: mobile add-to-cart rate, and size-related returns.
+Je regarderais le taux d'ajout au panier sur mobile, et les retours pour la taille.
 
-Follow for more."""
+Abonne-toi pour la suite."""
 
 if __name__ == '__main__':
     for name, t in (('TEMPLATE', TEMPLATE), ('EXAMPLE', EXAMPLE)):

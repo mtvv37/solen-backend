@@ -28,15 +28,15 @@ for i, d in enumerate(days):
     title = f"### {JOURS[d.weekday()].capitalize()} {d.day} {MOIS[d.month]}" + (f" · {EVENTS[d]}" if d in EVENTS else '')
     out.append(title + "\n")
     a = friction(28 + i, FRICTIONS[i]); wa = weight(a); maxw = max(maxw, wa)
-    if wa > 280: errors.append(f"A #{28+i}: {wa}")
+    if wa > 500: errors.append(f"A #{28+i}: {wa}")
     vis = f"\nVisuel : `design/social/x-friction/friction-{28+i}.png`\n" if 28 + i in VISUALS else "\nSans visuel.\n"
-    out.append(f"**A · 9h · Friction #{28+i}** ({wa}/280)\n```\n{a}\n```{vis}")
+    out.append(f"**A · 9h · Friction #{28+i}** ({wa} caractères{', X Premium' if wa > 280 else ''})\n```\n{a}\n```{vis}")
     b = BRANDS[i % len(BRANDS)]
     if i < len(WS):
         ws = WS[i]
-        out.append(f"**B · 13h · Worth stealing #{i+1} · {ws['brand']}** ({len(ws['text'])} caractères, X Premium)\n```\n{ws['text']}\n```\nImage : ta capture {ws['brand']}.\n")
+        out.append(f"**B · 13h · Idée à piquer #{i+1} · {ws['brand']}** ({len(ws['text'])} caractères, X Premium)\n```\n{ws['text']}\n```\nImage : ta capture {ws['brand']}.\n")
     else:
-        out.append(f"**B · 13h · Worth stealing #{i+1}** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.\n")
+        out.append(f"**B · 13h · Idée à piquer #{i+1}** : capture à m'envoyer. Idée pour décembre : guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes.\n")
     c = C[i]
     if c is None:
         assert d.weekday() == 6, d
@@ -58,31 +58,32 @@ if errors:
 assert all((c is None) == (d.weekday() == 6) for c, d in zip(C, days))
 
 brand_rows = '\n'.join(f"| {n} | {cat} | {w} |" for n, cat, w in BRANDS)
-wr = weight(REPLY.replace('[link]', 'x' * 23))
+wr = weight(REPLY.replace('[lien Cal.com]', 'x' * 23).replace('[lien Tally]', 'x' * 23))
 assert wr <= 280, wr
 assert sorted(VISUALS) == VISUALS and len(VISUALS) == 22
 head = f"""# Solen : 3 posts X par jour, du 24 novembre au 31 décembre 2026
 
-> Version 1.5, 24/11/2026 : Worth stealing complet (38 posts), réécrit en ton parlé, 900 caractères maximum, puces en tiret. Version 1.4, 23/11/2026 : départ décalé au mardi 24 novembre (rien n'a été posté avant). Frictions #28 à #65 jusqu'au 31 décembre, #66 à #70 en réserve pour janvier. 22 visuels de friction, visuel d'appel au formulaire, liste de marques ; sans tiret ni emoji, selon `design/social/RULES.md`. En anglais. Tous les posts font 280 caractères au plus (compteur X, les emoji et « € » comptent double).
+> Version 2.0, 26/11/2026 : tout passe en français (tutoiement). Les frictions sont réécrites pour ne pas être évidentes (pièges Shopify réels, effets de bord, le bon indicateur), en format long X Premium ; « Worth stealing » devient « Idée à piquer », citations recopiées depuis les captures. Appels : 20 min en visio d'abord, le formulaire en option. Les versions anglaises sont dans l'historique git.
+> Version 1.5, 24/11/2026 : Worth stealing complet (38 posts). Version 1.4, 23/11/2026 : départ décalé au mardi 24 novembre. Frictions #28 à #65 jusqu'au 31 décembre, #66 à #70 en réserve pour janvier. 22 visuels de friction, visuel d'appel ; sans tiret long ni emoji, selon `design/social/RULES.md`. Compteur X : les emoji et « € » comptent double.
 > Suite de [`X_BUILD_IN_PUBLIC.md`](X_BUILD_IN_PUBLIC.md). Objectif : obtenir des appels 1:1 et des réponses au formulaire, pas des abonnés.
 
 ## Mode d'emploi
 
-- **A · 9h : Shopify friction worth testing**, #28 à #70. La série qui fait le plus réagir. Finit par « Follow for more. » 22 posts sur 43 ont un visuel (`design/social/x-friction/`), en priorité ceux sur l'argent.
-- **B · 13h : Worth stealing**, nouvelle série en format long (X Premium). Tu m'envoies la capture d'une fonctionnalité d'un site, j'écris le post. 900 caractères maximum, puces en tiret, finit par « Follow for more. »
+- **A · 9h : Friction Shopify à tester**, #28 à #70. Une friction qu'on ne voit pas en testant sa propre boutique, l'hypothèse, le test, l'indicateur. Finit par « Abonne-toi pour la suite. » Entre 280 et 500 caractères (X Premium) : le titre et le début de l'hypothèse restent visibles avant « Afficher plus ». 22 posts sur 43 ont un visuel (`design/social/x-friction/`).
+- **B · 13h : Idée à piquer**, format long (X Premium). Une capture d'une fonctionnalité d'un site, ce qui marche, le mécanisme pas évident, ce qu'on testerait. 900 caractères maximum, puces en tiret, finit par « Abonne-toi pour la suite. »
 - **C · 18h : question, demande d'échange, opinion ou journal.** Le dimanche : le bilan chiffré de la semaine, écrit avec tes vrais chiffres.
-- **D · 21h, {len(D)} jours sur {len(C)} : un 4e post, uniquement un appel vers le formulaire.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les {sum(1 for c in C if c and c[0] == 'Appel')} appels en C : {len(D) + sum(1 for c in C if c and c[0] == 'Appel')} appels, plus le lien en réponse sous chaque post A et B.
-- **« Comment "form" »** : réponds en message privé avec le lien à chaque personne qui commente.
-- **Sous chaque post A et B**, ta première réponse : ce texte, avec le visuel `design/social/x-friction/cta-form.png`. Remplace `[link]` par le lien Tally.
+- **D · 21h, {len(D)} jours sur {len(C)} : un 4e post, uniquement un appel.** Surtout les lundis, mercredis et vendredis où le post C n'en est pas déjà un. Avec les {sum(1 for c in C if c and c[0] == 'Appel')} appels en C : {len(D) + sum(1 for c in C if c and c[0] == 'Appel')} appels, plus la réponse type sous chaque post A et B.
+- **« Réponds "appel" »** : envoie le lien Cal.com en message privé à chaque personne qui répond.
+- **Sous chaque post A et B**, ta première réponse : ce texte, avec le visuel `design/social/x-friction/cta-form.png`. Remplace `[lien Cal.com]` et `[lien Tally]`.
   ```
 {{REPLY_BLOCK}}
   ```
-- **« Link below »** dans un post C : le lien du formulaire va en première réponse, jamais dans le post.
+- **« Lien en réponse »** dans un post C ou D : les liens vont en première réponse (la réponse type), jamais dans le post.
 
-## Worth stealing : le format long
+## Idée à piquer : le format long
 
 Une capture, un nom de marque, ce qui marche, une chose qu'on testerait. Au-delà de 280 caractères, X demande un compte Premium ;
-le fil coupe après quelques lignes avec « Show more », donc la marque et la fonctionnalité tiennent dans les deux premières lignes.
+le fil coupe après quelques lignes avec « Afficher plus », donc la marque et la fonctionnalité tiennent dans les deux premières lignes.
 
 Le gabarit :
 
@@ -98,13 +99,15 @@ Un exemple rempli ({len(WS_EXAMPLE)} caractères ; la marque reste entre crochet
 
 **Règles**
 - On parle de ce qu'on voit sur la capture, jamais des résultats de la marque : pas de « +20 % de conversion », on ne les connaît pas.
-- « What I'd test », jamais « they should ». Ce n'est pas une critique.
+- On cite le texte du site tel qu'il est écrit, même en anglais. Si on n'a pas la capture sous les yeux, on paraphrase sans guillemets.
+- « Ce que je testerais », jamais « ils devraient ». Ce n'est pas une critique.
+- Pas évident : on explique le mécanisme (pourquoi ça marche), pas seulement ce qu'on voit.
 - On ne refait pas une fonctionnalité déjà décortiquée par un autre compte (par exemple le sticky add-to-cart de Comfrt).
-- On n'écrit « on Shopify » que si on l'a vérifié.
+- On n'écrit « sur Shopify » que si on l'a vérifié.
 
 ## Marques à décortiquer
 
-Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy. Pour chacune, où regarder en premier ; si rien ne ressort, prends une autre fonctionnalité ou une autre marque. Pour Fincut et Holy, envoie-moi les liens : je n'ai pas pu vérifier de quelles marques il s'agit.
+Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy. Pour chacune, où regarder en premier ; si rien ne ressort, prends une autre fonctionnalité ou une autre marque.
 
 | Marque | Catégorie | Où regarder |
 |---|---|---|
@@ -114,7 +117,7 @@ Des marques e-commerce dans l'esprit de Gymshark, Boku, Arntreal, Fincut et Holy
 """
 head = head.replace('{REPLY_BLOCK}', '\n'.join('  ' + l if l else '' for l in REPLY.split('\n')))
 reserve = '\n\n## En réserve pour janvier\n\nCes frictions ne tiennent plus avant le 31 décembre.\n\n' + '\n'.join(
-    f"**Friction #{n}** ({weight(friction(n, FRICTIONS[n - 28]))}/280)\n```\n{friction(n, FRICTIONS[n - 28])}\n```\n" for n in RESERVE)
+    f"**Friction #{n}** ({weight(friction(n, FRICTIONS[n - 28]))} caractères)\n```\n{friction(n, FRICTIONS[n - 28])}\n```\n" for n in RESERVE)
 open(sys.argv[2], 'w', encoding='utf-8').write(head + '\n'.join(out) + reserve + '\n')
 assert nd == len(D), (nd, len(D))
 print('ok, max weight', maxw, '| D posts', nd)

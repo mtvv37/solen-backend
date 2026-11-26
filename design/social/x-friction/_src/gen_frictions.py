@@ -1,4 +1,4 @@
-"""Génère les visuels X de la série « Shopify friction worth testing » (1200 x 675, même format que brand/posts/).
+"""Génère les visuels X de la série « Friction Shopify à tester » (1200 x 675, même format que brand/posts/).
 
 Mise en page du premier lot : téléphone annoté à gauche, texte à droite, logo en bas à gauche, compte en bas à droite.
 DA de la bannière X verte. Rendu : node render.js <html...> (Playwright).
@@ -41,7 +41,7 @@ def title(): return '<div class="bar"></div><div class="bar s"></div>'
 def price(now, was='', mark=False):
     inner = f'<span class="now">{now}</span>' + (f'<span class="was">{was}</span>' if was else '')
     return f'<div class="price">{mk(inner, True) if mark else inner}</div>'
-def btn(t='Add to cart', ghost=False): return f'<div class="btn{" ghost" if ghost else ""}">{t}</div>'
+def btn(t='Ajouter au panier', ghost=False): return f'<div class="btn{" ghost" if ghost else ""}">{t}</div>'
 def bart(): return '<div class="bar t"></div>'
 def head(t, right='×'): return f'<div class="head"><b>{t}</b><span>{right}</span></div>'
 def banner(t): return f'<div class="banner">{t}</div>'
@@ -54,7 +54,7 @@ def opt(label, right='', on=False): return f'<div class="op{" on" if on else ""}
 def sizes(labels): return '<div class="sz">' + ''.join(f'<span>{s}</span>' for s in labels) + '</div>'
 def card(price_t, chip='', quick=False):
     return (f'<div class="cd"><div class="ci">{f"<em>{chip}</em>" if chip else ""}</div><div class="bar"></div>'
-            f'<b>{price_t}</b>{"<u>+ Quick add</u>" if quick else ""}</div>')
+            f'<b>{price_t}</b>{"<u>+ Ajout rapide</u>" if quick else ""}</div>')
 def grid(cards): return '<div class="gr">' + ''.join(cards) + '</div>'
 def timer(label, t): return f'<div class="tm"><span>{label}</span><b>{t}</b></div>'
 def toggle(label, right, on=True): return f'<div class="tg{" on" if on else ""}"><i></i><span>{label}</span><b>{right}</b></div>'
@@ -62,84 +62,86 @@ def chips(labels): return '<div class="ch">' + ''.join(f'<span>{c}</span>' for c
 def links(items, marked): return '<div class="ln">' + ''.join(mk(f'<span>{t}</span>') if t == marked else f'<span>{t}</span>' for t in items) + '</div>'
 def gap(h): return f'<div style="height:{h}px"></div>'
 
-SPECS = [
+SPECS = [  # en français depuis le 26/11/2026, un visuel par angle de friction (voir tools/x-calendar/posts.py)
  dict(n=28, icons=['tag', 'percent', 'bag'],
-      h1='Sale price <i>alone</i>?<br>I\'d test the original<br>price next to it.',
-      screen=[nav(), img(), title(), price('€39', mark=True), btn(), bart()]),
+      h1='Prix barré<br>pour <i>-5 %</i> ? Je<br>testerais le prix seul.',
+      screen=[nav(), img(), title(), price('38 €', '40 €', mark=True), btn(), bart()]),
  dict(n=29, icons=['percent', 'tag', 'bag'],
-      h1='Discount only<br><i>at checkout</i>? I\'d test<br>it in the cart.',
-      screen=[head('Your cart (2)'), banner('BLACK FRIDAY · 30% OFF'), item('€60'), item('€25'),
-              mk(row('Subtotal', '€85', True)), note('Discounts applied at checkout'), btn('Checkout')]),
+      h1='Remise visible<br><i>qu\'au paiement</i> ?<br>Je testerais le panier.',
+      screen=[head('Ton panier (2)'), banner('BLACK FRIDAY · CODE BLACK30'), item('60 €'), item('25 €'),
+              mk(row('Sous-total', '85 €', True)), note('Réductions calculées au paiement'), btn('Paiement')]),
  dict(n=30, icons=['card', 'bag', 'check'],
-      h1='One checkout button?<br>I\'d test <i>express pay</i><br>in the cart.',
-      screen=[head('Your cart (2)'), item('€45'), item('€30'), row('Subtotal', '€75', True), gap(6), mk(btn('Checkout')), note('Taxes and shipping at checkout')]),
+      h1='Apple Pay<br>sur la fiche ? Je<br>testerais <i>le panier</i>.',
+      screen=[nav(), img(104), title(), price('39 €'), btn(), mk(btn('Apple Pay', True) + gap(4) + btn('Shop Pay', True))]),
  dict(n=31, icons=['clock', 'eye', 'check'],
-      h1='A timer that <i>restarts</i><br>on reload? I\'d test<br>a real deadline.',
-      screen=[nav(), img(158), title(), price('€49'), mk(timer('Offer ends in', '00:14:59')), btn()]),
+      h1='Un timer qui<br><i>repart à zéro</i> ? Je<br>testerais une vraie date.',
+      screen=[nav(), img(158), title(), price('49 €'), mk(timer("Fin de l'offre dans", '00:14:59')), btn()]),
  dict(n=32, icons=['tag', 'filter', 'percent'],
-      h1='Full-price items<br>on the <i>Sale</i> page?<br>I\'d test sale items only.',
-      screen=[head('Sale', '≡'), grid([card('€42', 'SALE'), card('€35', 'SALE')]), mk(grid([card('€80'), card('€65')]))]),
+      h1='Badge <i>Promo</i>,<br>mais pas ta taille ?<br>Je testerais le dire.',
+      screen=[head('Soldes', '≡'), grid([card('dès 29 €', 'PROMO'), card('dès 35 €', 'PROMO')]),
+              mk(opt('XS', '29 €') + opt('M', '49 €', True)), btn()]),
  dict(n=33, icons=['tag', 'help', 'bag'],
-      h1='Does my code work<br>on <i>sale</i> items? I\'d test<br>saying it in the cart.',
-      screen=[head('Your cart (1)'), item('€42', '€60'), gap(4),
-              mk('<div class="code"><div>Discount code</div><span>Apply</span></div><div class="nt q">Does it work on sale items?</div>'),
-              row('Subtotal', '€42', True), btn('Checkout')]),
+      h1='Code refusé<br><i>sans dire pourquoi</i> ?<br>Je testerais la raison.',
+      screen=[head('Ton panier (1)'), item('42 €', '60 €'), gap(4),
+              mk('<div class="code"><div>BLACK10</div><span>Appliquer</span></div><div class="nt q">Code non valide</div>'),
+              row('Sous-total', '42 €', True), btn('Paiement')]),
  dict(n=34, icons=['box', 'percent', 'tag'],
-      h1='Bundle offer<br>in <i>small print</i>? I\'d test<br>the saving in euros.',
-      screen=[nav(), img(164), title(), price('€25'), mk(note('Buy 2, save 10%. Conditions apply.', 'tiny')), btn(), bart()]),
+      h1='« 2 achetés, -10 % »<br><i>absent du panier</i> ?<br>Je testerais l\'y mettre.',
+      screen=[head('Ton panier (1)'), item('25 €'), mk('<div class="empty">Plus un mot sur « 2 achetés, -10 % »</div>'),
+              row('Sous-total', '25 €', True), btn('Paiement')]),
  dict(n=35, icons=['shield', 'check', 'bag'],
-      h1='Protection added<br><i>by default</i>? I\'d test<br>it unchecked.',
-      screen=[head('Your cart (2)'), item('€55'), item('€20'), mk(toggle('Shipping protection', '€2.95')),
-              row('Subtotal', '€77.95', True), btn('Checkout')]),
+      h1='Protection<br><i>cochée d\'office</i> ?<br>Je testerais décochée.',
+      screen=[head('Ton panier (2)'), item('55 €'), item('20 €'), mk(toggle('Protection de livraison', '2,95 €')),
+              row('Sous-total', '77,95 €', True), btn('Paiement')]),
  dict(n=36, icons=['chat', 'eye', 'bag'],
-      h1='Chat bubble on<br><i>Add to cart</i>? I\'d test<br>moving it up.',
-      screen=[nav(), img(), title(), price('€39'), '<div class="rel">' + btn() + '<div class="chat"><svg viewBox="0 0 24 24">' + ICONS['chat'] + '</svg><i class="bd">1</i></div></div>', bart()]),
+      h1='Le chat <i>sur</i><br><i>le bouton</i> ? Je<br>testerais de l\'enlever.',
+      screen=[nav(), img(), title(), price('39 €'), '<div class="rel">' + btn() + '<div class="chat"><svg viewBox="0 0 24 24">' + ICONS['chat'] + '</svg><i class="bd">1</i></div></div>', bart()]),
  dict(n=37, icons=['ruler', 'bag', 'check'],
-      h1='Quick add <i>picks a size</i><br>for you? I\'d test<br>asking first.',
-      screen=[head('Hoodies', '≡'), grid([card('€59', quick=True), card('€59', quick=True)]),
-              mk('<div class="toast"><svg viewBox="0 0 24 24">' + ICONS['check'] + '</svg>Added to cart: size S</div>'), grid([card('€49'), card('€49')])]),
+      h1='L\'ajout rapide<br><i>prend le XS</i> ? Je<br>testerais de demander.',
+      screen=[head('Sweats', '≡'), grid([card('59 €', quick=True), card('59 €', quick=True)]),
+              mk('<div class="toast"><svg viewBox="0 0 24 24">' + ICONS['check'] + '</svg>Ajouté au panier : taille XS</div>'), grid([card('49 €'), card('49 €')])]),
  dict(n=39, icons=['mail', 'percent', 'eye'],
-      h1='Close the pop-up,<br><i>lose the code</i>?<br>I\'d test a small tab.',
-      screen=[nav(), img(), title(), price('€39'), btn(),
-              '<div class="dim"></div><div class="pop"><div class="px">' + mk('<span>×</span>', True) + '</div><b>Get 10% off</b><p>your first order</p>'
-              '<div class="fx">Email</div><div class="btn">Get my code</div></div>']),
+      h1='Pop-up fermée,<br><i>code perdu</i> ?<br>Je testerais un onglet.',
+      screen=[nav(), img(), title(), price('39 €'), btn(),
+              '<div class="dim"></div><div class="pop"><div class="px">' + mk('<span>×</span>', True) + '</div><b>-10 %</b><p>sur ta première commande</p>'
+              '<div class="fx">Email</div><div class="btn">Recevoir mon code</div></div>']),
  dict(n=40, icons=['truck', 'gift', 'clock'],
-      h1='Will it arrive<br><i>by Christmas</i>? I\'d test<br>an order-by date.',
-      screen=[nav(), img(170), title(), price('€45'), btn(), mk(note('Ships in 3 to 5 business days', 'ship'))]),
+      h1='« 3 à 5 jours<br>ouvrés » <i>en décembre</i> ?<br>Je testerais une date.',
+      screen=[nav(), img(170), title(), price('45 €'), btn(), mk(note('Expédié sous 3 à 5 jours ouvrés', 'ship'))]),
  dict(n=41, icons=['gift', 'bag', 'heart'],
-      h1='No gift option<br><i>before checkout</i>?<br>I\'d test a gift toggle.',
-      screen=[head('Your cart (2)'), item('€48'), item('€32'), mk('<div class="empty">No gift wrap, no gift message</div>'),
-              row('Subtotal', '€80', True), btn('Checkout')]),
- dict(n=42, icons=['truck', 'clock', 'check'],
-      h1='Shipping options<br><i>without dates</i>?<br>I\'d test delivery days.',
-      screen=[head('Shipping', ''), field('Address', '12 Market Street'), gap(2),
-              mk(opt('Standard', '€4.95', True) + opt('Express', '€9.95')), btn('Continue to payment')]),
+      h1='Le <i>prix dans</i><br><i>le colis</i> ? Je testerais<br>« C\'est un cadeau ».',
+      screen=[head('Ton panier (2)'), item('48 €'), item('32 €'), mk('<div class="empty">Pas de facture sans prix, pas de message</div>'),
+              row('Sous-total', '80 €', True), btn('Paiement')]),
+ dict(n=42, icons=['truck', 'percent', 'check'],
+      h1='Livraison offerte,<br>puis <i>plus offerte</i> ?<br>Je testerais le seuil.',
+      screen=[head('Livraison', ''), row('Sous-total', '52 €'), row('Code -10 %', '-5,20 €'), gap(2),
+              mk(opt('Standard', '4,95 €', True)), note('Livraison offerte dès 50 €'), btn('Continuer')]),
  dict(n=44, icons=['ruler', 'eye', 'check'],
-      h1='Sizes, but<br><i>no fit info</i>? I\'d test<br>the model\'s size.',
-      screen=[nav(), img(162), title(), price('€65'), mk(sizes(['XS', 'S', 'M', 'L', 'XL'])), btn()]),
+      h1='Tes avis disent<br><i>« taille petit »</i> ?<br>Je testerais de l\'écrire.',
+      screen=[nav(), img(120), title(), price('65 €'), mk(sizes(['XS', 'S', 'M', 'L', 'XL'])), note('★★★★☆ « Taille petit, prenez au-dessus »'), btn()]),
  dict(n=46, icons=['globe', 'card', 'tag'],
-      h1='Dollars for<br><i>European</i> visitors?<br>I\'d test local currency.',
-      screen=[nav(), img(), title(), price('$49.00 USD', mark=True), btn(), bart()]),
+      h1='Un prix à<br><i>49,37 €</i> ? Je<br>testerais l\'arrondi.',
+      screen=[nav(), img(), title(), price('49,37 €', mark=True), btn(), bart()]),
  dict(n=47, icons=['globe', 'box', 'card'],
-      h1='Duties paid<br><i>on delivery</i>? I\'d test<br>duties included.',
-      screen=[head('Order summary', ''), item('€120'), row('Subtotal', '€120'), row('Shipping', '€8'),
-              mk(row('Duties', 'Paid on delivery')), row('Total', '€128', True), btn('Pay now')]),
+      h1='Douane payée<br><i>à la livraison</i> ? Je<br>testerais droits inclus.',
+      screen=[head('Récapitulatif', ''), item('120 €'), row('Sous-total', '120 €'), row('Livraison', '8 €'),
+              mk(row('Douane', 'À la livraison')), row('Total', '128 €', True), btn('Payer')]),
  dict(n=48, icons=['phone', 'lock', 'check'],
-      h1='Phone number<br><i>required</i>, no reason?<br>I\'d test saying why.',
-      screen=[head('Contact', ''), field('Email', 'sam@mail.com'), field('Address', '12 Market Street'),
-              mk(field('Phone (required)', '')), btn('Continue')]),
+      h1='Téléphone exigé,<br><i>sans dire pourquoi</i> ?<br>Je testerais le dire.',
+      screen=[head('Contact', ''), field('Email', 'sam@mail.com'), field('Adresse', '12 rue du Marché'),
+              mk(field('Téléphone (obligatoire)', '')), btn('Continuer')]),
  dict(n=54, icons=['gift', 'clock', 'bag'],
-      h1='Gift cards<br><i>in the footer</i>? I\'d test<br>them in the menu.',
-      screen=[nav(), img(120), '<div class="ft">', note('Help', 'lbl'), links(['Contact', 'Shipping', 'Returns', 'Gift cards', 'Our story'], 'Gift cards'), '</div>']),
+      h1='Le 22 décembre,<br>la carte cadeau<br><i>dans le footer</i> ?',
+      screen=[nav(), img(120), '<div class="ft">', note('Aide', 'lbl'), links(['Contact', 'Livraison', 'Retours', 'Cartes cadeaux', 'Notre histoire'], 'Cartes cadeaux'), '</div>']),
  dict(n=58, icons=['box', 'tag', 'percent'],
-      h1='Packs <i>without</i><br><i>a unit price</i>? I\'d test<br>€9.67 per pair.',
-      screen=[nav(), img(170), title(), mk(opt('1 pair', '€12') + opt('3 pairs', '€29', True)), btn()]),
+      h1='Un lot <i>sans</i><br><i>prix unitaire</i> ? Je<br>testerais 9,67 € la paire.',
+      screen=[nav(), img(170), title(), mk(opt('1 paire', '12 €') + opt('3 paires', '29 €', True)), btn()]),
  dict(n=59, icons=['refresh', 'card', 'check'],
-      h1='Subscription<br><i>picked for you</i>?<br>I\'d test one-time first.',
-      screen=[nav(), img(160), title(), mk(opt('Subscribe and save 15%', '€34', True)), opt('One-time purchase', '€40'), btn()]),
+      h1='Abonnement<br><i>coché pour toi</i> ? Je<br>testerais l\'inverse.',
+      screen=[nav(), img(160), title(), mk(opt('Abonnement -15 %', '34 €', True)), opt('Achat unique', '40 €'), btn()]),
  dict(n=65, icons=['filter', 'ruler', 'tag'],
-      h1='Sale page with<br><i>no size filter</i>?<br>I\'d test one.',
-      screen=[head('Sale', '≡'), mk(chips(['Category', 'Price', 'Color'])), grid([card('€29', 'SALE'), card('€39', 'SALE')]), grid([card('€24', 'SALE'), card('€45', 'SALE')])]),
+      h1='Filtre <i>taille M</i>,<br>mais M épuisé ?<br>Je testerais le stock.',
+      screen=[head('Soldes', '≡'), mk(chips(['Taille : M', 'Prix', 'Couleur'])), grid([card('29 €', 'ÉPUISÉ'), card('39 €', 'PROMO')]), grid([card('24 €', 'ÉPUISÉ'), card('45 €', 'PROMO')])]),
 ]
 
 PAGE = open(os.path.join(HERE, 'friction.tpl.html'), encoding='utf-8').read()

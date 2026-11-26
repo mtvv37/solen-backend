@@ -15,7 +15,7 @@ from ws_long import EXAMPLE as WS_EXAMPLE, TEMPLATE as WS_TEMPLATE  # noqa: E402
 from ws_posts import WS  # noqa: E402
 from tally_form import PAGES as FORM_PAGES  # noqa: E402
 
-# Captures Worth stealing : publiées à côté de la page, gardées hors du repo (dossier passé en argument).
+# Captures Idée à piquer : publiées à côté de la page, gardées hors du repo (dossier passé en argument).
 WS_IMAGES = {f'img/ws-{i + 1:02d}.' + p['shot'].rsplit('.', 1)[1]: p['shot'] for i, p in enumerate(WS) if not p['shot'].startswith('new:')}
 IDEE_DECEMBRE = 'guide cadeaux, date limite pour Noël, emballage cadeau, carte cadeau, retours prolongés, soldes'
 
@@ -53,17 +53,17 @@ def build():
         d = start + dt.timedelta(i)
         posts = []
         a = friction(28 + i, FRICTIONS[i])
-        posts.append(dict(slot='A', time='9h', series='Shopify friction worth testing', num=28 + i, text=a, w=weight(a),
+        posts.append(dict(slot='A', time='9h', series='Friction Shopify à tester', num=28 + i, text=a, w=weight(a), long=weight(a) > 280,
                           img=f'img/friction-{28 + i}.png' if 28 + i in VISUALS else None, reply=True))
         if i < len(WS):
             ws = WS[i]
             # Captures arrivées sans fichier : pas d'image sur la page, Thomas a la sienne.
             img = None if ws['shot'].startswith('new:') else f'img/ws-{i + 1:02d}.' + ws['shot'].rsplit('.', 1)[1]
-            posts.append(dict(slot='B', time='13h', series='Worth stealing', num=i + 1, brand=ws['brand'], text=ws['text'],
+            posts.append(dict(slot='B', time='13h', series='Idée à piquer', num=i + 1, brand=ws['brand'], text=ws['text'],
                               w=len(ws['text']), long=True, img=img, reply=True))
         else:
             b = BRANDS[i % len(BRANDS)]
-            posts.append(dict(slot='B', time='13h', series='Worth stealing', num=i + 1, brand=b[0], where=IDEE_DECEMBRE, reply=True))
+            posts.append(dict(slot='B', time='13h', series='Idée à piquer', num=i + 1, brand=b[0], where=IDEE_DECEMBRE, reply=True))
         c = C[i]
         if c is None:
             posts.append(dict(slot='C', time='18h', series='Bilan de la semaine', sunday=True))
@@ -73,10 +73,10 @@ def build():
         if t:
             posts.append(dict(slot='D', time='21h', series='Appel', text=t, w=weight(t)))
         for p in posts:
-            assert p.get('long') or p.get('w', 0) <= 280, (d, p['slot'])
+            assert p.get('w', 0) <= (900 if p.get('long') else 280), (d, p['slot'])
         days.append(dict(date=d.isoformat(), event=EVENTS.get((d.month, d.day)), posts=posts))
     reserve = [dict(num=n, text=friction(n, FRICTIONS[n - 28]), w=weight(friction(n, FRICTIONS[n - 28]))) for n in RESERVE]
-    data = dict(days=days, reply=REPLY, reply_w=weight(REPLY.replace('[link]', 'x' * 23)),
+    data = dict(days=days, reply=REPLY, reply_w=weight(REPLY.replace('[lien Cal.com]', 'x' * 23).replace('[lien Tally]', 'x' * 23)),
                 brands=[list(b) for b in BRANDS], reserve=reserve,
                 ws=dict(template=WS_TEMPLATE, example=WS_EXAMPLE), form=FORM_PAGES)
     page = open(os.path.join(HERE, 'page.html'), encoding='utf-8').read()
